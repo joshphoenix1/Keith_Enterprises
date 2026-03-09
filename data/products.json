@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1, "name": "Silicone Kitchen Utensil Set", "asin": "B09XYZ1234",
+    "category": "Kitchen & Dining", "price": 24.99, "cost": 4.50,
+    "weight_lb": 1.2, "dimensions": "12x8x3", "monthly_sales": 850,
+    "reviews": 1240, "rating": 4.3, "bsr": 4521, "competition": "Medium",
+    "fba_fee": 5.39, "referral_fee": 3.75, "status": "Active"
+  },
+  {
+    "id": 2, "name": "Bamboo Cutting Board Set", "asin": "B09ABC5678",
+    "category": "Kitchen & Dining", "price": 29.99, "cost": 6.20,
+    "weight_lb": 3.5, "dimensions": "16x12x2", "monthly_sales": 620,
+    "reviews": 890, "rating": 4.5, "bsr": 6234, "competition": "High",
+    "fba_fee": 6.82, "referral_fee": 4.50, "status": "Active"
+  },
+  {
+    "id": 3, "name": "LED Desk Lamp", "asin": "B09DEF9012",
+    "category": "Office Products", "price": 34.99, "cost": 8.75,
+    "weight_lb": 2.1, "dimensions": "18x5x5", "monthly_sales": 480,
+    "reviews": 2100, "rating": 4.6, "bsr": 3102, "competition": "High",
+    "fba_fee": 6.15, "referral_fee": 5.25, "status": "Active"
+  },
+  {
+    "id": 4, "name": "Yoga Resistance Bands Set", "asin": "B09GHI3456",
+    "category": "Sports & Outdoors", "price": 14.99, "cost": 2.10,
+    "weight_lb": 0.8, "dimensions": "8x6x2", "monthly_sales": 1200,
+    "reviews": 3450, "rating": 4.4, "bsr": 1890, "competition": "High",
+    "fba_fee": 4.75, "referral_fee": 2.25, "status": "Active"
+  },
+  {
+    "id": 5, "name": "Stainless Steel Water Bottle", "asin": "B09JKL7890",
+    "category": "Sports & Outdoors", "price": 19.99, "cost": 3.80,
+    "weight_lb": 0.9, "dimensions": "10x3x3", "monthly_sales": 950,
+    "reviews": 5670, "rating": 4.7, "bsr": 1245, "competition": "Very High",
+    "fba_fee": 5.05, "referral_fee": 3.00, "status": "Active"
+  },
+  {
+    "id": 6, "name": "Phone Stand Holder", "asin": "B09MNO1234",
+    "category": "Cell Phones & Accessories", "price": 12.99, "cost": 1.50,
+    "weight_lb": 0.4, "dimensions": "5x4x4", "monthly_sales": 1800,
+    "reviews": 8900, "rating": 4.2, "bsr": 890, "competition": "Very High",
+    "fba_fee": 4.25, "referral_fee": 1.95, "status": "Active"
+  },
+  {
+    "id": 7, "name": "Essential Oil Diffuser", "asin": "B09PQR5678",
+    "category": "Health & Household", "price": 27.99, "cost": 5.90,
+    "weight_lb": 1.5, "dimensions": "6x6x7", "monthly_sales": 720,
+    "reviews": 4200, "rating": 4.5, "bsr": 2340, "competition": "High",
+    "fba_fee": 5.65, "referral_fee": 4.20, "status": "Active"
+  },
+  {
+    "id": 8, "name": "Reusable Produce Bags", "asin": "B09STU9012",
+    "category": "Kitchen & Dining", "price": 11.99, "cost": 1.80,
+    "weight_lb": 0.5, "dimensions": "10x8x1", "monthly_sales": 1400,
+    "reviews": 2300, "rating": 4.3, "bsr": 3456, "competition": "Medium",
+    "fba_fee": 4.35, "referral_fee": 1.80, "status": "Active"
+  },
+  {
+    "id": 9, "name": "Portable Blender", "asin": "B09VWX3456",
+    "category": "Kitchen & Dining", "price": 22.99, "cost": 7.50,
+    "weight_lb": 1.3, "dimensions": "10x4x4", "monthly_sales": 560,
+    "reviews": 1560, "rating": 4.1, "bsr": 5670, "competition": "Medium",
+    "fba_fee": 5.45, "referral_fee": 3.45, "status": "Under Review"
+  },
+  {
+    "id": 10, "name": "Car Phone Mount", "asin": "B09YZA7890",
+    "category": "Cell Phones & Accessories", "price": 15.99, "cost": 2.40,
+    "weight_lb": 0.6, "dimensions": "6x4x3", "monthly_sales": 1100,
+    "reviews": 6700, "rating": 4.4, "bsr": 1567, "competition": "Very High",
+    "fba_fee": 4.55, "referral_fee": 2.40, "status": "Active"
+  },
+  {
+    "id": 11, "name": "Laptop Stand Adjustable", "asin": "B09BCD1234",
+    "category": "Office Products", "price": 39.99, "cost": 9.20,
+    "weight_lb": 2.8, "dimensions": "12x10x6", "monthly_sales": 380,
+    "reviews": 1890, "rating": 4.6, "bsr": 4890, "competition": "Medium",
+    "fba_fee": 6.95, "referral_fee": 6.00, "status": "Active"
+  },
+  {
+    "id": 12, "name": "Magnetic Cable Organizer", "asin": "B09EFG5678",
+    "category": "Office Products", "price": 9.99, "cost": 1.20,
+    "weight_lb": 0.3, "dimensions": "4x3x1", "monthly_sales": 2200,
+    "reviews": 3400, "rating": 4.0, "bsr": 2100, "competition": "Medium",
+    "fba_fee": 3.95, "referral_fee": 1.50, "status": "Active"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {"id": 1, "type": "product", "action": "Added new product", "detail": "Silicone Kitchen Utensil Set — $24.99", "time": "2 hours ago"},
+  {"id": 2, "type": "supplier", "action": "Supplier verified", "detail": "Shenzhen GreenTech Co. — Alibaba Gold Supplier", "time": "5 hours ago"},
+  {"id": 3, "type": "niche", "action": "Niche analyzed", "detail": "Portable Blenders — Growing trend, medium competition", "time": "1 day ago"},
+  {"id": 4, "type": "calculator", "action": "Feasibility check", "detail": "LED Desk Lamp — 42% margin, PASS", "time": "1 day ago"},
+  {"id": 5, "type": "risk", "action": "Risk updated", "detail": "Water Bottles — High competition risk flagged", "time": "2 days ago"}
+]

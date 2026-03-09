@@ -1,0 +1,54 @@
+{
+  "seller_assistant": {
+    "enabled": false,
+    "account_email": "",
+    "account_password": "",
+    "api_key": "",
+    "plan": "Pro",
+    "webhook_url": "",
+    "auto_sync": false,
+    "sync_frequency": "Hourly",
+    "sync_products": true,
+    "sync_restrictions": true,
+    "sync_ip_alerts": true,
+    "sync_competitors": true,
+    "google_sheet_id": ""
+  },
+  "whatsapp": {
+    "enabled": false,
+    "phone_number": "",
+    "business_name": "",
+    "api_key": "",
+    "webhook_url": "",
+    "notifications": true
+  },
+  "email": {
+    "enabled": false,
+    "provider": "Gmail",
+    "email_address": "",
+    "smtp_server": "",
+    "smtp_port": 587,
+    "username": "",
+    "password": "",
+    "use_tls": true,
+    "notifications": true
+  },
+  "google_drive": {
+    "enabled": false,
+    "account_email": "",
+    "client_id": "",
+    "client_secret": "",
+    "folder_id": "",
+    "auto_backup": false,
+    "backup_frequency": "Daily"
+  },
+  "claude_ai": {
+    "enabled": false,
+    "api_key": "",
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "auto_process": false,
+    "process_on_ingest": true,
+    "tasks": ["summarize", "extract_metrics", "sentiment"]
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1, "name": "Shenzhen GreenTech Co.", "platform": "Alibaba",
+    "country": "China", "products": "Kitchen Utensils, Cutting Boards",
+    "moq": 500, "lead_time_days": 25, "rating": 4.7,
+    "verified": true, "contact": "sales@greentech.cn",
+    "notes": "Gold supplier, 8 years. Good communication."
+  },
+  {
+    "id": 2, "name": "Yiwu SmartHome Ltd.", "platform": "1688",
+    "country": "China", "products": "LED Lamps, Desk Accessories",
+    "moq": 300, "lead_time_days": 20, "rating": 4.5,
+    "verified": true, "contact": "info@yiwusmarthome.com",
+    "notes": "Competitive pricing, fast samples."
+  },
+  {
+    "id": 3, "name": "Guangzhou FitGear", "platform": "Alibaba",
+    "country": "China", "products": "Resistance Bands, Fitness Accessories",
+    "moq": 1000, "lead_time_days": 18, "rating": 4.8,
+    "verified": true, "contact": "export@fitgear.cn",
+    "notes": "Top-rated, custom packaging available."
+  },
+  {
+    "id": 4, "name": "Dongguan EcoWare", "platform": "Made-in-China",
+    "country": "China", "products": "Reusable Bags, Eco Products",
+    "moq": 2000, "lead_time_days": 15, "rating": 4.3,
+    "verified": false, "contact": "orders@ecoware.com",
+    "notes": "Low prices but high MOQ."
+  },
+  {
+    "id": 5, "name": "Ningbo TechParts", "platform": "Alibaba",
+    "country": "China", "products": "Phone Mounts, Cable Organizers",
+    "moq": 500, "lead_time_days": 22, "rating": 4.6,
+    "verified": true, "contact": "techparts@outlook.com",
+    "notes": "Reliable, handles custom molds."
+  },
+  {
+    "id": 6, "name": "Delhi TradeLink", "platform": "IndiaMART",
+    "country": "India", "products": "Essential Oil Diffusers, Home Decor",
+    "moq": 200, "lead_time_days": 30, "rating": 4.2,
+    "verified": false, "contact": "info@delhitradelink.in",
+    "notes": "Lower MOQ, longer lead times."
+  }
+]

@@ -1,0 +1,19 @@
+niche,category,monthly_revenue,competition_score,avg_reviews,avg_price,avg_rating,trend,seasonal
+Kitchen Utensils,Kitchen & Dining,285000,65,1450,22.99,4.3,Stable,No
+Cutting Boards,Kitchen & Dining,195000,58,920,28.99,4.5,Growing,No
+LED Desk Lamps,Office Products,320000,78,2800,32.99,4.4,Growing,No
+Resistance Bands,Sports & Outdoors,410000,85,4200,16.99,4.3,Stable,Yes
+Water Bottles,Sports & Outdoors,520000,92,6500,21.99,4.5,Growing,Yes
+Phone Stands,Cell Phones & Accessories,280000,88,7800,14.99,4.2,Stable,No
+Essential Oil Diffusers,Health & Household,350000,75,3900,26.99,4.4,Declining,Yes
+Reusable Bags,Kitchen & Dining,180000,52,1800,12.99,4.2,Growing,No
+Portable Blenders,Kitchen & Dining,240000,62,1900,24.99,4.0,Growing,No
+Car Phone Mounts,Cell Phones & Accessories,310000,82,5600,17.99,4.3,Stable,No
+Laptop Stands,Office Products,270000,60,2100,36.99,4.5,Growing,No
+Cable Organizers,Office Products,150000,45,2800,11.99,4.1,Growing,No
+Yoga Mats,Sports & Outdoors,480000,90,8200,29.99,4.4,Stable,Yes
+Desk Organizers,Office Products,220000,55,1600,19.99,4.3,Growing,No
+Kitchen Scales,Kitchen & Dining,260000,70,3200,18.99,4.4,Stable,No
+Resistance Tubes,Sports & Outdoors,190000,48,1200,14.99,4.2,Growing,Yes
+Aromatherapy Candles,Health & Household,310000,68,2400,16.99,4.3,Growing,Yes
+Screen Protectors,Cell Phones & Accessories,420000,95,12000,9.99,4.0,Declining,No
