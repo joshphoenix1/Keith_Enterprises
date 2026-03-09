@@ -42,10 +42,10 @@
     "auto_backup": false,
     "backup_frequency": "Daily"
   },
-  "claude_ai": {
+  "claude_code": {
     "enabled": false,
     "api_key": "",
-    "model": "claude-sonnet-4-20250514",
+    "model": "claude-sonnet-4-6",
     "max_tokens": 4096,
     "auto_process": false,
     "process_on_ingest": true,

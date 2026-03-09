@@ -77,7 +77,7 @@ def layout():
     wa = accounts.get("whatsapp", {})
     em = accounts.get("email", {})
     gd = accounts.get("google_drive", {})
-    cl = accounts.get("claude_ai", {})
+    cl = accounts.get("claude_code", {})
 
     # ── Data Pipeline Overview ──
     pipeline_section = html.Div([
@@ -109,13 +109,13 @@ def layout():
 
     # ── Claude AI Section ──
     claude_form = html.Div([
-        _section_header("bi-cpu", "Claude AI",
-                        "Configure your Anthropic API key for AI-powered data processing and analysis",
+        _section_header("bi-cpu", "Claude Code",
+                        "Configure your Claude Code API key (sk-ant-api03-...) for AI-powered data processing",
                         COLORS["purple"]),
-        _toggle_row("Claude AI Processing", "acct-cl-enabled", cl.get("enabled", False)),
+        _toggle_row("Claude Code Processing", "acct-cl-enabled", cl.get("enabled", False)),
         html.Div([
-            form_group("Anthropic API Key",
-                       styled_input("acct-cl-apikey", "sk-ant-...", type="password",
+            form_group("Claude Code API Key",
+                       styled_input("acct-cl-apikey", "sk-ant-api03-...", type="password",
                                     value=cl.get("api_key", ""))),
             form_group("Model",
                        styled_dropdown("acct-cl-model",
@@ -440,7 +440,7 @@ def save_accounts(n_clicks,
             "account_email": sa_email or "",
             "account_password": sa_password or "",
         },
-        "claude_ai": {
+        "claude_code": {
             "enabled": bool(cl_enabled),
             "api_key": cl_apikey or "",
             "model": cl_model or "claude-sonnet-4-6",
@@ -482,11 +482,11 @@ def save_accounts(n_clicks,
 
     sources = sum([data["seller_assistant"]["enabled"], data["whatsapp"]["enabled"],
                    data["email"]["enabled"], data["google_drive"]["enabled"]])
-    ai = "active" if data["claude_ai"]["enabled"] else "inactive"
+    ai = "active" if data["claude_code"]["enabled"] else "inactive"
 
     return html.Div([
         html.I(className="bi bi-check-circle-fill me-2",
                style={"color": COLORS["success"]}),
-        html.Span(f"Settings saved! {sources}/4 data sources connected, Claude AI {ai}.",
+        html.Span(f"Settings saved! {sources}/4 data sources connected, Claude Code {ai}.",
                   style={"color": COLORS["success"], "fontWeight": "500"}),
     ], style={"fontSize": "0.9rem"})
