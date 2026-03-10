@@ -2,6 +2,13 @@ import plotly.graph_objects as go
 from config import COLORS
 
 
+def _hex_to_rgba(hex_color, alpha=1.0):
+    """Convert hex color to rgba string."""
+    h = hex_color.lstrip("#")
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return f"rgba({r},{g},{b},{alpha})"
+
+
 def dark_chart_layout(title="", height=350, showlegend=True):
     return dict(
         title=dict(text=title, font=dict(color=COLORS["text"], size=14)),
@@ -37,9 +44,9 @@ def gauge_chart(value, title="Score", max_val=100, height=250):
             "bgcolor": COLORS["card_border"],
             "borderwidth": 0,
             "steps": [
-                {"range": [0, max_val * 0.33], "color": f"{COLORS['danger']}20"},
-                {"range": [max_val * 0.33, max_val * 0.66], "color": f"{COLORS['warning']}20"},
-                {"range": [max_val * 0.66, max_val], "color": f"{COLORS['success']}20"},
+                {"range": [0, max_val * 0.33], "color": _hex_to_rgba(COLORS['danger'], 0.12)},
+                {"range": [max_val * 0.33, max_val * 0.66], "color": _hex_to_rgba(COLORS['warning'], 0.12)},
+                {"range": [max_val * 0.66, max_val], "color": _hex_to_rgba(COLORS['success'], 0.12)},
             ],
         },
     ))

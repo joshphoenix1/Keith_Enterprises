@@ -62,47 +62,58 @@ def calc_referral_fee(price, category="default"):
 
 
 def calc_feasibility(price, cost, fba_fee, referral_fee, monthly_sales,
-                     ad_spend_pct=0.10, other_costs=0):
+                     ad_spend_pct=0.10, other_costs=0,
+                     num_competitors=0, avg_reviews=0, avg_rating=0,
+                     avg_competitor_price=0, bsr=0, moq=0, lead_time=0,
+                     shipping_cost=0, storage_cost=0):
     """Calculate full feasibility metrics for a product."""
     revenue = price * monthly_sales
-    total_cost_per_unit = cost + fba_fee + referral_fee
+    total_cost_per_unit = cost + fba_fee + referral_fee + shipping_cost
     ad_spend_per_unit = price * ad_spend_pct
-    all_costs = total_cost_per_unit + ad_spend_per_unit + other_costs
+    all_costs = total_cost_per_unit + ad_spend_per_unit + other_costs + storage_cost
 
     profit_per_unit = price - all_costs
     margin = (profit_per_unit / price * 100) if price > 0 else 0
     monthly_profit = profit_per_unit * monthly_sales
     roi = (profit_per_unit / cost * 100) if cost > 0 else 0
+    annual_profit = monthly_profit * 12
+    initial_investment = cost * max(moq, monthly_sales) + (shipping_cost * max(moq, monthly_sales))
+    breakeven_units = int(all_costs / profit_per_unit) if profit_per_unit > 0 else 0
 
-    # Feasibility score (0-100)
+    # Feasibility score (0-100) — weighted across 6 dimensions
     score = 0
+
+    # 1. Margin score (max 20)
     if margin > 30:
-        score += 35
+        score += 20
     elif margin > 20:
-        score += 25
+        score += 14
     elif margin > 10:
-        score += 15
+        score += 8
     else:
-        score += 5
+        score += 3
 
+    # 2. ROI score (max 20)
     if roi > 100:
-        score += 25
+        score += 20
     elif roi > 50:
-        score += 18
+        score += 14
     elif roi > 25:
-        score += 10
+        score += 8
     else:
         score += 3
 
+    # 3. Monthly profit score (max 20)
     if monthly_profit > 3000:
-        score += 25
+        score += 20
     elif monthly_profit > 1500:
-        score += 18
+        score += 14
     elif monthly_profit > 500:
-        score += 10
+        score += 8
     else:
         score += 3
 
+    # 4. Sales volume score (max 15)
     if monthly_sales > 500:
         score += 15
     elif monthly_sales > 200:
@@ -110,7 +121,43 @@ def calc_feasibility(price, cost, fba_fee, referral_fee, monthly_sales,
     elif monthly_sales > 50:
         score += 5
 
-    score = min(score, 100)
+    # 5. Competition score (max 15) — lower competition = higher score
+    if num_competitors > 0:
+        if num_competitors <= 5:
+            score += 15
+        elif num_competitors <= 15:
+            score += 10
+        elif num_competitors <= 30:
+            score += 5
+        else:
+            score += 2
+
+        # Adjust for review barrier
+        if avg_reviews > 0:
+            if avg_reviews > 1000:
+                score -= 5  # very hard to compete
+            elif avg_reviews > 500:
+                score -= 3
+            elif avg_reviews < 100:
+                score += 3  # easy to enter
+    else:
+        score += 8  # no data, neutral
+
+    # 6. Price competitiveness (max 10)
+    if avg_competitor_price > 0 and price > 0:
+        price_ratio = price / avg_competitor_price
+        if 0.85 <= price_ratio <= 1.0:
+            score += 10  # slightly undercut
+        elif 0.7 <= price_ratio < 0.85:
+            score += 7   # significantly cheaper
+        elif 1.0 < price_ratio <= 1.15:
+            score += 6   # slightly more expensive
+        else:
+            score += 3   # way off
+    else:
+        score += 5  # no data
+
+    score = max(0, min(score, 100))
 
     if score >= 75:
         verdict = "GO"
@@ -125,8 +172,13 @@ def calc_feasibility(price, cost, fba_fee, referral_fee, monthly_sales,
         "profit_per_unit": round(profit_per_unit, 2),
         "margin": round(margin, 1),
         "monthly_profit": round(monthly_profit, 2),
+        "annual_profit": round(annual_profit, 2),
         "roi": round(roi, 1),
         "score": score,
         "verdict": verdict,
         "ad_spend_per_unit": round(ad_spend_per_unit, 2),
+        "initial_investment": round(initial_investment, 2),
+        "breakeven_units": breakeven_units,
+        "shipping_cost": round(shipping_cost, 2),
+        "storage_cost": round(storage_cost, 2),
     }

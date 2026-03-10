@@ -83,4 +83,5 @@ if __name__ == "__main__":
         checker = HealthChecker(app=app, interval=60)
         app.server.health_checker = checker
         checker.start()
-    app.run(debug=True, host="0.0.0.0", port=APP_PORT)
+    app.run(debug=True, host="0.0.0.0", port=APP_PORT,
+            dev_tools_ui=False, dev_tools_props_check=False)
