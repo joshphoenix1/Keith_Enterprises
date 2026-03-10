@@ -276,16 +276,28 @@ Only return valid JSON, no other text."""
 
 def fetch_url(url):
     """Fetch a URL and return the page text content and image URLs."""
-    import urllib.request
+    import requests as _requests
     import re
 
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-    req = urllib.request.Request(url, headers=headers)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Cache-Control": "no-cache",
+        "Sec-Ch-Ua": '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Sec-Ch-Ua-Platform": '"Windows"',
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
+        "Upgrade-Insecure-Requests": "1",
+    }
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            html_bytes = resp.read(5_000_000)  # max 5MB
-            charset = resp.headers.get_content_charset() or "utf-8"
-            html_text = html_bytes.decode(charset, errors="replace")
+        resp = _requests.get(url, headers=headers, timeout=30, allow_redirects=True)
+        resp.raise_for_status()
+        html_text = resp.text
     except Exception as e:
         return {"error": f"Failed to fetch URL: {str(e)}"}
 
@@ -372,7 +384,7 @@ def analyze_url_text(url):
 
 def analyze_url_images(url):
     """Fetch a URL, download product images, and extract product info from them."""
-    import urllib.request
+    import requests as _requests
 
     fetched = fetch_url(url)
     if "error" in fetched:
@@ -391,13 +403,18 @@ def analyze_url_images(url):
     content_blocks = []
     downloaded = 0
 
+    img_headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Referer": url,
+    }
+
     for img_url in img_urls[:10]:
         try:
-            headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-            req = urllib.request.Request(img_url, headers=headers)
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                img_bytes = resp.read(5_000_000)
-                content_type = resp.headers.get("Content-Type", "image/jpeg")
+            resp = _requests.get(img_url, headers=img_headers, timeout=15, allow_redirects=True)
+            resp.raise_for_status()
+            content_type = resp.headers.get("Content-Type", "image/jpeg").split(";")[0].strip()
+            img_bytes = resp.content
 
             if not content_type.startswith("image/"):
                 continue
