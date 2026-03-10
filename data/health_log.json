@@ -20106,5 +20106,6717 @@
         "heal_action": null
       }
     ]
+  },
+  {
+    "timestamp": "2026-03-10T03:15:01.534621",
+    "duration_ms": 34,
+    "overall_status": "critical",
+    "total_checks": 42,
+    "passed": 39,
+    "warnings": 2,
+    "failures": 1,
+    "healed": 2,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:pipeline.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: pipeline.json.corrupt.20260310_031501",
+        "healed": true,
+        "heal_action": "Restored pipeline.json from corrupt state"
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_031501",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.pipeline",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.pipeline",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'\n           ^^^^^^^^^^^^^^^^^^^^^TypeError: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9768MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "34 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:16:01.593544",
+    "duration_ms": 32,
+    "overall_status": "critical",
+    "total_checks": 42,
+    "passed": 39,
+    "warnings": 2,
+    "failures": 1,
+    "healed": 2,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:pipeline.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: pipeline.json.corrupt.20260310_031601",
+        "healed": true,
+        "heal_action": "Restored pipeline.json from corrupt state"
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_031601",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.pipeline",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.pipeline",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'\n           ^^^^^^^^^^^^^^^^^^^^^TypeError: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9768MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "34 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:17:01.724133",
+    "duration_ms": 104,
+    "overall_status": "critical",
+    "total_checks": 42,
+    "passed": 39,
+    "warnings": 2,
+    "failures": 1,
+    "healed": 2,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:pipeline.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: pipeline.json.corrupt.20260310_031701",
+        "healed": true,
+        "heal_action": "Restored pipeline.json from corrupt state"
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_031701",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.pipeline",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.pipeline",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'\n           ^^^^^^^^^^^^^^^^^^^^^TypeError: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9768MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "34 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:18:01.786689",
+    "duration_ms": 35,
+    "overall_status": "critical",
+    "total_checks": 42,
+    "passed": 39,
+    "warnings": 2,
+    "failures": 1,
+    "healed": 2,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:pipeline.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: pipeline.json.corrupt.20260310_031801",
+        "healed": true,
+        "heal_action": "Restored pipeline.json from corrupt state"
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_031801",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.pipeline",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.pipeline",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'\n           ^^^^^^^^^^^^^^^^^^^^^TypeError: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9768MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "34 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:19:01.848315",
+    "duration_ms": 32,
+    "overall_status": "critical",
+    "total_checks": 42,
+    "passed": 39,
+    "warnings": 2,
+    "failures": 1,
+    "healed": 2,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:pipeline.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: pipeline.json.corrupt.20260310_031901",
+        "healed": true,
+        "heal_action": "Restored pipeline.json from corrupt state"
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_031901",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.pipeline",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.pipeline",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'\n           ^^^^^^^^^^^^^^^^^^^^^TypeError: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9767MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "34 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:20:01.908386",
+    "duration_ms": 32,
+    "overall_status": "critical",
+    "total_checks": 42,
+    "passed": 39,
+    "warnings": 2,
+    "failures": 1,
+    "healed": 2,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:pipeline.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: pipeline.json.corrupt.20260310_032001",
+        "healed": true,
+        "heal_action": "Restored pipeline.json from corrupt state"
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032001",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.pipeline",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.pipeline",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'\n           ^^^^^^^^^^^^^^^^^^^^^TypeError: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9767MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "34 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:20:57.053332",
+    "duration_ms": 135,
+    "overall_status": "critical",
+    "total_checks": 42,
+    "passed": 39,
+    "warnings": 2,
+    "failures": 1,
+    "healed": 2,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:pipeline.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: pipeline.json.corrupt.20260310_032056",
+        "healed": true,
+        "heal_action": "Restored pipeline.json from corrupt state"
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032056",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.pipeline",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.pipeline",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'\n           ^^^^^^^^^^^^^^^^^^^^^TypeError: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9767MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "34 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:21:57.108556",
+    "duration_ms": 25,
+    "overall_status": "critical",
+    "total_checks": 42,
+    "passed": 38,
+    "warnings": 2,
+    "failures": 2,
+    "healed": 2,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:pipeline.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: pipeline.json.corrupt.20260310_032157",
+        "healed": true,
+        "heal_action": "Restored pipeline.json from corrupt state"
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032157",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.pipeline",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: 'moq'\n           ~^^^^^^^KeyError: 'moq'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.pipeline",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'\n           ^^^^^^^^^^^^^^^^^^^^^TypeError: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9767MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "34 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:22:39.043464",
+    "duration_ms": 149,
+    "overall_status": "critical",
+    "total_checks": 42,
+    "passed": 38,
+    "warnings": 2,
+    "failures": 2,
+    "healed": 2,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:pipeline.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: pipeline.json.corrupt.20260310_032238",
+        "healed": true,
+        "heal_action": "Restored pipeline.json from corrupt state"
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032238",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.pipeline",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: 'moq'\n           ~^^^^^^^KeyError: 'moq'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.pipeline",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'\n           ^^^^^^^^^^^^^^^^^^^^^TypeError: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9767MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "34 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:22:47.352424",
+    "duration_ms": 127,
+    "overall_status": "critical",
+    "total_checks": 42,
+    "passed": 38,
+    "warnings": 2,
+    "failures": 2,
+    "healed": 2,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:pipeline.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: pipeline.json.corrupt.20260310_032247",
+        "healed": true,
+        "heal_action": "Restored pipeline.json from corrupt state"
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032247",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.pipeline",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: 'moq'\n           ~^^^^^^^KeyError: 'moq'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.pipeline",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'\n           ^^^^^^^^^^^^^^^^^^^^^TypeError: dash.dash_table.DataTable.DataTable() got multiple values for keyword argument 'style_data_conditional'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9767MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "34 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:23:02.393876",
+    "duration_ms": 135,
+    "overall_status": "critical",
+    "total_checks": 39,
+    "passed": 37,
+    "warnings": 1,
+    "failures": 1,
+    "healed": 1,
+    "checks": [
+      {
+        "name": "data:offers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 15 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:buyers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032302",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: 'moq'\n           ~^^^^^^^KeyError: 'moq'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9766MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "33 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:24:02.459134",
+    "duration_ms": 33,
+    "overall_status": "critical",
+    "total_checks": 39,
+    "passed": 37,
+    "warnings": 1,
+    "failures": 1,
+    "healed": 1,
+    "checks": [
+      {
+        "name": "data:offers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 15 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:buyers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032402",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "fail",
+        "message": "Render error: 'moq'\n           ~^^^^^^^KeyError: 'moq'",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9766MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "33 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:24:41.062855",
+    "duration_ms": 477,
+    "overall_status": "degraded",
+    "total_checks": 39,
+    "passed": 38,
+    "warnings": 1,
+    "failures": 0,
+    "healed": 1,
+    "checks": [
+      {
+        "name": "data:offers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 15 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:buyers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032440",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9766MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "33 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:25:00.989707",
+    "duration_ms": 614,
+    "overall_status": "degraded",
+    "total_checks": 39,
+    "passed": 38,
+    "warnings": 1,
+    "failures": 0,
+    "healed": 1,
+    "checks": [
+      {
+        "name": "data:offers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 15 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:buyers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032500",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9766MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "33 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:25:17.188034",
+    "duration_ms": 522,
+    "overall_status": "degraded",
+    "total_checks": 39,
+    "passed": 38,
+    "warnings": 1,
+    "failures": 0,
+    "healed": 1,
+    "checks": [
+      {
+        "name": "data:offers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 15 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:buyers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032516",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9766MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "33 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:25:52.028452",
+    "duration_ms": 534,
+    "overall_status": "degraded",
+    "total_checks": 39,
+    "passed": 38,
+    "warnings": 1,
+    "failures": 0,
+    "healed": 1,
+    "checks": [
+      {
+        "name": "data:offers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 15 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:buyers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032551",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9766MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "33 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:25:58.843876",
+    "duration_ms": 499,
+    "overall_status": "degraded",
+    "total_checks": 39,
+    "passed": 38,
+    "warnings": 1,
+    "failures": 0,
+    "healed": 1,
+    "checks": [
+      {
+        "name": "data:offers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 15 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:buyers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032558",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9766MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "33 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:26:06.856834",
+    "duration_ms": 576,
+    "overall_status": "degraded",
+    "total_checks": 39,
+    "passed": 38,
+    "warnings": 1,
+    "failures": 0,
+    "healed": 1,
+    "checks": [
+      {
+        "name": "data:offers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 15 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:buyers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032606",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9766MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "33 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:26:19.501310",
+    "duration_ms": 516,
+    "overall_status": "degraded",
+    "total_checks": 39,
+    "passed": 38,
+    "warnings": 1,
+    "failures": 0,
+    "healed": 1,
+    "checks": [
+      {
+        "name": "data:offers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 15 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:buyers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032618",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9766MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "33 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T03:26:31.882077",
+    "duration_ms": 550,
+    "overall_status": "degraded",
+    "total_checks": 38,
+    "passed": 37,
+    "warnings": 1,
+    "failures": 0,
+    "healed": 1,
+    "checks": [
+      {
+        "name": "data:offers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 15 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:buyers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:rules.json",
+        "category": "data",
+        "status": "warn",
+        "message": "Was corrupt (Expected list) \u2014 restored to defaults. Backup: rules.json.corrupt.20260310_032631",
+        "healed": true,
+        "heal_action": "Restored rules.json from corrupt state"
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.offers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.buyers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9766MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "33 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
   }
 ]

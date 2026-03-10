@@ -138,24 +138,25 @@ def layout():
     # ── Data Pipeline Overview ──
     pipeline_section = html.Div([
         _section_header("bi-diagram-3", "Data Pipeline",
-                        "Ingest data from connected sources, process with Claude AI, and output insights",
+                        "Capture offers from WhatsApp/email, evaluate with AI, match to buyers",
                         COLORS["info"]),
         html.Div([
-            _pipeline_badge("Seller Assistant", "Claude AI", COLORS["success"]),
-            _pipeline_badge("WhatsApp", "Claude AI", "#25D366"),
-            _pipeline_badge("Email", "Claude AI", COLORS["primary"]),
-            _pipeline_badge("Google Drive", "Claude AI", COLORS["warning"]),
+            _pipeline_badge("WhatsApp", "Offer Intake", "#25D366"),
+            _pipeline_badge("Email", "Offer Intake", COLORS["primary"]),
+            _pipeline_badge("Offers", "Claude AI", COLORS["warning"]),
+            _pipeline_badge("Claude AI", "Buyer Match", COLORS["purple"]),
         ], style={"marginBottom": "16px"}),
         html.Div([
             html.Div([
                 html.I(className="bi bi-info-circle me-2", style={"color": COLORS["info"]}),
-                html.Span("Data flows: Sources ", style={"color": COLORS["text_muted"]}),
+                html.Span("Offer flow: ", style={"color": COLORS["text_muted"]}),
+                html.Span("WhatsApp/Email ", style={"color": COLORS["text"]}),
                 html.I(className="bi bi-arrow-right mx-1", style={"color": COLORS["text_muted"]}),
-                html.Span(" Ingest ", style={"color": COLORS["text_muted"]}),
+                html.Span(" Capture & Extract ", style={"color": COLORS["text_muted"]}),
                 html.I(className="bi bi-arrow-right mx-1", style={"color": COLORS["text_muted"]}),
-                html.Span(" Claude AI Processing ", style={"color": COLORS["purple"]}),
+                html.Span(" Evaluate (Amazon/Walmart) ", style={"color": COLORS["purple"]}),
                 html.I(className="bi bi-arrow-right mx-1", style={"color": COLORS["text_muted"]}),
-                html.Span(" Dashboard Insights", style={"color": COLORS["success"]}),
+                html.Span(" Match Buyers", style={"color": COLORS["success"]}),
             ], style={"fontSize": "0.8rem"}),
         ], style={
             "background": f"{COLORS['info']}10", "padding": "12px 16px",
@@ -183,12 +184,12 @@ def layout():
                        dcc.Checklist(
                            id="acct-cl-tasks",
                            options=[
-                               {"label": " Summarize content", "value": "summarize"},
-                               {"label": " Extract key metrics", "value": "extract_metrics"},
-                               {"label": " Sentiment analysis", "value": "sentiment"},
-                               {"label": " Competitor insights", "value": "competitor"},
-                               {"label": " Product feasibility scoring", "value": "feasibility"},
-                               {"label": " Risk assessment", "value": "risk"},
+                               {"label": " Extract offer fields (UPC, price, qty)", "value": "extract_offers"},
+                               {"label": " Auto-categorize products", "value": "categorize"},
+                               {"label": " Cross-reference marketplace pricing", "value": "marketplace"},
+                               {"label": " Buyer matching suggestions", "value": "buyer_match"},
+                               {"label": " Summarize messages", "value": "summarize"},
+                               {"label": " Image product extraction", "value": "image_scan"},
                            ],
                            value=cl.get("tasks", ["summarize", "extract_metrics", "sentiment"]),
                            className="dark-checklist",
@@ -197,8 +198,8 @@ def layout():
         ]),
         html.Div([
             html.I(className="bi bi-lightbulb me-2", style={"color": COLORS["warning"]}),
-            html.Span("Claude processes ingested data from Seller Assistant, WhatsApp, emails, and Drive files "
-                      "to extract product insights, supplier evaluations, and market intelligence.",
+            html.Span("Claude processes incoming offers from WhatsApp and email to extract product details, "
+                      "cross-reference marketplace pricing, and suggest buyer matches.",
                       style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
         ], style={
             "background": f"{COLORS['warning']}10", "padding": "12px 16px",
@@ -208,8 +209,8 @@ def layout():
 
     # ── Seller Assistant Section ──
     sa_form = html.Div([
-        _section_header("bi-bag-check-fill", "Seller Assistant",
-                        "Primary tool — ingest product lookups, IP alerts, restrictions, and competitor data",
+        _section_header("bi-bag-check-fill", "Seller Assistant / SellersAmp",
+                        "Cross-reference offers with Amazon/Walmart marketplace data",
                         COLORS["success"]),
         html.Div([
             html.Span("PRIMARY INTEGRATION", style={
@@ -377,8 +378,8 @@ def layout():
 
     # ── Filtering Rules Section ──
     rules_form = html.Div([
-        _section_header("bi-funnel", "Filtering Rules",
-                        "Auto-accept or auto-reject products based on feasibility thresholds",
+        _section_header("bi-funnel", "Offer Filtering Rules",
+                        "Auto-accept or auto-reject offers based on margin and quantity thresholds",
                         COLORS["warning"]),
 
         # --- Auto-Reject ---
@@ -389,29 +390,21 @@ def layout():
                     "color": COLORS["danger"], "fontWeight": "600", "fontSize": "0.9rem",
                 }),
             ], style={"marginBottom": "12px"}),
-            html.P("Products failing ANY of these thresholds will be automatically rejected.",
+            html.P("Offers failing ANY of these thresholds will be automatically rejected.",
                    style={"color": COLORS["text_muted"], "fontSize": "0.8rem", "marginBottom": "12px"}),
         ]),
         _toggle_row("Auto-Reject Enabled", "acct-rule-ar-enabled", ar.get("enabled", True)),
         html.Div([
-            form_group("Min Margin %",
+            form_group("Min Margin % (vs Amazon price)",
                        styled_input("acct-rule-ar-margin", "15", type="number",
                                     value=ar.get("min_margin_pct", 15))),
-            form_group("Min ROI %",
-                       styled_input("acct-rule-ar-roi", "30", type="number",
-                                    value=ar.get("min_roi_pct", 30))),
-            form_group("Max Competitors",
-                       styled_input("acct-rule-ar-comp", "50", type="number",
-                                    value=ar.get("max_competitors", 50))),
-        ], className="grid-row grid-2"),
-        html.Div([
-            form_group("Min Monthly Sales",
-                       styled_input("acct-rule-ar-sales", "50", type="number",
-                                    value=ar.get("min_monthly_sales", 50))),
-            form_group("Max BSR",
-                       styled_input("acct-rule-ar-bsr", "100000", type="number",
-                                    value=ar.get("max_bsr", 100000))),
-        ], className="grid-row grid-2"),
+            form_group("Min Quantity",
+                       styled_input("acct-rule-ar-qty", "50", type="number",
+                                    value=ar.get("min_quantity", 50))),
+            form_group("Max Offer Price $",
+                       styled_input("acct-rule-ar-maxprice", "100", type="number",
+                                    value=ar.get("max_offer_price", 100))),
+        ], className="grid-row grid-3"),
 
         # Divider
         html.Hr(style={"borderColor": COLORS["card_border"], "margin": "24px 0"}),
@@ -424,29 +417,21 @@ def layout():
                     "color": COLORS["success"], "fontWeight": "600", "fontSize": "0.9rem",
                 }),
             ], style={"marginBottom": "12px"}),
-            html.P("Products meeting ALL of these thresholds will be automatically accepted.",
+            html.P("Offers meeting ALL of these thresholds will be auto-accepted and matched to buyers.",
                    style={"color": COLORS["text_muted"], "fontSize": "0.8rem", "marginBottom": "12px"}),
         ]),
         _toggle_row("Auto-Accept Enabled", "acct-rule-aa-enabled", aa.get("enabled", True)),
         html.Div([
-            form_group("Min Margin %",
+            form_group("Min Margin % (vs Amazon price)",
                        styled_input("acct-rule-aa-margin", "35", type="number",
                                     value=aa.get("min_margin_pct", 35))),
-            form_group("Min ROI %",
-                       styled_input("acct-rule-aa-roi", "100", type="number",
-                                    value=aa.get("min_roi_pct", 100))),
-            form_group("Max Competitors",
-                       styled_input("acct-rule-aa-comp", "10", type="number",
-                                    value=aa.get("max_competitors", 10))),
-        ], className="grid-row grid-2"),
-        html.Div([
-            form_group("Min Monthly Sales",
-                       styled_input("acct-rule-aa-sales", "300", type="number",
-                                    value=aa.get("min_monthly_sales", 300))),
-            form_group("Min Feasibility Score",
-                       styled_input("acct-rule-aa-score", "75", type="number",
-                                    value=aa.get("min_score", 75))),
-        ], className="grid-row grid-2"),
+            form_group("Min Quantity",
+                       styled_input("acct-rule-aa-qty", "100", type="number",
+                                    value=aa.get("min_quantity", 100))),
+            form_group("Min Amazon Price $",
+                       styled_input("acct-rule-aa-amzprice", "10", type="number",
+                                    value=aa.get("min_amazon_price", 10))),
+        ], className="grid-row grid-3"),
 
         # Divider
         html.Hr(style={"borderColor": COLORS["card_border"], "margin": "24px 0"}),
@@ -459,25 +444,25 @@ def layout():
                     "color": COLORS["info"], "fontWeight": "600", "fontSize": "0.9rem",
                 }),
             ], style={"marginBottom": "12px"}),
-            html.P("Get notified when products hit these standout thresholds.",
+            html.P("Get notified when offers hit these standout thresholds.",
                    style={"color": COLORS["text_muted"], "fontSize": "0.8rem", "marginBottom": "12px"}),
         ]),
         html.Div([
             form_group("High Margin Threshold %",
-                       styled_input("acct-rule-al-margin", "40", type="number",
-                                    value=al.get("high_margin_threshold", 40))),
-            form_group("Low Competition Threshold",
-                       styled_input("acct-rule-al-comp", "5", type="number",
-                                    value=al.get("low_competition_threshold", 5))),
+                       styled_input("acct-rule-al-margin", "50", type="number",
+                                    value=al.get("high_margin_threshold", 50))),
+            form_group("Large Quantity Threshold",
+                       styled_input("acct-rule-al-qty", "1000", type="number",
+                                    value=al.get("large_quantity_threshold", 1000))),
         ], className="grid-row grid-2"),
-        _toggle_row("Notify on GO Verdict", "acct-rule-al-notify", al.get("notify_on_go", True)),
+        _toggle_row("Notify on High-Value Offers", "acct-rule-al-notify", al.get("notify_on_high_value", True)),
 
         # Info tip
         html.Div([
             html.I(className="bi bi-info-circle me-2", style={"color": COLORS["info"]}),
             html.Span("Rules are evaluated in order: auto-reject first (any threshold breach), "
-                      "then auto-accept (all thresholds must pass). Products that match neither "
-                      "are sent to manual review.",
+                      "then auto-accept (all thresholds must pass). Offers that match neither "
+                      "go to manual review in the Offers page.",
                       style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
         ], style={
             "background": f"{COLORS['info']}10", "padding": "12px 16px",
@@ -488,7 +473,7 @@ def layout():
     return html.Div([
         html.Div([
             html.H2("Accounts & Integrations"),
-            html.P("Connect data sources, configure AI processing, and manage your integration pipeline"),
+            html.P("Connect intake channels, configure AI processing, and set offer evaluation rules"),
         ], className="page-header"),
 
         # Pipeline overview
@@ -597,20 +582,16 @@ for _tid in _TOGGLE_IDS:
     # Filtering Rules — Auto-Reject
     State("acct-rule-ar-enabled", "value"),
     State("acct-rule-ar-margin", "value"),
-    State("acct-rule-ar-roi", "value"),
-    State("acct-rule-ar-comp", "value"),
-    State("acct-rule-ar-sales", "value"),
-    State("acct-rule-ar-bsr", "value"),
+    State("acct-rule-ar-qty", "value"),
+    State("acct-rule-ar-maxprice", "value"),
     # Filtering Rules — Auto-Accept
     State("acct-rule-aa-enabled", "value"),
     State("acct-rule-aa-margin", "value"),
-    State("acct-rule-aa-roi", "value"),
-    State("acct-rule-aa-comp", "value"),
-    State("acct-rule-aa-sales", "value"),
-    State("acct-rule-aa-score", "value"),
+    State("acct-rule-aa-qty", "value"),
+    State("acct-rule-aa-amzprice", "value"),
     # Filtering Rules — Alerts
     State("acct-rule-al-margin", "value"),
-    State("acct-rule-al-comp", "value"),
+    State("acct-rule-al-qty", "value"),
     State("acct-rule-al-notify", "value"),
     prevent_initial_call=True,
 )
@@ -620,9 +601,9 @@ def save_accounts(n_clicks,
                   wa_enabled, wa_phone, wa_business, wa_apikey, wa_webhook, wa_notify,
                   em_enabled, em_provider, em_address, em_smtp, em_port, em_user, em_pass, em_tls, em_notify,
                   gd_enabled, gd_email, gd_folder, gd_clientid, gd_secret, gd_autobackup, gd_frequency,
-                  rule_ar_enabled, rule_ar_margin, rule_ar_roi, rule_ar_comp, rule_ar_sales, rule_ar_bsr,
-                  rule_aa_enabled, rule_aa_margin, rule_aa_roi, rule_aa_comp, rule_aa_sales, rule_aa_score,
-                  rule_al_margin, rule_al_comp, rule_al_notify):
+                  rule_ar_enabled, rule_ar_margin, rule_ar_qty, rule_ar_maxprice,
+                  rule_aa_enabled, rule_aa_margin, rule_aa_qty, rule_aa_amzprice,
+                  rule_al_margin, rule_al_qty, rule_al_notify):
     sa_ch = sa_channels or []
     data = {
         "seller_assistant": {
@@ -683,23 +664,19 @@ def save_accounts(n_clicks,
         "auto_reject": {
             "enabled": bool(rule_ar_enabled and "on" in rule_ar_enabled),
             "min_margin_pct": float(rule_ar_margin or 15),
-            "min_roi_pct": float(rule_ar_roi or 30),
-            "max_competitors": int(rule_ar_comp or 50),
-            "min_monthly_sales": int(rule_ar_sales or 50),
-            "max_bsr": int(rule_ar_bsr or 100000),
+            "min_quantity": int(rule_ar_qty or 50),
+            "max_offer_price": float(rule_ar_maxprice or 100),
         },
         "auto_accept": {
             "enabled": bool(rule_aa_enabled and "on" in rule_aa_enabled),
             "min_margin_pct": float(rule_aa_margin or 35),
-            "min_roi_pct": float(rule_aa_roi or 100),
-            "max_competitors": int(rule_aa_comp or 10),
-            "min_monthly_sales": int(rule_aa_sales or 300),
-            "min_score": int(rule_aa_score or 75),
+            "min_quantity": int(rule_aa_qty or 100),
+            "min_amazon_price": float(rule_aa_amzprice or 10),
         },
         "alerts": {
-            "high_margin_threshold": float(rule_al_margin or 40),
-            "low_competition_threshold": int(rule_al_comp or 5),
-            "notify_on_go": bool(rule_al_notify and "on" in rule_al_notify),
+            "high_margin_threshold": float(rule_al_margin or 50),
+            "large_quantity_threshold": int(rule_al_qty or 1000),
+            "notify_on_high_value": bool(rule_al_notify and "on" in rule_al_notify),
         },
     }
     save_rules(rules_data)

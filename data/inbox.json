@@ -1,121 +1,104 @@
 {
   "messages": [
     {
-      "id": 1, "source": "email", "from": "sales@greentech.cn",
-      "subject": "New Silicone Utensil Sets — MOQ 500",
-      "date": "2026-03-10 09:15", "read": true,
-      "body": "Hi, we have new silicone kitchen utensil sets available. 10-piece set at $3.80/unit (MOQ 500), 15-piece set at $5.20/unit (MOQ 300). Lead time 20 days. Custom colors and logo available. Free samples for orders over 1000 units.",
+      "id": 1, "source": "whatsapp", "from": "+1 555-8821",
+      "subject": "Got 500 units Nature's Bounty D3",
+      "date": "2026-03-10 09:15", "read": false,
+      "body": "Hey, I've got 500 units of Nature's Bounty D3 5000 IU 240ct. Can do $4.20/unit. Good til March 12. Let me know ASAP, got another buyer interested.",
       "products": [
-        {"name": "Silicone Utensil Set 10pc", "price_offered": 3.80, "moq": 500, "lead_time": "20 days", "supplier": "Shenzhen GreenTech Co."},
-        {"name": "Silicone Utensil Set 15pc", "price_offered": 5.20, "moq": 300, "lead_time": "20 days", "supplier": "Shenzhen GreenTech Co."}
+        {"name": "Nature's Bounty Vitamin D3 5000 IU (240ct)", "upc": "074312516825", "price_offered": 4.20, "quantity": 500, "category": "OTC", "expiry": "2026-03-12 17:00"}
+      ],
+      "attachments": [],
+      "images_scanned": false
+    },
+    {
+      "id": 2, "source": "email", "from": "clearance@suppliersdirect.com",
+      "subject": "Dove Body Wash 6-packs — 300 units available",
+      "date": "2026-03-09 14:30", "read": true,
+      "body": "We're clearing out 300 units of Dove Deep Moisture Body Wash 24oz 6-packs. Price is $5.80 per 6-pack. Product is in great condition, long expiry. Can hold until March 14. Let me know if you want photos of the lot.",
+      "products": [
+        {"name": "Dove Body Wash Deep Moisture (24 oz, 6-pack)", "upc": "011111024564", "price_offered": 5.80, "quantity": 300, "category": "HBA", "expiry": "2026-03-14 12:00"}
       ],
       "attachments": [
-        {"filename": "silicone_utensils.png", "type": "image", "path": "data/attachments/silicone_utensils.png"},
-        {"filename": "company_logo_greentech.png", "type": "image", "path": "data/attachments/company_logo_greentech.png"}
+        {"filename": "dove_lot_photo.jpg", "type": "image", "path": "data/attachments/dove_lot_photo.jpg"}
       ],
       "images_scanned": false
     },
     {
-      "id": 2, "source": "whatsapp", "from": "+86 139 2847 5521",
-      "subject": "Bamboo cutting board bulk pricing",
-      "date": "2026-03-09 16:42", "read": true,
-      "body": "Hello! We can offer bamboo cutting board set (3 sizes) at $5.50/set for 1000+ units. Also have new bamboo utensil holder at $2.10/unit MOQ 500. Quality is A-grade, FSC certified. Can ship within 15 days.",
+      "id": 3, "source": "whatsapp", "from": "+1 555-3347",
+      "subject": "Energizer AA 48-packs, big lot",
+      "date": "2026-03-08 11:00", "read": true,
+      "body": "I have 1000 units of Energizer MAX AA 48-packs. Looking to move them quick at $6.50/unit. Expiry on the batteries is 2032. Need answer by tomorrow. Can deliver to your warehouse.",
       "products": [
-        {"name": "Bamboo Cutting Board Set (3pc)", "price_offered": 5.50, "moq": 1000, "lead_time": "15 days", "supplier": "Unknown (WhatsApp)"},
-        {"name": "Bamboo Utensil Holder", "price_offered": 2.10, "moq": 500, "lead_time": "15 days", "supplier": "Unknown (WhatsApp)"}
+        {"name": "Energizer MAX AA Batteries (48-pack)", "upc": "039800109965", "price_offered": 6.50, "quantity": 1000, "category": "Electronics", "expiry": "2026-03-11 18:00"}
+      ],
+      "attachments": [],
+      "images_scanned": false
+    },
+    {
+      "id": 4, "source": "email", "from": "overstock@toysinbulk.net",
+      "subject": "NERF Blasters + Hot Wheels overstock",
+      "date": "2026-03-10 08:00", "read": false,
+      "body": "Morning! We've got overstock on two items:\n\n1) NERF Elite 2.0 Eaglepoint RD-8 — 250 units at $8.50 each\n2) Hot Wheels 20-Car Gift Packs — 400 units at $7.25 each\n\nAll brand new, sealed boxes. Can hold til March 15 on the NERF and March 19 on Hot Wheels. Happy to send pallet photos. Volume discount possible if you take both.",
+      "products": [
+        {"name": "NERF Elite 2.0 Eaglepoint RD-8 Blaster", "upc": "630509947867", "price_offered": 8.50, "quantity": 250, "category": "Toys", "expiry": "2026-03-15 17:00"},
+        {"name": "Hot Wheels 20-Car Gift Pack (Styles May Vary)", "upc": "191726402619", "price_offered": 7.25, "quantity": 400, "category": "Toys", "expiry": "2026-03-19 17:00"}
       ],
       "attachments": [
-        {"filename": "bamboo_boards.png", "type": "image", "path": "data/attachments/bamboo_boards.png"}
+        {"filename": "nerf_pallet.jpg", "type": "image", "path": "data/attachments/nerf_pallet.jpg"},
+        {"filename": "hotwheels_cases.jpg", "type": "image", "path": "data/attachments/hotwheels_cases.jpg"}
       ],
       "images_scanned": false
     },
     {
-      "id": 3, "source": "email", "from": "export@fitgear.cn",
-      "subject": "Resistance Bands — Updated Pricing 2026",
-      "date": "2026-03-09 11:30", "read": false,
-      "body": "Dear buyer, we've updated our pricing for 2026. Resistance band set (5 bands + bag): $1.85/set MOQ 1000, $2.10/set MOQ 500. New fabric bands also available at $2.40/set MOQ 500. All include carrying pouch. Latex-free option available at +$0.30/set.",
+      "id": 5, "source": "whatsapp", "from": "+1 555-6623",
+      "subject": "Tide Pods 42ct — 600 units",
+      "date": "2026-03-09 09:00", "read": true,
+      "body": "Got 600 units Tide Pods 42ct. Asking $5.25/unit. Warehouse clearance, need them gone by March 13. All cases sealed, good dates. Can send UPC photos.",
       "products": [
-        {"name": "Resistance Band Set (5pc + bag)", "price_offered": 1.85, "moq": 1000, "lead_time": "18 days", "supplier": "Guangzhou FitGear"},
-        {"name": "Resistance Band Set (5pc + bag)", "price_offered": 2.10, "moq": 500, "lead_time": "18 days", "supplier": "Guangzhou FitGear"},
-        {"name": "Fabric Resistance Band Set", "price_offered": 2.40, "moq": 500, "lead_time": "18 days", "supplier": "Guangzhou FitGear"}
+        {"name": "Tide Pods Laundry Detergent (42ct)", "upc": "022000159748", "price_offered": 5.25, "quantity": 600, "category": "Household", "expiry": "2026-03-13 17:00"}
+      ],
+      "attachments": [],
+      "images_scanned": false
+    },
+    {
+      "id": 6, "source": "email", "from": "surplus@toolwarehouse.net",
+      "subject": "DEWALT 20V Drill Kits — warehouse surplus",
+      "date": "2026-03-09 15:20", "read": true,
+      "body": "We have 75 DEWALT 20V MAX Cordless Drill/Driver Kits (DCD771C2) from a cancelled order. Asking $42 per kit. All new in box with full manufacturer warranty. Available until March 18. Can provide serial number ranges for warranty verification.",
+      "products": [
+        {"name": "DEWALT 20V MAX Cordless Drill/Driver Kit (DCD771C2)", "upc": "885911548502", "price_offered": 42.00, "quantity": 75, "category": "Tools", "expiry": "2026-03-18 17:00"}
       ],
       "attachments": [
-        {"filename": "resistance_bands.png", "type": "image", "path": "data/attachments/resistance_bands.png"},
-        {"filename": "email_signature.png", "type": "image", "path": "data/attachments/email_signature.png"},
-        {"filename": "banner_ad.png", "type": "image", "path": "data/attachments/banner_ad.png"}
+        {"filename": "dewalt_lot.jpg", "type": "image", "path": "data/attachments/dewalt_lot.jpg"},
+        {"filename": "dewalt_serial_range.pdf", "type": "document", "path": "data/attachments/dewalt_serial_range.pdf"}
       ],
       "images_scanned": false
     },
     {
-      "id": 4, "source": "whatsapp", "from": "+86 186 7629 3341",
-      "subject": "LED desk lamp new model",
-      "date": "2026-03-08 20:05", "read": true,
-      "body": "New LED desk lamp model with wireless charging base. Price $7.90/unit MOQ 200. Has 3 color temps, touch control, USB-C. Also have ring light with phone holder at $4.50 MOQ 300.",
+      "id": 7, "source": "whatsapp", "from": "+1 555-4490",
+      "subject": "L'Oreal shampoo and Pampers available",
+      "date": "2026-03-10 10:45", "read": false,
+      "body": "Two deals today:\n\n- L'Oreal Elvive Total Repair 5 Shampoo 12.6oz, 800 units at $1.95 each. Hold til March 16.\n- Pampers Swaddlers Size 3 168ct, 200 units at $14.50 each. Hold til March 20.\n\nBoth from a retail return center, all sealed and sellable. Lmk",
       "products": [
-        {"name": "LED Desk Lamp w/ Wireless Charging", "price_offered": 7.90, "moq": 200, "lead_time": "22 days", "supplier": "Yiwu SmartHome Ltd."},
-        {"name": "Ring Light with Phone Holder", "price_offered": 4.50, "moq": 300, "lead_time": "22 days", "supplier": "Yiwu SmartHome Ltd."}
+        {"name": "L'Oreal Paris Elvive Total Repair 5 Shampoo (12.6 oz)", "upc": "071249210567", "price_offered": 1.95, "quantity": 800, "category": "HBA", "expiry": "2026-03-16 12:00"},
+        {"name": "Pampers Swaddlers Size 3 (168ct)", "upc": "037000848561", "price_offered": 14.50, "quantity": 200, "category": "HBA", "expiry": "2026-03-20 17:00"}
       ],
-      "attachments": [
-        {"filename": "led_lamp.png", "type": "image", "path": "data/attachments/led_lamp.png"}
-      ],
+      "attachments": [],
       "images_scanned": false
     },
     {
-      "id": 5, "source": "email", "from": "orders@ecoware.com",
-      "subject": "Eco-friendly reusable bags — Spring collection",
-      "date": "2026-03-08 14:20", "read": false,
-      "body": "Spring collection now available. Mesh produce bags (set of 12): $1.50/set MOQ 2000. Cotton tote bags with logo: $1.80/unit MOQ 1000. New beeswax wraps (set of 3): $1.90/set MOQ 1500. All materials certified organic.",
+      "id": 8, "source": "email", "from": "lots@grocerycloseout.com",
+      "subject": "Nature Valley Bars + Advil — closeout pricing",
+      "date": "2026-03-08 13:45", "read": true,
+      "body": "Two closeout lots available:\n\n1) Nature Valley Crunchy Granola Bars Variety Pack 48ct — 450 units at $4.10/unit. Need to move by March 13.\n2) Advil 200mg 300ct bottles — 250 units at $6.75/unit. Available til March 11.\n\nBoth are overstock from a major retailer DC. All product dates are good. Photos attached.",
       "products": [
-        {"name": "Mesh Produce Bags (12pc set)", "price_offered": 1.50, "moq": 2000, "lead_time": "15 days", "supplier": "Dongguan EcoWare"},
-        {"name": "Cotton Tote Bag (custom logo)", "price_offered": 1.80, "moq": 1000, "lead_time": "15 days", "supplier": "Dongguan EcoWare"},
-        {"name": "Beeswax Wraps (3pc set)", "price_offered": 1.90, "moq": 1500, "lead_time": "15 days", "supplier": "Dongguan EcoWare"}
+        {"name": "Nature Valley Crunchy Granola Bars Variety Pack (48ct)", "upc": "016000505803", "price_offered": 4.10, "quantity": 450, "category": "Grocery", "expiry": "2026-03-13 12:00"},
+        {"name": "Advil Ibuprofen 200mg Tablets (300ct)", "upc": "300450551283", "price_offered": 6.75, "quantity": 250, "category": "OTC", "expiry": "2026-03-11 12:00"}
       ],
       "attachments": [
-        {"filename": "reusable_bags.png", "type": "image", "path": "data/attachments/reusable_bags.png"}
-      ],
-      "images_scanned": false
-    },
-    {
-      "id": 6, "source": "whatsapp", "from": "+91 98765 43210",
-      "subject": "Essential oil diffuser — new design",
-      "date": "2026-03-07 12:00", "read": true,
-      "body": "We have a new wood grain essential oil diffuser, 300ml capacity, 7 LED colors, auto shut-off. Price $4.80/unit MOQ 200. Also ultrasonic humidifier at $5.50/unit MOQ 150. Both include gift box packaging.",
-      "products": [
-        {"name": "Wood Grain Essential Oil Diffuser 300ml", "price_offered": 4.80, "moq": 200, "lead_time": "30 days", "supplier": "Delhi TradeLink"},
-        {"name": "Ultrasonic Humidifier", "price_offered": 5.50, "moq": 150, "lead_time": "30 days", "supplier": "Delhi TradeLink"}
-      ],
-      "attachments": [
-        {"filename": "diffuser.png", "type": "image", "path": "data/attachments/diffuser.png"}
-      ],
-      "images_scanned": false
-    },
-    {
-      "id": 7, "source": "email", "from": "techparts@outlook.com",
-      "subject": "Phone mounts & cable organizers — Q2 pricing",
-      "date": "2026-03-07 09:45", "read": true,
-      "body": "Q2 pricing update: Magnetic car phone mount $2.00/unit MOQ 500. Desk phone stand (adjustable) $1.30/unit MOQ 500. Magnetic cable organizer (5-clip) $0.95/unit MOQ 1000. Silicone cable ties (10pk) $0.60/pack MOQ 2000. All items ready to ship from Ningbo warehouse.",
-      "products": [
-        {"name": "Magnetic Car Phone Mount", "price_offered": 2.00, "moq": 500, "lead_time": "22 days", "supplier": "Ningbo TechParts"},
-        {"name": "Adjustable Desk Phone Stand", "price_offered": 1.30, "moq": 500, "lead_time": "22 days", "supplier": "Ningbo TechParts"},
-        {"name": "Magnetic Cable Organizer (5-clip)", "price_offered": 0.95, "moq": 1000, "lead_time": "22 days", "supplier": "Ningbo TechParts"},
-        {"name": "Silicone Cable Ties (10pk)", "price_offered": 0.60, "moq": 2000, "lead_time": "22 days", "supplier": "Ningbo TechParts"}
-      ],
-      "attachments": [
-        {"filename": "phone_mount.png", "type": "image", "path": "data/attachments/phone_mount.png"}
-      ],
-      "images_scanned": false
-    },
-    {
-      "id": 8, "source": "whatsapp", "from": "+86 135 9988 7766",
-      "subject": "Portable blender clearance",
-      "date": "2026-03-06 18:30", "read": false,
-      "body": "Clearance sale on portable blenders! USB-C rechargeable, 380ml, 6 blades. Was $8.50, now $5.90/unit MOQ 200. Also personal size 500ml at $6.80 MOQ 150. Limited stock, first come first served.",
-      "products": [
-        {"name": "Portable Blender 380ml USB-C", "price_offered": 5.90, "moq": 200, "lead_time": "5 days", "supplier": "Unknown (WhatsApp)"},
-        {"name": "Portable Blender 500ml", "price_offered": 6.80, "moq": 150, "lead_time": "5 days", "supplier": "Unknown (WhatsApp)"}
-      ],
-      "attachments": [
-        {"filename": "blender.png", "type": "image", "path": "data/attachments/blender.png"}
+        {"filename": "granola_bars_lot.jpg", "type": "image", "path": "data/attachments/granola_bars_lot.jpg"},
+        {"filename": "advil_lot.jpg", "type": "image", "path": "data/attachments/advil_lot.jpg"}
       ],
       "images_scanned": false
     }

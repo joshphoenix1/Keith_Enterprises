@@ -1,7 +1,7 @@
 [
-  {"id": 1, "type": "product", "action": "Added new product", "detail": "Silicone Kitchen Utensil Set — $24.99", "time": "2 hours ago"},
-  {"id": 2, "type": "supplier", "action": "Supplier verified", "detail": "Shenzhen GreenTech Co. — Alibaba Gold Supplier", "time": "5 hours ago"},
-  {"id": 3, "type": "niche", "action": "Niche analyzed", "detail": "Portable Blenders — Growing trend, medium competition", "time": "1 day ago"},
-  {"id": 4, "type": "calculator", "action": "Feasibility check", "detail": "LED Desk Lamp — 42% margin, PASS", "time": "1 day ago"},
-  {"id": 5, "type": "risk", "action": "Risk updated", "detail": "Water Bottles — High competition risk flagged", "time": "2 days ago"}
+  {"type": "offer", "action": "New offer received", "detail": "Nature's Bounty D3 — 500 units @ $4.20", "time": "2 hours ago"},
+  {"type": "match", "action": "Buyer matched", "detail": "Mike's Health matched to Dove Body Wash offer", "time": "3 hours ago"},
+  {"type": "buyer", "action": "New buyer added", "detail": "Central Toys & Games added by Dave", "time": "Yesterday"},
+  {"type": "offer", "action": "Offer accepted", "detail": "Energizer AA 48pk — 1000 units accepted by Metro Tool", "time": "Yesterday"},
+  {"type": "offer", "action": "Offer expired", "detail": "Crest Toothpaste 6pk — expired, no match found", "time": "2 days ago"}
 ]

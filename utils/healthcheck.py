@@ -44,18 +44,17 @@ DEFAULT_ACCOUNTS = {
 REQUIRED_DEPS = ["dash", "plotly", "pandas", "dash_bootstrap_components", "anthropic"]
 
 PAGE_MODULES = [
-    "home", "inbox", "scanner", "products",
-    "pipeline", "suppliers", "accounts", "health",
+    "home", "inbox", "scanner", "offers",
+    "buyers", "accounts", "health",
 ]
 
 DATA_FILES_LIST = {
-    "products.json": [],
-    "suppliers.json": [],
+    "offers.json": [],
+    "buyers.json": [],
     "activity.json": [],
     "inbox.json": {"messages": []},
     "scans.json": [],
     "accounts.json": DEFAULT_ACCOUNTS,
-    "pipeline.json": {"items": []},
     "rules.json": {},
 }
 
@@ -267,21 +266,6 @@ class HealthChecker:
                 results.append(self._check_result(
                     name, "data", "fail", f"Error reading file: {e}"))
 
-        # Check niches.csv separately
-        csv_path = os.path.join(DATA_DIR, "niches.csv")
-        if not os.path.exists(csv_path):
-            results.append(self._check_result(
-                "data:niches.csv", "data", "warn", "File missing — some features may not work"))
-        else:
-            try:
-                import pandas as pd
-                df = pd.read_csv(csv_path)
-                results.append(self._check_result(
-                    "data:niches.csv", "data", "pass",
-                    f"Valid CSV, {len(df)} rows, {len(df.columns)} columns"))
-            except Exception as e:
-                results.append(self._check_result(
-                    "data:niches.csv", "data", "warn", f"CSV parse error: {e}"))
 
         return results
 
