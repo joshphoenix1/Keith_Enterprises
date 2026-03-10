@@ -1,0 +1,123 @@
+{
+  "messages": [
+    {
+      "id": 1, "source": "email", "from": "sales@greentech.cn",
+      "subject": "New Silicone Utensil Sets — MOQ 500",
+      "date": "2026-03-10 09:15", "read": true,
+      "body": "Hi, we have new silicone kitchen utensil sets available. 10-piece set at $3.80/unit (MOQ 500), 15-piece set at $5.20/unit (MOQ 300). Lead time 20 days. Custom colors and logo available. Free samples for orders over 1000 units.",
+      "products": [
+        {"name": "Silicone Utensil Set 10pc", "price_offered": 3.80, "moq": 500, "lead_time": "20 days", "supplier": "Shenzhen GreenTech Co."},
+        {"name": "Silicone Utensil Set 15pc", "price_offered": 5.20, "moq": 300, "lead_time": "20 days", "supplier": "Shenzhen GreenTech Co."}
+      ],
+      "attachments": [
+        {"filename": "silicone_utensils.png", "type": "image", "path": "data/attachments/silicone_utensils.png"},
+        {"filename": "company_logo_greentech.png", "type": "image", "path": "data/attachments/company_logo_greentech.png"}
+      ],
+      "images_scanned": false
+    },
+    {
+      "id": 2, "source": "whatsapp", "from": "+86 139 2847 5521",
+      "subject": "Bamboo cutting board bulk pricing",
+      "date": "2026-03-09 16:42", "read": true,
+      "body": "Hello! We can offer bamboo cutting board set (3 sizes) at $5.50/set for 1000+ units. Also have new bamboo utensil holder at $2.10/unit MOQ 500. Quality is A-grade, FSC certified. Can ship within 15 days.",
+      "products": [
+        {"name": "Bamboo Cutting Board Set (3pc)", "price_offered": 5.50, "moq": 1000, "lead_time": "15 days", "supplier": "Unknown (WhatsApp)"},
+        {"name": "Bamboo Utensil Holder", "price_offered": 2.10, "moq": 500, "lead_time": "15 days", "supplier": "Unknown (WhatsApp)"}
+      ],
+      "attachments": [
+        {"filename": "bamboo_boards.png", "type": "image", "path": "data/attachments/bamboo_boards.png"}
+      ],
+      "images_scanned": false
+    },
+    {
+      "id": 3, "source": "email", "from": "export@fitgear.cn",
+      "subject": "Resistance Bands — Updated Pricing 2026",
+      "date": "2026-03-09 11:30", "read": false,
+      "body": "Dear buyer, we've updated our pricing for 2026. Resistance band set (5 bands + bag): $1.85/set MOQ 1000, $2.10/set MOQ 500. New fabric bands also available at $2.40/set MOQ 500. All include carrying pouch. Latex-free option available at +$0.30/set.",
+      "products": [
+        {"name": "Resistance Band Set (5pc + bag)", "price_offered": 1.85, "moq": 1000, "lead_time": "18 days", "supplier": "Guangzhou FitGear"},
+        {"name": "Resistance Band Set (5pc + bag)", "price_offered": 2.10, "moq": 500, "lead_time": "18 days", "supplier": "Guangzhou FitGear"},
+        {"name": "Fabric Resistance Band Set", "price_offered": 2.40, "moq": 500, "lead_time": "18 days", "supplier": "Guangzhou FitGear"}
+      ],
+      "attachments": [
+        {"filename": "resistance_bands.png", "type": "image", "path": "data/attachments/resistance_bands.png"},
+        {"filename": "email_signature.png", "type": "image", "path": "data/attachments/email_signature.png"},
+        {"filename": "banner_ad.png", "type": "image", "path": "data/attachments/banner_ad.png"}
+      ],
+      "images_scanned": false
+    },
+    {
+      "id": 4, "source": "whatsapp", "from": "+86 186 7629 3341",
+      "subject": "LED desk lamp new model",
+      "date": "2026-03-08 20:05", "read": true,
+      "body": "New LED desk lamp model with wireless charging base. Price $7.90/unit MOQ 200. Has 3 color temps, touch control, USB-C. Also have ring light with phone holder at $4.50 MOQ 300.",
+      "products": [
+        {"name": "LED Desk Lamp w/ Wireless Charging", "price_offered": 7.90, "moq": 200, "lead_time": "22 days", "supplier": "Yiwu SmartHome Ltd."},
+        {"name": "Ring Light with Phone Holder", "price_offered": 4.50, "moq": 300, "lead_time": "22 days", "supplier": "Yiwu SmartHome Ltd."}
+      ],
+      "attachments": [
+        {"filename": "led_lamp.png", "type": "image", "path": "data/attachments/led_lamp.png"}
+      ],
+      "images_scanned": false
+    },
+    {
+      "id": 5, "source": "email", "from": "orders@ecoware.com",
+      "subject": "Eco-friendly reusable bags — Spring collection",
+      "date": "2026-03-08 14:20", "read": false,
+      "body": "Spring collection now available. Mesh produce bags (set of 12): $1.50/set MOQ 2000. Cotton tote bags with logo: $1.80/unit MOQ 1000. New beeswax wraps (set of 3): $1.90/set MOQ 1500. All materials certified organic.",
+      "products": [
+        {"name": "Mesh Produce Bags (12pc set)", "price_offered": 1.50, "moq": 2000, "lead_time": "15 days", "supplier": "Dongguan EcoWare"},
+        {"name": "Cotton Tote Bag (custom logo)", "price_offered": 1.80, "moq": 1000, "lead_time": "15 days", "supplier": "Dongguan EcoWare"},
+        {"name": "Beeswax Wraps (3pc set)", "price_offered": 1.90, "moq": 1500, "lead_time": "15 days", "supplier": "Dongguan EcoWare"}
+      ],
+      "attachments": [
+        {"filename": "reusable_bags.png", "type": "image", "path": "data/attachments/reusable_bags.png"}
+      ],
+      "images_scanned": false
+    },
+    {
+      "id": 6, "source": "whatsapp", "from": "+91 98765 43210",
+      "subject": "Essential oil diffuser — new design",
+      "date": "2026-03-07 12:00", "read": true,
+      "body": "We have a new wood grain essential oil diffuser, 300ml capacity, 7 LED colors, auto shut-off. Price $4.80/unit MOQ 200. Also ultrasonic humidifier at $5.50/unit MOQ 150. Both include gift box packaging.",
+      "products": [
+        {"name": "Wood Grain Essential Oil Diffuser 300ml", "price_offered": 4.80, "moq": 200, "lead_time": "30 days", "supplier": "Delhi TradeLink"},
+        {"name": "Ultrasonic Humidifier", "price_offered": 5.50, "moq": 150, "lead_time": "30 days", "supplier": "Delhi TradeLink"}
+      ],
+      "attachments": [
+        {"filename": "diffuser.png", "type": "image", "path": "data/attachments/diffuser.png"}
+      ],
+      "images_scanned": false
+    },
+    {
+      "id": 7, "source": "email", "from": "techparts@outlook.com",
+      "subject": "Phone mounts & cable organizers — Q2 pricing",
+      "date": "2026-03-07 09:45", "read": true,
+      "body": "Q2 pricing update: Magnetic car phone mount $2.00/unit MOQ 500. Desk phone stand (adjustable) $1.30/unit MOQ 500. Magnetic cable organizer (5-clip) $0.95/unit MOQ 1000. Silicone cable ties (10pk) $0.60/pack MOQ 2000. All items ready to ship from Ningbo warehouse.",
+      "products": [
+        {"name": "Magnetic Car Phone Mount", "price_offered": 2.00, "moq": 500, "lead_time": "22 days", "supplier": "Ningbo TechParts"},
+        {"name": "Adjustable Desk Phone Stand", "price_offered": 1.30, "moq": 500, "lead_time": "22 days", "supplier": "Ningbo TechParts"},
+        {"name": "Magnetic Cable Organizer (5-clip)", "price_offered": 0.95, "moq": 1000, "lead_time": "22 days", "supplier": "Ningbo TechParts"},
+        {"name": "Silicone Cable Ties (10pk)", "price_offered": 0.60, "moq": 2000, "lead_time": "22 days", "supplier": "Ningbo TechParts"}
+      ],
+      "attachments": [
+        {"filename": "phone_mount.png", "type": "image", "path": "data/attachments/phone_mount.png"}
+      ],
+      "images_scanned": false
+    },
+    {
+      "id": 8, "source": "whatsapp", "from": "+86 135 9988 7766",
+      "subject": "Portable blender clearance",
+      "date": "2026-03-06 18:30", "read": false,
+      "body": "Clearance sale on portable blenders! USB-C rechargeable, 380ml, 6 blades. Was $8.50, now $5.90/unit MOQ 200. Also personal size 500ml at $6.80 MOQ 150. Limited stock, first come first served.",
+      "products": [
+        {"name": "Portable Blender 380ml USB-C", "price_offered": 5.90, "moq": 200, "lead_time": "5 days", "supplier": "Unknown (WhatsApp)"},
+        {"name": "Portable Blender 500ml", "price_offered": 6.80, "moq": 150, "lead_time": "5 days", "supplier": "Unknown (WhatsApp)"}
+      ],
+      "attachments": [
+        {"filename": "blender.png", "type": "image", "path": "data/attachments/blender.png"}
+      ],
+      "images_scanned": false
+    }
+  ]
+}

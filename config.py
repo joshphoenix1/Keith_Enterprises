@@ -22,6 +22,8 @@ COLORS = {
 
 PAGE_ORDER = [
     {"name": "Home", "path": "/", "icon": "bi-house-fill"},
+    {"name": "Inbox", "path": "/inbox", "icon": "bi-chat-left-text"},
+    {"name": "Scanner", "path": "/scanner", "icon": "bi-camera"},
     {"name": "Tools", "path": "/tools", "icon": "bi-tools"},
     {"name": "Products", "path": "/products", "icon": "bi-box-seam"},
     {"name": "Calculator", "path": "/calculator", "icon": "bi-calculator"},

@@ -1,18 +1,31 @@
 {
   "seller_assistant": {
     "enabled": false,
-    "account_email": "",
-    "account_password": "",
     "api_key": "",
     "plan": "Pro",
     "webhook_url": "",
+    "google_sheet_id": "",
     "auto_sync": false,
     "sync_frequency": "Hourly",
     "sync_products": true,
     "sync_restrictions": true,
     "sync_ip_alerts": true,
     "sync_competitors": true,
-    "google_sheet_id": ""
+    "account_email": "",
+    "account_password": ""
+  },
+  "claude_code": {
+    "enabled": true,
+    "model": "claude-sonnet-4-6",
+    "process_on_ingest": true,
+    "auto_process": true,
+    "tasks": [
+      "summarize",
+      "extract_metrics",
+      "sentiment",
+      "competitor",
+      "feasibility"
+    ]
   },
   "whatsapp": {
     "enabled": false,
@@ -41,14 +54,5 @@
     "folder_id": "",
     "auto_backup": false,
     "backup_frequency": "Daily"
-  },
-  "claude_code": {
-    "enabled": false,
-    "api_key": "",
-    "model": "claude-sonnet-4-6",
-    "max_tokens": 4096,
-    "auto_process": false,
-    "process_on_ingest": true,
-    "tasks": ["summarize", "extract_metrics", "sentiment"]
   }
 }

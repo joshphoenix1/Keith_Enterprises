@@ -42,16 +42,13 @@ def _toggle_row(label, id, checked=False):
         html.Div([
             dcc.Checklist(
                 id=id,
-                options=[{"label": "", "value": "on"}],
+                options=[{"label": " Enable", "value": "on"}],
                 value=["on"] if checked else [],
                 className="dark-toggle",
                 style={"display": "inline-block"},
             ),
-            html.Span("Enabled" if checked else "Disabled",
-                      id=f"{id}-label",
-                      style={"color": COLORS["success"] if checked else COLORS["text_muted"],
-                             "fontSize": "0.8rem", "marginLeft": "8px"}),
-        ], style={"display": "flex", "alignItems": "center"}),
+            html.Div(id=f"{id}-label"),
+        ], style={"display": "flex", "alignItems": "center", "gap": "8px"}),
     ], style={"display": "flex", "justifyContent": "space-between",
               "alignItems": "center", "padding": "8px 0",
               "borderBottom": f"1px solid {COLORS['card_border']}", "marginBottom": "16px"})
@@ -69,6 +66,60 @@ def _pipeline_badge(source, target, color):
             "padding": "4px 10px", "borderRadius": "6px", "fontSize": "0.75rem", "fontWeight": "600",
         }),
     ], style={"display": "inline-flex", "alignItems": "center", "marginRight": "16px", "marginBottom": "8px"})
+
+
+def _oauth_status_banner():
+    """Show OAuth connection status from ~/.claude/.credentials.json."""
+    import os as _os
+    creds_path = _os.path.expanduser("~/.claude/.credentials.json")
+    has_oauth = False
+    if _os.path.exists(creds_path):
+        try:
+            with open(creds_path) as f:
+                creds = json.load(f)
+            token = creds.get("claudeAiOauth", {}).get("accessToken", "")
+            if token:
+                has_oauth = True
+        except Exception:
+            pass
+
+    if has_oauth:
+        return html.Div([
+            html.Div([
+                html.I(className="bi bi-check-circle-fill me-2",
+                       style={"color": COLORS["success"], "fontSize": "1.1rem"}),
+                html.Span("OAuth Connected", style={
+                    "color": COLORS["success"], "fontWeight": "700", "marginRight": "16px",
+                }),
+                html.Span("Using Claude Code OAuth session — billed to your Claude Max subscription",
+                          style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+            ], style={"display": "flex", "alignItems": "center", "flexWrap": "wrap"}),
+            html.Div([
+                html.Span("Token source: ", style={"color": COLORS["text_muted"], "fontSize": "0.75rem"}),
+                html.Code("~/.claude/.credentials.json",
+                          style={"color": COLORS["purple"], "fontSize": "0.75rem"}),
+            ], style={"marginTop": "6px"}),
+        ], style={
+            "background": f"{COLORS['success']}12", "border": f"1px solid {COLORS['success']}40",
+            "padding": "14px 18px", "borderRadius": "8px", "marginBottom": "16px",
+        })
+    else:
+        return html.Div([
+            html.Div([
+                html.I(className="bi bi-exclamation-triangle-fill me-2",
+                       style={"color": COLORS["warning"], "fontSize": "1.1rem"}),
+                html.Span("OAuth Not Connected", style={
+                    "color": COLORS["warning"], "fontWeight": "700", "marginRight": "16px",
+                }),
+                html.Span("Run ", style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+                html.Code("claude auth", style={"color": COLORS["primary"], "fontSize": "0.8rem"}),
+                html.Span(" to connect, or add a fallback API key below.",
+                          style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+            ], style={"display": "flex", "alignItems": "center", "flexWrap": "wrap"}),
+        ], style={
+            "background": f"{COLORS['warning']}12", "border": f"1px solid {COLORS['warning']}40",
+            "padding": "14px 18px", "borderRadius": "8px", "marginBottom": "16px",
+        })
 
 
 def layout():
@@ -110,13 +161,11 @@ def layout():
     # ── Claude AI Section ──
     claude_form = html.Div([
         _section_header("bi-cpu", "Claude Code",
-                        "Configure your Claude Code API key (sk-ant-api03-...) for AI-powered data processing",
+                        "Uses your Claude Code OAuth session — billed to your Claude subscription",
                         COLORS["purple"]),
+        _oauth_status_banner(),
         _toggle_row("Claude Code Processing", "acct-cl-enabled", cl.get("enabled", False)),
         html.Div([
-            form_group("Claude Code API Key",
-                       styled_input("acct-cl-apikey", "sk-ant-api03-...", type="password",
-                                    value=cl.get("api_key", ""))),
             form_group("Model",
                        styled_dropdown("acct-cl-model",
                                        [{"label": m, "value": m} for m in [
@@ -126,11 +175,6 @@ def layout():
                                        ]],
                                        cl.get("model", "claude-sonnet-4-6"))),
         ], className="grid-row grid-2"),
-        html.Div([
-            form_group("Max Tokens",
-                       styled_input("acct-cl-tokens", "4096",
-                                    value=cl.get("max_tokens", 4096), min=256, max=32000)),
-        ], style={"maxWidth": "300px"}),
         _toggle_row("Process on Ingest", "acct-cl-autoproc", cl.get("process_on_ingest", True)),
         _toggle_row("Auto-Process Scheduled", "acct-cl-autorun", cl.get("auto_process", False)),
         html.Div([
@@ -368,6 +412,28 @@ def layout():
     ])
 
 
+_TOGGLE_IDS = [
+    "acct-cl-enabled", "acct-cl-autoproc", "acct-cl-autorun",
+    "acct-sa-enabled", "acct-sa-autosync",
+    "acct-wa-enabled", "acct-wa-notify",
+    "acct-em-enabled", "acct-em-tls", "acct-em-notify",
+    "acct-gd-enabled", "acct-gd-autobackup",
+]
+
+for _tid in _TOGGLE_IDS:
+    @callback(
+        Output(f"{_tid}-label", "children"),
+        Input(_tid, "value"),
+    )
+    def _update_toggle_label(value, _id=_tid):
+        is_on = bool(value and "on" in value)
+        return html.Span(
+            "Enabled" if is_on else "Disabled",
+            style={"color": COLORS["success"] if is_on else COLORS["text_muted"],
+                   "fontSize": "0.8rem", "fontWeight": "600"},
+        )
+
+
 @callback(
     Output("acct-save-status", "children"),
     Input("acct-save-btn", "n_clicks"),
@@ -384,9 +450,7 @@ def layout():
     State("acct-sa-password", "value"),
     # Claude AI
     State("acct-cl-enabled", "value"),
-    State("acct-cl-apikey", "value"),
     State("acct-cl-model", "value"),
-    State("acct-cl-tokens", "value"),
     State("acct-cl-autoproc", "value"),
     State("acct-cl-autorun", "value"),
     State("acct-cl-tasks", "value"),
@@ -419,7 +483,7 @@ def layout():
 )
 def save_accounts(n_clicks,
                   sa_enabled, sa_apikey, sa_plan, sa_webhook, sa_gsheet, sa_autosync, sa_freq, sa_channels, sa_email, sa_password,
-                  cl_enabled, cl_apikey, cl_model, cl_tokens, cl_autoproc, cl_autorun, cl_tasks,
+                  cl_enabled, cl_model, cl_autoproc, cl_autorun, cl_tasks,
                   wa_enabled, wa_phone, wa_business, wa_apikey, wa_webhook, wa_notify,
                   em_enabled, em_provider, em_address, em_smtp, em_port, em_user, em_pass, em_tls, em_notify,
                   gd_enabled, gd_email, gd_folder, gd_clientid, gd_secret, gd_autobackup, gd_frequency):
@@ -442,9 +506,7 @@ def save_accounts(n_clicks,
         },
         "claude_code": {
             "enabled": bool(cl_enabled),
-            "api_key": cl_apikey or "",
             "model": cl_model or "claude-sonnet-4-6",
-            "max_tokens": int(cl_tokens or 4096),
             "process_on_ingest": bool(cl_autoproc),
             "auto_process": bool(cl_autorun),
             "tasks": cl_tasks or [],

@@ -27,6 +27,12 @@ def display_page(pathname):
     if pathname == "/" or pathname is None:
         from pages.home import layout
         return layout()
+    elif pathname == "/inbox":
+        from pages.inbox import layout
+        return layout()
+    elif pathname == "/scanner":
+        from pages.scanner import layout
+        return layout()
     elif pathname == "/tools":
         from pages.tools import layout
         return layout()
@@ -61,6 +67,8 @@ import pages.calculator
 import pages.suppliers
 import pages.risks
 import pages.accounts
+import pages.inbox
+import pages.scanner
 
 
 if __name__ == "__main__":
