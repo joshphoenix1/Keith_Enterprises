@@ -31,4 +31,5 @@ PAGE_ORDER = [
     {"name": "Niches", "path": "/niches", "icon": "bi-graph-up"},
     {"name": "Risks", "path": "/risks", "icon": "bi-shield-exclamation"},
     {"name": "Accounts", "path": "/accounts", "icon": "bi-gear"},
+    {"name": "Health", "path": "/health", "icon": "bi-heart-pulse"},
 ]

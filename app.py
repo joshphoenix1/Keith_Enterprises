@@ -54,6 +54,9 @@ def display_page(pathname):
     elif pathname == "/accounts":
         from pages.accounts import layout
         return layout()
+    elif pathname == "/health":
+        from pages.health import layout
+        return layout()
     else:
         return html.Div([
             html.H2("404 — Page Not Found"),
@@ -69,7 +72,15 @@ import pages.risks
 import pages.accounts
 import pages.inbox
 import pages.scanner
+import pages.health
 
 
 if __name__ == "__main__":
+    import os
+    from utils.healthcheck import HealthChecker
+    # Only start health checker in the reloader's child process (or non-debug mode)
+    if os.environ.get("WERKZEUG_RUN_MAIN") == "true" or not True:
+        checker = HealthChecker(app=app, interval=60)
+        app.server.health_checker = checker
+        checker.start()
     app.run(debug=True, host="0.0.0.0", port=APP_PORT)
