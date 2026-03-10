@@ -166,15 +166,11 @@ def layout():
         _oauth_status_banner(),
         _toggle_row("Claude Code Processing", "acct-cl-enabled", cl.get("enabled", False)),
         html.Div([
-            form_group("Model",
-                       styled_dropdown("acct-cl-model",
-                                       [{"label": m, "value": m} for m in [
-                                           "claude-opus-4-6",
-                                           "claude-sonnet-4-6",
-                                           "claude-haiku-4-5-20251001",
-                                       ]],
-                                       cl.get("model", "claude-sonnet-4-6"))),
-        ], className="grid-row grid-2"),
+            html.I(className="bi bi-cpu me-2", style={"color": COLORS["text_muted"]}),
+            html.Span("Model: ", style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+            html.Span("claude-sonnet-4-6", style={"color": COLORS["primary"], "fontSize": "0.8rem",
+                                                    "fontWeight": "600"}),
+        ], style={"marginBottom": "16px"}),
         _toggle_row("Process on Ingest", "acct-cl-autoproc", cl.get("process_on_ingest", True)),
         _toggle_row("Auto-Process Scheduled", "acct-cl-autorun", cl.get("auto_process", False)),
         html.Div([
@@ -450,7 +446,6 @@ for _tid in _TOGGLE_IDS:
     State("acct-sa-password", "value"),
     # Claude AI
     State("acct-cl-enabled", "value"),
-    State("acct-cl-model", "value"),
     State("acct-cl-autoproc", "value"),
     State("acct-cl-autorun", "value"),
     State("acct-cl-tasks", "value"),
@@ -483,7 +478,7 @@ for _tid in _TOGGLE_IDS:
 )
 def save_accounts(n_clicks,
                   sa_enabled, sa_apikey, sa_plan, sa_webhook, sa_gsheet, sa_autosync, sa_freq, sa_channels, sa_email, sa_password,
-                  cl_enabled, cl_model, cl_autoproc, cl_autorun, cl_tasks,
+                  cl_enabled, cl_autoproc, cl_autorun, cl_tasks,
                   wa_enabled, wa_phone, wa_business, wa_apikey, wa_webhook, wa_notify,
                   em_enabled, em_provider, em_address, em_smtp, em_port, em_user, em_pass, em_tls, em_notify,
                   gd_enabled, gd_email, gd_folder, gd_clientid, gd_secret, gd_autobackup, gd_frequency):
@@ -506,7 +501,7 @@ def save_accounts(n_clicks,
         },
         "claude_code": {
             "enabled": bool(cl_enabled),
-            "model": cl_model or "claude-sonnet-4-6",
+            "model": "claude-sonnet-4-6",
             "process_on_ingest": bool(cl_autoproc),
             "auto_process": bool(cl_autorun),
             "tasks": cl_tasks or [],

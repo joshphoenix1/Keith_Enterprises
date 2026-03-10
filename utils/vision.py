@@ -59,11 +59,8 @@ def get_oauth_token():
 
 
 def get_model():
-    """Load model preference from accounts.json."""
-    accounts_path = os.path.join(DATA_DIR, "accounts.json")
-    with open(accounts_path) as f:
-        accounts = json.load(f)
-    return accounts.get("claude_code", {}).get("model", "claude-sonnet-4-6")
+    """Return the model to use for all AI calls."""
+    return "claude-sonnet-4-6"
 
 
 def get_client():
