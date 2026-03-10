@@ -30,6 +30,6 @@ PAGE_ORDER = [
     {"name": "Suppliers", "path": "/suppliers", "icon": "bi-truck"},
     {"name": "Niches", "path": "/niches", "icon": "bi-graph-up"},
     {"name": "Risks", "path": "/risks", "icon": "bi-shield-exclamation"},
-    {"name": "Accounts", "path": "/accounts", "icon": "bi-gear"},
-    {"name": "Health", "path": "/health", "icon": "bi-heart-pulse"},
+    {"name": "Accounts", "path": "/accounts", "icon": "bi-gear", "admin": True},
+    {"name": "System Health", "path": "/health", "icon": "bi-heart-pulse", "admin": True},
 ]

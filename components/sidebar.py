@@ -4,7 +4,18 @@ from config import COLORS, PAGE_ORDER, APP_NAME
 
 def create_sidebar():
     nav_items = []
+    admin_started = False
     for page in PAGE_ORDER:
+        if page.get("admin") and not admin_started:
+            admin_started = True
+            nav_items.append(html.Hr(style={
+                "borderColor": COLORS["card_border"], "margin": "12px 16px",
+            }))
+            nav_items.append(html.Div("ADMIN", style={
+                "color": COLORS["text_muted"], "fontSize": "0.65rem",
+                "fontWeight": "700", "letterSpacing": "1.5px",
+                "padding": "4px 20px 8px",
+            }))
         nav_items.append(
             dcc.Link(
                 html.Div([
