@@ -3,7 +3,8 @@ from dash import html, dcc, callback, Input, Output, State
 from config import COLORS
 from components.cards import info_card
 from components.tables import dark_table
-from utils.vision import analyze_image, analyze_multiple_images, save_scan_result, load_scans
+from utils.vision import (analyze_image, analyze_multiple_images, save_scan_result, load_scans,
+                           analyze_url_text, analyze_url_images)
 
 
 def _result_section(data):
@@ -273,6 +274,103 @@ def layout():
             ]),
         ], className="grid-row grid-2"),
 
+        # ── URL Extraction Section ──
+        html.Div([
+            info_card("Extract from URL", html.Div([
+                html.Div([
+                    html.Div([
+                        html.Label("Product Page URL", style={
+                            "color": COLORS["text"], "fontSize": "0.85rem", "fontWeight": "600",
+                            "marginBottom": "6px", "display": "block",
+                        }),
+                        dcc.Input(
+                            id="scanner-url-input",
+                            type="text",
+                            placeholder="https://www.amazon.com/dp/... or any product page URL",
+                            style={
+                                "width": "100%", "padding": "10px 14px",
+                                "background": COLORS["input_bg"], "color": COLORS["text"],
+                                "border": f"1px solid {COLORS['input_border']}",
+                                "borderRadius": "8px", "fontSize": "0.9rem",
+                            },
+                        ),
+                    ], style={"flex": "1"}),
+                ], style={"marginBottom": "16px"}),
+                html.Div([
+                    html.Label("Extraction Mode", style={
+                        "color": COLORS["text"], "fontSize": "0.85rem", "fontWeight": "600",
+                        "marginBottom": "8px", "display": "block",
+                    }),
+                    html.Div([
+                        html.Div([
+                            dcc.RadioItems(
+                                id="scanner-url-mode",
+                                options=[
+                                    {"label": "", "value": "page_text"},
+                                    {"label": "", "value": "page_images"},
+                                ],
+                                value="page_text",
+                                style={"display": "none"},
+                            ),
+                            html.Div([
+                                html.Div([
+                                    html.I(className="bi bi-file-text",
+                                           style={"fontSize": "1.3rem", "marginBottom": "6px",
+                                                  "display": "block"}),
+                                    html.Div("Page Data", style={"fontWeight": "600", "fontSize": "0.85rem"}),
+                                    html.Div("Extract from page text, titles, specs, descriptions",
+                                             style={"fontSize": "0.7rem", "color": COLORS["text_muted"],
+                                                    "marginTop": "4px"}),
+                                ], id="scanner-mode-text-btn",
+                                    n_clicks=0,
+                                    style={
+                                        "padding": "14px 20px", "borderRadius": "10px",
+                                        "cursor": "pointer", "textAlign": "center", "flex": "1",
+                                        "border": f"2px solid {COLORS['primary']}",
+                                        "background": f"{COLORS['primary']}15",
+                                        "color": COLORS["primary"],
+                                        "transition": "all 0.2s",
+                                }),
+                                html.Div([
+                                    html.I(className="bi bi-images",
+                                           style={"fontSize": "1.3rem", "marginBottom": "6px",
+                                                  "display": "block"}),
+                                    html.Div("Page Images", style={"fontWeight": "600", "fontSize": "0.85rem"}),
+                                    html.Div("Download & scan product images from the page",
+                                             style={"fontSize": "0.7rem", "color": COLORS["text_muted"],
+                                                    "marginTop": "4px"}),
+                                ], id="scanner-mode-images-btn",
+                                    n_clicks=0,
+                                    style={
+                                        "padding": "14px 20px", "borderRadius": "10px",
+                                        "cursor": "pointer", "textAlign": "center", "flex": "1",
+                                        "border": f"2px solid {COLORS['card_border']}",
+                                        "background": "transparent",
+                                        "color": COLORS["text_muted"],
+                                        "transition": "all 0.2s",
+                                }),
+                            ], style={"display": "flex", "gap": "12px"}),
+                        ]),
+                    ]),
+                ], style={"marginBottom": "16px"}),
+                html.Button([
+                    html.I(className="bi bi-search me-2"),
+                    "Extract from URL",
+                ], id="scanner-url-btn", n_clicks=0, className="btn-primary-dark",
+                    style={"width": "100%", "padding": "10px"}),
+                html.Div([
+                    html.I(className="bi bi-info-circle me-2", style={"color": COLORS["info"]}),
+                    html.Span("Paste any product page URL — Amazon, Alibaba, supplier websites, etc. "
+                              "Page Data mode reads the text content; Page Images mode downloads and "
+                              "scans the product images with Claude Vision.",
+                              style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+                ], style={
+                    "background": f"{COLORS['info']}10", "padding": "10px 14px",
+                    "borderRadius": "8px", "marginTop": "12px",
+                }),
+            ]), "bi-link-45deg"),
+        ], style={"marginTop": "20px"}),
+
         # Loading indicator
         dcc.Loading(
             id="scanner-loading",
@@ -406,3 +504,112 @@ def _skipped_card(filename, reason):
         "padding": "8px 12px", "background": f"{COLORS['card_border']}30",
         "borderRadius": "6px", "marginBottom": "4px",
     })
+
+
+# ── Mode toggle callback ──
+@callback(
+    Output("scanner-url-mode", "value"),
+    Output("scanner-mode-text-btn", "style"),
+    Output("scanner-mode-images-btn", "style"),
+    Input("scanner-mode-text-btn", "n_clicks"),
+    Input("scanner-mode-images-btn", "n_clicks"),
+    prevent_initial_call=True,
+)
+def toggle_url_mode(text_clicks, img_clicks):
+    from dash import ctx
+    active_style = {
+        "padding": "14px 20px", "borderRadius": "10px",
+        "cursor": "pointer", "textAlign": "center", "flex": "1",
+        "border": f"2px solid {COLORS['primary']}",
+        "background": f"{COLORS['primary']}15",
+        "color": COLORS["primary"],
+        "transition": "all 0.2s",
+    }
+    inactive_style = {
+        "padding": "14px 20px", "borderRadius": "10px",
+        "cursor": "pointer", "textAlign": "center", "flex": "1",
+        "border": f"2px solid {COLORS['card_border']}",
+        "background": "transparent",
+        "color": COLORS["text_muted"],
+        "transition": "all 0.2s",
+    }
+    if ctx.triggered_id == "scanner-mode-images-btn":
+        return "page_images", inactive_style, active_style
+    return "page_text", active_style, inactive_style
+
+
+# ── URL extraction callback ──
+@callback(
+    Output("scanner-results", "children", allow_duplicate=True),
+    Output("scanner-history", "children", allow_duplicate=True),
+    Input("scanner-url-btn", "n_clicks"),
+    State("scanner-url-input", "value"),
+    State("scanner-url-mode", "value"),
+    prevent_initial_call=True,
+)
+def process_url(n_clicks, url, mode):
+    if not n_clicks or not url:
+        return "", _build_scans_table()
+
+    url = url.strip()
+    if not url.startswith(("http://", "https://")):
+        url = "https://" + url
+
+    if mode == "page_images":
+        result = analyze_url_images(url)
+    else:
+        result = analyze_url_text(url)
+
+    if "error" in result:
+        error_div = html.Div([
+            html.I(className="bi bi-exclamation-triangle-fill me-2",
+                   style={"color": COLORS["danger"]}),
+            html.Span(result["error"], style={"color": COLORS["danger"]}),
+        ], className="dash-card", style={"padding": "20px", "marginTop": "20px"})
+        return error_div, _build_scans_table()
+
+    if result.get("is_product") is False:
+        return html.Div([
+            html.Div([
+                html.I(className="bi bi-info-circle-fill me-2", style={"color": COLORS["warning"]}),
+                html.Span("No product found on this page", style={
+                    "color": COLORS["warning"], "fontWeight": "600"}),
+            ]),
+            html.P(result.get("reason", ""), style={
+                "color": COLORS["text_muted"], "fontSize": "0.85rem", "marginTop": "8px"}),
+        ], className="dash-card", style={"padding": "20px", "marginTop": "20px"}), _build_scans_table()
+
+    # Save and display
+    source_label = url[:60] + "..." if len(url) > 60 else url
+    save_scan_result(result, source_label)
+
+    # Add extraction mode badge
+    mode_label = "Page Data" if mode == "page_text" else "Page Images"
+    mode_color = COLORS["info"] if mode == "page_text" else COLORS["purple"]
+
+    result_output = html.Div([
+        html.Div([
+            html.I(className="bi bi-check-circle-fill me-2", style={"color": COLORS["success"]}),
+            html.Span("Product extracted", style={
+                "color": COLORS["success"], "fontSize": "0.85rem", "fontWeight": "600",
+                "marginRight": "12px",
+            }),
+            html.Span(mode_label, style={
+                "background": f"{mode_color}20", "color": mode_color,
+                "padding": "3px 10px", "borderRadius": "12px",
+                "fontSize": "0.7rem", "fontWeight": "600",
+            }),
+        ], style={"marginBottom": "12px"}),
+        html.Div([
+            html.I(className="bi bi-link-45deg me-2", style={"color": COLORS["text_muted"]}),
+            html.A(url, href=url, target="_blank", style={
+                "color": COLORS["primary"], "fontSize": "0.8rem", "textDecoration": "none",
+            }),
+        ], style={"marginBottom": "12px"}),
+        info_card(
+            f"Extracted — {result.get('product_name', 'Product')}",
+            _result_section(result), "bi-cpu",
+        ),
+    ], style={"marginTop": "20px"})
+
+    return result_output, _build_scans_table()

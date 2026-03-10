@@ -212,6 +212,242 @@ def analyze_multiple_images(images):
     return results
 
 
+URL_PAGE_EXTRACTION_PROMPT = """Analyze the following webpage content and extract all product information you can find. This is text scraped from a product page (e.g. Amazon listing, Alibaba product page, supplier website, etc.).
+
+Return a JSON object:
+
+{
+  "is_product": true,
+  "product_name": "Full product name",
+  "brand": "Brand name",
+  "category": "Product category (e.g. Health & Household, Kitchen & Dining, Sports & Outdoors)",
+  "description": "Brief product description",
+  "ingredients": ["list of ingredients if visible"],
+  "nutrition_facts": {"serving_size": "", "calories": "", "other": {}},
+  "net_weight": "Weight/volume with units",
+  "upc_barcode": "UPC/EAN if visible",
+  "claims": ["organic", "non-gmo", "vegan", etc.],
+  "warnings": ["any warnings or allergen info"],
+  "manufacturer": "Manufacturer name and location if visible",
+  "suggested_retail_price": "Price if listed",
+  "amazon_category_guess": "Best Amazon category for this product",
+  "key_selling_points": ["list of 3-5 marketing angles for Amazon listing"],
+  "estimated_competition": "Low/Medium/High based on product type",
+  "notes": "Any other relevant details extracted from the page"
+}
+
+If this page does NOT contain product information, return:
+{"is_product": false, "reason": "Brief explanation of what the page shows instead"}
+
+Only return valid JSON, no other text."""
+
+
+URL_IMAGE_EXTRACTION_PROMPT = """I'm going to show you images scraped from a product page. Analyze ONLY the images that show actual products — labels, packaging, bottles, boxes, listings, or physical items.
+
+Skip any images that are: icons, logos, UI elements, banners, navigation graphics, avatars, or unrelated images.
+
+For each product image found, extract all product information. Return a JSON object:
+
+{
+  "is_product": true,
+  "product_name": "Full product name",
+  "brand": "Brand name",
+  "category": "Product category (e.g. Health & Household, Kitchen & Dining, Sports & Outdoors)",
+  "description": "Brief product description",
+  "ingredients": ["list of ingredients if visible"],
+  "nutrition_facts": {"serving_size": "", "calories": "", "other": {}},
+  "net_weight": "Weight/volume with units",
+  "upc_barcode": "UPC/EAN if visible",
+  "claims": ["organic", "non-gmo", "vegan", etc.],
+  "warnings": ["any warnings or allergen info"],
+  "manufacturer": "Manufacturer name and location if visible",
+  "suggested_retail_price": null,
+  "amazon_category_guess": "Best Amazon category for this product",
+  "key_selling_points": ["list of 3-5 marketing angles for Amazon listing"],
+  "estimated_competition": "Low/Medium/High based on product type",
+  "notes": "Any other relevant details extracted from the images"
+}
+
+If none of the images show products, return:
+{"is_product": false, "reason": "No product images found on the page"}
+
+Only return valid JSON, no other text."""
+
+
+def fetch_url(url):
+    """Fetch a URL and return the page text content and image URLs."""
+    import urllib.request
+    import re
+
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    req = urllib.request.Request(url, headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            html_bytes = resp.read(5_000_000)  # max 5MB
+            charset = resp.headers.get_content_charset() or "utf-8"
+            html_text = html_bytes.decode(charset, errors="replace")
+    except Exception as e:
+        return {"error": f"Failed to fetch URL: {str(e)}"}
+
+    # Extract text content (strip tags)
+    text = re.sub(r"<script[^>]*>.*?</script>", "", html_text, flags=re.DOTALL | re.IGNORECASE)
+    text = re.sub(r"<style[^>]*>.*?</style>", "", text, flags=re.DOTALL | re.IGNORECASE)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+
+    # Extract image URLs
+    img_urls = re.findall(r'<img[^>]+src=["\']([^"\']+)["\']', html_text, re.IGNORECASE)
+    # Also grab data-src (lazy loaded images)
+    img_urls += re.findall(r'<img[^>]+data-src=["\']([^"\']+)["\']', html_text, re.IGNORECASE)
+
+    # Resolve relative URLs
+    from urllib.parse import urljoin
+    img_urls = [urljoin(url, u) for u in img_urls]
+
+    # Filter out tiny icons/tracking pixels by URL patterns
+    filtered = []
+    skip_patterns = ["1x1", "pixel", "tracking", "spacer", "blank", "favicon", ".svg",
+                     "sprite", "icon-", "loading", "spinner", "badge"]
+    for u in img_urls:
+        lower = u.lower()
+        if any(p in lower for p in skip_patterns):
+            continue
+        if lower.endswith((".js", ".css")):
+            continue
+        filtered.append(u)
+
+    # Deduplicate while preserving order
+    seen = set()
+    unique = []
+    for u in filtered:
+        if u not in seen:
+            seen.add(u)
+            unique.append(u)
+
+    return {"text": text[:50000], "images": unique[:20], "full_url": url}
+
+
+def analyze_url_text(url):
+    """Fetch a URL and extract product info from the page text."""
+    fetched = fetch_url(url)
+    if "error" in fetched:
+        return fetched
+
+    client = get_client()
+    if not client:
+        return {"error": "No Claude Code credentials found. Run 'claude auth' to connect."}
+
+    model = get_model()
+    page_text = fetched["text"]
+
+    message = client.messages.create(
+        model=model,
+        max_tokens=4096,
+        messages=[{
+            "role": "user",
+            "content": f"URL: {url}\n\nPage content:\n{page_text}\n\n{URL_PAGE_EXTRACTION_PROMPT}",
+        }],
+    )
+
+    response_text = message.content[0].text.strip()
+    if response_text.startswith("```"):
+        lines = response_text.split("\n")
+        response_text = "\n".join(lines[1:-1])
+
+    try:
+        result = json.loads(response_text)
+        result["_raw_response"] = response_text
+        result["_model_used"] = model
+        result["_source_url"] = url
+        result["_extraction_mode"] = "page_text"
+        result["_tokens_used"] = {
+            "input": message.usage.input_tokens,
+            "output": message.usage.output_tokens,
+        }
+        return result
+    except json.JSONDecodeError:
+        return {"error": "Failed to parse structured data from page", "raw_response": response_text,
+                "_model_used": model}
+
+
+def analyze_url_images(url):
+    """Fetch a URL, download product images, and extract product info from them."""
+    import urllib.request
+
+    fetched = fetch_url(url)
+    if "error" in fetched:
+        return fetched
+
+    client = get_client()
+    if not client:
+        return {"error": "No Claude Code credentials found. Run 'claude auth' to connect."}
+
+    img_urls = fetched.get("images", [])
+    if not img_urls:
+        return {"error": "No images found on the page.", "_source_url": url}
+
+    # Download images (limit to first 10 to manage token usage)
+    model = get_model()
+    content_blocks = []
+    downloaded = 0
+
+    for img_url in img_urls[:10]:
+        try:
+            headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+            req = urllib.request.Request(img_url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                img_bytes = resp.read(5_000_000)
+                content_type = resp.headers.get("Content-Type", "image/jpeg")
+
+            if not content_type.startswith("image/"):
+                continue
+
+            # Only accept jpeg/png/gif/webp
+            if content_type not in ("image/jpeg", "image/png", "image/gif", "image/webp"):
+                content_type = "image/jpeg"
+
+            b64 = base64.standard_b64encode(img_bytes).decode("utf-8")
+            content_blocks.append({"type": "text", "text": f"Image from {img_url}:"})
+            content_blocks.append({
+                "type": "image",
+                "source": {"type": "base64", "media_type": content_type, "data": b64},
+            })
+            downloaded += 1
+        except Exception:
+            continue
+
+    if downloaded == 0:
+        return {"error": "Could not download any images from the page.", "_source_url": url}
+
+    content_blocks.append({"type": "text", "text": URL_IMAGE_EXTRACTION_PROMPT})
+
+    message = client.messages.create(
+        model=model, max_tokens=4096,
+        messages=[{"role": "user", "content": content_blocks}],
+    )
+
+    response_text = message.content[0].text.strip()
+    if response_text.startswith("```"):
+        lines = response_text.split("\n")
+        response_text = "\n".join(lines[1:-1])
+
+    try:
+        result = json.loads(response_text)
+        result["_raw_response"] = response_text
+        result["_model_used"] = model
+        result["_source_url"] = url
+        result["_extraction_mode"] = "page_images"
+        result["_images_downloaded"] = downloaded
+        result["_tokens_used"] = {
+            "input": message.usage.input_tokens,
+            "output": message.usage.output_tokens,
+        }
+        return result
+    except json.JSONDecodeError:
+        return {"error": "Failed to parse structured data from images", "raw_response": response_text,
+                "_model_used": model}
+
+
 def save_scan_result(result, filename):
     """Save a scan result to the scans log."""
     scans_path = os.path.join(DATA_DIR, "scans.json")
