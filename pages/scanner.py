@@ -617,13 +617,24 @@ def process_url(n_clicks, url, mode):
 # ── Click scan history row to view details ──
 @callback(
     Output("scanner-results", "children", allow_duplicate=True),
+    Output("scanner-preview", "children", allow_duplicate=True),
     Input("scanner-history-table", "active_cell"),
     State("scanner-history-table", "data"),
     prevent_initial_call=True,
 )
 def view_scan_detail(active_cell, table_data):
+    no_preview = html.Div([
+        html.I(className="bi bi-image", style={
+            "fontSize": "3rem", "color": COLORS["card_border"],
+            "display": "block", "marginBottom": "8px",
+        }),
+        html.P("No image uploaded", style={
+            "color": COLORS["text_muted"], "fontSize": "0.85rem",
+        }),
+    ], style={"textAlign": "center", "padding": "50px 20px"})
+
     if not active_cell or not table_data:
-        return ""
+        return "", no_preview
 
     row = table_data[active_cell["row"]]
     scan_id = row.get("id")
@@ -637,7 +648,7 @@ def view_scan_detail(active_cell, table_data):
             break
 
     if not scan:
-        return html.P("Scan data not found.", style={"color": COLORS["text_muted"], "padding": "20px"})
+        return html.P("Scan data not found.", style={"color": COLORS["text_muted"], "padding": "20px"}), no_preview
 
     data = scan.get("data", {})
     source = scan.get("filename", "Unknown")
@@ -681,4 +692,4 @@ def view_scan_detail(active_cell, table_data):
             f"Extracted — {data.get('product_name', 'Product')}",
             _result_section(data), "bi-cpu",
         ),
-    ], style={"marginTop": "20px"})
+    ], style={"marginTop": "20px"}), no_preview
