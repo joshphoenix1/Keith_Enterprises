@@ -192,7 +192,16 @@ def _build_scans_table():
         {"name": "Scanned", "id": "scanned"},
         {"name": "File", "id": "file"},
     ]
-    return dark_table("scanner-history-table", columns, rows)
+    return html.Div([
+        html.Div([
+            html.I(className="bi bi-hand-index me-2", style={"color": COLORS["text_muted"]}),
+            html.Span("Click any row to view full scan details",
+                      style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+        ], style={"marginBottom": "10px"}),
+        dark_table("scanner-history-table", columns, rows,
+                   row_selectable="single",
+                   selected_rows=[]),
+    ])
 
 
 def layout():
@@ -613,3 +622,73 @@ def process_url(n_clicks, url, mode):
     ], style={"marginTop": "20px"})
 
     return result_output, _build_scans_table()
+
+
+# ── Click scan history row to view details ──
+@callback(
+    Output("scanner-results", "children", allow_duplicate=True),
+    Input("scanner-history-table", "selected_rows"),
+    State("scanner-history-table", "data"),
+    prevent_initial_call=True,
+)
+def view_scan_detail(selected_rows, table_data):
+    if not selected_rows or not table_data:
+        return ""
+
+    row = table_data[selected_rows[0]]
+    scan_id = row.get("id")
+
+    # Load full scan data from scans.json
+    scans = load_scans()
+    scan = None
+    for s in scans:
+        if s.get("id") == scan_id:
+            scan = s
+            break
+
+    if not scan:
+        return html.P("Scan data not found.", style={"color": COLORS["text_muted"], "padding": "20px"})
+
+    data = scan.get("data", {})
+    source = scan.get("filename", "Unknown")
+    timestamp = scan.get("timestamp", "")[:19].replace("T", " ")
+
+    # Source badge
+    source_url = data.get("_source_url")
+    mode = data.get("_extraction_mode")
+    source_info = []
+    if source_url:
+        mode_label = "Page Data" if mode == "page_text" else "Page Images" if mode == "page_images" else "URL"
+        mode_color = COLORS["info"] if mode == "page_text" else COLORS["purple"]
+        source_info.append(html.Div([
+            html.I(className="bi bi-link-45deg me-2", style={"color": COLORS["text_muted"]}),
+            html.A(source_url, href=source_url, target="_blank", style={
+                "color": COLORS["primary"], "fontSize": "0.8rem", "textDecoration": "none",
+            }),
+            html.Span(mode_label, style={
+                "background": f"{mode_color}20", "color": mode_color,
+                "padding": "2px 8px", "borderRadius": "10px",
+                "fontSize": "0.7rem", "fontWeight": "600", "marginLeft": "10px",
+            }),
+        ], style={"marginBottom": "8px"}))
+
+    return html.Div([
+        html.Div([
+            html.I(className="bi bi-clock-history me-2", style={"color": COLORS["info"]}),
+            html.Span(f"Scan #{scan_id}", style={
+                "color": COLORS["text"], "fontWeight": "700", "fontSize": "1rem",
+                "marginRight": "12px",
+            }),
+            html.Span(timestamp, style={
+                "color": COLORS["text_muted"], "fontSize": "0.8rem",
+            }),
+            html.Span(f" — {source}", style={
+                "color": COLORS["text_muted"], "fontSize": "0.8rem",
+            }),
+        ], style={"marginBottom": "12px"}),
+        html.Div(source_info) if source_info else None,
+        info_card(
+            f"Extracted — {data.get('product_name', 'Product')}",
+            _result_section(data), "bi-cpu",
+        ),
+    ], style={"marginTop": "20px"})

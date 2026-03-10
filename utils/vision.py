@@ -295,9 +295,20 @@ def fetch_url(url):
         "Upgrade-Insecure-Requests": "1",
     }
     try:
-        resp = _requests.get(url, headers=headers, timeout=30, allow_redirects=True)
+        session = _requests.Session()
+        resp = session.get(url, headers=headers, timeout=30, allow_redirects=True)
         resp.raise_for_status()
         html_text = resp.text
+        # Detect Cloudflare/bot protection challenge pages
+        if ("Just a moment" in html_text[:1000] and "cloudflare" in html_text.lower()[:5000]) or \
+           ("Checking your browser" in html_text[:1000]):
+            return {"error": f"This site uses Cloudflare bot protection and cannot be scraped directly. "
+                    f"Try downloading the page as HTML or taking a screenshot and using the image upload instead."}
+    except _requests.exceptions.HTTPError as e:
+        if e.response is not None and e.response.status_code == 403:
+            return {"error": "403 Forbidden — this site blocks automated access. "
+                    "Try saving the page as HTML or taking a screenshot and using the image upload instead."}
+        return {"error": f"Failed to fetch URL: {str(e)}"}
     except Exception as e:
         return {"error": f"Failed to fetch URL: {str(e)}"}
 
