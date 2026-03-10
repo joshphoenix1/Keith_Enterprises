@@ -1,0 +1,3042 @@
+[
+  {
+    "timestamp": "2026-03-10T02:37:31.089572",
+    "duration_ms": 183,
+    "overall_status": "critical",
+    "total_checks": 46,
+    "passed": 44,
+    "warnings": 0,
+    "failures": 2,
+    "healed": 0,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 3 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9774MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "fail",
+        "message": "No callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "fail",
+        "message": "Page router callback missing \u2014 navigation broken",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T02:37:55.333209",
+    "duration_ms": 191,
+    "overall_status": "critical",
+    "total_checks": 46,
+    "passed": 44,
+    "warnings": 0,
+    "failures": 2,
+    "healed": 0,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 3 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9774MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "fail",
+        "message": "No callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "fail",
+        "message": "Page router callback missing \u2014 navigation broken",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T02:38:33.762556",
+    "duration_ms": 257,
+    "overall_status": "degraded",
+    "total_checks": 46,
+    "passed": 45,
+    "warnings": 1,
+    "failures": 0,
+    "healed": 0,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 3 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9774MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "26 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "warn",
+        "message": "Cannot verify page routing: name 'APP_PORT' is not defined",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T02:38:53.718220",
+    "duration_ms": 252,
+    "overall_status": "healthy",
+    "total_checks": 46,
+    "passed": 46,
+    "warnings": 0,
+    "failures": 0,
+    "healed": 0,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 3 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9774MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "26 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T02:39:08.633869",
+    "duration_ms": 276,
+    "overall_status": "healthy",
+    "total_checks": 46,
+    "passed": 46,
+    "warnings": 0,
+    "failures": 0,
+    "healed": 0,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 3 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9774MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "26 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T02:39:15.826786",
+    "duration_ms": 245,
+    "overall_status": "healthy",
+    "total_checks": 46,
+    "passed": 46,
+    "warnings": 0,
+    "failures": 0,
+    "healed": 0,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 3 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9774MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "26 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T02:39:26.027768",
+    "duration_ms": 240,
+    "overall_status": "healthy",
+    "total_checks": 46,
+    "passed": 46,
+    "warnings": 0,
+    "failures": 0,
+    "healed": 0,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 3 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9773MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "26 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-10T02:40:26.095489",
+    "duration_ms": 63,
+    "overall_status": "healthy",
+    "total_checks": 46,
+    "passed": 46,
+    "warnings": 0,
+    "failures": 0,
+    "healed": 0,
+    "checks": [
+      {
+        "name": "data:products.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 12 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:suppliers.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 6 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:activity.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:inbox.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 8 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:scans.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 3 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:accounts.json",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid JSON, 5 records",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "data:niches.csv",
+        "category": "data",
+        "status": "pass",
+        "message": "Valid CSV, 18 rows, 9 columns",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:data/attachments",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:assets",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:pages",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:utils",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dir:components",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "Exists and writable",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "import:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Module imported successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.home",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.inbox",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.scanner",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.tools",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.products",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.calculator",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.suppliers",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.niches",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.risks",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.accounts",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "render:pages.health",
+        "category": "pages",
+        "status": "pass",
+        "message": "Renders successfully",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v4.0.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:plotly",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v6.6.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:pandas",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v3.0.1",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:dash_bootstrap_components",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v2.0.4",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "dep:anthropic",
+        "category": "dependencies",
+        "status": "pass",
+        "message": "v0.84.0",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:credentials_file",
+        "category": "oauth",
+        "status": "pass",
+        "message": "Credentials file exists and is valid JSON",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "oauth:token",
+        "category": "oauth",
+        "status": "pass",
+        "message": "OAuth token present (sk-ant-o...-gAA)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "port:5011",
+        "category": "port",
+        "status": "pass",
+        "message": "App is listening on port 5011",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "disk:space",
+        "category": "filesystem",
+        "status": "pass",
+        "message": "9773MB free (33.9% used of 14804MB)",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:registry",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "26 callbacks registered",
+        "healed": false,
+        "heal_action": null
+      },
+      {
+        "name": "callbacks:page_router",
+        "category": "callbacks",
+        "status": "pass",
+        "message": "Page routing verified via HTTP",
+        "healed": false,
+        "heal_action": null
+      }
+    ]
+  }
+]

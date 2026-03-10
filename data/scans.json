@@ -1,0 +1,229 @@
+[
+  {
+    "id": 1,
+    "filename": "https://amazon.com.au/Swisse-Ultiboost-Strength-Vitamin-Tabl...",
+    "timestamp": "2026-03-10T02:22:03.013704",
+    "data": {
+      "is_product": true,
+      "product_name": "Swisse Ultiboost High Strength Vitamin B12 - Supports Energy Production - 60 Tablets",
+      "brand": "Swisse",
+      "category": "Health, Household & Personal Care \u203a Vitamins & Supplements \u203a Vitamins, Minerals & Supplements \u203a Vitamins \u203a Multivitamins",
+      "description": "Swisse Ultiboost High Strength Vitamin B12 is a vegan-friendly daily supplement containing 1,000 micrograms of vitamin B12 (cyanocobalamin) per tablet. Supports healthy red blood cell production, energy production, vitality, cognitive function, brain health, and immune and nervous system health. No added artificial flavours.",
+      "ingredients": [
+        "Vitamin B12 (cyanocobalamin) 1000 mcg"
+      ],
+      "nutrition_facts": {
+        "serving_size": "1 tablet daily",
+        "calories": "",
+        "other": {
+          "Vitamin B12 (cyanocobalamin)": "1000 mcg"
+        }
+      },
+      "net_weight": "50g (60 tablets)",
+      "upc_barcode": "9311770596398",
+      "claims": [
+        "vegan",
+        "vegetarian",
+        "no added artificial flavours",
+        "high strength"
+      ],
+      "warnings": [
+        "Vitamin supplements should not replace a balanced diet.",
+        "If symptoms persist consult your healthcare professional.",
+        "This medicine may not be right for you.",
+        "Always read the label and any warnings before purchase.",
+        "Follow the directions for use.",
+        "Supplements may only be of assistance if dietary intake is inadequate."
+      ],
+      "manufacturer": "Swisse Australia",
+      "suggested_retail_price": "No featured offers available (temporarily out of stock)",
+      "amazon_category_guess": "Health, Household & Personal Care > Vitamins & Dietary Supplements > Vitamin B > Vitamin B12",
+      "key_selling_points": [
+        "High strength 1,000 mcg Vitamin B12 (cyanocobalamin) per tablet for maximum support",
+        "Supports energy production, mental clarity, and red blood cell formation",
+        "Vegan and vegetarian friendly formula with no artificial flavours",
+        "Supports immune system and nervous system health",
+        "Trusted Australian brand Swisse with 4.7/5 stars from 427 reviews and 200+ bought in the past week"
+      ],
+      "estimated_competition": "High",
+      "notes": "ASIN: B07BF3MMPM. Product first available on Amazon AU on 10 April 2018. Ranked #121 in Health, Household & Personal Care and #1 in Multivitamins Nutritional Supplements on Amazon AU. Also available in a 60 count Pack of 2 option. Amazon's Choice designation. Subscribe & Save option available (10% off). Product dimensions: 5.63 x 5.63 x 7.91 cm. Customer sentiment highlights quality, effectiveness, and value for money. Currently temporarily out of stock on Amazon AU.",
+      "_raw_response": "{\n  \"is_product\": true,\n  \"product_name\": \"Swisse Ultiboost High Strength Vitamin B12 - Supports Energy Production - 60 Tablets\",\n  \"brand\": \"Swisse\",\n  \"category\": \"Health, Household & Personal Care \u203a Vitamins & Supplements \u203a Vitamins, Minerals & Supplements \u203a Vitamins \u203a Multivitamins\",\n  \"description\": \"Swisse Ultiboost High Strength Vitamin B12 is a vegan-friendly daily supplement containing 1,000 micrograms of vitamin B12 (cyanocobalamin) per tablet. Supports healthy red blood cell production, energy production, vitality, cognitive function, brain health, and immune and nervous system health. No added artificial flavours.\",\n  \"ingredients\": [\n    \"Vitamin B12 (cyanocobalamin) 1000 mcg\"\n  ],\n  \"nutrition_facts\": {\n    \"serving_size\": \"1 tablet daily\",\n    \"calories\": \"\",\n    \"other\": {\n      \"Vitamin B12 (cyanocobalamin)\": \"1000 mcg\"\n    }\n  },\n  \"net_weight\": \"50g (60 tablets)\",\n  \"upc_barcode\": \"9311770596398\",\n  \"claims\": [\n    \"vegan\",\n    \"vegetarian\",\n    \"no added artificial flavours\",\n    \"high strength\"\n  ],\n  \"warnings\": [\n    \"Vitamin supplements should not replace a balanced diet.\",\n    \"If symptoms persist consult your healthcare professional.\",\n    \"This medicine may not be right for you.\",\n    \"Always read the label and any warnings before purchase.\",\n    \"Follow the directions for use.\",\n    \"Supplements may only be of assistance if dietary intake is inadequate.\"\n  ],\n  \"manufacturer\": \"Swisse Australia\",\n  \"suggested_retail_price\": \"No featured offers available (temporarily out of stock)\",\n  \"amazon_category_guess\": \"Health, Household & Personal Care > Vitamins & Dietary Supplements > Vitamin B > Vitamin B12\",\n  \"key_selling_points\": [\n    \"High strength 1,000 mcg Vitamin B12 (cyanocobalamin) per tablet for maximum support\",\n    \"Supports energy production, mental clarity, and red blood cell formation\",\n    \"Vegan and vegetarian friendly formula with no artificial flavours\",\n    \"Supports immune system and nervous system health\",\n    \"Trusted Australian brand Swisse with 4.7/5 stars from 427 reviews and 200+ bought in the past week\"\n  ],\n  \"estimated_competition\": \"High\",\n  \"notes\": \"ASIN: B07BF3MMPM. Product first available on Amazon AU on 10 April 2018. Ranked #121 in Health, Household & Personal Care and #1 in Multivitamins Nutritional Supplements on Amazon AU. Also available in a 60 count Pack of 2 option. Amazon's Choice designation. Subscribe & Save option available (10% off). Product dimensions: 5.63 x 5.63 x 7.91 cm. Customer sentiment highlights quality, effectiveness, and value for money. Currently temporarily out of stock on Amazon AU.\"\n}",
+      "_model_used": "claude-sonnet-4-6",
+      "_source_url": "https://amazon.com.au/Swisse-Ultiboost-Strength-Vitamin-Tablets/dp/B07BF3MMPM/ref=sr_1_5?dib=eyJ2IjoiMSJ9.1EnYZ_LnITiYhK3PKwiy7Hn9_bUU1OwAeIX3fRunxpVqDc2gNWioQqhwHlXl4TK8sYzQPrZekXmXGG6F5LuBww_xTNqzR46GGnvgH7hIrXfKhfNcAYKt1MEX03Mst1e-0Rf28TGzAkAO6ps44Q5yCVverHpqr75qNTLYTKVQIC6mzFnkOwvYlLfQ2xQuMDCx1QC7LfLna_dgs05dtpdx5PGkMdduUr_t7HeWqWLjA6uiItJHpTZQ90GJIi3904Ib75d5x_fg5jNwgrpqJK99A9TjFesKuU4Tgx2MsU0yrD0.48GY8rFFYrtjGjCGhgiFZWbV6yV8mC5R2h1cC1NaFR0&dib_tag=se&keywords=vitamins&qid=1773109296&sr=8-5",
+      "_extraction_mode": "page_text",
+      "_tokens_used": {
+        "input": 10836,
+        "output": 780
+      }
+    }
+  },
+  {
+    "id": 2,
+    "filename": "https://amazon.com.au/Swisse-Ultiboost-Strength-Vitamin-Tabl...",
+    "timestamp": "2026-03-10T02:22:30.488523",
+    "data": {
+      "is_product": true,
+      "product_name": "Swisse Ultiboost Vitamin C",
+      "brand": "Swisse",
+      "category": "Health & Household",
+      "description": "Vitamin C dietary supplement in tablet form. A high-potency vitamin C supplement supporting immune health and antioxidant protection.",
+      "ingredients": [],
+      "nutrition_facts": {
+        "serving_size": "",
+        "calories": "",
+        "other": {}
+      },
+      "net_weight": "Not clearly visible at image resolution",
+      "upc_barcode": null,
+      "claims": [
+        "Immune support",
+        "Antioxidant"
+      ],
+      "warnings": [],
+      "manufacturer": "Swisse Wellness",
+      "suggested_retail_price": null,
+      "amazon_category_guess": "Health & Household > Vitamins, Minerals & Supplements > Vitamin C",
+      "key_selling_points": [
+        "High-potency Vitamin C formula",
+        "Supports immune system health",
+        "Antioxidant protection",
+        "Trusted Swisse brand",
+        "Daily wellness supplement"
+      ],
+      "estimated_competition": "High",
+      "notes": "Multiple product images were found showing what appears to be a Swisse Ultiboost Vitamin C supplement bottle/packaging with orange branding. Additional image panels appear to show benefits, facts, and supplement details panels but are too small (40px thumbnails) to extract specific text content clearly. The orange color scheme and Swisse branding are consistent across all product images. Other images on the page (Young Sherlock banner, Amazon Fresh, Amazon Prime Photos) were correctly excluded as non-product UI/banner content.",
+      "_raw_response": "{\n  \"is_product\": true,\n  \"product_name\": \"Swisse Ultiboost Vitamin C\",\n  \"brand\": \"Swisse\",\n  \"category\": \"Health & Household\",\n  \"description\": \"Vitamin C dietary supplement in tablet form. A high-potency vitamin C supplement supporting immune health and antioxidant protection.\",\n  \"ingredients\": [],\n  \"nutrition_facts\": {\n    \"serving_size\": \"\",\n    \"calories\": \"\",\n    \"other\": {}\n  },\n  \"net_weight\": \"Not clearly visible at image resolution\",\n  \"upc_barcode\": null,\n  \"claims\": [\n    \"Immune support\",\n    \"Antioxidant\"\n  ],\n  \"warnings\": [],\n  \"manufacturer\": \"Swisse Wellness\",\n  \"suggested_retail_price\": null,\n  \"amazon_category_guess\": \"Health & Household > Vitamins, Minerals & Supplements > Vitamin C\",\n  \"key_selling_points\": [\n    \"High-potency Vitamin C formula\",\n    \"Supports immune system health\",\n    \"Antioxidant protection\",\n    \"Trusted Swisse brand\",\n    \"Daily wellness supplement\"\n  ],\n  \"estimated_competition\": \"High\",\n  \"notes\": \"Multiple product images were found showing what appears to be a Swisse Ultiboost Vitamin C supplement bottle/packaging with orange branding. Additional image panels appear to show benefits, facts, and supplement details panels but are too small (40px thumbnails) to extract specific text content clearly. The orange color scheme and Swisse branding are consistent across all product images. Other images on the page (Young Sherlock banner, Amazon Fresh, Amazon Prime Photos) were correctly excluded as non-product UI/banner content.\"\n}",
+      "_model_used": "claude-sonnet-4-6",
+      "_source_url": "https://amazon.com.au/Swisse-Ultiboost-Strength-Vitamin-Tablets/dp/B07BF3MMPM/ref=sr_1_5?dib=eyJ2IjoiMSJ9.1EnYZ_LnITiYhK3PKwiy7Hn9_bUU1OwAeIX3fRunxpVqDc2gNWioQqhwHlXl4TK8sYzQPrZekXmXGG6F5LuBww_xTNqzR46GGnvgH7hIrXfKhfNcAYKt1MEX03Mst1e-0Rf28TGzAkAO6ps44Q5yCVverHpqr75qNTLYTKVQIC6mzFnkOwvYlLfQ2xQuMDCx1QC7LfLna_dgs05dtpdx5PGkMdduUr_t7HeWqWLjA6uiItJHpTZQ90GJIi3904Ib75d5x_fg5jNwgrpqJK99A9TjFesKuU4Tgx2MsU0yrD0.48GY8rFFYrtjGjCGhgiFZWbV6yV8mC5R2h1cC1NaFR0&dib_tag=se&keywords=vitamins&qid=1773109296&sr=8-5",
+      "_extraction_mode": "page_images",
+      "_images_downloaded": 10,
+      "_tokens_used": {
+        "input": 1305,
+        "output": 427
+      }
+    }
+  },
+  {
+    "id": 3,
+    "filename": "https://www.amazon.com.au/Swisse-Ultivite-Mens-Multivitamin-...",
+    "timestamp": "2026-03-10T02:25:51.452390",
+    "data": {
+      "is_product": true,
+      "product_name": "Swisse Ultivite Men's Multivitamin - 60 Tablets",
+      "brand": "Swisse",
+      "category": "Health, Household & Personal Care > Vitamins & Supplements > Vitamins > Multivitamins",
+      "description": "Swisse Ultivite Men's Multivitamin is a comprehensive daily multivitamin tablet formulated for men, containing B vitamins to support energy production, Zinc for immune and cognitive support, Magnesium for healthy muscle function, Vitamin D3 for bone health, and antioxidant-rich ingredients like Selenium and Vitamin E to protect against free radical damage.",
+      "ingredients": [
+        "Biotin 50 \u03bcg",
+        "Folic acid 500 \u03bcg",
+        "Nicotinamide 25 mg",
+        "Vitamin B1 (thiamine from thiamine hydrochloride) 22.03 mg",
+        "Vitamin B2 (riboflavin) 30 mg",
+        "Vitamin B5 (pantothenic acid from calcium pantothenate) 69 mg",
+        "Vitamin B6 (pyridoxine from pyridoxine hydrochloride) 24.68 mg",
+        "Vitamin B12 (cyanocobalamin) 50 \u03bcg",
+        "Vitamin C (ascorbic acid) 165 mg",
+        "Vitamin D3 (colecalciferol) 25 \u03bcg",
+        "Vitamin E (d-alpha-tocopheryl acid succinate) 24.79 mg",
+        "Calcium (from calcium citrate tetrahydrate) 21 mg",
+        "Chromium (from chromium picolinate) 6.2 \u03bcg",
+        "Copper (from copper gluconate) 58 \u03bcg",
+        "Iodine (from potassium iodide) 50 \u03bcg",
+        "Iron (from ferrous fumarate) 3 mg",
+        "Magnesium (from heavy magnesium oxide) 105 mg",
+        "Manganese (from manganese amino acid chelate) 1.2 mg",
+        "Potassium (from potassium sulfate) 4 mg",
+        "Selenium (from selenomethionine) 26 \u03bcg",
+        "Zinc (from zinc sulfate monohydrate) 15 mg",
+        "Betacarotene 1 mg",
+        "Choline (from choline bitartrate) 10.28 mg",
+        "Co-enzyme Q10 (ubidecarenone) 1 mg",
+        "Inositol 25 mg",
+        "Lutein 0.2 mg",
+        "Lysine (from lysine hydrochloride) 8 mg",
+        "Spearmint oil 1.5 mg",
+        "Astragalus (Astragalus membranaceus extract 5 mg) equiv. dry root 50 mg",
+        "Bilberry (Vaccinium myrtillus extract 0.25 mg) equiv. fresh fruit 25 mg",
+        "Celery (Apium graveolens extract 1.6 mg) equiv. dry seed 20 mg",
+        "Fennel (Foeniculum vulgare extract 3 mg) equiv. dry fruit 15 mg",
+        "Ginger (Zingiber officinale extract 1 mg) equiv. dry rhizome 5 mg",
+        "Ginkgo (Ginkgo biloba extract 2 mg) equiv. dry leaf 100 mg",
+        "Globe Artichoke (Cynara scolymus extract 1 mg) equiv. fresh leaf 50 mg",
+        "Grape Seed (Vitis vinifera extract 9.9 mg) equiv. dry seed 1.18 g",
+        "Gotu Kola (Centella asiatica extract 12.5 mg) equiv. dry whole plant 50 mg",
+        "Green Tea (Camellia sinensis extract 62 mg) equiv. dry leaf 372 mg",
+        "Korean Ginseng (Panax ginseng extract 5 mg) equiv. dry root 50 mg",
+        "Liquorice (Glycyrrhiza glabra extract 2 mg) equiv. dry root & stolon 10 mg",
+        "Milk Thistle (Silybum marianum extract 0.71 mg) equiv. dry fruit 50 mg",
+        "Papaya (Carica papaya fruit powder) 10 mg",
+        "Parsley (Petroselinum crispum extract 2.5 mg) equiv. dry herb 10 mg",
+        "Saw Palmetto (Serenoa repens extract 16 mg) equiv. dry fruit 200 mg",
+        "Tomato (Lycopersicon esculentum extract 2 mg) equiv. fresh fruit 700 mg"
+      ],
+      "nutrition_facts": {
+        "serving_size": "1 tablet daily",
+        "calories": "",
+        "other": {
+          "Biotin": "50 \u03bcg",
+          "Folic acid": "500 \u03bcg",
+          "Vitamin B1": "22.03 mg",
+          "Vitamin B2": "30 mg",
+          "Vitamin B5": "69 mg",
+          "Vitamin B6": "24.68 mg",
+          "Vitamin B12": "50 \u03bcg",
+          "Vitamin C": "165 mg",
+          "Vitamin D3": "25 \u03bcg",
+          "Vitamin E": "24.79 mg",
+          "Magnesium": "105 mg",
+          "Zinc": "15 mg",
+          "Selenium": "26 \u03bcg",
+          "Iron": "3 mg",
+          "Calcium": "21 mg"
+        }
+      },
+      "net_weight": "123 g",
+      "upc_barcode": "",
+      "claims": [
+        "Keto-friendly",
+        "Supports energy production",
+        "Immune system support",
+        "Bone health support",
+        "Muscle function support",
+        "Heart health support",
+        "Antioxidant protection",
+        "Cognitive function support"
+      ],
+      "warnings": [
+        "Stop taking this medication if you experience tingling, burning or numbness and see your healthcare practitioner as soon as possible. [Contains vitamin B6].",
+        "Do not use if pregnant or likely to become pregnant.",
+        "Use in children under 12 years is not recommended.",
+        "Do not use while breastfeeding.",
+        "This product contains selenium which is toxic in high doses. A daily dose of 150 micrograms for adults of selenium from dietary supplements should not be exceeded.",
+        "Do not take while on warfarin therapy without medical advice.",
+        "Not for the treatment of iron deficiency conditions.",
+        "Vitamin and mineral supplements should not replace a balanced diet.",
+        "If symptoms persist, talk to your health professional."
+      ],
+      "manufacturer": "Swisse",
+      "suggested_retail_price": "No featured offers available (temporarily out of stock)",
+      "amazon_category_guess": "Health & Household > Vitamins, Minerals & Supplements > Multivitamins",
+      "key_selling_points": [
+        "Comprehensive men's formula with 40+ vitamins, minerals, and herbal extracts in a single daily tablet",
+        "Key B vitamins and CoQ10 to support energy production and reduce fatigue",
+        "Zinc and Vitamin C for immune system support; Selenium and Vitamin E for antioxidant protection",
+        "Includes herbal ingredients like Korean Ginseng, Ginkgo, Saw Palmetto, and Green Tea for holistic men's health",
+        "Highly rated by customers (4.7/5 stars from 178 reviews) \u2014 Amazon's Choice in Multivitamins"
+      ],
+      "estimated_competition": "High",
+      "notes": "ASIN: B09ZDSFCG8. Item Model Number: 723105. Available in 60-count and 120-count pack sizes. Flavour listed as 'Unflavoured' despite containing spearmint oil. Best Sellers Rank: #648 in Health, Household & Personal Care; #13 in Multivitamins Nutritional Supplements. Date first available: 3 May 2022. Package dimensions: 8.9 x 5.3 x 5.2 cm. 50+ bought in past week. Swisse brand has 97% positive ratings from 5,000+ customers and 10,000+ recent orders. Temporarily out of stock at time of scraping. Directions: One tablet daily, during or immediately after a meal.",
+      "_raw_response": "{\n  \"is_product\": true,\n  \"product_name\": \"Swisse Ultivite Men's Multivitamin - 60 Tablets\",\n  \"brand\": \"Swisse\",\n  \"category\": \"Health, Household & Personal Care > Vitamins & Supplements > Vitamins > Multivitamins\",\n  \"description\": \"Swisse Ultivite Men's Multivitamin is a comprehensive daily multivitamin tablet formulated for men, containing B vitamins to support energy production, Zinc for immune and cognitive support, Magnesium for healthy muscle function, Vitamin D3 for bone health, and antioxidant-rich ingredients like Selenium and Vitamin E to protect against free radical damage.\",\n  \"ingredients\": [\n    \"Biotin 50 \u03bcg\",\n    \"Folic acid 500 \u03bcg\",\n    \"Nicotinamide 25 mg\",\n    \"Vitamin B1 (thiamine from thiamine hydrochloride) 22.03 mg\",\n    \"Vitamin B2 (riboflavin) 30 mg\",\n    \"Vitamin B5 (pantothenic acid from calcium pantothenate) 69 mg\",\n    \"Vitamin B6 (pyridoxine from pyridoxine hydrochloride) 24.68 mg\",\n    \"Vitamin B12 (cyanocobalamin) 50 \u03bcg\",\n    \"Vitamin C (ascorbic acid) 165 mg\",\n    \"Vitamin D3 (colecalciferol) 25 \u03bcg\",\n    \"Vitamin E (d-alpha-tocopheryl acid succinate) 24.79 mg\",\n    \"Calcium (from calcium citrate tetrahydrate) 21 mg\",\n    \"Chromium (from chromium picolinate) 6.2 \u03bcg\",\n    \"Copper (from copper gluconate) 58 \u03bcg\",\n    \"Iodine (from potassium iodide) 50 \u03bcg\",\n    \"Iron (from ferrous fumarate) 3 mg\",\n    \"Magnesium (from heavy magnesium oxide) 105 mg\",\n    \"Manganese (from manganese amino acid chelate) 1.2 mg\",\n    \"Potassium (from potassium sulfate) 4 mg\",\n    \"Selenium (from selenomethionine) 26 \u03bcg\",\n    \"Zinc (from zinc sulfate monohydrate) 15 mg\",\n    \"Betacarotene 1 mg\",\n    \"Choline (from choline bitartrate) 10.28 mg\",\n    \"Co-enzyme Q10 (ubidecarenone) 1 mg\",\n    \"Inositol 25 mg\",\n    \"Lutein 0.2 mg\",\n    \"Lysine (from lysine hydrochloride) 8 mg\",\n    \"Spearmint oil 1.5 mg\",\n    \"Astragalus (Astragalus membranaceus extract 5 mg) equiv. dry root 50 mg\",\n    \"Bilberry (Vaccinium myrtillus extract 0.25 mg) equiv. fresh fruit 25 mg\",\n    \"Celery (Apium graveolens extract 1.6 mg) equiv. dry seed 20 mg\",\n    \"Fennel (Foeniculum vulgare extract 3 mg) equiv. dry fruit 15 mg\",\n    \"Ginger (Zingiber officinale extract 1 mg) equiv. dry rhizome 5 mg\",\n    \"Ginkgo (Ginkgo biloba extract 2 mg) equiv. dry leaf 100 mg\",\n    \"Globe Artichoke (Cynara scolymus extract 1 mg) equiv. fresh leaf 50 mg\",\n    \"Grape Seed (Vitis vinifera extract 9.9 mg) equiv. dry seed 1.18 g\",\n    \"Gotu Kola (Centella asiatica extract 12.5 mg) equiv. dry whole plant 50 mg\",\n    \"Green Tea (Camellia sinensis extract 62 mg) equiv. dry leaf 372 mg\",\n    \"Korean Ginseng (Panax ginseng extract 5 mg) equiv. dry root 50 mg\",\n    \"Liquorice (Glycyrrhiza glabra extract 2 mg) equiv. dry root & stolon 10 mg\",\n    \"Milk Thistle (Silybum marianum extract 0.71 mg) equiv. dry fruit 50 mg\",\n    \"Papaya (Carica papaya fruit powder) 10 mg\",\n    \"Parsley (Petroselinum crispum extract 2.5 mg) equiv. dry herb 10 mg\",\n    \"Saw Palmetto (Serenoa repens extract 16 mg) equiv. dry fruit 200 mg\",\n    \"Tomato (Lycopersicon esculentum extract 2 mg) equiv. fresh fruit 700 mg\"\n  ],\n  \"nutrition_facts\": {\n    \"serving_size\": \"1 tablet daily\",\n    \"calories\": \"\",\n    \"other\": {\n      \"Biotin\": \"50 \u03bcg\",\n      \"Folic acid\": \"500 \u03bcg\",\n      \"Vitamin B1\": \"22.03 mg\",\n      \"Vitamin B2\": \"30 mg\",\n      \"Vitamin B5\": \"69 mg\",\n      \"Vitamin B6\": \"24.68 mg\",\n      \"Vitamin B12\": \"50 \u03bcg\",\n      \"Vitamin C\": \"165 mg\",\n      \"Vitamin D3\": \"25 \u03bcg\",\n      \"Vitamin E\": \"24.79 mg\",\n      \"Magnesium\": \"105 mg\",\n      \"Zinc\": \"15 mg\",\n      \"Selenium\": \"26 \u03bcg\",\n      \"Iron\": \"3 mg\",\n      \"Calcium\": \"21 mg\"\n    }\n  },\n  \"net_weight\": \"123 g\",\n  \"upc_barcode\": \"\",\n  \"claims\": [\n    \"Keto-friendly\",\n    \"Supports energy production\",\n    \"Immune system support\",\n    \"Bone health support\",\n    \"Muscle function support\",\n    \"Heart health support\",\n    \"Antioxidant protection\",\n    \"Cognitive function support\"\n  ],\n  \"warnings\": [\n    \"Stop taking this medication if you experience tingling, burning or numbness and see your healthcare practitioner as soon as possible. [Contains vitamin B6].\",\n    \"Do not use if pregnant or likely to become pregnant.\",\n    \"Use in children under 12 years is not recommended.\",\n    \"Do not use while breastfeeding.\",\n    \"This product contains selenium which is toxic in high doses. A daily dose of 150 micrograms for adults of selenium from dietary supplements should not be exceeded.\",\n    \"Do not take while on warfarin therapy without medical advice.\",\n    \"Not for the treatment of iron deficiency conditions.\",\n    \"Vitamin and mineral supplements should not replace a balanced diet.\",\n    \"If symptoms persist, talk to your health professional.\"\n  ],\n  \"manufacturer\": \"Swisse\",\n  \"suggested_retail_price\": \"No featured offers available (temporarily out of stock)\",\n  \"amazon_category_guess\": \"Health & Household > Vitamins, Minerals & Supplements > Multivitamins\",\n  \"key_selling_points\": [\n    \"Comprehensive men's formula with 40+ vitamins, minerals, and herbal extracts in a single daily tablet\",\n    \"Key B vitamins and CoQ10 to support energy production and reduce fatigue\",\n    \"Zinc and Vitamin C for immune system support; Selenium and Vitamin E for antioxidant protection\",\n    \"Includes herbal ingredients like Korean Ginseng, Ginkgo, Saw Palmetto, and Green Tea for holistic men's health\",\n    \"Highly rated by customers (4.7/5 stars from 178 reviews) \u2014 Amazon's Choice in Multivitamins\"\n  ],\n  \"estimated_competition\": \"High\",\n  \"notes\": \"ASIN: B09ZDSFCG8. Item Model Number: 723105. Available in 60-count and 120-count pack sizes. Flavour listed as 'Unflavoured' despite containing spearmint oil. Best Sellers Rank: #648 in Health, Household & Personal Care; #13 in Multivitamins Nutritional Supplements. Date first available: 3 May 2022. Package dimensions: 8.9 x 5.3 x 5.2 cm. 50+ bought in past week. Swisse brand has 97% positive ratings from 5,000+ customers and 10,000+ recent orders. Temporarily out of stock at time of scraping. Directions: One tablet daily, during or immediately after a meal.\"\n}",
+      "_model_used": "claude-sonnet-4-6",
+      "_source_url": "https://www.amazon.com.au/Swisse-Ultivite-Mens-Multivitamin-Tablets/dp/B09ZDSFCG8/ref=sr_1_6?dib=eyJ2IjoiMSJ9.1EnYZ_LnITiYhK3PKwiy7Hn9_bUU1OwAeIX3fRunxpVqDc2gNWioQqhwHlXl4TK8sYzQPrZekXmXGG6F5LuBww_xTNqzR46GGnvgH7hIrXfKhfNcAYKt1MEX03Mst1e-0Rf28TGzAkAO6ps44Q5yCVverHpqr75qNTLYTKVQIC6mzFnkOwvYlLfQ2xQuMDCx1QC7LfLna_dgs05dtpdx5PGkMdduUr_t7HeWqWLjA6uiItJHpTZQ90GJIi3904Ib75d5x_fg5jNwgrpqJK99A9TjFesKuU4Tgx2MsU0yrD0.48GY8rFFYrtjGjCGhgiFZWbV6yV8mC5R2h1cC1NaFR0&dib_tag=se&keywords=vitamins&qid=1773109460&sr=8-6&th=1",
+      "_extraction_mode": "page_text",
+      "_tokens_used": {
+        "input": 12722,
+        "output": 2174
+      }
+    }
+  }
+]
