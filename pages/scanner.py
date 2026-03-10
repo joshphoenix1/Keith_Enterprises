@@ -381,9 +381,7 @@ def layout():
                             {"name": "Claims", "id": "claims"},
                             {"name": "Scanned", "id": "scanned"},
                             {"name": "File", "id": "file"}],
-                           _build_scans_table(),
-                           row_selectable="single",
-                           selected_rows=[]),
+                           _build_scans_table()),
             ]), "bi-clock-history"),
         ], style={"marginTop": "20px"}),
     ])
@@ -391,8 +389,8 @@ def layout():
 
 @callback(
     Output("scanner-preview", "children"),
-    Output("scanner-results", "children"),
-    Output("scanner-history-table", "data"),
+    Output("scanner-results", "children", allow_duplicate=True),
+    Output("scanner-history-table", "data", allow_duplicate=True),
     Input("scanner-upload", "contents"),
     State("scanner-upload", "filename"),
     prevent_initial_call=True,
@@ -542,7 +540,7 @@ def toggle_url_mode(text_clicks, img_clicks):
 # ── URL extraction callback ──
 @callback(
     Output("scanner-results", "children", allow_duplicate=True),
-    Output("scanner-history", "children", allow_duplicate=True),
+    Output("scanner-history-table", "data", allow_duplicate=True),
     Input("scanner-url-btn", "n_clicks"),
     State("scanner-url-input", "value"),
     State("scanner-url-mode", "value"),
@@ -619,15 +617,15 @@ def process_url(n_clicks, url, mode):
 # ── Click scan history row to view details ──
 @callback(
     Output("scanner-results", "children", allow_duplicate=True),
-    Input("scanner-history-table", "selected_rows"),
+    Input("scanner-history-table", "active_cell"),
     State("scanner-history-table", "data"),
     prevent_initial_call=True,
 )
-def view_scan_detail(selected_rows, table_data):
-    if not selected_rows or not table_data:
+def view_scan_detail(active_cell, table_data):
+    if not active_cell or not table_data:
         return ""
 
-    row = table_data[selected_rows[0]]
+    row = table_data[active_cell["row"]]
     scan_id = row.get("id")
 
     # Load full scan data from scans.json

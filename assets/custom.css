@@ -204,6 +204,12 @@ body {
     outline: none !important;
     box-shadow: inset 0 0 0 2px #58a6ff !important;
 }
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner tr td {
+    cursor: pointer !important;
+}
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner tr:hover td {
+    background-color: #1f2937 !important;
+}
 input.dash-filter--case--sensitive {
     display: none !important;
 }
