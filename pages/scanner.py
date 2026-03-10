@@ -154,11 +154,10 @@ def _result_section(data):
 
 
 def _build_scans_table():
-    """Build the history table from saved scans."""
+    """Build the history table data rows."""
     scans = load_scans()
     if not scans:
-        return html.P("No scans yet. Upload an image to get started.",
-                      style={"color": COLORS["text_muted"], "padding": "16px", "textAlign": "center"})
+        return []
 
     rows = []
     for s in reversed(scans):
@@ -177,31 +176,7 @@ def _build_scans_table():
             "file": s.get("filename", "—"),
         })
 
-    if not rows:
-        return html.P("No successful scans yet.",
-                      style={"color": COLORS["text_muted"], "padding": "16px", "textAlign": "center"})
-
-    columns = [
-        {"name": "#", "id": "id"},
-        {"name": "Product", "id": "product"},
-        {"name": "Brand", "id": "brand"},
-        {"name": "Category", "id": "category"},
-        {"name": "Weight", "id": "weight"},
-        {"name": "Competition", "id": "competition"},
-        {"name": "Claims", "id": "claims"},
-        {"name": "Scanned", "id": "scanned"},
-        {"name": "File", "id": "file"},
-    ]
-    return html.Div([
-        html.Div([
-            html.I(className="bi bi-hand-index me-2", style={"color": COLORS["text_muted"]}),
-            html.Span("Click any row to view full scan details",
-                      style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
-        ], style={"marginBottom": "10px"}),
-        dark_table("scanner-history-table", columns, rows,
-                   row_selectable="single",
-                   selected_rows=[]),
-    ])
+    return rows
 
 
 def layout():
@@ -390,9 +365,26 @@ def layout():
 
         # Scan history table
         html.Div([
-            info_card("Scan History",
-                      html.Div(id="scanner-history", children=_build_scans_table()),
-                      "bi-clock-history"),
+            info_card("Scan History", html.Div([
+                html.Div([
+                    html.I(className="bi bi-hand-index me-2", style={"color": COLORS["text_muted"]}),
+                    html.Span("Click any row to view full scan details",
+                              style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+                ], style={"marginBottom": "10px"}),
+                dark_table("scanner-history-table",
+                           [{"name": "#", "id": "id"},
+                            {"name": "Product", "id": "product"},
+                            {"name": "Brand", "id": "brand"},
+                            {"name": "Category", "id": "category"},
+                            {"name": "Weight", "id": "weight"},
+                            {"name": "Competition", "id": "competition"},
+                            {"name": "Claims", "id": "claims"},
+                            {"name": "Scanned", "id": "scanned"},
+                            {"name": "File", "id": "file"}],
+                           _build_scans_table(),
+                           row_selectable="single",
+                           selected_rows=[]),
+            ]), "bi-clock-history"),
         ], style={"marginTop": "20px"}),
     ])
 
@@ -400,7 +392,7 @@ def layout():
 @callback(
     Output("scanner-preview", "children"),
     Output("scanner-results", "children"),
-    Output("scanner-history", "children"),
+    Output("scanner-history-table", "data"),
     Input("scanner-upload", "contents"),
     State("scanner-upload", "filename"),
     prevent_initial_call=True,
