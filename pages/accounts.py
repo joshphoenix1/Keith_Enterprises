@@ -3,6 +3,7 @@ import os
 from dash import html, dcc, callback, Input, Output, State
 from config import COLORS
 from components.forms import styled_input, styled_dropdown, form_group
+from utils.rules import load_rules, save_rules
 
 DATA_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "accounts.json")
 
@@ -129,6 +130,10 @@ def layout():
     em = accounts.get("email", {})
     gd = accounts.get("google_drive", {})
     cl = accounts.get("claude_code", {})
+    rules = load_rules()
+    ar = rules.get("auto_reject", {})
+    aa = rules.get("auto_accept", {})
+    al = rules.get("alerts", {})
 
     # ── Data Pipeline Overview ──
     pipeline_section = html.Div([
@@ -370,6 +375,116 @@ def layout():
         ], style={"maxWidth": "300px"}),
     ])
 
+    # ── Filtering Rules Section ──
+    rules_form = html.Div([
+        _section_header("bi-funnel", "Filtering Rules",
+                        "Auto-accept or auto-reject products based on feasibility thresholds",
+                        COLORS["warning"]),
+
+        # --- Auto-Reject ---
+        html.Div([
+            html.Div([
+                html.I(className="bi bi-x-circle me-2", style={"color": COLORS["danger"]}),
+                html.Span("Auto-Reject Thresholds", style={
+                    "color": COLORS["danger"], "fontWeight": "600", "fontSize": "0.9rem",
+                }),
+            ], style={"marginBottom": "12px"}),
+            html.P("Products failing ANY of these thresholds will be automatically rejected.",
+                   style={"color": COLORS["text_muted"], "fontSize": "0.8rem", "marginBottom": "12px"}),
+        ]),
+        _toggle_row("Auto-Reject Enabled", "acct-rule-ar-enabled", ar.get("enabled", True)),
+        html.Div([
+            form_group("Min Margin %",
+                       styled_input("acct-rule-ar-margin", "15", type="number",
+                                    value=ar.get("min_margin_pct", 15))),
+            form_group("Min ROI %",
+                       styled_input("acct-rule-ar-roi", "30", type="number",
+                                    value=ar.get("min_roi_pct", 30))),
+            form_group("Max Competitors",
+                       styled_input("acct-rule-ar-comp", "50", type="number",
+                                    value=ar.get("max_competitors", 50))),
+        ], className="grid-row grid-2"),
+        html.Div([
+            form_group("Min Monthly Sales",
+                       styled_input("acct-rule-ar-sales", "50", type="number",
+                                    value=ar.get("min_monthly_sales", 50))),
+            form_group("Max BSR",
+                       styled_input("acct-rule-ar-bsr", "100000", type="number",
+                                    value=ar.get("max_bsr", 100000))),
+        ], className="grid-row grid-2"),
+
+        # Divider
+        html.Hr(style={"borderColor": COLORS["card_border"], "margin": "24px 0"}),
+
+        # --- Auto-Accept ---
+        html.Div([
+            html.Div([
+                html.I(className="bi bi-check-circle me-2", style={"color": COLORS["success"]}),
+                html.Span("Auto-Accept Thresholds", style={
+                    "color": COLORS["success"], "fontWeight": "600", "fontSize": "0.9rem",
+                }),
+            ], style={"marginBottom": "12px"}),
+            html.P("Products meeting ALL of these thresholds will be automatically accepted.",
+                   style={"color": COLORS["text_muted"], "fontSize": "0.8rem", "marginBottom": "12px"}),
+        ]),
+        _toggle_row("Auto-Accept Enabled", "acct-rule-aa-enabled", aa.get("enabled", True)),
+        html.Div([
+            form_group("Min Margin %",
+                       styled_input("acct-rule-aa-margin", "35", type="number",
+                                    value=aa.get("min_margin_pct", 35))),
+            form_group("Min ROI %",
+                       styled_input("acct-rule-aa-roi", "100", type="number",
+                                    value=aa.get("min_roi_pct", 100))),
+            form_group("Max Competitors",
+                       styled_input("acct-rule-aa-comp", "10", type="number",
+                                    value=aa.get("max_competitors", 10))),
+        ], className="grid-row grid-2"),
+        html.Div([
+            form_group("Min Monthly Sales",
+                       styled_input("acct-rule-aa-sales", "300", type="number",
+                                    value=aa.get("min_monthly_sales", 300))),
+            form_group("Min Feasibility Score",
+                       styled_input("acct-rule-aa-score", "75", type="number",
+                                    value=aa.get("min_score", 75))),
+        ], className="grid-row grid-2"),
+
+        # Divider
+        html.Hr(style={"borderColor": COLORS["card_border"], "margin": "24px 0"}),
+
+        # --- Alerts ---
+        html.Div([
+            html.Div([
+                html.I(className="bi bi-bell me-2", style={"color": COLORS["info"]}),
+                html.Span("Alert Thresholds", style={
+                    "color": COLORS["info"], "fontWeight": "600", "fontSize": "0.9rem",
+                }),
+            ], style={"marginBottom": "12px"}),
+            html.P("Get notified when products hit these standout thresholds.",
+                   style={"color": COLORS["text_muted"], "fontSize": "0.8rem", "marginBottom": "12px"}),
+        ]),
+        html.Div([
+            form_group("High Margin Threshold %",
+                       styled_input("acct-rule-al-margin", "40", type="number",
+                                    value=al.get("high_margin_threshold", 40))),
+            form_group("Low Competition Threshold",
+                       styled_input("acct-rule-al-comp", "5", type="number",
+                                    value=al.get("low_competition_threshold", 5))),
+        ], className="grid-row grid-2"),
+        _toggle_row("Notify on GO Verdict", "acct-rule-al-notify", al.get("notify_on_go", True)),
+
+        # Info tip
+        html.Div([
+            html.I(className="bi bi-info-circle me-2", style={"color": COLORS["info"]}),
+            html.Span("Rules are evaluated in order: auto-reject first (any threshold breach), "
+                      "then auto-accept (all thresholds must pass). Products that match neither "
+                      "are sent to manual review.",
+                      style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+        ], style={
+            "background": f"{COLORS['info']}10", "padding": "12px 16px",
+            "borderRadius": "8px", "marginTop": "8px",
+        }),
+    ])
+
     return html.Div([
         html.Div([
             html.H2("Accounts & Integrations"),
@@ -396,6 +511,10 @@ def layout():
         html.Div([email_form], className="dash-card", style={"marginBottom": "20px"}),
         html.Div([gdrive_form], className="dash-card", style={"marginBottom": "20px"}),
 
+        # Filtering Rules — before save button
+        html.Div([rules_form], className="dash-card",
+                 style={"marginBottom": "20px", "border": f"1px solid {COLORS['warning']}40"}),
+
         # Save button
         html.Div([
             html.Button([html.I(className="bi bi-check-circle me-2"), "Save All Settings"],
@@ -414,6 +533,7 @@ _TOGGLE_IDS = [
     "acct-wa-enabled", "acct-wa-notify",
     "acct-em-enabled", "acct-em-tls", "acct-em-notify",
     "acct-gd-enabled", "acct-gd-autobackup",
+    "acct-rule-ar-enabled", "acct-rule-aa-enabled", "acct-rule-al-notify",
 ]
 
 for _tid in _TOGGLE_IDS:
@@ -474,6 +594,24 @@ for _tid in _TOGGLE_IDS:
     State("acct-gd-secret", "value"),
     State("acct-gd-autobackup", "value"),
     State("acct-gd-frequency", "value"),
+    # Filtering Rules — Auto-Reject
+    State("acct-rule-ar-enabled", "value"),
+    State("acct-rule-ar-margin", "value"),
+    State("acct-rule-ar-roi", "value"),
+    State("acct-rule-ar-comp", "value"),
+    State("acct-rule-ar-sales", "value"),
+    State("acct-rule-ar-bsr", "value"),
+    # Filtering Rules — Auto-Accept
+    State("acct-rule-aa-enabled", "value"),
+    State("acct-rule-aa-margin", "value"),
+    State("acct-rule-aa-roi", "value"),
+    State("acct-rule-aa-comp", "value"),
+    State("acct-rule-aa-sales", "value"),
+    State("acct-rule-aa-score", "value"),
+    # Filtering Rules — Alerts
+    State("acct-rule-al-margin", "value"),
+    State("acct-rule-al-comp", "value"),
+    State("acct-rule-al-notify", "value"),
     prevent_initial_call=True,
 )
 def save_accounts(n_clicks,
@@ -481,7 +619,10 @@ def save_accounts(n_clicks,
                   cl_enabled, cl_autoproc, cl_autorun, cl_tasks,
                   wa_enabled, wa_phone, wa_business, wa_apikey, wa_webhook, wa_notify,
                   em_enabled, em_provider, em_address, em_smtp, em_port, em_user, em_pass, em_tls, em_notify,
-                  gd_enabled, gd_email, gd_folder, gd_clientid, gd_secret, gd_autobackup, gd_frequency):
+                  gd_enabled, gd_email, gd_folder, gd_clientid, gd_secret, gd_autobackup, gd_frequency,
+                  rule_ar_enabled, rule_ar_margin, rule_ar_roi, rule_ar_comp, rule_ar_sales, rule_ar_bsr,
+                  rule_aa_enabled, rule_aa_margin, rule_aa_roi, rule_aa_comp, rule_aa_sales, rule_aa_score,
+                  rule_al_margin, rule_al_comp, rule_al_notify):
     sa_ch = sa_channels or []
     data = {
         "seller_assistant": {
@@ -537,6 +678,32 @@ def save_accounts(n_clicks,
     }
     _save_accounts(data)
 
+    # Save filtering rules
+    rules_data = {
+        "auto_reject": {
+            "enabled": bool(rule_ar_enabled and "on" in rule_ar_enabled),
+            "min_margin_pct": float(rule_ar_margin or 15),
+            "min_roi_pct": float(rule_ar_roi or 30),
+            "max_competitors": int(rule_ar_comp or 50),
+            "min_monthly_sales": int(rule_ar_sales or 50),
+            "max_bsr": int(rule_ar_bsr or 100000),
+        },
+        "auto_accept": {
+            "enabled": bool(rule_aa_enabled and "on" in rule_aa_enabled),
+            "min_margin_pct": float(rule_aa_margin or 35),
+            "min_roi_pct": float(rule_aa_roi or 100),
+            "max_competitors": int(rule_aa_comp or 10),
+            "min_monthly_sales": int(rule_aa_sales or 300),
+            "min_score": int(rule_aa_score or 75),
+        },
+        "alerts": {
+            "high_margin_threshold": float(rule_al_margin or 40),
+            "low_competition_threshold": int(rule_al_comp or 5),
+            "notify_on_go": bool(rule_al_notify and "on" in rule_al_notify),
+        },
+    }
+    save_rules(rules_data)
+
     sources = sum([data["seller_assistant"]["enabled"], data["whatsapp"]["enabled"],
                    data["email"]["enabled"], data["google_drive"]["enabled"]])
     ai = "active" if data["claude_code"]["enabled"] else "inactive"
@@ -544,6 +711,6 @@ def save_accounts(n_clicks,
     return html.Div([
         html.I(className="bi bi-check-circle-fill me-2",
                style={"color": COLORS["success"]}),
-        html.Span(f"Settings saved! {sources}/4 data sources connected, Claude Code {ai}.",
+        html.Span(f"Settings saved! {sources}/4 data sources connected, Claude Code {ai}. Filtering rules updated.",
                   style={"color": COLORS["success"], "fontWeight": "500"}),
     ], style={"fontSize": "0.9rem"})

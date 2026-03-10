@@ -6,6 +6,7 @@ from config import COLORS
 from components.cards import info_card
 from components.tables import dark_table
 from utils.vision import analyze_image, analyze_multiple_images, save_scan_result
+from utils.data import calc_feasibility, estimate_fba_fee, calc_referral_fee
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 DATA_PATH = os.path.join(DATA_DIR, "inbox.json")
@@ -164,20 +165,73 @@ def _message_card(msg):
     })
 
 
+def _score_product(price_offered):
+    """Auto-score a product using the feasibility calculator.
+
+    Uses 2.5x the offered price as estimated sell price, default 1.0 lb weight,
+    and conservative estimates for monthly sales and competition.
+    """
+    sell_price = round(price_offered * 2.5, 2)
+    fba_fee = estimate_fba_fee(1.0)
+    referral_fee = calc_referral_fee(sell_price)
+    result = calc_feasibility(
+        price=sell_price,
+        cost=price_offered,
+        fba_fee=fba_fee,
+        referral_fee=referral_fee,
+        monthly_sales=200,
+    )
+    return {
+        "sell_price": sell_price,
+        "fba_fee": fba_fee,
+        "referral_fee": referral_fee,
+        "margin": result["margin"],
+        "score": result["score"],
+        "verdict": result["verdict"],
+    }
+
+
+def _verdict_style(verdict):
+    """Return inline style dict for verdict badge."""
+    if verdict == "GO":
+        color = COLORS["success"]
+    elif verdict == "MAYBE":
+        color = COLORS["warning"]
+    else:
+        color = COLORS["danger"]
+    return {
+        "color": color,
+        "fontWeight": "700",
+        "background": f"{color}20",
+        "padding": "2px 10px",
+        "borderRadius": "10px",
+        "fontSize": "0.75rem",
+        "display": "inline-block",
+    }
+
+
 def _build_products_table(messages):
-    """Extract all products from messages into a flat table."""
+    """Extract all products from messages into a flat table with auto-scoring."""
     rows = []
     for msg in messages:
         for p in msg.get("products", []):
+            price_offered = p["price_offered"]
+            scoring = _score_product(price_offered)
             rows.append({
                 "product": p["name"],
-                "price": f"${p['price_offered']:.2f}",
+                "price": f"${price_offered:.2f}",
                 "moq": p["moq"],
                 "lead_time": p["lead_time"],
                 "supplier": p["supplier"],
                 "source": msg["source"].title(),
                 "from": msg["from"],
                 "date": msg["date"][:10],
+                "est_sell": f"${scoring['sell_price']:.2f}",
+                "fba_fee": f"${scoring['fba_fee']:.2f}",
+                "referral_fee": f"${scoring['referral_fee']:.2f}",
+                "margin": scoring["margin"],
+                "score": scoring["score"],
+                "verdict": scoring["verdict"],
                 "status": "New",
             })
         # Also include products found by image scanning
@@ -192,21 +246,181 @@ def _build_products_table(messages):
                     "source": f"{msg['source'].title()} (scan)",
                     "from": msg["from"],
                     "date": msg["date"][:10],
+                    "est_sell": "—",
+                    "fba_fee": "—",
+                    "referral_fee": "—",
+                    "margin": 0,
+                    "score": 0,
+                    "verdict": "—",
                     "status": "Scanned",
                 })
 
-    columns = [
-        {"name": "Product", "id": "product"},
-        {"name": "Price", "id": "price"},
-        {"name": "MOQ", "id": "moq"},
-        {"name": "Lead Time", "id": "lead_time"},
-        {"name": "Supplier", "id": "supplier"},
-        {"name": "Source", "id": "source"},
-        {"name": "From", "id": "from"},
-        {"name": "Date", "id": "date"},
-        {"name": "Status", "id": "status"},
+    # Sort by feasibility score descending (best opportunities first)
+    rows.sort(key=lambda r: r["score"], reverse=True)
+
+    return rows
+
+
+def _build_products_html_table(rows):
+    """Build a styled HTML table for scored products (instead of dash DataTable)."""
+    headers = [
+        "Product", "Price", "Est. Sell Price", "FBA Fee", "Referral Fee",
+        "Est. Margin %", "Score", "Verdict",
+        "MOQ", "Lead Time", "Supplier", "Source", "From", "Date", "Status",
     ]
-    return columns, rows
+
+    header_style = {
+        "padding": "10px 12px",
+        "textAlign": "left",
+        "color": COLORS["text_muted"],
+        "fontSize": "0.7rem",
+        "fontWeight": "600",
+        "textTransform": "uppercase",
+        "letterSpacing": "0.05em",
+        "borderBottom": f"1px solid {COLORS['card_border']}",
+        "whiteSpace": "nowrap",
+    }
+
+    cell_style = {
+        "padding": "9px 12px",
+        "color": COLORS["text"],
+        "fontSize": "0.8rem",
+        "borderBottom": f"1px solid {COLORS['card_border']}",
+        "whiteSpace": "nowrap",
+    }
+
+    thead = html.Thead(html.Tr([html.Th(h, style=header_style) for h in headers]))
+
+    tbody_rows = []
+    for row in rows:
+        margin_val = row["margin"]
+        if isinstance(margin_val, (int, float)) and margin_val != 0:
+            if margin_val > 25:
+                margin_color = COLORS["success"]
+            elif margin_val > 15:
+                margin_color = COLORS["warning"]
+            else:
+                margin_color = COLORS["danger"]
+            margin_cell = html.Td(
+                f"{margin_val:.1f}%",
+                style={**cell_style, "color": margin_color, "fontWeight": "600"},
+            )
+        else:
+            margin_cell = html.Td("—", style=cell_style)
+
+        score_val = row["score"]
+        if isinstance(score_val, (int, float)) and score_val != 0:
+            if score_val >= 75:
+                score_color = COLORS["success"]
+            elif score_val >= 50:
+                score_color = COLORS["warning"]
+            else:
+                score_color = COLORS["danger"]
+            score_cell = html.Td(
+                str(score_val),
+                style={**cell_style, "color": score_color, "fontWeight": "700"},
+            )
+        else:
+            score_cell = html.Td("—", style=cell_style)
+
+        verdict_val = row["verdict"]
+        if verdict_val in ("GO", "MAYBE", "NO GO"):
+            verdict_cell = html.Td(
+                html.Span(verdict_val, style=_verdict_style(verdict_val)),
+                style=cell_style,
+            )
+        else:
+            verdict_cell = html.Td("—", style=cell_style)
+
+        tr = html.Tr([
+            html.Td(row["product"], style=cell_style),
+            html.Td(row["price"], style=cell_style),
+            html.Td(row["est_sell"], style=cell_style),
+            html.Td(row["fba_fee"], style=cell_style),
+            html.Td(row["referral_fee"], style=cell_style),
+            margin_cell,
+            score_cell,
+            verdict_cell,
+            html.Td(str(row["moq"]), style=cell_style),
+            html.Td(str(row["lead_time"]), style=cell_style),
+            html.Td(row["supplier"], style=cell_style),
+            html.Td(row["source"], style=cell_style),
+            html.Td(row["from"], style=cell_style),
+            html.Td(row["date"], style=cell_style),
+            html.Td(row["status"], style=cell_style),
+        ])
+        tbody_rows.append(tr)
+
+    table = html.Table(
+        [thead, html.Tbody(tbody_rows)],
+        style={
+            "width": "100%",
+            "borderCollapse": "collapse",
+            "background": COLORS["card"],
+            "borderRadius": "8px",
+            "overflow": "hidden",
+        },
+    )
+
+    return html.Div(table, style={"overflowX": "auto"})
+
+
+def _build_kpi_row(rows):
+    """Build KPI summary row above the products table."""
+    # Only count rows with actual scores (not scanned-only rows with score 0 and verdict "—")
+    scored_rows = [r for r in rows if isinstance(r["score"], (int, float)) and r["verdict"] in ("GO", "MAYBE", "NO GO")]
+
+    total_products = len(rows)
+    go_count = sum(1 for r in scored_rows if r["verdict"] == "GO")
+
+    if scored_rows:
+        avg_margin = sum(r["margin"] for r in scored_rows) / len(scored_rows)
+    else:
+        avg_margin = 0.0
+
+    best_name = scored_rows[0]["product"] if scored_rows else "—"
+
+    # Avg margin color
+    if avg_margin > 25:
+        margin_color = COLORS["success"]
+    elif avg_margin > 15:
+        margin_color = COLORS["warning"]
+    else:
+        margin_color = COLORS["danger"]
+
+    kpi_style = {
+        "display": "flex",
+        "gap": "16px",
+        "marginBottom": "16px",
+        "flexWrap": "wrap",
+    }
+
+    def _kpi_card(label, value, color):
+        return html.Div([
+            html.P(label, style={
+                "color": COLORS["text_muted"], "fontSize": "0.7rem",
+                "marginBottom": "2px", "textTransform": "uppercase",
+                "letterSpacing": "0.05em", "fontWeight": "600",
+            }),
+            html.H5(value, style={
+                "color": color, "fontWeight": "700", "marginBottom": "0",
+                "fontSize": "1.1rem",
+            }),
+        ], style={
+            "background": COLORS["card"],
+            "border": f"1px solid {COLORS['card_border']}",
+            "borderRadius": "8px",
+            "padding": "12px 18px",
+            "flex": "1",
+            "minWidth": "140px",
+        })
+
+    return html.Div([
+        _kpi_card("Total Products", str(total_products), COLORS["text"]),
+        _kpi_card("GO Products", str(go_count), COLORS["success"]),
+        _kpi_card("Avg Margin", f"{avg_margin:.1f}%", margin_color),
+        _kpi_card("Best Opportunity", best_name, COLORS["primary"]),
+    ], style=kpi_style)
 
 
 def _count_unscanned(messages):
@@ -229,7 +443,9 @@ def layout():
     unscanned = _count_unscanned(messages)
 
     message_cards = [_message_card(m) for m in messages]
-    columns, rows = _build_products_table(messages)
+    rows = _build_products_table(messages)
+    kpi_row = _build_kpi_row(rows)
+    products_html = _build_products_html_table(rows)
 
     # Filter buttons
     filter_bar = html.Div([
@@ -321,14 +537,15 @@ def layout():
                                   html.I(className="bi bi-info-circle me-2",
                                          style={"color": COLORS["info"]}),
                                   html.Span("Products from message text + AI image scans. "
-                                            "Scanned products show status \"Scanned\".",
+                                            "Auto-scored using the feasibility calculator. "
+                                            "Sorted by feasibility score (best first).",
                                             style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
                               ], style={
                                   "background": f"{COLORS['info']}10", "padding": "10px 14px",
                                   "borderRadius": "8px", "marginBottom": "16px",
                               }),
                               html.Div(id="inbox-products-container",
-                                       children=dark_table("inbox-products-table", columns, rows)),
+                                       children=[kpi_row, products_html]),
                           ]), "bi-table"),
             ]),
         ], className="grid-row grid-2"),
@@ -487,10 +704,11 @@ def handle_scan(scan_all_clicks, individual_clicks):
     else:
         status = ""
 
-    # Rebuild message feed and products table
+    # Rebuild message feed and products table with scoring
     messages = _load_inbox().get("messages", [])
     message_cards = [_message_card(m) for m in messages]
-    columns, rows = _build_products_table(messages)
-    products_table = dark_table("inbox-products-table", columns, rows)
+    rows = _build_products_table(messages)
+    kpi_row = _build_kpi_row(rows)
+    products_html = _build_products_html_table(rows)
 
-    return status, message_cards, products_table
+    return status, message_cards, [kpi_row, products_html]

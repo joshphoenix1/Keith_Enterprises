@@ -44,8 +44,8 @@ DEFAULT_ACCOUNTS = {
 REQUIRED_DEPS = ["dash", "plotly", "pandas", "dash_bootstrap_components", "anthropic"]
 
 PAGE_MODULES = [
-    "home", "inbox", "scanner", "tools", "products",
-    "calculator", "suppliers", "niches", "risks", "accounts", "health",
+    "home", "inbox", "scanner", "products",
+    "pipeline", "suppliers", "accounts", "health",
 ]
 
 DATA_FILES_LIST = {
@@ -55,6 +55,8 @@ DATA_FILES_LIST = {
     "inbox.json": {"messages": []},
     "scans.json": [],
     "accounts.json": DEFAULT_ACCOUNTS,
+    "pipeline.json": {"items": []},
+    "rules.json": {},
 }
 
 

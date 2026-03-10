@@ -225,5 +225,110 @@
         "output": 2174
       }
     }
+  },
+  {
+    "id": 4,
+    "filename": "vb12.webp",
+    "timestamp": "2026-03-10T02:46:59.888946",
+    "data": {
+      "is_product": true,
+      "product_name": "Good Vita-B12 Energy Boost Soft-Chews - Plump Pomegranate",
+      "brand": "The Good Vitamin Co",
+      "category": "Health & Household",
+      "description": "Vitamin B12 gummy soft-chews in plump pomegranate flavor, designed for energy boost support. Contains 90 soft-chews per bottle. Marketed as the No.1 Vitamin Gummy Brand in NZ Pharmacy.",
+      "ingredients": [],
+      "nutrition_facts": {
+        "serving_size": "Not visible",
+        "calories": "Not visible",
+        "other": {
+          "active_ingredient": "Vitamin B12"
+        }
+      },
+      "net_weight": "90 Soft-Chews",
+      "upc_barcode": null,
+      "claims": [
+        "Gluten Free",
+        "Natural Pectin",
+        "Dairy Free",
+        "Egg Free",
+        "Nut Free",
+        "Soy Free",
+        "Vegan Friendly",
+        "Halal Certified",
+        "No.1 Vitamin Gummy Brand in NZ Pharmacy"
+      ],
+      "warnings": [
+        "Free from Dairy, Egg, Nuts, Soy"
+      ],
+      "manufacturer": "The Good Vitamin Co, New Zealand",
+      "suggested_retail_price": null,
+      "amazon_category_guess": "Health & Household > Vitamins, Minerals & Supplements > Vitamin B12",
+      "key_selling_points": [
+        "No.1 Vitamin Gummy Brand in New Zealand Pharmacy",
+        "Vegan-friendly with natural pectin, no gelatin",
+        "Free from gluten, dairy, eggs, nuts, and soy - suitable for multiple dietary needs",
+        "Halal certified for broader consumer accessibility",
+        "Delicious pomegranate-flavored gummy soft-chews for easy daily vitamin intake"
+      ],
+      "estimated_competition": "High",
+      "notes": "Product is a dietary supplement. Features a light blue cap and contains visible pink/red gummy chews inside the clear bottle. Badge indicates No.1 status in NZ Pharmacy for vitamin gummy brand category.",
+      "_raw_response": "{\n  \"is_product\": true,\n  \"product_name\": \"Good Vita-B12 Energy Boost Soft-Chews - Plump Pomegranate\",\n  \"brand\": \"The Good Vitamin Co\",\n  \"category\": \"Health & Household\",\n  \"description\": \"Vitamin B12 gummy soft-chews in plump pomegranate flavor, designed for energy boost support. Contains 90 soft-chews per bottle. Marketed as the No.1 Vitamin Gummy Brand in NZ Pharmacy.\",\n  \"ingredients\": [],\n  \"nutrition_facts\": {\n    \"serving_size\": \"Not visible\",\n    \"calories\": \"Not visible\",\n    \"other\": {\n      \"active_ingredient\": \"Vitamin B12\"\n    }\n  },\n  \"net_weight\": \"90 Soft-Chews\",\n  \"upc_barcode\": null,\n  \"claims\": [\n    \"Gluten Free\",\n    \"Natural Pectin\",\n    \"Dairy Free\",\n    \"Egg Free\",\n    \"Nut Free\",\n    \"Soy Free\",\n    \"Vegan Friendly\",\n    \"Halal Certified\",\n    \"No.1 Vitamin Gummy Brand in NZ Pharmacy\"\n  ],\n  \"warnings\": [\n    \"Free from Dairy, Egg, Nuts, Soy\"\n  ],\n  \"manufacturer\": \"The Good Vitamin Co, New Zealand\",\n  \"suggested_retail_price\": null,\n  \"amazon_category_guess\": \"Health & Household > Vitamins, Minerals & Supplements > Vitamin B12\",\n  \"key_selling_points\": [\n    \"No.1 Vitamin Gummy Brand in New Zealand Pharmacy\",\n    \"Vegan-friendly with natural pectin, no gelatin\",\n    \"Free from gluten, dairy, eggs, nuts, and soy - suitable for multiple dietary needs\",\n    \"Halal certified for broader consumer accessibility\",\n    \"Delicious pomegranate-flavored gummy soft-chews for easy daily vitamin intake\"\n  ],\n  \"estimated_competition\": \"High\",\n  \"notes\": \"Product is a dietary supplement. Features a light blue cap and contains visible pink/red gummy chews inside the clear bottle. Badge indicates No.1 status in NZ Pharmacy for vitamin gummy brand category.\"\n}",
+      "_model_used": "claude-sonnet-4-6",
+      "_tokens_used": {
+        "input": 932,
+        "output": 573
+      }
+    }
+  },
+  {
+    "id": 5,
+    "filename": "b122.webp",
+    "timestamp": "2026-03-10T02:48:03.622436",
+    "data": {
+      "is_product": true,
+      "product_name": "Vitamin B12 50 High Dose",
+      "brand": "me today",
+      "category": "Health & Household",
+      "description": "High dose Vitamin B12 dietary supplement containing 50mcg Cyanocobalamin, designed for plant-based diet support. Comes in vegetarian capsule form.",
+      "ingredients": [
+        "Cyanocobalamin (Vitamin B12)"
+      ],
+      "nutrition_facts": {
+        "serving_size": "1 capsule daily",
+        "calories": "",
+        "other": {
+          "vitamin_b12": "50mcg",
+          "form": "Cyanocobalamin"
+        }
+      },
+      "net_weight": "180 Vege Caps",
+      "upc_barcode": null,
+      "claims": [
+        "vegetarian",
+        "vegan",
+        "plant-based",
+        "dietary supplement",
+        "high dose"
+      ],
+      "warnings": [],
+      "manufacturer": "me today",
+      "suggested_retail_price": null,
+      "amazon_category_guess": "Health & Household > Vitamins, Minerals & Supplements > Vitamin B12",
+      "key_selling_points": [
+        "High dose 50mcg Cyanocobalamin for maximum B12 support",
+        "Specifically formulated for plant-based and vegan diets",
+        "180 vegetarian capsules providing a 6-month supply with 1-daily dosing",
+        "Convenient once-daily formula",
+        "Suitable for vegans and vegetarians who may be B12 deficient"
+      ],
+      "estimated_competition": "High",
+      "notes": "Product is labeled as a dietary supplement. The amber glass bottle suggests a premium positioning. The '50' in the product name refers to the 50mcg dosage of Cyanocobalamin. Brand appears to be 'me today' with a registered trademark symbol.",
+      "_raw_response": "{\n  \"is_product\": true,\n  \"product_name\": \"Vitamin B12 50 High Dose\",\n  \"brand\": \"me today\",\n  \"category\": \"Health & Household\",\n  \"description\": \"High dose Vitamin B12 dietary supplement containing 50mcg Cyanocobalamin, designed for plant-based diet support. Comes in vegetarian capsule form.\",\n  \"ingredients\": [\"Cyanocobalamin (Vitamin B12)\"],\n  \"nutrition_facts\": {\n    \"serving_size\": \"1 capsule daily\",\n    \"calories\": \"\",\n    \"other\": {\n      \"vitamin_b12\": \"50mcg\",\n      \"form\": \"Cyanocobalamin\"\n    }\n  },\n  \"net_weight\": \"180 Vege Caps\",\n  \"upc_barcode\": null,\n  \"claims\": [\"vegetarian\", \"vegan\", \"plant-based\", \"dietary supplement\", \"high dose\"],\n  \"warnings\": [],\n  \"manufacturer\": \"me today\",\n  \"suggested_retail_price\": null,\n  \"amazon_category_guess\": \"Health & Household > Vitamins, Minerals & Supplements > Vitamin B12\",\n  \"key_selling_points\": [\n    \"High dose 50mcg Cyanocobalamin for maximum B12 support\",\n    \"Specifically formulated for plant-based and vegan diets\",\n    \"180 vegetarian capsules providing a 6-month supply with 1-daily dosing\",\n    \"Convenient once-daily formula\",\n    \"Suitable for vegans and vegetarians who may be B12 deficient\"\n  ],\n  \"estimated_competition\": \"High\",\n  \"notes\": \"Product is labeled as a dietary supplement. The amber glass bottle suggests a premium positioning. The '50' in the product name refers to the 50mcg dosage of Cyanocobalamin. Brand appears to be 'me today' with a registered trademark symbol.\"\n}",
+      "_model_used": "claude-sonnet-4-6",
+      "_tokens_used": {
+        "input": 734,
+        "output": 476
+      }
+    }
   }
 ]

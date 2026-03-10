@@ -33,23 +33,14 @@ def display_page(pathname):
     elif pathname == "/scanner":
         from pages.scanner import layout
         return layout()
-    elif pathname == "/tools":
-        from pages.tools import layout
-        return layout()
     elif pathname == "/products":
         from pages.products import layout
         return layout()
-    elif pathname == "/calculator":
-        from pages.calculator import layout
+    elif pathname == "/pipeline":
+        from pages.pipeline import layout
         return layout()
     elif pathname == "/suppliers":
         from pages.suppliers import layout
-        return layout()
-    elif pathname == "/niches":
-        from pages.niches import layout
-        return layout()
-    elif pathname == "/risks":
-        from pages.risks import layout
         return layout()
     elif pathname == "/accounts":
         from pages.accounts import layout
@@ -66,9 +57,8 @@ def display_page(pathname):
 
 # Import page modules to register their callbacks
 import pages.products
-import pages.calculator
+import pages.pipeline
 import pages.suppliers
-import pages.risks
 import pages.accounts
 import pages.inbox
 import pages.scanner

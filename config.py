@@ -24,12 +24,9 @@ PAGE_ORDER = [
     {"name": "Home", "path": "/", "icon": "bi-house-fill"},
     {"name": "Inbox", "path": "/inbox", "icon": "bi-chat-left-text"},
     {"name": "Scanner", "path": "/scanner", "icon": "bi-camera"},
-    {"name": "Tools", "path": "/tools", "icon": "bi-tools"},
     {"name": "Products", "path": "/products", "icon": "bi-box-seam"},
-    {"name": "Calculator", "path": "/calculator", "icon": "bi-calculator"},
+    {"name": "Pipeline", "path": "/pipeline", "icon": "bi-funnel"},
     {"name": "Suppliers", "path": "/suppliers", "icon": "bi-truck"},
-    {"name": "Niches", "path": "/niches", "icon": "bi-graph-up"},
-    {"name": "Risks", "path": "/risks", "icon": "bi-shield-exclamation"},
     {"name": "Accounts", "path": "/accounts", "icon": "bi-gear", "admin": True},
     {"name": "System Health", "path": "/health", "icon": "bi-heart-pulse", "admin": True},
 ]
