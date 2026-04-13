@@ -1,3 +1,13 @@
 __pycache__/
 *.pyc
 .env
+
+# Runtime data (regenerated on startup)
+data/health_log.json
+data/*.corrupt.*
+data/attachments/
+
+# WhatsApp bridge runtime
+whatsapp-bridge/node_modules/
+whatsapp-bridge/auth_state/
+whatsapp-bridge/media/

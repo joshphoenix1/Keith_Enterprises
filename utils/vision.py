@@ -44,17 +44,45 @@ Only return valid JSON array, no other text."""
 
 
 CLAUDE_CREDS_PATH = os.path.expanduser("~/.claude/.credentials.json")
+ACCOUNTS_PATH = os.path.join(DATA_DIR, "accounts.json")
+
+# Cache for validated token to avoid re-checking on every call
+_token_cache = {"token": None, "validated": False, "last_check": 0}
+_TOKEN_CHECK_INTERVAL = 300  # Re-validate every 5 minutes
+
+
+def _get_api_key_fallback():
+    """Load fallback API key from accounts.json if configured."""
+    try:
+        with open(ACCOUNTS_PATH) as f:
+            accounts = json.load(f)
+        return accounts.get("claude_code", {}).get("api_key", "")
+    except Exception:
+        return ""
 
 
 def get_oauth_token():
-    """Load Claude Code OAuth access token from ~/.claude/.credentials.json."""
+    """Load Claude Code OAuth access token from ~/.claude/.credentials.json.
+
+    Falls back to API key from accounts.json if OAuth is not available.
+    """
+    # Try OAuth first
     if os.path.exists(CLAUDE_CREDS_PATH):
-        with open(CLAUDE_CREDS_PATH) as f:
-            creds = json.load(f)
-        oauth = creds.get("claudeAiOauth", {})
-        token = oauth.get("accessToken", "")
-        if token:
-            return token
+        try:
+            with open(CLAUDE_CREDS_PATH) as f:
+                creds = json.load(f)
+            oauth = creds.get("claudeAiOauth", {})
+            token = oauth.get("accessToken", "")
+            if token:
+                return token
+        except (json.JSONDecodeError, IOError):
+            pass
+
+    # Fallback to API key from accounts config
+    api_key = _get_api_key_fallback()
+    if api_key:
+        return api_key
+
     return ""
 
 
@@ -63,8 +91,50 @@ def get_model():
     return "claude-sonnet-4-6"
 
 
+def validate_token(token=None):
+    """Validate that the current token works by making a minimal API call.
+
+    Returns dict with 'valid' bool and 'error' string if invalid.
+    Uses caching to avoid hammering the API.
+    """
+    import time as _time
+
+    now = _time.time()
+    if (_token_cache["validated"] and
+            _token_cache["token"] == (token or get_oauth_token()) and
+            now - _token_cache["last_check"] < _TOKEN_CHECK_INTERVAL):
+        return {"valid": True}
+
+    token = token or get_oauth_token()
+    if not token:
+        return {"valid": False, "error": "No token or API key available"}
+
+    try:
+        client = anthropic.Anthropic(api_key=token, timeout=5.0)
+        # Minimal call to check auth — count tokens on a tiny string
+        client.messages.count_tokens(
+            model=get_model(),
+            messages=[{"role": "user", "content": "test"}],
+        )
+        _token_cache["token"] = token
+        _token_cache["validated"] = True
+        _token_cache["last_check"] = now
+        return {"valid": True}
+    except anthropic.AuthenticationError:
+        _token_cache["validated"] = False
+        _token_cache["last_check"] = now  # Don't retry for 5 min
+        return {"valid": False, "error": "Token is invalid or expired. Run 'claude auth' or update API key in Accounts."}
+    except Exception as e:
+        _token_cache["last_check"] = now  # Don't retry for 5 min on any failure
+        return {"valid": False, "error": f"Could not validate token: {e}"}
+
+
 def get_client():
-    """Create an Anthropic client using Claude Code OAuth."""
+    """Create an Anthropic client using Claude Code OAuth or fallback API key.
+
+    Tries OAuth token first, then API key from accounts config.
+    Includes basic retry logic for transient failures.
+    """
     token = get_oauth_token()
     if not token:
         return None

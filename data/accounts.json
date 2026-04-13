@@ -17,6 +17,7 @@
   "claude_code": {
     "enabled": true,
     "model": "claude-sonnet-4-6",
+    "api_key": "",
     "process_on_ingest": true,
     "auto_process": true,
     "tasks": [
@@ -28,11 +29,11 @@
     ]
   },
   "whatsapp": {
-    "enabled": false,
+    "enabled": true,
+    "bridge_url": "http://localhost:8085",
+    "api_key": "keith-enterprises-wa-key",
     "phone_number": "",
-    "business_name": "",
-    "api_key": "",
-    "webhook_url": "",
+    "auto_process_images": true,
     "notifications": true
   },
   "email": {

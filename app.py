@@ -1,7 +1,13 @@
+import json
+import logging
 import dash
 from dash import html, dcc, callback, Input, Output
+from flask import request, jsonify
 from config import COLORS, APP_NAME, APP_PORT
 from components.sidebar import create_sidebar
+
+logging.basicConfig(level=logging.INFO,
+                    format="%(asctime)s %(name)s %(levelname)s %(message)s")
 
 app = dash.Dash(
     __name__,
@@ -59,6 +65,71 @@ import pages.accounts
 import pages.inbox
 import pages.scanner
 import pages.health
+
+
+# ── WhatsApp Webhook (Green API) ──
+# Green API sends POST requests for incoming messages
+
+server = app.server
+
+
+@server.route("/api/whatsapp/webhook", methods=["POST"])
+def whatsapp_webhook_receive():
+    """Handle incoming WhatsApp messages from Green API."""
+    from utils.whatsapp import process_webhook_payload, trigger_auto_process
+    import os
+
+    wa_logger = logging.getLogger("keith.whatsapp.webhook")
+
+    # Check if WhatsApp is enabled
+    accounts_path = os.path.join(os.path.dirname(__file__), "data", "accounts.json")
+    auto_process = True
+    try:
+        with open(accounts_path) as f:
+            accounts = json.load(f)
+        wa_config = accounts.get("whatsapp", {})
+        if not wa_config.get("enabled"):
+            return "OK", 200  # Silently accept but don't process
+        auto_process = wa_config.get("auto_process_images", True)
+    except Exception:
+        pass
+
+    # Process the payload
+    try:
+        payload = request.get_json()
+        if not payload:
+            return "OK", 200
+
+        processed = process_webhook_payload(payload)
+
+        # Auto-process images with Claude AI if enabled
+        if auto_process and processed:
+            import threading
+            msg_ids = [m["id"] for m in processed
+                       if any(a.get("type") == "image" for a in m.get("attachments", []))]
+            if msg_ids:
+                t = threading.Thread(target=trigger_auto_process, args=(msg_ids,), daemon=True)
+                t.start()
+
+        wa_logger.info("Processed %d incoming WhatsApp message(s)", len(processed))
+
+    except Exception as e:
+        wa_logger.error("Error processing webhook: %s", e)
+
+    return "OK", 200
+
+
+@server.route("/api/whatsapp/send", methods=["POST"])
+def whatsapp_send_message():
+    """API endpoint to send a WhatsApp message from the dashboard."""
+    from utils.whatsapp import send_message
+
+    data = request.get_json()
+    if not data or not data.get("to") or not data.get("message"):
+        return jsonify({"error": "Missing 'to' and/or 'message' fields"}), 400
+
+    result = send_message(data["to"], data["message"])
+    return jsonify(result), 200 if result.get("success") else 500
 
 
 if __name__ == "__main__":

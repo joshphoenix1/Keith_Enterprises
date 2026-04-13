@@ -1,5 +1,5 @@
 APP_NAME = "Keith Enterprises"
-APP_PORT = 5011
+APP_PORT = 8080
 
 COLORS = {
     "bg": "#0f1117",

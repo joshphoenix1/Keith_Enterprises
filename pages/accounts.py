@@ -1,6 +1,6 @@
 import json
 import os
-from dash import html, dcc, callback, Input, Output, State
+from dash import html, dcc, callback, Input, Output, State, ctx
 from config import COLORS
 from components.forms import styled_input, styled_dropdown, form_group
 from utils.rules import load_rules, save_rules
@@ -67,6 +67,78 @@ def _pipeline_badge(source, target, color):
             "padding": "4px 10px", "borderRadius": "6px", "fontSize": "0.75rem", "fontWeight": "600",
         }),
     ], style={"display": "inline-flex", "alignItems": "center", "marginRight": "16px", "marginBottom": "8px"})
+
+
+def _wa_connection_status():
+    """Check WhatsApp bridge status and show QR code or connection info at page load."""
+    try:
+        from utils.whatsapp import test_connection, get_qr_code
+        status = test_connection()
+
+        if status.get("connected"):
+            phone = status.get("phone_number", "")
+            return html.Div([
+                html.Div([
+                    html.I(className="bi bi-check-circle-fill me-2",
+                           style={"color": COLORS["success"], "fontSize": "1.1rem"}),
+                    html.Span("WhatsApp Connected", style={
+                        "color": COLORS["success"], "fontWeight": "700", "marginRight": "16px"}),
+                    html.Span(f"Phone: +{phone}" if phone else "",
+                              style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+                ], style={"display": "flex", "alignItems": "center"}),
+            ], style={
+                "background": f"{COLORS['success']}12", "border": f"1px solid {COLORS['success']}40",
+                "padding": "14px 18px", "borderRadius": "8px", "marginBottom": "16px",
+            })
+
+        # Not connected — try to show QR code
+        qr = get_qr_code()
+        if qr.get("qr"):
+            return html.Div([
+                html.Div([
+                    html.I(className="bi bi-qr-code me-2",
+                           style={"color": "#25D366", "fontSize": "1.1rem"}),
+                    html.Span("Scan QR Code to Connect", style={
+                        "color": "#25D366", "fontWeight": "700"}),
+                ], style={"marginBottom": "12px"}),
+                html.P([
+                    html.Span("Android: ", style={"fontWeight": "600", "color": COLORS["text"]}),
+                    "Open WhatsApp ",
+                    html.Span("\u22EE", style={"fontWeight": "700", "fontSize": "1rem"}),
+                    " (top right) \u2192 Linked Devices \u2192 Link a Device",
+                ], style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+                html.Div([
+                    html.Img(src=qr["qr"],
+                             style={"maxWidth": "280px", "borderRadius": "12px",
+                                    "border": "2px solid #25D366"}),
+                ], style={"textAlign": "center", "padding": "10px 0"}),
+            ], style={
+                "background": COLORS["card"], "padding": "20px",
+                "borderRadius": "12px",
+                "border": f"1px solid {COLORS['card_border']}", "marginBottom": "16px",
+            })
+
+        # Bridge not running or other error
+        error = status.get("error", qr.get("error", ""))
+        return html.Div([
+            html.I(className="bi bi-exclamation-triangle-fill me-2",
+                   style={"color": COLORS["warning"], "fontSize": "1.1rem"}),
+            html.Span("WhatsApp Not Connected", style={
+                "color": COLORS["warning"], "fontWeight": "700", "marginRight": "12px"}),
+            html.Span(error, style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+        ], style={
+            "background": f"{COLORS['warning']}12", "border": f"1px solid {COLORS['warning']}40",
+            "padding": "14px 18px", "borderRadius": "8px", "marginBottom": "16px",
+        })
+    except Exception as e:
+        return html.Div([
+            html.I(className="bi bi-exclamation-triangle-fill me-2",
+                   style={"color": COLORS["warning"]}),
+            html.Span(f"Could not check WhatsApp status: {e}",
+                      style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+        ], style={
+            "padding": "14px 18px", "borderRadius": "8px", "marginBottom": "16px",
+        })
 
 
 def _oauth_status_banner():
@@ -177,6 +249,12 @@ def layout():
             html.Span("claude-sonnet-4-6", style={"color": COLORS["primary"], "fontSize": "0.8rem",
                                                     "fontWeight": "600"}),
         ], style={"marginBottom": "16px"}),
+        html.Div([
+            form_group("API Key (fallback if OAuth disconnects)",
+                       styled_input("acct-cl-apikey", "sk-ant-... (optional)", type="password",
+                                    value=cl.get("api_key", "")),
+                       "Only needed if OAuth token expires — leave blank to use OAuth only"),
+        ], style={"marginBottom": "8px"}),
         _toggle_row("Process on Ingest", "acct-cl-autoproc", cl.get("process_on_ingest", True)),
         _toggle_row("Auto-Process Scheduled", "acct-cl-autorun", cl.get("auto_process", False)),
         html.Div([
@@ -285,27 +363,62 @@ def layout():
 
     # ── WhatsApp Section ──
     whatsapp_form = html.Div([
-        _section_header("bi-whatsapp", "WhatsApp",
-                        "Ingest supplier messages, order confirmations, and negotiation threads",
+        _section_header("bi-whatsapp", "WhatsApp (Personal Account)",
+                        "Connect your personal WhatsApp to receive supplier messages and product images",
                         "#25D366"),
+        html.Div([
+            html.I(className="bi bi-info-circle me-2", style={"color": "#25D366"}),
+            html.Span("Self-hosted WhatsApp bridge (open source Baileys). Your data stays on your server. ",
+                      style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+            html.Br(),
+            html.Span("Start bridge: ", style={"color": COLORS["text"], "fontSize": "0.8rem", "fontWeight": "600"}),
+            html.Code("docker compose -f docker-compose.whatsapp.yml up -d",
+                      style={"color": COLORS["primary"], "fontSize": "0.75rem"}),
+            html.Span(" — then click Show QR Code below and scan with your phone.",
+                      style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+        ], style={
+            "background": "#25D36610", "padding": "12px 16px",
+            "borderRadius": "8px", "marginBottom": "16px", "lineHeight": "1.8",
+            "border": "1px solid #25D36630",
+        }),
         _toggle_row("WhatsApp Integration", "acct-wa-enabled", wa.get("enabled", False)),
         html.Div([
-            form_group("Phone Number",
+            form_group("Bridge URL",
+                       styled_input("acct-wa-bridgeurl", "http://localhost:8085", type="text",
+                                    value=wa.get("bridge_url", "http://localhost:8085")),
+                       "Where the WhatsApp bridge Docker container is running"),
+            form_group("Your Phone Number",
                        styled_input("acct-wa-phone", "+1 (555) 000-0000", type="text",
-                                    value=wa.get("phone_number", ""))),
-            form_group("Business Name",
-                       styled_input("acct-wa-business", "My Business", type="text",
-                                    value=wa.get("business_name", ""))),
+                                    value=wa.get("phone_number", "")),
+                       "The personal number you'll link"),
         ], className="grid-row grid-2"),
-        html.Div([
-            form_group("API Key",
-                       styled_input("acct-wa-apikey", "Enter your API key", type="password",
-                                    value=wa.get("api_key", ""))),
-            form_group("Webhook URL",
-                       styled_input("acct-wa-webhook", "https://...", type="text",
-                                    value=wa.get("webhook_url", ""))),
-        ], className="grid-row grid-2"),
+        _toggle_row("Auto-Process Images with Claude AI", "acct-wa-autoprocess",
+                     wa.get("auto_process_images", True)),
         _toggle_row("Send Notifications", "acct-wa-notify", wa.get("notifications", True)),
+
+        # WhatsApp connection status / QR code (rendered at page load)
+        _wa_connection_status(),
+
+        # Action buttons
+        html.Div([
+            html.Button([
+                html.I(className="bi bi-qr-code me-2"),
+                "Refresh QR Code",
+            ], id="acct-wa-create-btn", className="btn-outline-dark",
+               style={"marginRight": "12px"}),
+            html.Button([
+                html.I(className="bi bi-broadcast me-2"),
+                "Test Connection",
+            ], id="acct-wa-test-btn", className="btn-outline-dark",
+               style={"marginRight": "12px"}),
+            html.Button([
+                html.I(className="bi bi-send me-2"),
+                "Send Test Message",
+            ], id="acct-wa-sendtest-btn", className="btn-outline-dark"),
+        ], style={"marginTop": "16px"}),
+
+        # Single output area for all WA actions
+        html.Div(id="acct-wa-action-result", style={"marginTop": "16px"}),
     ])
 
     # ── Email Section ──
@@ -515,7 +628,7 @@ def layout():
 _TOGGLE_IDS = [
     "acct-cl-enabled", "acct-cl-autoproc", "acct-cl-autorun",
     "acct-sa-enabled", "acct-sa-autosync",
-    "acct-wa-enabled", "acct-wa-notify",
+    "acct-wa-enabled", "acct-wa-autoprocess", "acct-wa-notify",
     "acct-em-enabled", "acct-em-tls", "acct-em-notify",
     "acct-gd-enabled", "acct-gd-autobackup",
     "acct-rule-ar-enabled", "acct-rule-aa-enabled", "acct-rule-al-notify",
@@ -551,15 +664,15 @@ for _tid in _TOGGLE_IDS:
     State("acct-sa-password", "value"),
     # Claude AI
     State("acct-cl-enabled", "value"),
+    State("acct-cl-apikey", "value"),
     State("acct-cl-autoproc", "value"),
     State("acct-cl-autorun", "value"),
     State("acct-cl-tasks", "value"),
-    # WhatsApp
+    # WhatsApp (Bridge)
     State("acct-wa-enabled", "value"),
+    State("acct-wa-bridgeurl", "value"),
     State("acct-wa-phone", "value"),
-    State("acct-wa-business", "value"),
-    State("acct-wa-apikey", "value"),
-    State("acct-wa-webhook", "value"),
+    State("acct-wa-autoprocess", "value"),
     State("acct-wa-notify", "value"),
     # Email
     State("acct-em-enabled", "value"),
@@ -597,8 +710,8 @@ for _tid in _TOGGLE_IDS:
 )
 def save_accounts(n_clicks,
                   sa_enabled, sa_apikey, sa_plan, sa_webhook, sa_gsheet, sa_autosync, sa_freq, sa_channels, sa_email, sa_password,
-                  cl_enabled, cl_autoproc, cl_autorun, cl_tasks,
-                  wa_enabled, wa_phone, wa_business, wa_apikey, wa_webhook, wa_notify,
+                  cl_enabled, cl_api_key, cl_autoproc, cl_autorun, cl_tasks,
+                  wa_enabled, wa_bridgeurl, wa_phone, wa_autoprocess, wa_notify,
                   em_enabled, em_provider, em_address, em_smtp, em_port, em_user, em_pass, em_tls, em_notify,
                   gd_enabled, gd_email, gd_folder, gd_clientid, gd_secret, gd_autobackup, gd_frequency,
                   rule_ar_enabled, rule_ar_margin, rule_ar_qty, rule_ar_maxprice,
@@ -624,16 +737,17 @@ def save_accounts(n_clicks,
         "claude_code": {
             "enabled": bool(cl_enabled),
             "model": "claude-sonnet-4-6",
+            "api_key": cl_api_key or "",
             "process_on_ingest": bool(cl_autoproc),
             "auto_process": bool(cl_autorun),
             "tasks": cl_tasks or [],
         },
         "whatsapp": {
             "enabled": bool(wa_enabled),
+            "bridge_url": wa_bridgeurl or "http://localhost:8085",
+            "api_key": "keith-enterprises-wa-key",
             "phone_number": wa_phone or "",
-            "business_name": wa_business or "",
-            "api_key": wa_apikey or "",
-            "webhook_url": wa_webhook or "",
+            "auto_process_images": bool(wa_autoprocess),
             "notifications": bool(wa_notify),
         },
         "email": {
@@ -691,3 +805,74 @@ def save_accounts(n_clicks,
         html.Span(f"Settings saved! {sources}/4 data sources connected, Claude Code {ai}. Filtering rules updated.",
                   style={"color": COLORS["success"], "fontWeight": "500"}),
     ], style={"fontSize": "0.9rem"})
+
+
+@callback(
+    Output("acct-wa-action-result", "children"),
+    Input("acct-wa-create-btn", "n_clicks"),
+    Input("acct-wa-test-btn", "n_clicks"),
+    Input("acct-wa-sendtest-btn", "n_clicks"),
+    State("acct-wa-phone", "value"),
+    prevent_initial_call=True,
+)
+def handle_whatsapp_actions(create_clicks, test_clicks, send_clicks, phone_number):
+    triggered = ctx.triggered_id
+
+    def _badge(msg, color, icon):
+        return html.Div([
+            html.I(className=f"bi {icon} me-2", style={"color": color}),
+            html.Span(msg, style={"color": color, "fontWeight": "500", "fontSize": "0.85rem"}),
+        ], style={"background": f"{color}15", "padding": "10px 14px", "borderRadius": "8px"})
+
+    if triggered == "acct-wa-create-btn":
+        try:
+            from utils.whatsapp import get_qr_code
+            result = get_qr_code()
+            if result.get("connected"):
+                return _badge(f"Already connected! Phone: {result.get('phone', '')}", COLORS["success"], "bi-check-circle-fill")
+            elif result.get("qr"):
+                return html.Div([
+                    _badge("Scan the QR code below with your WhatsApp", COLORS["warning"], "bi-exclamation-triangle"),
+                    html.Div([
+                        html.P([
+                            html.Span("Android: ", style={"fontWeight": "600", "color": COLORS["text"]}),
+                            "Open WhatsApp \u22EE (top right) \u2192 Linked Devices \u2192 Link a Device",
+                        ], style={"color": COLORS["text_muted"], "fontSize": "0.8rem", "marginBottom": "12px"}),
+                        html.Img(src=result["qr"],
+                                 style={"maxWidth": "280px", "borderRadius": "12px",
+                                        "border": "2px solid #25D366"}),
+                    ], style={"textAlign": "center", "padding": "16px",
+                              "background": COLORS["card"], "borderRadius": "12px",
+                              "border": f"1px solid {COLORS['card_border']}", "marginTop": "12px"}),
+                ])
+            else:
+                return _badge(result.get("error", "Unknown error"), COLORS["danger"], "bi-x-circle-fill")
+        except Exception as e:
+            return _badge(f"Error: {e}", COLORS["danger"], "bi-x-circle-fill")
+
+    elif triggered == "acct-wa-test-btn":
+        try:
+            from utils.whatsapp import test_connection
+            result = test_connection()
+            if result.get("connected"):
+                phone = result.get("phone_number", "")
+                return _badge(f"Connected! Phone: +{phone}" if phone else "Connected!", COLORS["success"], "bi-check-circle-fill")
+            else:
+                return _badge(result.get("error", "Unknown error"), COLORS["danger"], "bi-x-circle-fill")
+        except Exception as e:
+            return _badge(f"Error: {e}", COLORS["danger"], "bi-x-circle-fill")
+
+    elif triggered == "acct-wa-sendtest-btn":
+        if not phone_number:
+            return _badge("Enter your phone number first.", COLORS["warning"], "bi-exclamation-triangle")
+        try:
+            from utils.whatsapp import send_message
+            result = send_message(phone_number, "Keith Enterprises test — WhatsApp integration is working!")
+            if result.get("success"):
+                return _badge(f"Test message sent to {phone_number}!", COLORS["success"], "bi-check-circle-fill")
+            else:
+                return _badge(f"Failed: {result.get('error', 'Unknown')}", COLORS["danger"], "bi-x-circle-fill")
+        except Exception as e:
+            return _badge(f"Error: {e}", COLORS["danger"], "bi-x-circle-fill")
+
+    return ""

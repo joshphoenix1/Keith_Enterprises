@@ -26,8 +26,9 @@ DEFAULT_ACCOUNTS = {
         "tasks": ["summarize", "extract_metrics", "sentiment"],
     },
     "whatsapp": {
-        "enabled": False, "phone_number": "", "business_name": "",
-        "api_key": "", "webhook_url": "", "notifications": True,
+        "enabled": False, "bridge_url": "http://localhost:8085",
+        "api_key": "keith-enterprises-wa-key", "phone_number": "",
+        "auto_process_images": True, "notifications": True,
     },
     "email": {
         "enabled": False, "provider": "Gmail", "email_address": "",
@@ -139,6 +140,9 @@ class HealthChecker:
 
         # Category 6: OAuth / credentials
         checks.extend(self._check_oauth())
+
+        # Category 6b: WhatsApp connection
+        checks.extend(self._check_whatsapp())
 
         # Category 7: Port / process
         checks.extend(self._check_port())
@@ -391,10 +395,40 @@ class HealthChecker:
                 results.append(self._check_result(
                     "oauth:token", "oauth", "pass",
                     f"OAuth token present ({masked})"))
+
+                # Validate token actually works
+                try:
+                    from utils.vision import validate_token
+                    validation = validate_token(token)
+                    if validation.get("valid"):
+                        results.append(self._check_result(
+                            "oauth:validation", "oauth", "pass",
+                            "Token validated successfully"))
+                    else:
+                        results.append(self._check_result(
+                            "oauth:validation", "oauth", "warn",
+                            f"Token may be expired: {validation.get('error', '')}"))
+                except Exception as e:
+                    results.append(self._check_result(
+                        "oauth:validation", "oauth", "warn",
+                        f"Could not validate token: {e}"))
             else:
-                results.append(self._check_result(
-                    "oauth:token", "oauth", "warn",
-                    "Credentials file exists but no accessToken found"))
+                # Check for API key fallback
+                try:
+                    from utils.vision import _get_api_key_fallback
+                    api_key = _get_api_key_fallback()
+                    if api_key:
+                        results.append(self._check_result(
+                            "oauth:token", "oauth", "pass",
+                            "No OAuth token but API key fallback is configured"))
+                    else:
+                        results.append(self._check_result(
+                            "oauth:token", "oauth", "warn",
+                            "No OAuth token and no API key fallback"))
+                except Exception:
+                    results.append(self._check_result(
+                        "oauth:token", "oauth", "warn",
+                        "Credentials file exists but no accessToken found"))
 
         except json.JSONDecodeError:
             results.append(self._check_result(
@@ -403,6 +437,55 @@ class HealthChecker:
             results.append(self._check_result(
                 "oauth:token", "oauth", "fail",
                 "Cannot read token — credentials file corrupt"))
+
+        return results
+
+    # ── Category 6b: WhatsApp ──
+
+    def _check_whatsapp(self):
+        results = []
+        try:
+            with open(os.path.join(DATA_DIR, "accounts.json")) as f:
+                accounts = json.load(f)
+            wa = accounts.get("whatsapp", {})
+
+            if not wa.get("enabled"):
+                results.append(self._check_result(
+                    "whatsapp:status", "whatsapp", "pass",
+                    "WhatsApp integration disabled (not configured)"))
+                return results
+
+            # Check required fields
+            if not wa.get("bridge_url"):
+                results.append(self._check_result(
+                    "whatsapp:bridge_url", "whatsapp", "warn",
+                    "WhatsApp enabled but no bridge URL configured"))
+            elif not wa.get("api_key"):
+                results.append(self._check_result(
+                    "whatsapp:api_key", "whatsapp", "warn",
+                    "WhatsApp enabled but no API key configured"))
+            else:
+                # Try a quick connection test
+                try:
+                    from utils.whatsapp import test_connection
+                    result = test_connection()
+                    if result.get("connected"):
+                        phone = result.get("phone_number", "")
+                        results.append(self._check_result(
+                            "whatsapp:connection", "whatsapp", "pass",
+                            f"Connected — {phone}"))
+                    else:
+                        results.append(self._check_result(
+                            "whatsapp:connection", "whatsapp", "warn",
+                            f"Connection failed: {result.get('error', 'unknown')}"))
+                except Exception as e:
+                    results.append(self._check_result(
+                        "whatsapp:connection", "whatsapp", "warn",
+                        f"Could not test connection: {e}"))
+        except Exception:
+            results.append(self._check_result(
+                "whatsapp:status", "whatsapp", "pass",
+                "WhatsApp config not found (not configured)"))
 
         return results
 

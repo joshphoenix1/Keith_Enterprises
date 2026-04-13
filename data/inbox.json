@@ -1,106 +1,169 @@
 {
   "messages": [
     {
-      "id": 1, "source": "whatsapp", "from": "+1 555-8821",
-      "subject": "Got 500 units Nature's Bounty D3",
-      "date": "2026-03-10 09:15", "read": false,
-      "body": "Hey, I've got 500 units of Nature's Bounty D3 5000 IU 240ct. Can do $4.20/unit. Good til March 12. Let me know ASAP, got another buyer interested.",
-      "products": [
-        {"name": "Nature's Bounty Vitamin D3 5000 IU (240ct)", "upc": "074312516825", "price_offered": 4.20, "quantity": 500, "category": "OTC", "expiry": "2026-03-12 17:00"}
-      ],
+      "id": 11,
+      "source": "whatsapp",
+      "from": "+140029506679039@lid",
+      "sender_name": "Brooks",
+      "subject": "Huge!!",
+      "body": "Huge!!",
+      "date": "2026-04-13 04:17",
+      "read": false,
+      "products": [],
       "attachments": [],
-      "images_scanned": false
+      "images_scanned": false,
+      "wa_message_id": "3ACDE36DA28905EBC01E",
+      "wa_chat_id": "140029506679039@lid"
     },
     {
-      "id": 2, "source": "email", "from": "clearance@suppliersdirect.com",
-      "subject": "Dove Body Wash 6-packs — 300 units available",
-      "date": "2026-03-09 14:30", "read": true,
-      "body": "We're clearing out 300 units of Dove Deep Moisture Body Wash 24oz 6-packs. Price is $5.80 per 6-pack. Product is in great condition, long expiry. Can hold until March 14. Let me know if you want photos of the lot.",
-      "products": [
-        {"name": "Dove Body Wash Deep Moisture (24 oz, 6-pack)", "upc": "011111024564", "price_offered": 5.80, "quantity": 300, "category": "HBA", "expiry": "2026-03-14 12:00"}
-      ],
-      "attachments": [
-        {"filename": "dove_lot_photo.jpg", "type": "image", "path": "data/attachments/dove_lot_photo.jpg"}
-      ],
-      "images_scanned": false
-    },
-    {
-      "id": 3, "source": "whatsapp", "from": "+1 555-3347",
-      "subject": "Energizer AA 48-packs, big lot",
-      "date": "2026-03-08 11:00", "read": true,
-      "body": "I have 1000 units of Energizer MAX AA 48-packs. Looking to move them quick at $6.50/unit. Expiry on the batteries is 2032. Need answer by tomorrow. Can deliver to your warehouse.",
-      "products": [
-        {"name": "Energizer MAX AA Batteries (48-pack)", "upc": "039800109965", "price_offered": 6.50, "quantity": 1000, "category": "Electronics", "expiry": "2026-03-11 18:00"}
-      ],
+      "id": 10,
+      "source": "whatsapp",
+      "from": "+140029506679039@lid",
+      "sender_name": "Brooks",
+      "subject": "Received message (reactionMessage)",
+      "body": "Received message (reactionMessage)",
+      "date": "2026-04-13 04:17",
+      "read": false,
+      "products": [],
       "attachments": [],
-      "images_scanned": false
+      "images_scanned": false,
+      "wa_message_id": "3A84C36668B52D67738E",
+      "wa_chat_id": "140029506679039@lid"
     },
     {
-      "id": 4, "source": "email", "from": "overstock@toysinbulk.net",
-      "subject": "NERF Blasters + Hot Wheels overstock",
-      "date": "2026-03-10 08:00", "read": false,
-      "body": "Morning! We've got overstock on two items:\n\n1) NERF Elite 2.0 Eaglepoint RD-8 — 250 units at $8.50 each\n2) Hot Wheels 20-Car Gift Packs — 400 units at $7.25 each\n\nAll brand new, sealed boxes. Can hold til March 15 on the NERF and March 19 on Hot Wheels. Happy to send pallet photos. Volume discount possible if you take both.",
-      "products": [
-        {"name": "NERF Elite 2.0 Eaglepoint RD-8 Blaster", "upc": "630509947867", "price_offered": 8.50, "quantity": 250, "category": "Toys", "expiry": "2026-03-15 17:00"},
-        {"name": "Hot Wheels 20-Car Gift Pack (Styles May Vary)", "upc": "191726402619", "price_offered": 7.25, "quantity": 400, "category": "Toys", "expiry": "2026-03-19 17:00"}
-      ],
-      "attachments": [
-        {"filename": "nerf_pallet.jpg", "type": "image", "path": "data/attachments/nerf_pallet.jpg"},
-        {"filename": "hotwheels_cases.jpg", "type": "image", "path": "data/attachments/hotwheels_cases.jpg"}
-      ],
-      "images_scanned": false
-    },
-    {
-      "id": 5, "source": "whatsapp", "from": "+1 555-6623",
-      "subject": "Tide Pods 42ct — 600 units",
-      "date": "2026-03-09 09:00", "read": true,
-      "body": "Got 600 units Tide Pods 42ct. Asking $5.25/unit. Warehouse clearance, need them gone by March 13. All cases sealed, good dates. Can send UPC photos.",
-      "products": [
-        {"name": "Tide Pods Laundry Detergent (42ct)", "upc": "022000159748", "price_offered": 5.25, "quantity": 600, "category": "Household", "expiry": "2026-03-13 17:00"}
-      ],
+      "id": 9,
+      "source": "whatsapp",
+      "from": "+140029506679039@lid",
+      "sender_name": "Brooks",
+      "subject": "https://www.amazon.com.au/Supplement-Nicotinamide-Riboside-Resveratrol-Quercetin...",
+      "body": "https://www.amazon.com.au/Supplement-Nicotinamide-Riboside-Resveratrol-Quercetin/dp/B0DQ4GJYJG/ref=sr_1_2_sspa?crid=1F7QQDCLNDI2O&dib=eyJ2IjoiMSJ9.ylXXAuVbsdQxeAhPyyWQdd9acU7-nN8UXBDT_STyA_nv69ejr1atv9WmVUVi5joQSZsn_RYVzNu4Bq-5dMxB6R27jOktaa-GnSslHo6xhebmSrWqdnZZKlzkIeTQht2gpL2VJ4S1gwiKn_dYddhLGAlee-zXxzsz1ZI3iCa9h9IQnQL9UGMDbW095MlsWiK79C-AzbnY4ER1EjBUdmuGEUU_t3F8WswtVmE7JNmV-nkhhnbMQU73p4rv-vG2s0SZmajOcHk3GFfDQA0D2etZmFvjLqahhPHMpqZhZTlsMs8._NoJG80FpG5yjT7O5BHDUFNn2l6DogOHPTK70w5xFbc&dib_tag=se&keywords=nad+supplement&qid=1776053755&sprefix=NAD%2Caps%2C318&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+      "date": "2026-04-13 04:16",
+      "read": false,
+      "products": [],
       "attachments": [],
-      "images_scanned": false
+      "images_scanned": false,
+      "wa_message_id": "3AD2DD2223AD06AA6F18",
+      "wa_chat_id": "140029506679039@lid"
     },
     {
-      "id": 6, "source": "email", "from": "surplus@toolwarehouse.net",
-      "subject": "DEWALT 20V Drill Kits — warehouse surplus",
-      "date": "2026-03-09 15:20", "read": true,
-      "body": "We have 75 DEWALT 20V MAX Cordless Drill/Driver Kits (DCD771C2) from a cancelled order. Asking $42 per kit. All new in box with full manufacturer warranty. Available until March 18. Can provide serial number ranges for warranty verification.",
-      "products": [
-        {"name": "DEWALT 20V MAX Cordless Drill/Driver Kit (DCD771C2)", "upc": "885911548502", "price_offered": 42.00, "quantity": 75, "category": "Tools", "expiry": "2026-03-18 17:00"}
-      ],
-      "attachments": [
-        {"filename": "dewalt_lot.jpg", "type": "image", "path": "data/attachments/dewalt_lot.jpg"},
-        {"filename": "dewalt_serial_range.pdf", "type": "document", "path": "data/attachments/dewalt_serial_range.pdf"}
-      ],
-      "images_scanned": false
-    },
-    {
-      "id": 7, "source": "whatsapp", "from": "+1 555-4490",
-      "subject": "L'Oreal shampoo and Pampers available",
-      "date": "2026-03-10 10:45", "read": false,
-      "body": "Two deals today:\n\n- L'Oreal Elvive Total Repair 5 Shampoo 12.6oz, 800 units at $1.95 each. Hold til March 16.\n- Pampers Swaddlers Size 3 168ct, 200 units at $14.50 each. Hold til March 20.\n\nBoth from a retail return center, all sealed and sellable. Lmk",
-      "products": [
-        {"name": "L'Oreal Paris Elvive Total Repair 5 Shampoo (12.6 oz)", "upc": "071249210567", "price_offered": 1.95, "quantity": 800, "category": "HBA", "expiry": "2026-03-16 12:00"},
-        {"name": "Pampers Swaddlers Size 3 (168ct)", "upc": "037000848561", "price_offered": 14.50, "quantity": 200, "category": "HBA", "expiry": "2026-03-20 17:00"}
-      ],
+      "id": 8,
+      "source": "whatsapp",
+      "from": "+140029506679039@lid",
+      "sender_name": "Brooks",
+      "subject": "Testing 2",
+      "body": "Testing 2",
+      "date": "2026-04-13 04:16",
+      "read": false,
+      "products": [],
       "attachments": [],
-      "images_scanned": false
+      "images_scanned": false,
+      "wa_message_id": "3A9BA716BAD5A9727B0D",
+      "wa_chat_id": "140029506679039@lid"
     },
     {
-      "id": 8, "source": "email", "from": "lots@grocerycloseout.com",
-      "subject": "Nature Valley Bars + Advil — closeout pricing",
-      "date": "2026-03-08 13:45", "read": true,
-      "body": "Two closeout lots available:\n\n1) Nature Valley Crunchy Granola Bars Variety Pack 48ct — 450 units at $4.10/unit. Need to move by March 13.\n2) Advil 200mg 300ct bottles — 250 units at $6.75/unit. Available til March 11.\n\nBoth are overstock from a major retailer DC. All product dates are good. Photos attached.",
-      "products": [
-        {"name": "Nature Valley Crunchy Granola Bars Variety Pack (48ct)", "upc": "016000505803", "price_offered": 4.10, "quantity": 450, "category": "Grocery", "expiry": "2026-03-13 12:00"},
-        {"name": "Advil Ibuprofen 200mg Tablets (300ct)", "upc": "300450551283", "price_offered": 6.75, "quantity": 250, "category": "OTC", "expiry": "2026-03-11 12:00"}
-      ],
-      "attachments": [
-        {"filename": "granola_bars_lot.jpg", "type": "image", "path": "data/attachments/granola_bars_lot.jpg"},
-        {"filename": "advil_lot.jpg", "type": "image", "path": "data/attachments/advil_lot.jpg"}
-      ],
-      "images_scanned": false
+      "id": 7,
+      "source": "whatsapp",
+      "from": "+140029506679039@lid",
+      "sender_name": "Brooks",
+      "subject": "https://www.amazon.com.au/EHPlabs-Acetyl-L-Carnitine-Support-Recovery/dp/B073ZN8...",
+      "body": "https://www.amazon.com.au/EHPlabs-Acetyl-L-Carnitine-Support-Recovery/dp/B073ZN82J3/ref=sr_1_3_sspa?dib=eyJ2IjoiMSJ9.GP6SIUjJIEQWkSntLlG7KzmJxJ8e6C_x_VLaJZx9w33LTAao4WykBXcifhbmilEUhkcj35G1kfe0h3ZicxXrQ1qt59b5Eqo5HkGuxs8xmKp0dwDUJ7NC63Dh_eNhDaigK0u4qIwvysXnmq3Q0QnScP3_wcwIapcaNaTVXcJWTpcYxRbvhC9J31olzvqlQ49D4Kpjp7kOmTnRsrfmwTi3GTMOV-P5QVt5Q_9JvH6uWpnslG2i_UBLshZagLc6uzwHd9xa6I5XguuMR0Jxmq4XE6vks8EGFxTG0UHcmCa5yms.AIhOBuJ9z-admg_BKdBLxzZcFw16e2KgqZrxFyoT-Rc&dib_tag=se&keywords=creatine&qid=1776053716&sr=8-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+      "date": "2026-04-13 04:16",
+      "read": false,
+      "products": [],
+      "attachments": [],
+      "images_scanned": false,
+      "wa_message_id": "3A2A800F7D67B842A144",
+      "wa_chat_id": "140029506679039@lid"
+    },
+    {
+      "id": 6,
+      "source": "whatsapp",
+      "from": "+140029506679039@lid",
+      "sender_name": "Brooks",
+      "subject": "Testing",
+      "body": "Testing",
+      "date": "2026-04-13 04:16",
+      "read": false,
+      "products": [],
+      "attachments": [],
+      "images_scanned": false,
+      "wa_message_id": "3A924983BC68413F04B8",
+      "wa_chat_id": "140029506679039@lid"
+    },
+    {
+      "id": 5,
+      "source": "whatsapp",
+      "from": "+140029506679039@lid",
+      "sender_name": "Brooks",
+      "subject": "Yes no worries ping me if I\u2019m up I got you!",
+      "body": "Yes no worries ping me if I\u2019m up I got you!",
+      "date": "2026-04-13 04:15",
+      "read": false,
+      "products": [],
+      "attachments": [],
+      "images_scanned": false,
+      "wa_message_id": "3A47F51884C5021DA144",
+      "wa_chat_id": "140029506679039@lid"
+    },
+    {
+      "id": 4,
+      "source": "whatsapp",
+      "from": "+140029506679039@lid",
+      "sender_name": "Brooks",
+      "subject": "Received message (reactionMessage)",
+      "body": "Received message (reactionMessage)",
+      "date": "2026-04-13 04:14",
+      "read": false,
+      "products": [],
+      "attachments": [],
+      "images_scanned": false,
+      "wa_message_id": "3AD5BF9B79E948884AD9",
+      "wa_chat_id": "140029506679039@lid"
+    },
+    {
+      "id": 3,
+      "source": "whatsapp",
+      "from": "+140029506679039@lid",
+      "sender_name": "Brooks",
+      "subject": "https://www.amazon.com.au/American-Crew-Cleansing-Shampoo-millilitre/dp/B08SMH2D...",
+      "body": "https://www.amazon.com.au/American-Crew-Cleansing-Shampoo-millilitre/dp/B08SMH2DST/ref=asc_df_B08SMH2DST?mcid=d52c7adcd60933afa97d0f6a08d41921&language=en_AU&tag=nzgoshpadde-22&linkCode=df0&hvadid=725042092282&hvpos=&hvnetw=g&hvrand=10602674702699850095&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9118688&hvtargid=pla-1416433171596&psc=1&language=en_AU&gad_source=1",
+      "date": "2026-04-13 04:11",
+      "read": false,
+      "products": [],
+      "attachments": [],
+      "images_scanned": false,
+      "wa_message_id": "3A97802844AAAC1EA5E0",
+      "wa_chat_id": "140029506679039@lid"
+    },
+    {
+      "id": 2,
+      "source": "whatsapp",
+      "from": "+140029506679039@lid",
+      "sender_name": "Brooks",
+      "subject": "Test",
+      "body": "Test",
+      "date": "2026-04-13 04:10",
+      "read": false,
+      "products": [],
+      "attachments": [],
+      "images_scanned": false,
+      "wa_message_id": "3A6413C6C50586A7CB79",
+      "wa_chat_id": "140029506679039@lid"
+    },
+    {
+      "id": 1,
+      "source": "whatsapp",
+      "from": "+1234567890",
+      "sender_name": "Test User",
+      "subject": "Direct test after enabling",
+      "body": "Direct test after enabling",
+      "date": "2026-04-13 04:03",
+      "read": false,
+      "products": [],
+      "attachments": [],
+      "images_scanned": false,
+      "wa_message_id": "test789",
+      "wa_chat_id": "1234567890@s.whatsapp.net"
     }
   ]
 }

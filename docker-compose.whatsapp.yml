@@ -1,0 +1,20 @@
+services:
+  whatsapp-bridge:
+    build: ./whatsapp-bridge
+    container_name: keith-whatsapp
+    restart: unless-stopped
+    ports:
+      - "8085:8085"
+    environment:
+      - BRIDGE_PORT=8085
+      - WEBHOOK_URL=http://host.docker.internal:8080/api/whatsapp/webhook
+      - API_KEY=keith-enterprises-wa-key
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - wa_auth:/app/auth_state
+      - wa_media:/app/media
+
+volumes:
+  wa_auth:
+  wa_media:

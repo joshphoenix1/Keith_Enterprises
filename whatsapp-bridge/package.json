@@ -1,0 +1,15 @@
+{
+  "name": "keith-whatsapp-bridge",
+  "version": "1.0.0",
+  "description": "Lightweight WhatsApp bridge using Baileys for Keith Enterprises",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "baileys": "6.7.9",
+    "express": "^4.21.0",
+    "pino": "^9.0.0",
+    "qrcode": "^1.5.4"
+  }
+}
