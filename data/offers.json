@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "id": 1,
+    "upc": "",
+    "product_name": "NAD+ Supplement with Nicotinamide Riboside, Resveratrol & Quercetin",
+    "category": "Health & Wellness Supplements",
+    "quantity": 0,
+    "offered_price": 0,
+    "expiry": "2026-04-20",
+    "source": "whatsapp",
+    "source_from": "Brooks",
+    "status": "new",
+    "marketplace_data": {
+      "amazon_price": null,
+      "walmart_price": null
+    },
+    "matched_buyers": [],
+    "margin_pct": null,
+    "created_at": "2026-04-13 21:02:18",
+    "notes": "Auto-created from inbox message #9"
+  },
+  {
+    "id": 2,
+    "upc": "",
+    "product_name": "EHPlabs Acetyl L-Carnitine Support Recovery",
+    "category": "Sports Nutrition / Amino Acid Supplements",
+    "quantity": 0,
+    "offered_price": 0,
+    "expiry": "2026-04-20",
+    "source": "whatsapp",
+    "source_from": "Brooks",
+    "status": "new",
+    "marketplace_data": {
+      "amazon_price": null,
+      "walmart_price": null
+    },
+    "matched_buyers": [],
+    "margin_pct": null,
+    "created_at": "2026-04-13 21:02:18",
+    "notes": "Auto-created from inbox message #7"
+  },
+  {
+    "id": 3,
+    "upc": "",
+    "product_name": "American Crew Daily Cleansing Shampoo",
+    "category": "Hair Care / Shampoo",
+    "quantity": 0,
+    "offered_price": 0,
+    "expiry": "2026-04-20",
+    "source": "whatsapp",
+    "source_from": "Brooks",
+    "status": "new",
+    "marketplace_data": {
+      "amazon_price": null,
+      "walmart_price": null
+    },
+    "matched_buyers": [],
+    "margin_pct": null,
+    "created_at": "2026-04-13 21:02:18",
+    "notes": "Auto-created from inbox message #3"
+  }
+]

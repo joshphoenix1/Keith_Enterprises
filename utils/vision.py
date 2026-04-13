@@ -1,9 +1,15 @@
 import json
 import base64
 import os
-import anthropic
+import subprocess
+import tempfile
+import time as _time
+import logging
+
+logger = logging.getLogger("keith.vision")
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 EXTRACTION_PROMPT = """First, determine if this image shows an actual product — a product label, packaging, bottle, box, listing screenshot, spec sheet, or physical item being offered for sale.
 
@@ -41,242 +47,6 @@ For each image, respond with a JSON array. Each entry should be:
 {"index": 0, "is_product": true/false, "reason": "what the image shows"}
 
 Only return valid JSON array, no other text."""
-
-
-CLAUDE_CREDS_PATH = os.path.expanduser("~/.claude/.credentials.json")
-ACCOUNTS_PATH = os.path.join(DATA_DIR, "accounts.json")
-
-# Cache for validated token to avoid re-checking on every call
-_token_cache = {"token": None, "validated": False, "last_check": 0}
-_TOKEN_CHECK_INTERVAL = 300  # Re-validate every 5 minutes
-
-
-def _get_api_key_fallback():
-    """Load fallback API key from accounts.json if configured."""
-    try:
-        with open(ACCOUNTS_PATH) as f:
-            accounts = json.load(f)
-        return accounts.get("claude_code", {}).get("api_key", "")
-    except Exception:
-        return ""
-
-
-def get_oauth_token():
-    """Load Claude Code OAuth access token from ~/.claude/.credentials.json.
-
-    Falls back to API key from accounts.json if OAuth is not available.
-    """
-    # Try OAuth first
-    if os.path.exists(CLAUDE_CREDS_PATH):
-        try:
-            with open(CLAUDE_CREDS_PATH) as f:
-                creds = json.load(f)
-            oauth = creds.get("claudeAiOauth", {})
-            token = oauth.get("accessToken", "")
-            if token:
-                return token
-        except (json.JSONDecodeError, IOError):
-            pass
-
-    # Fallback to API key from accounts config
-    api_key = _get_api_key_fallback()
-    if api_key:
-        return api_key
-
-    return ""
-
-
-def get_model():
-    """Return the model to use for all AI calls."""
-    return "claude-sonnet-4-6"
-
-
-def validate_token(token=None):
-    """Validate that the current token works by making a minimal API call.
-
-    Returns dict with 'valid' bool and 'error' string if invalid.
-    Uses caching to avoid hammering the API.
-    """
-    import time as _time
-
-    now = _time.time()
-    if (_token_cache["validated"] and
-            _token_cache["token"] == (token or get_oauth_token()) and
-            now - _token_cache["last_check"] < _TOKEN_CHECK_INTERVAL):
-        return {"valid": True}
-
-    token = token or get_oauth_token()
-    if not token:
-        return {"valid": False, "error": "No token or API key available"}
-
-    try:
-        client = anthropic.Anthropic(api_key=token, timeout=5.0)
-        # Minimal call to check auth — count tokens on a tiny string
-        client.messages.count_tokens(
-            model=get_model(),
-            messages=[{"role": "user", "content": "test"}],
-        )
-        _token_cache["token"] = token
-        _token_cache["validated"] = True
-        _token_cache["last_check"] = now
-        return {"valid": True}
-    except anthropic.AuthenticationError:
-        _token_cache["validated"] = False
-        _token_cache["last_check"] = now  # Don't retry for 5 min
-        return {"valid": False, "error": "Token is invalid or expired. Run 'claude auth' or update API key in Accounts."}
-    except Exception as e:
-        _token_cache["last_check"] = now  # Don't retry for 5 min on any failure
-        return {"valid": False, "error": f"Could not validate token: {e}"}
-
-
-def get_client():
-    """Create an Anthropic client using Claude Code OAuth or fallback API key.
-
-    Tries OAuth token first, then API key from accounts config.
-    Includes basic retry logic for transient failures.
-    """
-    token = get_oauth_token()
-    if not token:
-        return None
-    return anthropic.Anthropic(api_key=token)
-
-
-def analyze_image(image_bytes, filename="image.jpg"):
-    """Send an image to Claude for product information extraction."""
-    client = get_client()
-    if not client:
-        return {"error": "No Claude Code credentials found. Run 'claude auth' or add an API key in Accounts."}
-
-    # Determine media type
-    ext = filename.rsplit(".", 1)[-1].lower() if "." in filename else "jpg"
-    media_types = {
-        "jpg": "image/jpeg", "jpeg": "image/jpeg",
-        "png": "image/png", "gif": "image/gif",
-        "webp": "image/webp",
-    }
-    media_type = media_types.get(ext, "image/jpeg")
-
-    b64_data = base64.standard_b64encode(image_bytes).decode("utf-8")
-
-    model = get_model()
-
-    message = client.messages.create(
-        model=model,
-        max_tokens=4096,
-        messages=[{
-            "role": "user",
-            "content": [
-                {
-                    "type": "image",
-                    "source": {
-                        "type": "base64",
-                        "media_type": media_type,
-                        "data": b64_data,
-                    },
-                },
-                {
-                    "type": "text",
-                    "text": EXTRACTION_PROMPT,
-                },
-            ],
-        }],
-    )
-
-    response_text = message.content[0].text.strip()
-
-    # Parse JSON from response (handle markdown code blocks)
-    if response_text.startswith("```"):
-        lines = response_text.split("\n")
-        response_text = "\n".join(lines[1:-1])
-
-    try:
-        result = json.loads(response_text)
-        result["_raw_response"] = response_text
-        result["_model_used"] = model
-        result["_tokens_used"] = {
-            "input": message.usage.input_tokens,
-            "output": message.usage.output_tokens,
-        }
-        return result
-    except json.JSONDecodeError:
-        return {
-            "error": "Failed to parse structured data from image",
-            "raw_response": response_text,
-            "_model_used": model,
-        }
-
-
-def analyze_multiple_images(images):
-    """Filter a batch of images, only extract data from actual product images.
-
-    Args:
-        images: list of dicts with keys: bytes, filename
-
-    Returns:
-        list of dicts — one per image, with is_product flag and extracted data if applicable.
-    """
-    client = get_client()
-    if not client:
-        return [{"error": "No Claude Code credentials found. Run 'claude auth' or add an API key in Accounts."}]
-
-    model = get_model()
-
-    # Step 1: Send all images to Claude to classify which are product images
-    content_blocks = []
-    for i, img in enumerate(images):
-        ext = img["filename"].rsplit(".", 1)[-1].lower() if "." in img["filename"] else "jpg"
-        media_types = {"jpg": "image/jpeg", "jpeg": "image/jpeg", "png": "image/png",
-                       "gif": "image/gif", "webp": "image/webp"}
-        media_type = media_types.get(ext, "image/jpeg")
-        b64 = base64.standard_b64encode(img["bytes"]).decode("utf-8")
-
-        content_blocks.append({"type": "text", "text": f"Image {i}:"})
-        content_blocks.append({
-            "type": "image",
-            "source": {"type": "base64", "media_type": media_type, "data": b64},
-        })
-
-    content_blocks.append({"type": "text", "text": BATCH_FILTER_PROMPT})
-
-    message = client.messages.create(
-        model=model, max_tokens=2048,
-        messages=[{"role": "user", "content": content_blocks}],
-    )
-
-    response_text = message.content[0].text.strip()
-    if response_text.startswith("```"):
-        lines = response_text.split("\n")
-        response_text = "\n".join(lines[1:-1])
-
-    try:
-        classifications = json.loads(response_text)
-    except json.JSONDecodeError:
-        # Fallback: treat all as product images
-        classifications = [{"index": i, "is_product": True, "reason": "classification failed"}
-                          for i in range(len(images))]
-
-    # Step 2: For each product image, run full extraction
-    results = []
-    for cls in classifications:
-        idx = cls.get("index", 0)
-        if idx >= len(images):
-            continue
-        img = images[idx]
-
-        if not cls.get("is_product", False):
-            results.append({
-                "filename": img["filename"],
-                "is_product": False,
-                "reason": cls.get("reason", "Not a product image"),
-                "skipped": True,
-            })
-        else:
-            extracted = analyze_image(img["bytes"], img["filename"])
-            extracted["is_product"] = True
-            extracted["filename"] = img["filename"]
-            results.append(extracted)
-
-    return results
 
 
 URL_PAGE_EXTRACTION_PROMPT = """Analyze the following webpage content and extract all product information you can find. This is text scraped from a product page (e.g. Amazon listing, Alibaba product page, supplier website, etc.).
@@ -341,6 +111,200 @@ If none of the images show products, return:
 Only return valid JSON, no other text."""
 
 
+# ── Claude CLI interface ──
+
+CLAUDE_CREDS_PATH = os.path.expanduser("~/.claude/.credentials.json")
+
+# Cache for validated token
+_token_cache = {"validated": False, "last_check": 0}
+_TOKEN_CHECK_INTERVAL = 300
+
+
+def _claude_call(prompt, image_paths=None, timeout=120):
+    """Call Claude via the CLI (`claude -p`). Returns response text.
+
+    For image analysis, pass image_paths — the CLI will read them via its Read tool.
+    """
+    cmd = ["claude", "-p", "--output-format", "text"]
+
+    if image_paths:
+        cmd.extend(["--allowedTools", "Read", "--add-dir", BASE_DIR])
+        # Prepend read instructions for each image
+        read_lines = []
+        for i, path in enumerate(image_paths):
+            read_lines.append(f"Read the image file at {path}")
+        prompt = "\n".join(read_lines) + "\n\nNow analyze the images above.\n\n" + prompt
+
+    result = subprocess.run(
+        cmd, input=prompt, capture_output=True, text=True, timeout=timeout
+    )
+
+    if result.returncode != 0:
+        error_msg = result.stderr.strip() or "Unknown CLI error"
+        logger.error("Claude CLI error (rc=%d): %s", result.returncode, error_msg[:200])
+        raise RuntimeError(f"Claude CLI error: {error_msg}")
+
+    return result.stdout.strip()
+
+
+def _parse_json_response(response_text):
+    """Parse JSON from Claude response, handling markdown code blocks."""
+    text = response_text.strip()
+    if text.startswith("```"):
+        lines = text.split("\n")
+        text = "\n".join(lines[1:-1])
+    return json.loads(text)
+
+
+def get_model():
+    """Return the model used for AI calls (for display/logging)."""
+    return "claude-cli"
+
+
+def validate_token(token=None):
+    """Check if the Claude CLI is available and authenticated."""
+    now = _time.time()
+    if (_token_cache["validated"] and
+            now - _token_cache["last_check"] < _TOKEN_CHECK_INTERVAL):
+        return {"valid": True}
+
+    # Check CLI binary exists
+    cli_path = subprocess.run(["which", "claude"], capture_output=True, text=True)
+    if cli_path.returncode != 0:
+        return {"valid": False, "error": "Claude CLI not found. Install it with: npm install -g @anthropic-ai/claude-code"}
+
+    # Check credentials file and expiry
+    if os.path.exists(CLAUDE_CREDS_PATH):
+        try:
+            with open(CLAUDE_CREDS_PATH) as f:
+                creds = json.load(f)
+            expires_at = creds.get("claudeAiOauth", {}).get("expiresAt", 0)
+            now_ms = int(_time.time() * 1000)
+            if expires_at > now_ms:
+                _token_cache["validated"] = True
+                _token_cache["last_check"] = now
+                return {"valid": True}
+            else:
+                _token_cache["validated"] = False
+                return {"valid": False, "error": "Claude CLI token expired. Run 'claude auth' to refresh."}
+        except (json.JSONDecodeError, IOError):
+            pass
+
+    return {"valid": False, "error": "No Claude CLI credentials found. Run 'claude auth' to connect."}
+
+
+# Keep for backward compat with health check page
+def get_oauth_token():
+    """Check if OAuth credentials exist."""
+    if os.path.exists(CLAUDE_CREDS_PATH):
+        try:
+            with open(CLAUDE_CREDS_PATH) as f:
+                creds = json.load(f)
+            return creds.get("claudeAiOauth", {}).get("accessToken", "")
+        except (json.JSONDecodeError, IOError):
+            pass
+    return ""
+
+
+def get_client():
+    """Backward compat — returns truthy if CLI is available."""
+    return validate_token().get("valid", False)
+
+
+# ── Image analysis ──
+
+def analyze_image(image_bytes, filename="image.jpg"):
+    """Send an image to Claude CLI for product information extraction."""
+    # Save image to temp file
+    ext = filename.rsplit(".", 1)[-1].lower() if "." in filename else "jpg"
+    with tempfile.NamedTemporaryFile(suffix=f".{ext}", delete=False, dir=DATA_DIR) as tmp:
+        tmp.write(image_bytes)
+        tmp_path = tmp.name
+
+    try:
+        response_text = _claude_call(EXTRACTION_PROMPT, image_paths=[tmp_path])
+        result = _parse_json_response(response_text)
+        result["_raw_response"] = response_text
+        result["_model_used"] = "claude-cli"
+        return result
+    except json.JSONDecodeError:
+        return {
+            "error": "Failed to parse structured data from image",
+            "raw_response": response_text,
+            "_model_used": "claude-cli",
+        }
+    except Exception as e:
+        return {"error": f"Image analysis failed: {e}", "_model_used": "claude-cli"}
+    finally:
+        try:
+            os.unlink(tmp_path)
+        except OSError:
+            pass
+
+
+def analyze_multiple_images(images):
+    """Filter a batch of images, only extract data from actual product images.
+
+    Args:
+        images: list of dicts with keys: bytes, filename
+
+    Returns:
+        list of dicts — one per image, with is_product flag and extracted data if applicable.
+    """
+    # Save all images to temp files
+    tmp_paths = []
+    try:
+        for img in images:
+            ext = img["filename"].rsplit(".", 1)[-1].lower() if "." in img["filename"] else "jpg"
+            with tempfile.NamedTemporaryFile(suffix=f".{ext}", delete=False, dir=DATA_DIR) as tmp:
+                tmp.write(img["bytes"])
+                tmp_paths.append(tmp.name)
+
+        # Step 1: Classify which images are products
+        classify_prompt = ""
+        for i, path in enumerate(tmp_paths):
+            classify_prompt += f"Image {i} is at: {path}\n"
+        classify_prompt += "\n" + BATCH_FILTER_PROMPT
+
+        response_text = _claude_call(classify_prompt, image_paths=tmp_paths)
+        try:
+            classifications = _parse_json_response(response_text)
+        except json.JSONDecodeError:
+            classifications = [{"index": i, "is_product": True, "reason": "classification failed"}
+                              for i in range(len(images))]
+
+        # Step 2: For each product image, run full extraction
+        results = []
+        for cls in classifications:
+            idx = cls.get("index", 0)
+            if idx >= len(images):
+                continue
+            img = images[idx]
+
+            if not cls.get("is_product", False):
+                results.append({
+                    "filename": img["filename"],
+                    "is_product": False,
+                    "reason": cls.get("reason", "Not a product image"),
+                    "skipped": True,
+                })
+            else:
+                extracted = analyze_image(img["bytes"], img["filename"])
+                extracted["is_product"] = True
+                extracted["filename"] = img["filename"]
+                results.append(extracted)
+
+        return results
+    finally:
+        for path in tmp_paths:
+            try:
+                os.unlink(path)
+            except OSError:
+                pass
+
+
+# ── URL analysis ──
+
 def fetch_url(url):
     """Fetch a URL and return the page text content and image URLs."""
     import requests as _requests
@@ -366,38 +330,30 @@ def fetch_url(url):
         resp = session.get(url, headers=headers, timeout=30, allow_redirects=True)
         resp.raise_for_status()
         html_text = resp.text
-        # Detect Cloudflare/bot protection challenge pages
         if ("Just a moment" in html_text[:1000] and "cloudflare" in html_text.lower()[:5000]) or \
            ("Checking your browser" in html_text[:1000]):
-            return {"error": f"This site uses Cloudflare bot protection and cannot be scraped directly. "
-                    f"Try downloading the page as HTML or taking a screenshot and using the image upload instead."}
+            return {"error": "This site uses Cloudflare bot protection and cannot be scraped directly."}
     except _requests.exceptions.HTTPError as e:
         if e.response is not None and e.response.status_code == 403:
-            return {"error": "403 Forbidden — this site blocks automated access. "
-                    "Try saving the page as HTML or taking a screenshot and using the image upload instead."}
+            return {"error": "403 Forbidden — this site blocks automated access."}
         return {"error": f"Failed to fetch URL: {str(e)}"}
     except Exception as e:
         return {"error": f"Failed to fetch URL: {str(e)}"}
 
-    # Extract text content (strip tags)
     text = re.sub(r"<script[^>]*>.*?</script>", "", html_text, flags=re.DOTALL | re.IGNORECASE)
     text = re.sub(r"<style[^>]*>.*?</style>", "", text, flags=re.DOTALL | re.IGNORECASE)
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
 
-    # Extract image URLs
     img_urls = re.findall(r'<img[^>]+src=["\']([^"\']+)["\']', html_text, re.IGNORECASE)
-    # Also grab data-src (lazy loaded images)
     img_urls += re.findall(r'<img[^>]+data-src=["\']([^"\']+)["\']', html_text, re.IGNORECASE)
 
-    # Resolve relative URLs
     from urllib.parse import urljoin
     img_urls = [urljoin(url, u) for u in img_urls]
 
-    # Filter out tiny icons/tracking pixels by URL patterns
-    filtered = []
     skip_patterns = ["1x1", "pixel", "tracking", "spacer", "blank", "favicon", ".svg",
                      "sprite", "icon-", "loading", "spinner", "badge"]
+    filtered = []
     for u in img_urls:
         lower = u.lower()
         if any(p in lower for p in skip_patterns):
@@ -406,7 +362,6 @@ def fetch_url(url):
             continue
         filtered.append(u)
 
-    # Deduplicate while preserving order
     seen = set()
     unique = []
     for u in filtered:
@@ -418,130 +373,88 @@ def fetch_url(url):
 
 
 def analyze_url_text(url):
-    """Fetch a URL and extract product info from the page text."""
+    """Fetch a URL and extract product info from the page text via Claude CLI."""
     fetched = fetch_url(url)
     if "error" in fetched:
         return fetched
 
-    client = get_client()
-    if not client:
-        return {"error": "No Claude Code credentials found. Run 'claude auth' to connect."}
-
-    model = get_model()
     page_text = fetched["text"]
-
-    message = client.messages.create(
-        model=model,
-        max_tokens=4096,
-        messages=[{
-            "role": "user",
-            "content": f"URL: {url}\n\nPage content:\n{page_text}\n\n{URL_PAGE_EXTRACTION_PROMPT}",
-        }],
-    )
-
-    response_text = message.content[0].text.strip()
-    if response_text.startswith("```"):
-        lines = response_text.split("\n")
-        response_text = "\n".join(lines[1:-1])
+    prompt = f"URL: {url}\n\nPage content:\n{page_text}\n\n{URL_PAGE_EXTRACTION_PROMPT}"
 
     try:
-        result = json.loads(response_text)
+        response_text = _claude_call(prompt)
+        result = _parse_json_response(response_text)
         result["_raw_response"] = response_text
-        result["_model_used"] = model
+        result["_model_used"] = "claude-cli"
         result["_source_url"] = url
         result["_extraction_mode"] = "page_text"
-        result["_tokens_used"] = {
-            "input": message.usage.input_tokens,
-            "output": message.usage.output_tokens,
-        }
         return result
     except json.JSONDecodeError:
-        return {"error": "Failed to parse structured data from page", "raw_response": response_text,
-                "_model_used": model}
+        return {"error": "Failed to parse structured data from page",
+                "raw_response": response_text, "_model_used": "claude-cli"}
+    except Exception as e:
+        return {"error": f"URL analysis failed: {e}", "_model_used": "claude-cli"}
 
 
 def analyze_url_images(url):
-    """Fetch a URL, download product images, and extract product info from them."""
+    """Fetch a URL, download product images, and extract product info via Claude CLI."""
     import requests as _requests
 
     fetched = fetch_url(url)
     if "error" in fetched:
         return fetched
 
-    client = get_client()
-    if not client:
-        return {"error": "No Claude Code credentials found. Run 'claude auth' to connect."}
-
     img_urls = fetched.get("images", [])
     if not img_urls:
         return {"error": "No images found on the page.", "_source_url": url}
 
-    # Download images (limit to first 10 to manage token usage)
-    model = get_model()
-    content_blocks = []
-    downloaded = 0
-
     img_headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
         "Referer": url,
     }
 
-    for img_url in img_urls[:10]:
-        try:
-            resp = _requests.get(img_url, headers=img_headers, timeout=15, allow_redirects=True)
-            resp.raise_for_status()
-            content_type = resp.headers.get("Content-Type", "image/jpeg").split(";")[0].strip()
-            img_bytes = resp.content
-
-            if not content_type.startswith("image/"):
+    tmp_paths = []
+    try:
+        for img_url in img_urls[:10]:
+            try:
+                resp = _requests.get(img_url, headers=img_headers, timeout=15, allow_redirects=True)
+                resp.raise_for_status()
+                content_type = resp.headers.get("Content-Type", "image/jpeg").split(";")[0].strip()
+                if not content_type.startswith("image/"):
+                    continue
+                ext = content_type.split("/")[1].replace("jpeg", "jpg")
+                with tempfile.NamedTemporaryFile(suffix=f".{ext}", delete=False, dir=DATA_DIR) as tmp:
+                    tmp.write(resp.content)
+                    tmp_paths.append(tmp.name)
+            except Exception:
                 continue
 
-            # Only accept jpeg/png/gif/webp
-            if content_type not in ("image/jpeg", "image/png", "image/gif", "image/webp"):
-                content_type = "image/jpeg"
+        if not tmp_paths:
+            return {"error": "Could not download any images from the page.", "_source_url": url}
 
-            b64 = base64.standard_b64encode(img_bytes).decode("utf-8")
-            content_blocks.append({"type": "text", "text": f"Image from {img_url}:"})
-            content_blocks.append({
-                "type": "image",
-                "source": {"type": "base64", "media_type": content_type, "data": b64},
-            })
-            downloaded += 1
-        except Exception:
-            continue
-
-    if downloaded == 0:
-        return {"error": "Could not download any images from the page.", "_source_url": url}
-
-    content_blocks.append({"type": "text", "text": URL_IMAGE_EXTRACTION_PROMPT})
-
-    message = client.messages.create(
-        model=model, max_tokens=4096,
-        messages=[{"role": "user", "content": content_blocks}],
-    )
-
-    response_text = message.content[0].text.strip()
-    if response_text.startswith("```"):
-        lines = response_text.split("\n")
-        response_text = "\n".join(lines[1:-1])
-
-    try:
-        result = json.loads(response_text)
+        response_text = _claude_call(URL_IMAGE_EXTRACTION_PROMPT, image_paths=tmp_paths)
+        result = _parse_json_response(response_text)
         result["_raw_response"] = response_text
-        result["_model_used"] = model
+        result["_model_used"] = "claude-cli"
         result["_source_url"] = url
         result["_extraction_mode"] = "page_images"
-        result["_images_downloaded"] = downloaded
-        result["_tokens_used"] = {
-            "input": message.usage.input_tokens,
-            "output": message.usage.output_tokens,
-        }
+        result["_images_downloaded"] = len(tmp_paths)
         return result
     except json.JSONDecodeError:
-        return {"error": "Failed to parse structured data from images", "raw_response": response_text,
-                "_model_used": model}
+        return {"error": "Failed to parse structured data from images",
+                "raw_response": response_text, "_model_used": "claude-cli"}
+    except Exception as e:
+        return {"error": f"URL image analysis failed: {e}", "_model_used": "claude-cli"}
+    finally:
+        for path in tmp_paths:
+            try:
+                os.unlink(path)
+            except OSError:
+                pass
 
+
+# ── Scan storage ──
 
 def save_scan_result(result, filename):
     """Save a scan result to the scans log."""

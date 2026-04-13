@@ -48,8 +48,32 @@
       "images_scanned": true,
       "wa_message_id": "3AD2DD2223AD06AA6F18",
       "wa_chat_id": "140029506679039@lid",
-      "urls_scanned": false,
-      "scan_results": []
+      "urls_scanned": true,
+      "scan_results": [
+        {
+          "is_product": true,
+          "product_name": "NAD+ Supplement with Nicotinamide Riboside, Resveratrol & Quercetin",
+          "brand": "Unknown (generic/private label)",
+          "category": "Health & Wellness Supplements",
+          "description": "A multi-ingredient longevity and cellular health supplement combining Nicotinamide Riboside (NR) for NAD+ boosting, Trans-Resveratrol for antioxidant and anti-aging support, and Quercetin as a senolytic and anti-inflammatory flavonoid. Targets the growing anti-aging and longevity supplement market.",
+          "asin": "B0DQ4GJYJG",
+          "amazon_url": "https://www.amazon.com.au/Supplement-Nicotinamide-Riboside-Resveratrol-Quercetin/dp/B0DQ4GJYJG/ref=sr_1_2_sspa",
+          "amazon_category_guess": "Health, Household & Personal Care > Vitamins, Minerals & Supplements > Anti-Aging Supplements",
+          "key_selling_points": [
+            "All-in-one NAD+ longevity stack \u2014 combines NR, Resveratrol, and Quercetin in a single capsule",
+            "Targets cellular energy and healthy aging backed by emerging longevity research",
+            "Quercetin acts as a natural senolytic to support clearing of senescent cells",
+            "Resveratrol provides potent antioxidant and cardiovascular support",
+            "Appeals to the David Sinclair / Bryan Johnson longevity-conscious consumer demographic"
+          ],
+          "estimated_competition": "High",
+          "notes": "Listed on Amazon Australia (.com.au). Found via 'NAD supplement' search keywords, appearing as a sponsored result (position 2), indicating active PPC spend. The NAD+/longevity supplement category is highly competitive with established brands like Tru Niagen (ChromaDex), Elysium Basis, and ProHealth Longevity. The combination formula (NR + Resveratrol + Quercetin) is a common private-label stack pattern. ASIN prefix B0DQ suggests a relatively recent listing (late 2024 / early 2025). The sponsored placement and multi-ingredient approach suggest a private-label or newer brand trying to differentiate through ingredient bundling rather than brand recognition.",
+          "_source": "url",
+          "_url": "https://www.amazon.com.au/Supplement-Nicotinamide-Riboside-Resveratrol-Quercetin/dp/B0DQ4GJYJG/ref=sr_1_2_sspa?crid=1F7QQDCLNDI2O&dib=eyJ2IjoiMSJ9.ylXXAuVbsdQxeAhPyyWQdd9acU7-nN8UXBDT_STyA_nv69ejr1atv9WmVUVi5joQSZsn_RYVzNu4Bq-5dMxB6R27jOktaa-GnSslHo6xhebmSrWqdnZZKlzkIeTQht2gpL2VJ4S1gwiKn_dYddhLGAlee-zXxzsz1ZI3iCa9h9IQnQL9UGMDbW095MlsWiK79C-AzbnY4ER1EjBUdmuGEUU_t3F8WswtVmE7JNmV-nkhhnbMQU73p4rv-vG2s0SZmajOcHk3GFfDQA0D2etZmFvjLqahhPHMpqZhZTlsMs8._NoJG80FpG5yjT7O5BHDUFNn2l6DogOHPTK70w5xFbc&dib_tag=se&keywords=nad+supplement&qid=1776053755&sprefix=NAD%2Caps%2C318&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+          "_asin": "B0DQ4GJYJG",
+          "_model_used": "claude-cli"
+        }
+      ]
     },
     {
       "id": 8,
@@ -82,8 +106,32 @@
       "images_scanned": true,
       "wa_message_id": "3A2A800F7D67B842A144",
       "wa_chat_id": "140029506679039@lid",
-      "urls_scanned": false,
-      "scan_results": []
+      "urls_scanned": true,
+      "scan_results": [
+        {
+          "is_product": true,
+          "product_name": "EHPlabs Acetyl L-Carnitine Support Recovery",
+          "brand": "EHPlabs",
+          "category": "Sports Nutrition / Amino Acid Supplements",
+          "description": "Acetyl L-Carnitine supplement by EHPlabs designed to support fat metabolism, energy production, and exercise recovery. L-Carnitine helps transport fatty acids into mitochondria for energy conversion, commonly used as a weight management and performance supplement.",
+          "asin": "B073ZN82J3",
+          "amazon_url": "https://www.amazon.com.au/EHPlabs-Acetyl-L-Carnitine-Support-Recovery/dp/B073ZN82J3/ref=sr_1_3_sspa",
+          "amazon_category_guess": "Health, Household & Personal Care > Sports Nutrition > Amino Acid Supplements > L-Carnitine",
+          "key_selling_points": [
+            "Supports fat metabolism and conversion of fatty acids to energy",
+            "Aids exercise recovery and reduces muscle fatigue",
+            "Acetyl form offers enhanced bioavailability and crosses the blood-brain barrier for cognitive support",
+            "From EHPlabs, a well-known Australian sports nutrition brand",
+            "Stimulant-free fat burning support that stacks well with other supplements"
+          ],
+          "estimated_competition": "High",
+          "notes": "EHPlabs is a popular Australian-founded sports nutrition brand. Acetyl L-Carnitine is a highly competitive supplement category with many established brands. This product appeared in search results for 'creatine' (per the URL query parameter), suggesting it is being advertised via sponsored placement to capture cross-category fitness supplement traffic. The .com.au domain indicates this is listed on Amazon Australia.",
+          "_source": "url",
+          "_url": "https://www.amazon.com.au/EHPlabs-Acetyl-L-Carnitine-Support-Recovery/dp/B073ZN82J3/ref=sr_1_3_sspa?dib=eyJ2IjoiMSJ9.GP6SIUjJIEQWkSntLlG7KzmJxJ8e6C_x_VLaJZx9w33LTAao4WykBXcifhbmilEUhkcj35G1kfe0h3ZicxXrQ1qt59b5Eqo5HkGuxs8xmKp0dwDUJ7NC63Dh_eNhDaigK0u4qIwvysXnmq3Q0QnScP3_wcwIapcaNaTVXcJWTpcYxRbvhC9J31olzvqlQ49D4Kpjp7kOmTnRsrfmwTi3GTMOV-P5QVt5Q_9JvH6uWpnslG2i_UBLshZagLc6uzwHd9xa6I5XguuMR0Jxmq4XE6vks8EGFxTG0UHcmCa5yms.AIhOBuJ9z-admg_BKdBLxzZcFw16e2KgqZrxFyoT-Rc&dib_tag=se&keywords=creatine&qid=1776053716&sr=8-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+          "_asin": "B073ZN82J3",
+          "_model_used": "claude-cli"
+        }
+      ]
     },
     {
       "id": 6,
@@ -150,8 +198,32 @@
       "images_scanned": true,
       "wa_message_id": "3A97802844AAAC1EA5E0",
       "wa_chat_id": "140029506679039@lid",
-      "urls_scanned": false,
-      "scan_results": []
+      "urls_scanned": true,
+      "scan_results": [
+        {
+          "is_product": true,
+          "product_name": "American Crew Daily Cleansing Shampoo",
+          "brand": "American Crew",
+          "category": "Hair Care / Shampoo",
+          "description": "A daily cleansing shampoo designed for men, formulated to remove excess oil and product buildup while leaving hair clean and manageable. Part of the American Crew professional men's grooming line.",
+          "asin": "B08SMH2DST",
+          "amazon_url": "https://www.amazon.com.au/American-Crew-Cleansing-Shampoo-millilitre/dp/B08SMH2DST/ref=asc_df_B08SMH2DST",
+          "amazon_category_guess": "Beauty > Hair Care > Shampoo > Men's",
+          "key_selling_points": [
+            "Professional-grade men's grooming brand trusted by barbers worldwide",
+            "Daily use formula that cleanses without stripping natural oils",
+            "Removes product buildup and excess sebum for fresh, clean hair",
+            "Suitable for all hair types, especially normal to oily hair",
+            "Leaves hair manageable and ready for styling"
+          ],
+          "estimated_competition": "High",
+          "notes": "American Crew is one of the most recognized men's grooming brands globally, founded in 1994. Their cleansing shampoo is a staple product in the line. The 'millilitre' in the URL slug suggests this is a metric-sized variant (likely 250ml or 1000ml) sold on the Australian Amazon marketplace (amazon.com.au). Competition is high in the men's shampoo category, but American Crew commands strong brand loyalty and premium positioning.",
+          "_source": "url",
+          "_url": "https://www.amazon.com.au/American-Crew-Cleansing-Shampoo-millilitre/dp/B08SMH2DST/ref=asc_df_B08SMH2DST?mcid=d52c7adcd60933afa97d0f6a08d41921&language=en_AU&tag=nzgoshpadde-22&linkCode=df0&hvadid=725042092282&hvpos=&hvnetw=g&hvrand=10602674702699850095&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9118688&hvtargid=pla-1416433171596&psc=1&language=en_AU&gad_source=1",
+          "_asin": "B08SMH2DST",
+          "_model_used": "claude-cli"
+        }
+      ]
     },
     {
       "id": 2,

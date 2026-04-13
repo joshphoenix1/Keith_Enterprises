@@ -373,31 +373,23 @@ def _extract_urls(text):
 
 
 def _extract_product_from_amazon_url(url):
-    """Extract product info from an Amazon URL using the ASIN and Claude AI.
+    """Extract product info from an Amazon URL using the ASIN and Claude CLI.
 
     Amazon blocks direct scraping, so we extract the ASIN and product name
     from the URL slug, then ask Claude to identify the product.
     """
     import re
-    from utils.vision import get_client, get_model, save_scan_result
+    from utils.vision import _claude_call, _parse_json_response
 
-    # Extract ASIN (10-char alphanumeric after /dp/)
     asin_match = re.search(r'/dp/([A-Z0-9]{10})', url)
     asin = asin_match.group(1) if asin_match else ""
 
-    # Extract product slug from URL path
     slug_match = re.search(r'amazon\.[^/]+/([^/]+)/dp/', url)
     slug = slug_match.group(1).replace("-", " ") if slug_match else ""
 
     if not asin and not slug:
         return {"is_product": False, "error": "Could not extract product info from URL"}
 
-    # Ask Claude to identify the product from the URL info
-    client = get_client()
-    if not client:
-        return {"error": "No Claude credentials available"}
-
-    model = get_model()
     prompt = f"""I have an Amazon product listing with the following information extracted from the URL:
 
 Product URL slug: {slug}
@@ -423,25 +415,12 @@ Based on this information, identify the product and return a JSON object:
 Only return valid JSON, no other text."""
 
     try:
-        message = client.messages.create(
-            model=model, max_tokens=2048,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        response_text = message.content[0].text.strip()
-        if response_text.startswith("```"):
-            lines = response_text.split("\n")
-            response_text = "\n".join(lines[1:-1])
-
-        import json
-        result = json.loads(response_text)
+        response_text = _claude_call(prompt)
+        result = _parse_json_response(response_text)
         result["_source"] = "amazon_url"
         result["_url"] = url
         result["_asin"] = asin
-        result["_model_used"] = model
-        result["_tokens_used"] = {
-            "input": message.usage.input_tokens,
-            "output": message.usage.output_tokens,
-        }
+        result["_model_used"] = "claude-cli"
         return result
     except Exception as e:
         return {"is_product": False, "error": f"Claude analysis failed: {e}", "_url": url}

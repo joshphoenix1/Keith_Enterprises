@@ -4,7 +4,7 @@ import base64
 from dash import html, dcc, callback, Input, Output, State, ALL, ctx
 from config import COLORS
 from components.cards import info_card
-from utils.vision import analyze_image, analyze_multiple_images, save_scan_result
+from utils.vision import analyze_image, analyze_multiple_images, analyze_url_text, save_scan_result
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 DATA_PATH = os.path.join(DATA_DIR, "inbox.json")
@@ -97,17 +97,28 @@ def _message_card(msg):
     scanned = msg.get("images_scanned", False)
     att_badge = _attachment_badges(attachments, scanned)
 
-    # Scan button for messages with unscanned images
+    # Scan button for messages with unscanned images or URLs
+    import re as _re
     has_images = any(a.get("type") == "image" for a in attachments)
+    has_urls = bool(_re.search(r'https?://', (msg.get("body", "") or "")))
+    needs_image_scan = has_images and not scanned
+    needs_url_scan = has_urls and not msg.get("urls_scanned")
     scan_btn = None
-    if has_images and not scanned:
+    if needs_image_scan or needs_url_scan:
+        label = "Scan"
+        if needs_image_scan and needs_url_scan:
+            label = "Scan Images & URLs"
+        elif needs_image_scan:
+            label = "Scan Images"
+        else:
+            label = "Scan URLs"
         scan_btn = html.Button([
-            html.I(className="bi bi-camera me-1"),
-            "Scan Images",
+            html.I(className="bi bi-cpu me-1"),
+            label,
         ], id={"type": "inbox-scan-btn", "index": msg["id"]},
             className="btn-outline-dark",
             style={"fontSize": "0.7rem", "padding": "3px 10px", "marginTop": "6px"})
-    elif has_images and scanned:
+    elif (has_images and scanned) or (has_urls and msg.get("urls_scanned")):
         scan_btn = html.Span([
             html.I(className="bi bi-check-circle-fill me-1",
                    style={"color": COLORS["success"]}),
@@ -225,18 +236,21 @@ def _build_products_table(messages):
                 "date": msg["date"][:10],
                 "status": "New",
             })
-        # Also include products found by image scanning
+        # Also include products found by AI scanning (images + URLs)
         for r in msg.get("scan_results", []):
             if r.get("is_product") and not r.get("skipped") and r.get("product_name"):
+                price = r.get("suggested_retail_price") or "—"
+                if price != "—" and not str(price).startswith("$"):
+                    price = f"${price}" if str(price).replace(".", "").isdigit() else price
                 rows.append({
                     "product": r["product_name"],
-                    "upc": "",
-                    "category": "Other",
-                    "price": "—",
+                    "upc": r.get("upc_barcode") or r.get("asin") or "",
+                    "category": r.get("category") or r.get("amazon_category_guess") or "Other",
+                    "price": price,
                     "quantity": "—",
                     "expiry": "—",
-                    "source": f"{msg['source'].title()} (scan)",
-                    "from": msg["from"],
+                    "source": f"{msg['source'].title()} (AI)",
+                    "from": msg.get("sender_name") or msg["from"],
                     "date": msg["date"][:10],
                     "status": "Scanned",
                 })
@@ -358,9 +372,16 @@ def _build_kpi_row(messages, rows):
 
 
 def _count_unscanned(messages):
-    return sum(1 for m in messages
-               if not m.get("images_scanned") and
-               any(a.get("type") == "image" for a in m.get("attachments", [])))
+    import re as _re
+    count = 0
+    for m in messages:
+        has_unscanned_images = (not m.get("images_scanned") and
+            any(a.get("type") == "image" for a in m.get("attachments", [])))
+        has_unscanned_urls = (not m.get("urls_scanned") and
+            bool(_re.search(r'https?://', m.get("body", "") or "")))
+        if has_unscanned_images or has_unscanned_urls:
+            count += 1
+    return count
 
 
 def layout():
@@ -413,10 +434,10 @@ def layout():
                            style={"fontSize": "1.3rem", "color": COLORS["purple"]}),
                 ], style={"flexShrink": "0"}),
                 html.Div([
-                    html.Span("Auto Image Scanning ",
+                    html.Span("AI Scanning ",
                               style={"color": COLORS["text"], "fontWeight": "600"}),
-                    html.Span("— Product images attached to messages are "
-                              "automatically detected and scanned by Claude AI. Non-product images "
+                    html.Span("— Product images and URLs in messages are "
+                              "scanned by Claude AI. Non-product images "
                               "(logos, signatures) are filtered out. Extracted products "
                               "appear in the table below.",
                               style={"color": COLORS["text_muted"]}),
@@ -595,28 +616,68 @@ def handle_scan(scan_all_clicks, individual_clicks):
         scanned_count = 0
         products_found = 0
         filtered_out = 0
+        urls_processed = 0
 
         for msg in messages:
-            if msg.get("images_scanned"):
-                continue
-            has_images = any(a.get("type") == "image" for a in msg.get("attachments", []))
-            if not has_images:
+            import re as _re
+            has_images = not msg.get("images_scanned") and any(
+                a.get("type") == "image" for a in msg.get("attachments", []))
+            has_urls = not msg.get("urls_scanned") and bool(
+                _re.search(r'https?://', msg.get("body", "") or ""))
+
+            if not has_images and not has_urls:
                 continue
 
-            results = _scan_message_images(msg)
-            msg["images_scanned"] = True
-            msg["scan_results"] = results
             scanned_count += 1
-            products_found += sum(1 for r in results if r.get("is_product") and not r.get("skipped"))
-            filtered_out += sum(1 for r in results if r.get("skipped") or r.get("is_product") is False)
+            msg.setdefault("scan_results", [])
+
+            # Scan image attachments
+            if has_images:
+                img_results = _scan_message_images(msg)
+                msg["images_scanned"] = True
+                msg["scan_results"].extend(img_results)
+                products_found += sum(1 for r in img_results if r.get("is_product") and not r.get("skipped"))
+                filtered_out += sum(1 for r in img_results if r.get("skipped") or r.get("is_product") is False)
+
+            # Scan URLs in message body
+            if has_urls:
+                urls = _re.findall(r'https?://[^\s<>"\']+', msg.get("body", "") or "")
+                for url in urls[:3]:
+                    try:
+                        result = analyze_url_text(url)
+                        if result.get("error") and "amazon" in url.lower():
+                            from utils.whatsapp import _extract_product_from_amazon_url
+                            result = _extract_product_from_amazon_url(url)
+                        if result.get("is_product"):
+                            result["_source"] = "url"
+                            result["_url"] = url
+                            save_scan_result(result, url)
+                            msg["scan_results"].append(result)
+                            products_found += 1
+                        else:
+                            msg["scan_results"].append(result)
+                    except Exception as e:
+                        msg["scan_results"].append({"url": url, "error": str(e), "is_product": False})
+                    urls_processed += 1
+                msg["urls_scanned"] = True
+
+            if not msg.get("images_scanned"):
+                msg["images_scanned"] = True
 
         _save_inbox(inbox)
 
+        parts = []
+        if products_found:
+            parts.append(f"found {products_found} product{'s' if products_found != 1 else ''}")
+        if filtered_out:
+            parts.append(f"filtered out {filtered_out} non-product image{'s' if filtered_out != 1 else ''}")
+        if urls_processed:
+            parts.append(f"processed {urls_processed} URL{'s' if urls_processed != 1 else ''}")
+        detail = ", ".join(parts) if parts else "nothing new to scan"
+
         status = html.Div([
             html.I(className="bi bi-check-circle-fill me-2", style={"color": COLORS["success"]}),
-            html.Span(f"Scanned {scanned_count} message{'s' if scanned_count != 1 else ''}. "
-                      f"Found {products_found} product image{'s' if products_found != 1 else ''}, "
-                      f"filtered out {filtered_out} non-product image{'s' if filtered_out != 1 else ''}.",
+            html.Span(f"Scanned {scanned_count} message{'s' if scanned_count != 1 else ''}. {detail.capitalize()}.",
                       style={"color": COLORS["success"], "fontWeight": "500", "fontSize": "0.85rem"}),
         ], style={
             "background": f"{COLORS['success']}10", "padding": "12px 16px",
@@ -624,24 +685,58 @@ def handle_scan(scan_all_clicks, individual_clicks):
         })
 
     elif isinstance(triggered, dict) and triggered.get("type") == "inbox-scan-btn":
+        import re as _re
         msg_id = triggered["index"]
         msg = next((m for m in messages if m["id"] == msg_id), None)
-        if msg and not msg.get("images_scanned"):
-            results = _scan_message_images(msg)
-            msg["images_scanned"] = True
-            msg["scan_results"] = results
-            _save_inbox(inbox)
+        if msg:
+            has_images = not msg.get("images_scanned") and any(
+                a.get("type") == "image" for a in msg.get("attachments", []))
+            has_urls = not msg.get("urls_scanned") and bool(
+                _re.search(r'https?://', msg.get("body", "") or ""))
 
-            products_found = sum(1 for r in results if r.get("is_product") and not r.get("skipped"))
-            status = html.Div([
-                html.I(className="bi bi-check-circle-fill me-2", style={"color": COLORS["success"]}),
-                html.Span(f"Scanned message from {msg['from']}. "
-                          f"Found {products_found} product image{'s' if products_found != 1 else ''}.",
-                          style={"color": COLORS["success"], "fontWeight": "500", "fontSize": "0.85rem"}),
-            ], style={
-                "background": f"{COLORS['success']}10", "padding": "12px 16px",
-                "borderRadius": "8px", "marginBottom": "16px",
-            })
+            if has_images or has_urls:
+                products_found = 0
+                msg.setdefault("scan_results", [])
+
+                if has_images:
+                    img_results = _scan_message_images(msg)
+                    msg["scan_results"].extend(img_results)
+                    products_found += sum(1 for r in img_results if r.get("is_product") and not r.get("skipped"))
+
+                if has_urls:
+                    urls = _re.findall(r'https?://[^\s<>"\']+', msg.get("body", "") or "")
+                    for url in urls[:3]:
+                        try:
+                            result = analyze_url_text(url)
+                            if result.get("error") and "amazon" in url.lower():
+                                from utils.whatsapp import _extract_product_from_amazon_url
+                                result = _extract_product_from_amazon_url(url)
+                            if result.get("is_product"):
+                                result["_source"] = "url"
+                                result["_url"] = url
+                                save_scan_result(result, url)
+                                msg["scan_results"].append(result)
+                                products_found += 1
+                            else:
+                                msg["scan_results"].append(result)
+                        except Exception as e:
+                            msg["scan_results"].append({"url": url, "error": str(e), "is_product": False})
+
+                msg["images_scanned"] = True
+                msg["urls_scanned"] = True
+                _save_inbox(inbox)
+
+                status = html.Div([
+                    html.I(className="bi bi-check-circle-fill me-2", style={"color": COLORS["success"]}),
+                    html.Span(f"Scanned message from {msg['from']}. "
+                              f"Found {products_found} product{'s' if products_found != 1 else ''}.",
+                              style={"color": COLORS["success"], "fontWeight": "500", "fontSize": "0.85rem"}),
+                ], style={
+                    "background": f"{COLORS['success']}10", "padding": "12px 16px",
+                    "borderRadius": "8px", "marginBottom": "16px",
+                })
+            else:
+                status = ""
         else:
             status = ""
     else:

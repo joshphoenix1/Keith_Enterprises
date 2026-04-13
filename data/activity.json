@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "type": "pipeline",
+    "action": "ingested_products",
+    "detail": "Scanned 3 products from inbox. Created 3 new offers, 0 duplicates skipped.",
+    "time": "2026-04-13 21:02:18"
+  }
+]
