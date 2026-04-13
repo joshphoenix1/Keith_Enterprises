@@ -170,6 +170,35 @@ def _message_card(msg):
         html.Div([scan_btn, scan_summary], style={"display": "flex", "gap": "12px",
                                                     "alignItems": "center", "flexWrap": "wrap"})
         if (scan_btn or scan_summary) else None,
+        # WhatsApp reply input
+        html.Div([
+            dcc.Input(
+                id={"type": "inbox-reply-input", "index": msg["id"]},
+                type="text",
+                placeholder="Type a reply...",
+                style={
+                    "flex": "1", "background": COLORS["input_bg"],
+                    "border": f"1px solid {COLORS['card_border']}",
+                    "borderRadius": "6px", "padding": "5px 10px",
+                    "color": COLORS["text"], "fontSize": "0.8rem",
+                    "outline": "none",
+                },
+                debounce=False,
+            ),
+            html.Button([
+                html.I(className="bi bi-send-fill me-1"),
+                "Send",
+            ], id={"type": "inbox-reply-btn", "index": msg["id"]},
+                className="btn-primary-dark",
+                style={
+                    "fontSize": "0.75rem", "padding": "5px 12px",
+                    "whiteSpace": "nowrap",
+                }),
+        ], style={
+            "display": "flex", "gap": "8px", "alignItems": "center",
+            "marginTop": "8px", "paddingTop": "8px",
+            "borderTop": f"1px solid {COLORS['card_border']}",
+        }) if msg["source"] == "whatsapp" else None,
     ], style={
         "padding": "14px 16px",
         "borderBottom": f"1px solid {COLORS['card_border']}",
@@ -406,6 +435,9 @@ def layout():
             "padding": "14px 18px", "borderRadius": "10px", "marginBottom": "20px",
         }),
 
+        # Reply status
+        html.Div(id="inbox-reply-status"),
+
         # Scan status
         dcc.Loading(
             id="inbox-scan-loading",
@@ -439,15 +471,24 @@ def layout():
                 info_card(f"Extracted Products ({len(rows)})",
                           html.Div([
                               html.Div([
-                                  html.I(className="bi bi-info-circle me-2",
-                                         style={"color": COLORS["info"]}),
-                                  html.Span("Products extracted from message text + AI image scans. "
-                                            "Use the Offers page to formally log and evaluate these.",
-                                            style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+                                  html.Div([
+                                      html.I(className="bi bi-info-circle me-2",
+                                             style={"color": COLORS["info"]}),
+                                      html.Span("Products extracted from messages, URLs, and AI image scans.",
+                                                style={"color": COLORS["text_muted"], "fontSize": "0.8rem",
+                                                       "flex": "1"}),
+                                      html.Button([
+                                          html.I(className="bi bi-arrow-right-circle me-2"),
+                                          "Push to Offers",
+                                      ], id="inbox-push-offers-btn", className="btn-primary-dark",
+                                         style={"fontSize": "0.8rem", "padding": "6px 14px",
+                                                "whiteSpace": "nowrap"}),
+                                  ], style={"display": "flex", "alignItems": "center", "gap": "12px"}),
                               ], style={
                                   "background": f"{COLORS['info']}10", "padding": "10px 14px",
                                   "borderRadius": "8px", "marginBottom": "16px",
                               }),
+                              html.Div(id="inbox-push-status", style={"marginBottom": "12px"}),
                               html.Div(id="inbox-products-container",
                                        children=[kpi_row, products_html]),
                           ]), "bi-table"),
@@ -614,3 +655,123 @@ def handle_scan(scan_all_clicks, individual_clicks):
     products_html = _build_products_html_table(rows)
 
     return status, message_cards, [kpi_row, products_html]
+
+
+@callback(
+    Output("inbox-push-status", "children"),
+    Input("inbox-push-offers-btn", "n_clicks"),
+    prevent_initial_call=True,
+)
+def push_to_offers(n_clicks):
+    if not n_clicks:
+        return ""
+    try:
+        from utils.pipeline import ingest_products_from_inbox
+        result = ingest_products_from_inbox()
+        new = result.get("new_offers", 0)
+        dups = result.get("duplicates", 0)
+        scanned = result.get("scanned", 0)
+        if new > 0:
+            return html.Div([
+                html.I(className="bi bi-check-circle-fill me-2",
+                       style={"color": COLORS["success"]}),
+                html.Span(f"Created {new} new offer{'s' if new != 1 else ''} from {scanned} products "
+                          f"({dups} duplicates skipped). ",
+                          style={"color": COLORS["success"], "fontWeight": "500", "fontSize": "0.85rem"}),
+                dcc.Link("View Offers →", href="/offers",
+                         style={"color": COLORS["primary"], "fontSize": "0.85rem"}),
+            ], style={"background": f"{COLORS['success']}10", "padding": "10px 14px",
+                      "borderRadius": "8px"})
+        else:
+            return html.Div([
+                html.I(className="bi bi-info-circle me-2",
+                       style={"color": COLORS["info"]}),
+                html.Span(f"No new products to create offers from ({scanned} scanned, {dups} already exist).",
+                          style={"color": COLORS["text_muted"], "fontSize": "0.85rem"}),
+            ], style={"background": f"{COLORS['info']}10", "padding": "10px 14px",
+                      "borderRadius": "8px"})
+    except Exception as e:
+        return html.Div([
+            html.I(className="bi bi-x-circle-fill me-2",
+                   style={"color": COLORS["danger"]}),
+            html.Span(f"Error: {e}", style={"color": COLORS["danger"], "fontSize": "0.85rem"}),
+        ], style={"background": f"{COLORS['danger']}10", "padding": "10px 14px",
+                  "borderRadius": "8px"})
+
+
+@callback(
+    Output("inbox-reply-status", "children"),
+    Input({"type": "inbox-reply-btn", "index": ALL}, "n_clicks"),
+    State({"type": "inbox-reply-input", "index": ALL}, "value"),
+    prevent_initial_call=True,
+)
+def handle_whatsapp_reply(n_clicks_list, reply_texts):
+    if not ctx.triggered_id or not isinstance(ctx.triggered_id, dict):
+        return ""
+
+    msg_id = ctx.triggered_id["index"]
+
+    # Find which index in the pattern-matched lists corresponds to the triggered button
+    triggered_idx = None
+    for i, btn_id in enumerate(ctx.inputs_list[0]):
+        if btn_id["id"]["index"] == msg_id:
+            triggered_idx = i
+            break
+
+    if triggered_idx is None:
+        return ""
+
+    # Check that the button was actually clicked (not just initial load)
+    if not n_clicks_list[triggered_idx]:
+        return ""
+
+    reply_text = reply_texts[triggered_idx]
+    if not reply_text or not reply_text.strip():
+        return html.Div([
+            html.I(className="bi bi-exclamation-triangle-fill me-2",
+                   style={"color": COLORS["danger"]}),
+            html.Span("Please type a message before sending.",
+                      style={"color": COLORS["danger"], "fontSize": "0.85rem"}),
+        ], style={
+            "background": f"{COLORS['danger']}10", "padding": "10px 14px",
+            "borderRadius": "8px", "marginBottom": "12px",
+        })
+
+    # Look up the sender's phone number from the message
+    inbox = _load_inbox()
+    messages = inbox.get("messages", [])
+    msg = next((m for m in messages if m["id"] == msg_id), None)
+    if not msg:
+        return html.Div([
+            html.I(className="bi bi-x-circle-fill me-2",
+                   style={"color": COLORS["danger"]}),
+            html.Span("Message not found.",
+                      style={"color": COLORS["danger"], "fontSize": "0.85rem"}),
+        ], style={
+            "background": f"{COLORS['danger']}10", "padding": "10px 14px",
+            "borderRadius": "8px", "marginBottom": "12px",
+        })
+
+    try:
+        from utils.whatsapp import send_message
+        send_message(msg["from"], reply_text.strip())
+        return html.Div([
+            html.I(className="bi bi-check-circle-fill me-2",
+                   style={"color": COLORS["success"]}),
+            html.Span(f"Reply sent to {msg['from']}.",
+                      style={"color": COLORS["success"], "fontSize": "0.85rem",
+                             "fontWeight": "500"}),
+        ], style={
+            "background": f"{COLORS['success']}10", "padding": "10px 14px",
+            "borderRadius": "8px", "marginBottom": "12px",
+        })
+    except Exception as e:
+        return html.Div([
+            html.I(className="bi bi-x-circle-fill me-2",
+                   style={"color": COLORS["danger"]}),
+            html.Span(f"Failed to send: {str(e)}",
+                      style={"color": COLORS["danger"], "fontSize": "0.85rem"}),
+        ], style={
+            "background": f"{COLORS['danger']}10", "padding": "10px 14px",
+            "borderRadius": "8px", "marginBottom": "12px",
+        })

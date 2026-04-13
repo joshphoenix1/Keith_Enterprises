@@ -32,10 +32,10 @@ def layout():
 
     # Calculate today's offer value
     from datetime import datetime
-    today = datetime.now().strftime("%2026-03-10")
+    today_str = datetime.now().strftime("%Y-%m-%d")
     today_value = sum(
         o.get("offered_price", 0) * o.get("quantity", 0)
-        for o in offers if o.get("created_at", "").startswith("2026-03-10")
+        for o in offers if o.get("created_at", "").startswith(today_str)
     )
 
     # Activity feed
@@ -76,22 +76,48 @@ def layout():
                        "borderBottom": f"1px solid {COLORS['card_border']}"})
         )
 
+    # WhatsApp status
+    wa_status = ""
+    try:
+        from utils.whatsapp import test_connection
+        wa_result = test_connection()
+        if wa_result.get("connected"):
+            wa_phone = wa_result.get("phone_number", "")
+            wa_status = html.Div([
+                html.I(className="bi bi-whatsapp me-2", style={"color": "#25D366"}),
+                html.Span("WhatsApp Connected", style={"color": "#25D366", "fontWeight": "600",
+                                                        "fontSize": "0.8rem"}),
+                html.Span(f" (+{wa_phone})" if wa_phone else "",
+                          style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+            ], style={"padding": "8px 14px", "background": "#25D36612",
+                      "borderRadius": "8px", "marginBottom": "8px"})
+        else:
+            wa_status = html.Div([
+                html.I(className="bi bi-whatsapp me-2", style={"color": COLORS["text_muted"]}),
+                html.Span("WhatsApp Disconnected", style={"color": COLORS["text_muted"],
+                                                           "fontSize": "0.8rem"}),
+            ], style={"padding": "8px 14px", "background": f"{COLORS['card_border']}30",
+                      "borderRadius": "8px", "marginBottom": "8px"})
+    except Exception:
+        pass
+
     # Quick actions
     quick_actions = html.Div([
+        wa_status,
+        dcc.Link(
+            html.Button([html.I(className="bi bi-chat-left-text me-2"), f"Inbox ({unread_msgs} unread)"],
+                        className="btn-primary-dark", style={"width": "100%", "marginBottom": "8px"}),
+            href="/inbox",
+        ),
         dcc.Link(
             html.Button([html.I(className="bi bi-plus-circle me-2"), "Add Offer"],
-                        className="btn-primary-dark", style={"width": "100%", "marginBottom": "8px"}),
+                        className="btn-outline-dark", style={"width": "100%", "marginBottom": "8px"}),
             href="/offers",
         ),
         dcc.Link(
             html.Button([html.I(className="bi bi-people me-2"), "Manage Buyers"],
                         className="btn-outline-dark", style={"width": "100%", "marginBottom": "8px"}),
             href="/buyers",
-        ),
-        dcc.Link(
-            html.Button([html.I(className="bi bi-chat-left-text me-2"), f"Inbox ({unread_msgs} unread)"],
-                        className="btn-outline-dark", style={"width": "100%", "marginBottom": "8px"}),
-            href="/inbox",
         ),
         dcc.Link(
             html.Button([html.I(className="bi bi-camera me-2"), "Scan Product"],
