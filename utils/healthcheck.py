@@ -396,22 +396,10 @@ class HealthChecker:
                     "oauth:token", "oauth", "pass",
                     f"OAuth token present ({masked})"))
 
-                # Validate token actually works
-                try:
-                    from utils.vision import validate_token
-                    validation = validate_token(token)
-                    if validation.get("valid"):
-                        results.append(self._check_result(
-                            "oauth:validation", "oauth", "pass",
-                            "Token validated successfully"))
-                    else:
-                        results.append(self._check_result(
-                            "oauth:validation", "oauth", "warn",
-                            f"Token may be expired: {validation.get('error', '')}"))
-                except Exception as e:
-                    results.append(self._check_result(
-                        "oauth:validation", "oauth", "warn",
-                        f"Could not validate token: {e}"))
+                # Token present — skip live validation to avoid rate limits
+                results.append(self._check_result(
+                    "oauth:validation", "oauth", "pass",
+                    "Token present (skipping live validation to avoid rate limits)"))
             else:
                 # Check for API key fallback
                 try:

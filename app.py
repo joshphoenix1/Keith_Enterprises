@@ -102,11 +102,16 @@ def whatsapp_webhook_receive():
 
         processed = process_webhook_payload(payload)
 
-        # Auto-process images with Claude AI if enabled
+        # Auto-process with Claude AI if enabled (images + URLs)
         if auto_process and processed:
             import threading
-            msg_ids = [m["id"] for m in processed
-                       if any(a.get("type") == "image" for a in m.get("attachments", []))]
+            import re
+            msg_ids = []
+            for m in processed:
+                has_images = any(a.get("type") == "image" for a in m.get("attachments", []))
+                has_urls = bool(re.search(r'https?://', m.get("body", "")))
+                if has_images or has_urls:
+                    msg_ids.append(m["id"])
             if msg_ids:
                 t = threading.Thread(target=trigger_auto_process, args=(msg_ids,), daemon=True)
                 t.start()

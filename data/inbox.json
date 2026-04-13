@@ -11,9 +11,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "3ACDE36DA28905EBC01E",
-      "wa_chat_id": "140029506679039@lid"
+      "wa_chat_id": "140029506679039@lid",
+      "urls_scanned": false,
+      "scan_results": []
     },
     {
       "id": 10,
@@ -26,9 +28,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "3A84C36668B52D67738E",
-      "wa_chat_id": "140029506679039@lid"
+      "wa_chat_id": "140029506679039@lid",
+      "urls_scanned": false,
+      "scan_results": []
     },
     {
       "id": 9,
@@ -41,9 +45,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "3AD2DD2223AD06AA6F18",
-      "wa_chat_id": "140029506679039@lid"
+      "wa_chat_id": "140029506679039@lid",
+      "urls_scanned": false,
+      "scan_results": []
     },
     {
       "id": 8,
@@ -56,9 +62,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "3A9BA716BAD5A9727B0D",
-      "wa_chat_id": "140029506679039@lid"
+      "wa_chat_id": "140029506679039@lid",
+      "urls_scanned": false,
+      "scan_results": []
     },
     {
       "id": 7,
@@ -71,9 +79,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "3A2A800F7D67B842A144",
-      "wa_chat_id": "140029506679039@lid"
+      "wa_chat_id": "140029506679039@lid",
+      "urls_scanned": false,
+      "scan_results": []
     },
     {
       "id": 6,
@@ -86,9 +96,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "3A924983BC68413F04B8",
-      "wa_chat_id": "140029506679039@lid"
+      "wa_chat_id": "140029506679039@lid",
+      "urls_scanned": false,
+      "scan_results": []
     },
     {
       "id": 5,
@@ -101,9 +113,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "3A47F51884C5021DA144",
-      "wa_chat_id": "140029506679039@lid"
+      "wa_chat_id": "140029506679039@lid",
+      "urls_scanned": false,
+      "scan_results": []
     },
     {
       "id": 4,
@@ -116,9 +130,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "3AD5BF9B79E948884AD9",
-      "wa_chat_id": "140029506679039@lid"
+      "wa_chat_id": "140029506679039@lid",
+      "urls_scanned": false,
+      "scan_results": []
     },
     {
       "id": 3,
@@ -131,9 +147,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "3A97802844AAAC1EA5E0",
-      "wa_chat_id": "140029506679039@lid"
+      "wa_chat_id": "140029506679039@lid",
+      "urls_scanned": false,
+      "scan_results": []
     },
     {
       "id": 2,
@@ -146,9 +164,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "3A6413C6C50586A7CB79",
-      "wa_chat_id": "140029506679039@lid"
+      "wa_chat_id": "140029506679039@lid",
+      "urls_scanned": false,
+      "scan_results": []
     },
     {
       "id": 1,
@@ -161,9 +181,11 @@
       "read": false,
       "products": [],
       "attachments": [],
-      "images_scanned": false,
+      "images_scanned": true,
       "wa_message_id": "test789",
-      "wa_chat_id": "1234567890@s.whatsapp.net"
+      "wa_chat_id": "1234567890@s.whatsapp.net",
+      "urls_scanned": false,
+      "scan_results": []
     }
   ]
 }

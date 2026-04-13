@@ -366,12 +366,96 @@ def send_message(to_number, text):
 
 # ── Auto Processing ──
 
-def trigger_auto_process(message_ids=None):
-    """Trigger Claude AI auto-processing for new WhatsApp messages with images.
+def _extract_urls(text):
+    """Extract URLs from message text."""
+    import re
+    return re.findall(r'https?://[^\s<>"\']+', text or "")
 
-    Runs the image scanning pipeline on unprocessed messages.
+
+def _extract_product_from_amazon_url(url):
+    """Extract product info from an Amazon URL using the ASIN and Claude AI.
+
+    Amazon blocks direct scraping, so we extract the ASIN and product name
+    from the URL slug, then ask Claude to identify the product.
     """
-    from utils.vision import analyze_image, analyze_multiple_images, save_scan_result
+    import re
+    from utils.vision import get_client, get_model, save_scan_result
+
+    # Extract ASIN (10-char alphanumeric after /dp/)
+    asin_match = re.search(r'/dp/([A-Z0-9]{10})', url)
+    asin = asin_match.group(1) if asin_match else ""
+
+    # Extract product slug from URL path
+    slug_match = re.search(r'amazon\.[^/]+/([^/]+)/dp/', url)
+    slug = slug_match.group(1).replace("-", " ") if slug_match else ""
+
+    if not asin and not slug:
+        return {"is_product": False, "error": "Could not extract product info from URL"}
+
+    # Ask Claude to identify the product from the URL info
+    client = get_client()
+    if not client:
+        return {"error": "No Claude credentials available"}
+
+    model = get_model()
+    prompt = f"""I have an Amazon product listing with the following information extracted from the URL:
+
+Product URL slug: {slug}
+ASIN: {asin}
+Full URL: {url}
+
+Based on this information, identify the product and return a JSON object:
+
+{{
+  "is_product": true,
+  "product_name": "Full product name (your best guess from the URL slug)",
+  "brand": "Brand name",
+  "category": "Product category",
+  "description": "Brief product description based on what you know about this product",
+  "asin": "{asin}",
+  "amazon_url": "{url.split('?')[0]}",
+  "amazon_category_guess": "Best Amazon category",
+  "key_selling_points": ["3-5 marketing angles"],
+  "estimated_competition": "Low/Medium/High",
+  "notes": "Any relevant details you know about this product"
+}}
+
+Only return valid JSON, no other text."""
+
+    try:
+        message = client.messages.create(
+            model=model, max_tokens=2048,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        response_text = message.content[0].text.strip()
+        if response_text.startswith("```"):
+            lines = response_text.split("\n")
+            response_text = "\n".join(lines[1:-1])
+
+        import json
+        result = json.loads(response_text)
+        result["_source"] = "amazon_url"
+        result["_url"] = url
+        result["_asin"] = asin
+        result["_model_used"] = model
+        result["_tokens_used"] = {
+            "input": message.usage.input_tokens,
+            "output": message.usage.output_tokens,
+        }
+        return result
+    except Exception as e:
+        return {"is_product": False, "error": f"Claude analysis failed: {e}", "_url": url}
+
+
+def trigger_auto_process(message_ids=None):
+    """Trigger Claude AI auto-processing for new WhatsApp messages.
+
+    Handles both:
+    - Image attachments: runs Claude vision to extract product data
+    - URLs in message text: fetches the page and extracts product data via Claude
+    """
+    from utils.vision import (analyze_image, analyze_multiple_images,
+                              analyze_url_text, save_scan_result)
 
     inbox = _load_inbox()
     messages = inbox.get("messages", [])
@@ -379,41 +463,84 @@ def trigger_auto_process(message_ids=None):
     products_found = 0
 
     for msg in messages:
-        if msg.get("images_scanned"):
+        if msg.get("images_scanned") and msg.get("urls_scanned"):
             continue
         if message_ids and msg["id"] not in message_ids:
             continue
 
-        image_attachments = [a for a in msg.get("attachments", []) if a.get("type") == "image"]
-        if not image_attachments:
-            continue
+        has_work = False
 
-        base_dir = os.path.dirname(os.path.dirname(__file__))
-        images = []
-        for att in image_attachments:
-            filepath = os.path.join(base_dir, att["path"])
-            if os.path.exists(filepath):
-                with open(filepath, "rb") as f:
-                    images.append({"bytes": f.read(), "filename": att["filename"]})
+        # ── Process image attachments ──
+        if not msg.get("images_scanned"):
+            image_attachments = [a for a in msg.get("attachments", []) if a.get("type") == "image"]
+            if image_attachments:
+                base_dir = os.path.dirname(os.path.dirname(__file__))
+                images = []
+                for att in image_attachments:
+                    filepath = os.path.join(base_dir, att["path"])
+                    if os.path.exists(filepath):
+                        with open(filepath, "rb") as f:
+                            images.append({"bytes": f.read(), "filename": att["filename"]})
 
-        if not images:
-            continue
+                if images:
+                    has_work = True
+                    if len(images) == 1:
+                        result = analyze_image(images[0]["bytes"], images[0]["filename"])
+                        result["filename"] = images[0]["filename"]
+                        save_scan_result(result, images[0]["filename"])
+                        img_results = [result]
+                    else:
+                        img_results = analyze_multiple_images(images)
+                        for r in img_results:
+                            if r.get("is_product") and not r.get("skipped"):
+                                save_scan_result(r, r.get("filename", "unknown"))
 
-        if len(images) == 1:
-            result = analyze_image(images[0]["bytes"], images[0]["filename"])
-            result["filename"] = images[0]["filename"]
-            save_scan_result(result, images[0]["filename"])
-            results = [result]
-        else:
-            results = analyze_multiple_images(images)
-            for r in results:
-                if r.get("is_product") and not r.get("skipped"):
-                    save_scan_result(r, r.get("filename", "unknown"))
+                    msg["images_scanned"] = True
+                    msg.setdefault("scan_results", []).extend(img_results)
+                    products_found += sum(1 for r in img_results
+                                          if r.get("is_product") and not r.get("skipped"))
+            else:
+                msg["images_scanned"] = True
 
-        msg["images_scanned"] = True
-        msg["scan_results"] = results
-        processed_count += 1
-        products_found += sum(1 for r in results if r.get("is_product") and not r.get("skipped"))
+        # ── Process URLs in message text ──
+        if not msg.get("urls_scanned"):
+            urls = _extract_urls(msg.get("body", ""))
+            if urls:
+                has_work = True
+                url_results = []
+                for url in urls[:3]:  # Limit to 3 URLs per message
+                    try:
+                        # Try direct page fetch first
+                        result = analyze_url_text(url)
+                        if result.get("error") and "amazon" in url.lower():
+                            # Amazon blocks scraping — use ASIN extraction + Claude
+                            logger.info("Direct fetch failed for Amazon URL, using ASIN extraction: %s", url[:60])
+                            result = _extract_product_from_amazon_url(url)
+
+                        if result.get("is_product"):
+                            result["_source"] = "url"
+                            result["_url"] = url
+                            save_scan_result(result, url)
+                            url_results.append(result)
+                            products_found += 1
+                            logger.info("Extracted product from URL: %s — %s",
+                                        url[:60], result.get("product_name", "?"))
+                        elif result.get("error"):
+                            url_results.append({"url": url, "error": result["error"], "is_product": False})
+                            logger.warning("URL extraction failed for %s: %s", url[:60], result["error"])
+                        else:
+                            url_results.append(result)
+                    except Exception as e:
+                        logger.error("URL processing error for %s: %s", url[:60], e)
+                        url_results.append({"url": url, "error": str(e), "is_product": False})
+
+                msg["urls_scanned"] = True
+                msg.setdefault("scan_results", []).extend(url_results)
+            else:
+                msg["urls_scanned"] = True
+
+        if has_work:
+            processed_count += 1
 
     if processed_count > 0:
         _save_inbox(inbox)
