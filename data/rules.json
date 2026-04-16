@@ -1,1 +1,19 @@
-{}
+{
+  "auto_reject": {
+    "enabled": true,
+    "min_margin_pct": 15.0,
+    "min_quantity": 50,
+    "max_offer_price": 100.0
+  },
+  "auto_accept": {
+    "enabled": true,
+    "min_margin_pct": 35.0,
+    "min_quantity": 100,
+    "min_amazon_price": 10.0
+  },
+  "alerts": {
+    "high_margin_threshold": 50.0,
+    "large_quantity_threshold": 1000,
+    "notify_on_high_value": true
+  }
+}

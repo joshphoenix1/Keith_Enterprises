@@ -1,6 +1,6 @@
 import json
 import os
-from dash import html, dcc
+from dash import html, dcc, callback, Input, Output
 from config import COLORS
 from components.cards import kpi_card, info_card
 
@@ -76,30 +76,8 @@ def layout():
                        "borderBottom": f"1px solid {COLORS['card_border']}"})
         )
 
-    # WhatsApp status
-    wa_status = ""
-    try:
-        from utils.whatsapp import test_connection
-        wa_result = test_connection()
-        if wa_result.get("connected"):
-            wa_phone = wa_result.get("phone_number", "")
-            wa_status = html.Div([
-                html.I(className="bi bi-whatsapp me-2", style={"color": "#25D366"}),
-                html.Span("WhatsApp Connected", style={"color": "#25D366", "fontWeight": "600",
-                                                        "fontSize": "0.8rem"}),
-                html.Span(f" (+{wa_phone})" if wa_phone else "",
-                          style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
-            ], style={"padding": "8px 14px", "background": "#25D36612",
-                      "borderRadius": "8px", "marginBottom": "8px"})
-        else:
-            wa_status = html.Div([
-                html.I(className="bi bi-whatsapp me-2", style={"color": COLORS["text_muted"]}),
-                html.Span("WhatsApp Disconnected", style={"color": COLORS["text_muted"],
-                                                           "fontSize": "0.8rem"}),
-            ], style={"padding": "8px 14px", "background": f"{COLORS['card_border']}30",
-                      "borderRadius": "8px", "marginBottom": "8px"})
-    except Exception:
-        pass
+    # WhatsApp status — loaded async via callback below
+    wa_status = html.Div(id="home-wa-status")
 
     # Quick actions
     quick_actions = html.Div([
@@ -189,3 +167,33 @@ def layout():
             ]),
         ], className="grid-row grid-3"),
     ])
+
+
+@callback(
+    Output("home-wa-status", "children"),
+    Input("home-wa-status", "id"),
+)
+def _load_wa_status(_):
+    """Load WhatsApp status async after page render."""
+    try:
+        from utils.whatsapp import test_connection
+        wa_result = test_connection()
+        if wa_result.get("connected"):
+            wa_phone = wa_result.get("phone_number", "")
+            return html.Div([
+                html.I(className="bi bi-whatsapp me-2", style={"color": "#25D366"}),
+                html.Span("WhatsApp Connected", style={"color": "#25D366", "fontWeight": "600",
+                                                        "fontSize": "0.8rem"}),
+                html.Span(f" (+{wa_phone})" if wa_phone else "",
+                          style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+            ], style={"padding": "8px 14px", "background": "#25D36612",
+                      "borderRadius": "8px", "marginBottom": "8px"})
+        else:
+            return html.Div([
+                html.I(className="bi bi-whatsapp me-2", style={"color": COLORS["text_muted"]}),
+                html.Span("WhatsApp Disconnected", style={"color": COLORS["text_muted"],
+                                                           "fontSize": "0.8rem"}),
+            ], style={"padding": "8px 14px", "background": f"{COLORS['card_border']}30",
+                      "borderRadius": "8px", "marginBottom": "8px"})
+    except Exception:
+        return ""
