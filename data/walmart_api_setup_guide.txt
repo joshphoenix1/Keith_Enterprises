@@ -1,0 +1,83 @@
+========================================
+WALMART PRICE API - SETUP INSTRUCTIONS
+========================================
+
+This lets Keith Enterprises automatically pull Walmart prices
+for products in your offer dashboard.
+
+TIME NEEDED: ~10 minutes to apply, 3-7 days for approval
+
+----------------------------------------
+STEP 1: Go to Walmart's Affiliate Page
+----------------------------------------
+Open this link in your browser:
+  https://affiliates.walmart.com
+
+Click "Join Now" or "Apply Now"
+
+It will redirect you to Impact.com (this is normal -
+Walmart uses Impact.com to manage their program).
+
+
+----------------------------------------
+STEP 2: Create an Impact.com Account
+----------------------------------------
+- Use your business email
+- Fill in your name and create a password
+- For "Company/Website" you can put your business name
+  (Keith Enterprises or Discount Depot LV)
+- For website URL, if you don't have one, you can use
+  your social media page or just put a placeholder
+
+
+----------------------------------------
+STEP 3: Fill Out the Application
+----------------------------------------
+When it asks about your business:
+
+- Business Type: select "Content / Blog / Website" or
+  "Technology / Software" (either works)
+- How will you promote: select "Product comparison"
+  or "Price comparison"
+- Monthly visitors/traffic: pick the lowest option,
+  this doesn't matter much
+- Categories: select "Health", "Household", "Beauty",
+  "Toys" (whatever matches your product categories)
+
+Submit the application.
+
+
+----------------------------------------
+STEP 4: Wait for Approval
+----------------------------------------
+You'll get an email from Impact.com when approved.
+This usually takes 3-7 business days.
+
+If you don't hear back in a week, check your spam folder
+or log back into Impact.com to check status.
+
+
+----------------------------------------
+STEP 5: Get Your API Credentials
+----------------------------------------
+Once approved:
+
+1. Log into Impact.com
+2. Go to: Settings > API Keys (or Technical Settings)
+3. Look for:
+   - Consumer ID (also called API Key)
+   - Private Key (also called API Secret)
+4. Copy both of these
+
+Send them to Josh / your tech team and they'll plug them
+into the dashboard.
+
+
+----------------------------------------
+THAT'S IT!
+----------------------------------------
+Once we have those two keys, the dashboard will
+automatically pull Walmart prices alongside the
+Amazon prices that are already working.
+
+Questions? Message the group chat.

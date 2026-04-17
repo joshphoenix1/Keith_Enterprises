@@ -79,6 +79,33 @@ If this page does NOT contain product information, return:
 Only return valid JSON, no other text."""
 
 
+EMAIL_TEXT_EXTRACTION_PROMPT = """You are analyzing the body text of an email from a wholesale supplier or distributor. Extract ALL products mentioned as a JSON array.
+
+For each product found, return:
+{
+  "is_product": true,
+  "product_name": "Full product name",
+  "brand": "Brand name",
+  "category": "Product category (OTC, HBA, Toys, Tools, Electronics, Grocery, Household, Apparel, Other)",
+  "description": "Brief description",
+  "quantity": 0,
+  "offered_price": 0,
+  "suggested_retail_price": null,
+  "upc_barcode": "",
+  "notes": "Any details about condition, lot size, closeout, etc."
+}
+
+If no products are found, return:
+{"is_product": false, "reason": "Explanation of what the email contains instead"}
+
+If multiple products are found, return a JSON array of product objects.
+If only one product, still return it in an array: [{ ... }]
+
+Extract prices where mentioned. Use 0 if no price given. Map categories to: OTC, HBA, Toys, Tools, Electronics, Grocery, Household, Apparel, or Other.
+
+Only return valid JSON, no other text."""
+
+
 URL_IMAGE_EXTRACTION_PROMPT = """I'm going to show you images scraped from a product page. Analyze ONLY the images that show actual products — labels, packaging, bottles, boxes, listings, or physical items.
 
 Skip any images that are: icons, logos, UI elements, banners, navigation graphics, avatars, or unrelated images.
@@ -394,6 +421,126 @@ def analyze_url_text(url):
                 "raw_response": response_text, "_model_used": "claude-cli"}
     except Exception as e:
         return {"error": f"URL analysis failed: {e}", "_model_used": "claude-cli"}
+
+
+def analyze_email_body(body_text, sender="", subject=""):
+    """Extract products from email body text via Claude CLI.
+
+    Returns a list of product dicts (scan_results format).
+    """
+    context = f"From: {sender}\nSubject: {subject}\n\n" if sender or subject else ""
+    prompt = f"{context}Email body:\n{body_text[:8000]}\n\n{EMAIL_TEXT_EXTRACTION_PROMPT}"
+
+    try:
+        response_text = _claude_call(prompt)
+        result = _parse_json_response(response_text)
+
+        # Normalize: always return a list
+        if isinstance(result, dict):
+            if not result.get("is_product"):
+                return []
+            result = [result]
+
+        # Tag each result
+        products = []
+        for r in result:
+            if r.get("is_product"):
+                r["_source"] = "email_text"
+                r["_model_used"] = "claude-cli"
+                products.append(r)
+
+        logger.info("Extracted %d products from email text (from %s)", len(products), sender)
+        return products
+
+    except json.JSONDecodeError:
+        logger.error("Failed to parse email text extraction response")
+        return []
+    except Exception as e:
+        logger.error("Email text analysis failed: %s", e)
+        return []
+
+
+def analyze_spreadsheet(filepath, sender="", subject=""):
+    """Parse an xlsx/csv offer sheet and extract products via Claude.
+
+    Reads the spreadsheet into text (first N rows), sends to Claude for extraction.
+    Returns a list of product dicts.
+    """
+    import csv
+    import io
+
+    text_rows = []
+
+    ext = os.path.splitext(filepath)[1].lower()
+    try:
+        if ext in (".xlsx", ".xls"):
+            import openpyxl
+            wb = openpyxl.load_workbook(filepath, read_only=True, data_only=True)
+            for sheet_name in wb.sheetnames:
+                ws = wb[sheet_name]
+                text_rows.append(f"--- Sheet: {sheet_name} ---")
+                for i, row in enumerate(ws.iter_rows(values_only=True)):
+                    if i > 500:
+                        text_rows.append("... (truncated)")
+                        break
+                    cells = [str(c) if c is not None else "" for c in row]
+                    text_rows.append("\t".join(cells))
+            wb.close()
+        elif ext == ".csv":
+            with open(filepath, "r", errors="replace") as f:
+                reader = csv.reader(f)
+                for i, row in enumerate(reader):
+                    if i > 500:
+                        text_rows.append("... (truncated)")
+                        break
+                    text_rows.append("\t".join(row))
+        else:
+            return []
+    except Exception as e:
+        logger.error("Failed to read spreadsheet %s: %s", filepath, e)
+        return []
+
+    if not text_rows:
+        return []
+
+    spreadsheet_text = "\n".join(text_rows)
+
+    prompt = f"""From: {sender}
+Subject: {subject}
+
+This is a wholesale/distributor offer sheet (spreadsheet). Extract ALL products listed.
+
+Spreadsheet content:
+{spreadsheet_text[:12000]}
+
+{EMAIL_TEXT_EXTRACTION_PROMPT}"""
+
+    try:
+        response_text = _claude_call(prompt, timeout=180)
+        result = _parse_json_response(response_text)
+
+        if isinstance(result, dict):
+            if not result.get("is_product"):
+                return []
+            result = [result]
+
+        products = []
+        for r in result:
+            if r.get("is_product"):
+                r["_source"] = "spreadsheet"
+                r["_model_used"] = "claude-cli"
+                products.append(r)
+
+        logger.info("Extracted %d products from spreadsheet %s",
+                     len(products), os.path.basename(filepath))
+        return products
+
+    except json.JSONDecodeError:
+        logger.error("Failed to parse spreadsheet extraction response")
+        return []
+    except Exception as e:
+        logger.error("Spreadsheet analysis failed: %s", e)
+        return []
 
 
 def analyze_url_images(url):

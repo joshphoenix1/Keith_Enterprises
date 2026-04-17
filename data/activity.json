@@ -10,5 +10,17 @@
     "action": "ingested_products",
     "detail": "Scanned 3 products from inbox. Created 0 new offers, 3 duplicates skipped.",
     "time": "2026-04-13 21:18:51"
+  },
+  {
+    "type": "pipeline",
+    "action": "ingested_products",
+    "detail": "Scanned 121 products from inbox. Created 93 new offers, 28 duplicates skipped.",
+    "time": "2026-04-16 23:47:47"
+  },
+  {
+    "type": "pipeline",
+    "action": "ingested_products",
+    "detail": "Scanned 127 products from inbox. Created 6 new offers, 121 duplicates skipped.",
+    "time": "2026-04-16 23:53:54"
   }
 ]

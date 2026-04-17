@@ -140,9 +140,14 @@ def whatsapp_send_message():
 if __name__ == "__main__":
     import os
     from utils.healthcheck import HealthChecker
+    from utils.email_client import EmailPoller
     # Only start health checker in the reloader's child process (or non-debug mode)
     if os.environ.get("WERKZEUG_RUN_MAIN") == "true" or not True:
         checker = HealthChecker(app=app, interval=60)
         app.server.health_checker = checker
         checker.start()
+
+        email_poller = EmailPoller(interval=120)
+        app.server.email_poller = email_poller
+        email_poller.start()
     app.run(debug=False, host="0.0.0.0", port=APP_PORT)
