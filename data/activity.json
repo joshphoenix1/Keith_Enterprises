@@ -28,5 +28,11 @@
     "action": "ingested_products",
     "detail": "Scanned 495 products from inbox. Created 293 new offers, 202 duplicates skipped. Matched 110 offers to buyers.",
     "time": "2026-04-17 01:13:47"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260417-001 from Josh: 5 items, $1,741.45",
+    "time": "2026-04-17 02:36:56"
   }
 ]

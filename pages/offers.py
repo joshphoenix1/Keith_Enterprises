@@ -144,7 +144,7 @@ def _build_filter_button(label, status_value, is_active=False):
         border = COLORS["card_border"]
     return html.Button(
         label,
-        id={"type": "offers-filter-btn", "index": status_value},
+        id=f"offers-filter-{status_value}",
         n_clicks=0,
         style={
             "background": bg,
@@ -198,45 +198,51 @@ def _build_table_data(offers, status_filter="all", category_filter=None):
     rows = []
     for o in filtered:
         mp = o.get("marketplace_data") or {}
+        sa = o.get("sa_data") or {}
         buyers = o.get("matched_buyers") or []
         buyer_name = buyers[0]["buyer_name"] if buyers else "-"
+
+        # Use SA data if available, fall back to scraped data
+        buy_box = sa.get("buy_box_price") or mp.get("amazon_price") or 0
+        buyer_profit = sa.get("buyer_profit") or 0
+        monthly_sales = sa.get("estimated_monthly_sales") or 0
+        fba_sellers = sa.get("fba_sellers", "")
+        wholesale = o.get("wholesale_price") or 0
+        our_margin = o.get("our_margin_pct") or sa.get("our_margin_pct") or 0
+
         rows.append({
             "id": o.get("id"),
             "status": STATUS_LABELS.get(o.get("status", ""), o.get("status", "")),
             "product_name": o.get("product_name", ""),
-            "upc": o.get("upc", ""),
             "category": o.get("category", ""),
+            "supplier_cost": round(float(o.get("per_unit_cost") or 0), 2),
+            "wholesale": round(float(wholesale), 2),
+            "our_margin": round(float(our_margin), 1),
+            "buy_box": round(float(buy_box), 2),
+            "buyer_profit": round(float(buyer_profit), 2),
+            "monthly_sales": monthly_sales,
+            "fba_sellers": fba_sellers if fba_sellers != "" else "",
             "quantity": o.get("quantity") or 0,
-            "case_price": round(float(o.get("offered_price") or 0), 2),
-            "pack_qty": o.get("pack_qty") or 0,
-            "unit_cost": round(float(o.get("per_unit_cost") or 0), 2),
-            "amazon_price": round(float(mp.get("amazon_price") or 0), 2),
-            "walmart_price": round(float(mp.get("walmart_price") or 0), 2),
-            "margin_pct": round(float(o.get("margin_pct") or 0), 1),
             "matched_buyer": buyer_name,
-            "source": (o.get("source") or "").capitalize(),
             "expiry": _format_date(o.get("expiry", "")),
-            "date_added": _format_date(o.get("created_at", "")),
         })
     return rows
 
 
 TABLE_COLUMNS = [
     {"name": "Status", "id": "status"},
-    {"name": "Product Name", "id": "product_name"},
-    {"name": "UPC", "id": "upc"},
+    {"name": "Product", "id": "product_name"},
     {"name": "Category", "id": "category"},
-    {"name": "Qty", "id": "quantity", "type": "numeric"},
-    {"name": "Case Price", "id": "case_price", "type": "numeric"},
-    {"name": "Pack", "id": "pack_qty", "type": "numeric"},
-    {"name": "Unit Cost", "id": "unit_cost", "type": "numeric"},
-    {"name": "Amazon Price", "id": "amazon_price", "type": "numeric"},
-    {"name": "Walmart Price", "id": "walmart_price", "type": "numeric"},
-    {"name": "Margin %", "id": "margin_pct", "type": "numeric"},
-    {"name": "Matched Buyer", "id": "matched_buyer"},
-    {"name": "Source", "id": "source"},
+    {"name": "Our Cost", "id": "supplier_cost", "type": "numeric"},
+    {"name": "Our Price", "id": "wholesale", "type": "numeric"},
+    {"name": "Our Margin %", "id": "our_margin", "type": "numeric"},
+    {"name": "Buy Box", "id": "buy_box", "type": "numeric"},
+    {"name": "Buyer Profit", "id": "buyer_profit", "type": "numeric"},
+    {"name": "Mo. Sales", "id": "monthly_sales", "type": "numeric"},
+    {"name": "FBA", "id": "fba_sellers"},
+    {"name": "Avail", "id": "quantity", "type": "numeric"},
+    {"name": "Buyer", "id": "matched_buyer"},
     {"name": "Expiry", "id": "expiry"},
-    {"name": "Date Added", "id": "date_added"},
 ]
 
 
@@ -263,6 +269,7 @@ def layout():
     offers = _load_offers()
     table_data = _build_table_data(offers)
     no_price = sum(1 for o in offers if not (o.get("marketplace_data") or {}).get("amazon_price"))
+    no_sa = sum(1 for o in offers if o.get("upc") and not o.get("sa_data", {}).get("buy_box_price"))
 
     return html.Div([
         # Hidden stores
@@ -308,46 +315,72 @@ def layout():
             "border": f"1px solid {COLORS['card_border']}",
         }),
 
-        # Price lookup banner
+        # Seller Assistant enrichment banner
         html.Div([
             html.Div([
                 html.Div([
-                    html.I(className="bi bi-currency-dollar",
-                           style={"fontSize": "1.3rem", "color": COLORS["success"]}),
+                    html.I(className="bi bi-lightning-charge-fill",
+                           style={"fontSize": "1.3rem", "color": COLORS["purple"]}),
                 ], style={"flexShrink": "0"}),
                 html.Div([
-                    html.Span("Amazon Price Lookup ",
+                    html.Span("Seller Assistant Enrichment ",
                               style={"color": COLORS["text"], "fontWeight": "600"}),
-                    html.Span(id="offers-price-pending-text",
-                              children=f"— {no_price} offers without pricing",
+                    html.Span(id="offers-sa-pending-text",
+                              children=f"— {no_sa} offers need enrichment (Buy Box, fees, restrictions, sales data)",
                               style={"color": COLORS["text_muted"]}),
                 ], style={"fontSize": "0.85rem", "flex": "1"}),
                 html.Div([
                     styled_dropdown(
-                        "offers-price-batch-size",
-                        [{"label": f"{n} offers", "value": n} for n in [10, 25, 50, 100]],
+                        "offers-sa-batch-size",
+                        [{"label": f"{n} offers", "value": n} for n in [10, 25, 50]],
                         value=25,
-                        placeholder="Batch size",
+                        placeholder="Batch",
                         clearable=False,
                     ),
-                ], style={"minWidth": "130px"}),
+                ], style={"minWidth": "120px"}),
                 html.Div([
                     html.Button([
-                        html.I(className="bi bi-search me-2"),
-                        "Run Price Check",
-                    ], id="offers-price-check-btn", className="btn-primary-dark",
+                        html.I(className="bi bi-lightning-charge me-2"),
+                        "Enrich Products",
+                    ], id="offers-sa-enrich-btn", className="btn-primary-dark",
                         style={"fontSize": "0.8rem", "padding": "8px 16px", "whiteSpace": "nowrap"}),
                 ]),
             ], style={"display": "flex", "alignItems": "center", "gap": "16px"}),
             dcc.Loading(
-                id="offers-price-loading",
+                id="offers-sa-loading",
                 type="default",
-                color=COLORS["primary"],
-                children=html.Div(id="offers-price-status"),
+                color=COLORS["purple"],
+                children=html.Div(id="offers-sa-status"),
             ),
         ], style={
-            "background": f"{COLORS['success']}10", "border": f"1px solid {COLORS['success']}30",
+            "background": f"{COLORS['purple']}10", "border": f"1px solid {COLORS['purple']}30",
             "padding": "14px 18px", "borderRadius": "10px", "marginBottom": "20px",
+        }),
+
+        # Price check banner (fallback for offers without UPC)
+        html.Div([
+            html.Div([
+                html.Div([
+                    html.I(className="bi bi-currency-dollar",
+                           style={"fontSize": "1.1rem", "color": COLORS["success"]}),
+                ], style={"flexShrink": "0"}),
+                html.Span(id="offers-price-pending-text",
+                          children=f"Amazon price scraper: {no_price} without pricing",
+                          style={"color": COLORS["text_muted"], "fontSize": "0.8rem", "flex": "1"}),
+                styled_dropdown(
+                    "offers-price-batch-size",
+                    [{"label": f"{n}", "value": n} for n in [10, 25, 50]],
+                    value=25,
+                    clearable=False,
+                ),
+                html.Button([html.I(className="bi bi-search me-1"), "Price Check"],
+                    id="offers-price-check-btn", className="btn-outline-dark",
+                    style={"fontSize": "0.75rem", "padding": "6px 12px", "whiteSpace": "nowrap"}),
+            ], style={"display": "flex", "alignItems": "center", "gap": "12px"}),
+            html.Div(id="offers-price-status"),
+        ], style={
+            "background": f"{COLORS['card']}", "border": f"1px solid {COLORS['card_border']}",
+            "padding": "10px 14px", "borderRadius": "8px", "marginBottom": "20px",
         }),
 
         # Main data table
@@ -482,24 +515,29 @@ def layout():
 
 @callback(
     Output("offers-active-filter", "data"),
-    Input({"type": "offers-filter-btn", "index": ALL}, "n_clicks"),
+    Input("offers-filter-all", "n_clicks"),
+    Input("offers-filter-new", "n_clicks"),
+    Input("offers-filter-evaluating", "n_clicks"),
+    Input("offers-filter-matched", "n_clicks"),
+    Input("offers-filter-accepted", "n_clicks"),
+    Input("offers-filter-rejected", "n_clicks"),
     prevent_initial_call=True,
 )
-def _set_filter(n_clicks_list):
+def _set_filter(*args):
     """Track which status filter button was clicked."""
-    triggered = ctx.triggered_id
-    if triggered and isinstance(triggered, dict):
-        return triggered["index"]
+    triggered = ctx.triggered_id or ""
+    if isinstance(triggered, str) and triggered.startswith("offers-filter-"):
+        return triggered.replace("offers-filter-", "")
     return "all"
 
 
 @callback(
     Output("offers-main-table", "data"),
     Output("offers-kpi-row", "children"),
-    Output({"type": "offers-filter-btn", "index": ALL}, "style"),
     Input("offers-active-filter", "data"),
     Input("offers-category-filter", "value"),
     Input("offers-add-btn", "n_clicks"),
+    prevent_initial_call=True,
 )
 def _update_table(status_filter, category_filter, _add_click):
     """Re-render the table and KPIs when filters change or data is added."""
@@ -507,38 +545,7 @@ def _update_table(status_filter, category_filter, _add_click):
     status_filter = status_filter or "all"
     table_data = _build_table_data(offers, status_filter, category_filter)
     kpi_row = _build_kpi_row(offers)
-
-    # Build button styles based on active filter
-    filter_values = ["all", "new", "evaluating", "matched", "accepted", "rejected"]
-    button_styles = []
-    for val in filter_values:
-        is_active = (val == status_filter)
-        if is_active:
-            button_styles.append({
-                "background": COLORS["active"],
-                "color": "#ffffff",
-                "border": f"1px solid {COLORS['active']}",
-                "borderRadius": "6px",
-                "padding": "6px 16px",
-                "fontSize": "0.8rem",
-                "fontWeight": "500",
-                "cursor": "pointer",
-                "transition": "all 0.15s ease",
-            })
-        else:
-            button_styles.append({
-                "background": "transparent",
-                "color": COLORS["text_muted"],
-                "border": f"1px solid {COLORS['card_border']}",
-                "borderRadius": "6px",
-                "padding": "6px 16px",
-                "fontSize": "0.8rem",
-                "fontWeight": "500",
-                "cursor": "pointer",
-                "transition": "all 0.15s ease",
-            })
-
-    return table_data, kpi_row, button_styles
+    return table_data, kpi_row
 
 
 @callback(
@@ -658,6 +665,7 @@ def _show_detail(selected_rows, table_data):
     status = offer.get("status", "new")
     status_color = STATUS_COLORS.get(status, COLORS["text_muted"])
     mp = offer.get("marketplace_data") or {}
+    sa = offer.get("sa_data") or {}
     buyers = offer.get("matched_buyers") or []
 
     buyer_list = html.Div([
@@ -711,22 +719,47 @@ def _show_detail(selected_rows, table_data):
 
         # Detail grid
         html.Div([
-            # Left column: offer details
+            # Left column: offer + SA details
             html.Div([
+                # Our pricing
+                html.H6("Our Pricing", style={"color": COLORS["text_muted"], "fontSize": "0.75rem",
+                         "textTransform": "uppercase", "letterSpacing": "0.05em", "marginBottom": "8px"}),
+                _detail_field("Supplier Case Price", _format_currency(offer.get("offered_price"))),
+                _detail_field("Pack Qty", str(offer.get("pack_qty", "")) or "-"),
+                _detail_field("Our Cost/Unit", _format_currency(offer.get("per_unit_cost"))),
+                _detail_field("Our Wholesale Price", _format_currency(offer.get("wholesale_price"))),
+                _detail_field("Our Margin", f"{offer.get('our_margin_pct', 0) or sa.get('our_margin_pct', 0):.1f}%"),
+
+                html.Hr(style={"borderColor": COLORS["card_border"], "margin": "12px 0"}),
+
+                # Amazon market data (for buyer evaluation)
+                html.H6("Amazon Market Data", style={"color": COLORS["text_muted"], "fontSize": "0.75rem",
+                         "textTransform": "uppercase", "letterSpacing": "0.05em", "marginBottom": "8px"}),
+                _detail_field("ASIN", sa.get("asin", "") or "-"),
+                _detail_field("Buy Box Price", _format_currency(sa.get("buy_box_price") or mp.get("amazon_price"))),
+                _detail_field("FBA Fees", _format_currency(sa.get("total_fees"))),
+                _detail_field("Buyer Profit/Unit", _format_currency(sa.get("buyer_profit"))),
+                _detail_field("Buyer ROI", f"{sa.get('buyer_roi_pct', 0):.1f}%" if sa.get("buyer_roi_pct") else "-"),
+                _detail_field("Mo. Sales", str(sa.get("estimated_monthly_sales", "")) or "-"),
+                _detail_field("BSR", f"{sa.get('bsr', '')} (top {sa.get('bsr_top_pct', '')}%)" if sa.get("bsr") else "-"),
+                _detail_field("FBA Sellers", str(sa.get("fba_sellers", "")) or "-"),
+
+                html.Hr(style={"borderColor": COLORS["card_border"], "margin": "12px 0"}),
+
                 _detail_field("UPC", offer.get("upc", "")),
                 _detail_field("Category", offer.get("category", "")),
-                _detail_field("Quantity", str(offer.get("quantity", 0))),
-                _detail_field("Case Price", _format_currency(offer.get("offered_price"))),
-                _detail_field("Pack Qty", str(offer.get("pack_qty", "")) or "-"),
-                _detail_field("Unit Cost", _format_currency(offer.get("per_unit_cost"))),
-                _detail_field("Amazon Price", _format_currency(mp.get("amazon_price"))),
-                _detail_field("Walmart Price", _format_currency(mp.get("walmart_price"))),
-                _detail_field("Margin", _format_pct(offer.get("margin_pct"))),
+                _detail_field("Available", str(offer.get("quantity", 0))),
                 _detail_field("Expiry", _format_date(offer.get("expiry", ""))),
                 _detail_field("Source", (offer.get("source") or "").capitalize()),
                 _detail_field("From", offer.get("source_from", "") or "-"),
-                _detail_field("Added", _format_date(offer.get("created_at", ""))),
-                _detail_field("Notes", offer.get("notes", "") or "-"),
+                # Amazon link
+                html.Div([
+                    html.A([html.I(className="bi bi-box-arrow-up-right me-2"), "View on Amazon"],
+                           href=sa.get("product_url") or f"https://www.amazon.com/s?k={offer.get('upc', '')}",
+                           target="_blank",
+                           style={"color": COLORS["primary"], "fontSize": "0.85rem",
+                                  "textDecoration": "none"}),
+                ], style={"marginTop": "8px"}) if sa.get("product_url") or offer.get("upc") else None,
             ], style={"flex": "1"}),
 
             # Right column: buyers and status update
@@ -869,6 +902,61 @@ def _run_price_check(n_clicks, batch_size):
             })
 
         return status, f"— {remaining} offers without pricing"
+
+    except Exception as e:
+        return html.Div([
+            html.I(className="bi bi-x-circle-fill me-2",
+                   style={"color": COLORS["danger"]}),
+            html.Span(f"Error: {str(e)}",
+                      style={"color": COLORS["danger"], "fontSize": "0.85rem"}),
+        ], style={
+            "padding": "10px 14px", "borderRadius": "8px", "marginTop": "12px",
+            "background": f"{COLORS['danger']}10",
+        }), no_update
+
+
+@callback(
+    Output("offers-sa-status", "children"),
+    Output("offers-sa-pending-text", "children"),
+    Input("offers-sa-enrich-btn", "n_clicks"),
+    State("offers-sa-batch-size", "value"),
+    prevent_initial_call=True,
+)
+def _run_sa_enrichment(n_clicks, batch_size):
+    if not n_clicks:
+        return no_update, no_update
+
+    from utils.seller_assistant import bulk_enrich
+    batch_size = int(batch_size or 25)
+
+    try:
+        result = bulk_enrich(max_offers=batch_size, delay=1.1)
+        enriched = result.get("enriched", 0)
+        restricted = result.get("restricted", 0)
+        errors = result.get("errors", 0)
+        remaining = result.get("remaining", 0)
+
+        parts = []
+        if enriched:
+            parts.append(f"{enriched} enriched")
+        if restricted:
+            parts.append(f"{restricted} restricted")
+        if errors:
+            parts.append(f"{errors} errors")
+        detail = ", ".join(parts) if parts else "nothing to process"
+
+        status = html.Div([
+            html.I(className="bi bi-check-circle-fill me-2",
+                   style={"color": COLORS["success"]}),
+            html.Span(f"{detail}. {remaining} remaining.",
+                      style={"color": COLORS["success"], "fontWeight": "500",
+                             "fontSize": "0.85rem"}),
+        ], style={
+            "background": f"{COLORS['success']}10", "padding": "10px 14px",
+            "borderRadius": "8px", "marginTop": "12px",
+        })
+
+        return status, f"— {remaining} offers need enrichment"
 
     except Exception as e:
         return html.Div([

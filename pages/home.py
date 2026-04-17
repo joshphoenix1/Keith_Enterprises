@@ -23,20 +23,36 @@ def layout():
     inbox = _load_json("inbox.json")
     messages = inbox.get("messages", []) if isinstance(inbox, dict) else []
 
+    orders = _load_json("orders.json")
+
     total_offers = len(offers)
     new_offers = sum(1 for o in offers if o.get("status") == "new")
     matched_offers = sum(1 for o in offers if o.get("status") == "matched")
     accepted_offers = sum(1 for o in offers if o.get("status") == "accepted")
     total_buyers = len(buyers)
     unread_msgs = sum(1 for m in messages if not m.get("read"))
+    total_orders = len(orders)
+    pending_orders = sum(1 for o in orders if o.get("status") == "pending_review")
 
-    # Calculate today's offer value
+    # SA enrichment stats
+    enriched = sum(1 for o in offers if o.get("sa_data", {}).get("buy_box_price"))
+    restricted = sum(1 for o in offers if o.get("sa_data", {}).get("restriction_status") in ("NOT_ELIGIBLE", "APPROVAL_REQUIRED"))
+    sellable = sum(1 for o in offers if o.get("sa_data", {}).get("restriction_status") == "ALLOWED_TO_SELL")
+
+    # Profit stats from SA data
+    profits = [o.get("sa_data", {}).get("profit_per_unit", 0) for o in offers
+               if o.get("sa_data", {}).get("profit_per_unit") and o.get("sa_data", {}).get("profit_per_unit") > 0]
+    avg_profit = round(sum(profits) / len(profits), 2) if profits else 0
+    total_potential = sum(
+        (o.get("sa_data", {}).get("profit_per_unit") or 0) * (o.get("quantity") or 0)
+        for o in offers if o.get("sa_data", {}).get("profit_per_unit", 0) > 0
+    )
+
+    # Order value
+    order_value = sum(o.get("subtotal", 0) for o in orders if o.get("status") != "cancelled")
+
     from datetime import datetime
     today_str = datetime.now().strftime("%Y-%m-%d")
-    today_value = sum(
-        o.get("offered_price", 0) * o.get("quantity", 0)
-        for o in offers if o.get("created_at", "").startswith(today_str)
-    )
 
     # Activity feed
     type_icons = {
@@ -107,10 +123,12 @@ def layout():
     # Offer pipeline summary
     pipeline_data = [
         ("New", new_offers, COLORS["info"]),
-        ("Evaluating", sum(1 for o in offers if o.get("status") == "evaluating"), COLORS["warning"]),
-        ("Matched", matched_offers, COLORS["purple"]),
+        ("Enriched (SA)", enriched, COLORS["purple"]),
+        ("Sellable", sellable, COLORS["success"]),
+        ("Restricted", restricted, COLORS["danger"]),
+        ("Matched", matched_offers, COLORS["primary"]),
         ("Accepted", accepted_offers, COLORS["success"]),
-        ("Rejected", sum(1 for o in offers if o.get("status") == "rejected"), COLORS["danger"]),
+        ("Orders", total_orders, COLORS["warning"]),
     ]
 
     pipeline_bars = html.Div([
@@ -144,14 +162,14 @@ def layout():
 
         # KPI Row
         html.Div([
-            kpi_card("Total Offers", str(total_offers), "bi-tag",
-                     COLORS["primary"], f"{new_offers} new today"),
-            kpi_card("Matched", str(matched_offers), "bi-link-45deg",
-                     COLORS["purple"], f"{accepted_offers} accepted"),
+            kpi_card("Offers", str(total_offers), "bi-tag",
+                     COLORS["primary"], f"{enriched} enriched, {total_offers - enriched} pending"),
+            kpi_card("Orders", str(total_orders), "bi-cart-check",
+                     COLORS["success"], f"${order_value:,.0f} value" if order_value else f"{pending_orders} pending"),
+            kpi_card("Avg Profit/Unit", f"${avg_profit:.2f}", "bi-currency-dollar",
+                     COLORS["warning"], f"${total_potential:,.0f} potential"),
             kpi_card("Buyers", str(total_buyers), "bi-people",
-                     COLORS["success"]),
-            kpi_card("Today's Value", f"${today_value:,.0f}", "bi-currency-dollar",
-                     COLORS["warning"]),
+                     COLORS["info"], f"{matched_offers} matched, {accepted_offers} accepted"),
         ], className="grid-row grid-4"),
 
         # Bottom row: pipeline + activity + quick actions

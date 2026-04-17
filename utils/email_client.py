@@ -485,9 +485,18 @@ def fetch_and_process():
 
             # Run price check on new offers without prices
             if ingest_result.get("new_offers", 0) > 0:
-                from utils.pricing import bulk_lookup_prices
-                price_result = bulk_lookup_prices(max_offers=ingest_result["new_offers"], delay=1)
-                logger.info("Pipeline: found %d Amazon prices", price_result.get("amazon_found", 0))
+                # Enrich with Seller Assistant (Buy Box, fees, restrictions, sales)
+                try:
+                    from utils.seller_assistant import bulk_enrich
+                    sa_result = bulk_enrich(max_offers=ingest_result["new_offers"], delay=1.1)
+                    logger.info("Pipeline: SA enriched %d, %d restricted",
+                                sa_result.get("enriched", 0), sa_result.get("restricted", 0))
+                except Exception as e:
+                    logger.error("SA enrichment failed: %s", e)
+                    # Fallback to basic price scraping
+                    from utils.pricing import bulk_lookup_prices
+                    price_result = bulk_lookup_prices(max_offers=ingest_result["new_offers"], delay=1)
+                    logger.info("Pipeline: found %d Amazon prices", price_result.get("amazon_found", 0))
 
                 # Re-match buyers with updated prices
                 offers = _load_json("offers.json")

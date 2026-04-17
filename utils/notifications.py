@@ -194,6 +194,31 @@ def send_buyer_confirmation(order, buyer_email):
             f"</tr>"
         )
 
+    # Shipping address
+    ship_addr = order.get("shipping_address", {})
+    addr_lines = []
+    if ship_addr.get("name"):
+        addr_lines.append(f"<strong>{ship_addr['name']}</strong>")
+    if ship_addr.get("company"):
+        addr_lines.append(ship_addr["company"])
+    if ship_addr.get("line1"):
+        addr_lines.append(ship_addr["line1"])
+    if ship_addr.get("line2"):
+        addr_lines.append(ship_addr["line2"])
+    csz = ""
+    if ship_addr.get("city"):
+        csz = ship_addr["city"]
+    if ship_addr.get("state"):
+        csz += f", {ship_addr['state']}"
+    if ship_addr.get("zip"):
+        csz += f" {ship_addr['zip']}"
+    if csz:
+        addr_lines.append(csz)
+    if ship_addr.get("phone"):
+        addr_lines.append(f"Phone: {ship_addr['phone']}")
+
+    shipping_html = "<br>".join(addr_lines) if addr_lines else "<em>No shipping address on file — we'll confirm before shipping.</em>"
+
     html = f"""
     <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;">
         <div style="background:#1a1a2e;color:#fff;padding:24px 28px;border-radius:8px 8px 0 0;">
@@ -205,9 +230,9 @@ def send_buyer_confirmation(order, buyer_email):
             <p>Thank you for your order. Here is your confirmation:</p>
 
             <table style="width:100%;margin:12px 0;">
-                <tr><td style="color:#666;padding:3px 0;width:120px;">Order ID</td><td style="font-weight:bold;">{order_id}</td></tr>
+                <tr><td style="color:#666;padding:3px 0;width:130px;">Order ID</td><td style="font-weight:bold;">{order_id}</td></tr>
                 <tr><td style="color:#666;padding:3px 0;">Date</td><td>{order.get('created_at', '—')}</td></tr>
-                <tr><td style="color:#666;padding:3px 0;">Payment Terms</td><td>{order.get('payment_terms', '—')}</td></tr>
+                <tr><td style="color:#666;padding:3px 0;">Payment Terms</td><td>{order.get('payment_terms', 'Wire before ship')}</td></tr>
             </table>
 
             <h3 style="margin:20px 0 8px;border-bottom:2px solid #1a1a2e;padding-bottom:4px;">Order Details</h3>
@@ -231,13 +256,41 @@ def send_buyer_confirmation(order, buyer_email):
                 </tfoot>
             </table>
 
-            <div style="background:#f0f7f4;border-left:4px solid #2d6a4f;padding:16px;margin:24px 0;border-radius:0 4px 4px 0;">
-                <p style="margin:0;font-weight:bold;color:#2d6a4f;">Next Steps</p>
-                <p style="margin:8px 0 0;">We'll confirm availability and send payment details within 24 hours.</p>
+            <!-- Shipping Address -->
+            <div style="display:flex;gap:24px;margin:24px 0;">
+                <div style="flex:1;background:#f9f9f9;padding:16px;border-radius:6px;">
+                    <p style="margin:0 0 8px;font-size:11px;color:#999;text-transform:uppercase;letter-spacing:1px;font-weight:bold;">Ship To</p>
+                    <p style="margin:0;font-size:14px;line-height:1.6;">{shipping_html}</p>
+                </div>
+            </div>
+
+            <!-- Payment Details -->
+            <div style="background:#fff8e1;border-left:4px solid #f9a825;padding:16px;margin:20px 0;border-radius:0 4px 4px 0;">
+                <p style="margin:0;font-weight:bold;color:#f57f17;">Payment Information</p>
+                <table style="margin:10px 0 0;font-size:14px;line-height:1.8;">
+                    <tr><td style="color:#666;padding:2px 16px 2px 0;">Amount Due:</td><td style="font-weight:bold;">${subtotal:,.2f}</td></tr>
+                    <tr><td style="color:#666;padding:2px 16px 2px 0;">Terms:</td><td>{order.get('payment_terms', 'Wire before ship')}</td></tr>
+                    <tr><td style="color:#666;padding:2px 16px 2px 0;">Wire Transfer:</td><td>Contact us for bank details</td></tr>
+                    <tr><td style="color:#666;padding:2px 16px 2px 0;">Zelle:</td><td>jaxonbelgiano@gmail.com</td></tr>
+                    <tr><td style="color:#666;padding:2px 16px 2px 0;">Reference:</td><td style="font-weight:bold;">{order_id}</td></tr>
+                </table>
+                <p style="margin:10px 0 0;font-size:12px;color:#666;">Please include your order number with your payment for faster processing.</p>
+            </div>
+
+            <!-- Next Steps -->
+            <div style="background:#f0f7f4;border-left:4px solid #2d6a4f;padding:16px;margin:20px 0;border-radius:0 4px 4px 0;">
+                <p style="margin:0;font-weight:bold;color:#2d6a4f;">What Happens Next</p>
+                <ol style="margin:8px 0 0;padding-left:20px;font-size:14px;line-height:1.8;">
+                    <li>We confirm product availability (within 24 hours)</li>
+                    <li>You send payment via wire or Zelle</li>
+                    <li>We arrange shipping once payment clears</li>
+                    <li>You receive tracking information via email</li>
+                </ol>
             </div>
 
             <p style="color:#888;font-size:12px;margin-top:24px;border-top:1px solid #eee;padding-top:12px;">
-                If you have questions about this order, reply to this email or contact us directly.
+                Quantities are held for 48 hours. If you have questions, reply to this email.<br>
+                Keith Enterprises — Wholesale Distribution
             </p>
         </div>
     </div>

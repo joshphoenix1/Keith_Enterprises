@@ -535,9 +535,15 @@ def trigger_auto_process(message_ids=None):
             logger.info("Pipeline: created %d offers from WhatsApp products", ingest_result.get("new_offers", 0))
 
             if ingest_result.get("new_offers", 0) > 0:
-                from utils.pricing import bulk_lookup_prices
-                price_result = bulk_lookup_prices(max_offers=ingest_result["new_offers"], delay=1)
-                logger.info("Pipeline: found %d Amazon prices", price_result.get("amazon_found", 0))
+                try:
+                    from utils.seller_assistant import bulk_enrich
+                    sa_result = bulk_enrich(max_offers=ingest_result["new_offers"], delay=1.1)
+                    logger.info("Pipeline: SA enriched %d, %d restricted",
+                                sa_result.get("enriched", 0), sa_result.get("restricted", 0))
+                except Exception as sa_err:
+                    logger.error("SA enrichment failed: %s", sa_err)
+                    from utils.pricing import bulk_lookup_prices
+                    bulk_lookup_prices(max_offers=ingest_result["new_offers"], delay=1)
 
                 offers = _load_json("offers.json")
                 matched = auto_match_buyers(offers)

@@ -217,6 +217,21 @@ def _show_detail(selected_rows, table_data):
         actions.append(html.Button([html.I(className="bi bi-check-circle me-2"), "Mark Complete"],
                        id="orders-btn-complete", className="btn-primary-dark", style={"marginRight": "8px"}))
 
+    # Packing slip / drop-ship buttons (available for confirmed+ orders)
+    if status not in ("pending_review", "cancelled"):
+        actions.append(html.A([html.I(className="bi bi-printer me-2"), "Packing Slip"],
+                       href=f"/api/packing-slip/{order_id}", target="_blank",
+                       className="btn-outline-dark",
+                       style={"padding": "6px 14px", "fontSize": "0.8rem", "textDecoration": "none",
+                              "display": "inline-flex", "alignItems": "center", "borderRadius": "6px",
+                              "border": f"1px solid {COLORS['card_border']}", "color": COLORS["text"]}))
+        actions.append(html.A([html.I(className="bi bi-truck me-2"), "Drop-Ship Sheet"],
+                       href=f"/api/packing-slip/{order_id}?mode=dropship", target="_blank",
+                       className="btn-outline-dark",
+                       style={"padding": "6px 14px", "fontSize": "0.8rem", "textDecoration": "none",
+                              "display": "inline-flex", "alignItems": "center", "borderRadius": "6px",
+                              "border": f"1px solid {COLORS['card_border']}", "color": COLORS["text"]}))
+
     # Ensure all button IDs exist in DOM (Dash needs them for callback)
     for btn_id in ["orders-btn-confirm", "orders-btn-cancel", "orders-btn-invoice",
                     "orders-btn-paid", "orders-btn-shipped", "orders-btn-complete"]:

@@ -20,6 +20,17 @@ COLORS = {
     "active": "#1f6feb",
 }
 
+COMPANY = {
+    "name": "Keith Enterprises",
+    "address_line1": "",
+    "address_line2": "",
+    "city": "",
+    "state": "",
+    "zip": "",
+    "phone": "",
+    "email": "jaxonbelgiano@gmail.com",
+}
+
 PAGE_ORDER = [
     {"name": "Home", "path": "/", "icon": "bi-house-fill"},
     {"name": "Inbox", "path": "/inbox", "icon": "bi-chat-left-text"},

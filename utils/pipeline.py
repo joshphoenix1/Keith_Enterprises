@@ -50,13 +50,17 @@ def create_offer_from_scan(scan_result, source_msg):
     now = datetime.now()
     expiry = (now + timedelta(days=7)).strftime("%Y-%m-%d")
 
+    supplier_cost = scan_result.get("offered_price") or scan_result.get("price_offered", 0)
+    pack_qty = scan_result.get("pack_qty", 0)
+
     return {
         "id": None,  # caller assigns the actual ID
         "upc": scan_result.get("upc") or scan_result.get("upc_barcode", ""),
         "product_name": scan_result.get("product_name") or scan_result.get("name", "Unknown Product"),
         "category": scan_result.get("category", ""),
         "quantity": scan_result.get("quantity", 0),
-        "offered_price": scan_result.get("offered_price") or scan_result.get("price_offered", 0),
+        "offered_price": supplier_cost,  # supplier's case price (internal)
+        "wholesale_price": None,  # our selling price to buyers (set manually or via markup)
         "expiry": expiry,
         "source": source_msg.get("source", ""),
         "source_from": source_msg.get("sender_name") or source_msg.get("from", ""),
@@ -67,6 +71,7 @@ def create_offer_from_scan(scan_result, source_msg):
         },
         "matched_buyers": [],
         "margin_pct": None,
+        "our_margin_pct": None,  # our markup margin
         "created_at": now.strftime("%Y-%m-%d %H:%M:%S"),
         "notes": f"Auto-created from inbox message #{source_msg.get('id', '?')}",
     }

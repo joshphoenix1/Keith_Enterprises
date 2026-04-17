@@ -2,7 +2,7 @@ import json
 import os
 from datetime import datetime
 
-from dash import html, dcc, callback, Input, Output, State, no_update
+from dash import html, dcc, callback, Input, Output, State, no_update, dash_table
 
 from config import COLORS
 from components.cards import kpi_card, info_card
@@ -99,10 +99,15 @@ def match_buyers(offer, buyers):
 # UI helpers
 # ---------------------------------------------------------------------------
 def _category_pills(categories):
-    """Render a list of category strings as colored pill spans."""
+    """Render a list of category strings as tiny colored pill spans."""
     return html.Div(
-        [pill(cat, CATEGORY_COLORS.get(cat, COLORS["text_muted"])) for cat in categories],
-        style={"display": "flex", "gap": "4px", "flexWrap": "wrap"},
+        [html.Span(cat[:3], title=cat, style={
+            "background": f"{CATEGORY_COLORS.get(cat, COLORS['text_muted'])}25",
+            "color": CATEGORY_COLORS.get(cat, COLORS["text_muted"]),
+            "padding": "1px 5px", "borderRadius": "8px", "fontSize": "0.65rem",
+            "fontWeight": "600", "lineHeight": "1.2", "cursor": "default",
+        }) for cat in categories],
+        style={"display": "flex", "gap": "3px", "flexWrap": "wrap", "maxWidth": "120px"},
     )
 
 
@@ -125,23 +130,24 @@ def _score_bar(score):
     })
 
 
-def _build_buyer_table_rows(buyers):
-    """Build a styled HTML table body for the buyer directory."""
+def _build_buyer_table_data(buyers):
+    """Build DataTable data for the buyer directory."""
     rows = []
     for b in buyers:
-        rows.append(html.Tr([
-            html.Td(b["name"], style={"fontWeight": "600"}),
-            html.Td(b["rep"]),
-            html.Td(_category_pills(b.get("categories", []))),
-            html.Td(f"{b.get('target_margin_pct', 0):.0f}%",
-                     style={"textAlign": "center"}),
-            html.Td(f"{b.get('min_qty', 0):,}", style={"textAlign": "right"}),
-            html.Td(f"{b.get('max_qty', 0):,}", style={"textAlign": "right"}),
-            html.Td(b.get("contact_email", ""),
-                     style={"fontSize": "0.8rem", "color": COLORS["info"]}),
-            html.Td(b.get("created_at", ""),
-                     style={"fontSize": "0.8rem", "color": COLORS["text_muted"]}),
-        ], style={"borderBottom": f"1px solid {COLORS['card_border']}"}))
+        addr = b.get("shipping_address", {})
+        loc = ""
+        if addr.get("city") and addr.get("state"):
+            loc = f"{addr['city']}, {addr['state']}"
+        rows.append({
+            "id": b.get("id"),
+            "name": b.get("name", ""),
+            "rep": b.get("rep", ""),
+            "categories": ", ".join(b.get("categories", [])),
+            "margin": b.get("target_margin_pct", 0),
+            "email": b.get("contact_email", ""),
+            "phone": b.get("phone", ""),
+            "location": loc,
+        })
     return rows
 
 
@@ -279,27 +285,67 @@ def layout():
         "top": "0",
     }
 
+    buyer_table_data = []
+    for b in buyers:
+        addr = b.get("shipping_address", {})
+        loc = ""
+        if addr.get("city") and addr.get("state"):
+            loc = f"{addr['city']}, {addr['state']}"
+        buyer_table_data.append({
+            "id": b.get("id"),
+            "name": b.get("name", ""),
+            "rep": b.get("rep", ""),
+            "categories": ", ".join(b.get("categories", [])),
+            "margin": b.get("target_margin_pct", 0),
+            "email": b.get("contact_email", ""),
+            "phone": b.get("phone", ""),
+            "location": loc,
+        })
+
     buyer_table = html.Div([
-        html.Table([
-            html.Thead(html.Tr([
-                html.Th("Name", style=_header),
-                html.Th("Rep", style=_header),
-                html.Th("Categories", style=_header),
-                html.Th("Target Margin", style={**_header, "textAlign": "center"}),
-                html.Th("Min Qty", style={**_header, "textAlign": "right"}),
-                html.Th("Max Qty", style={**_header, "textAlign": "right"}),
-                html.Th("Contact", style=_header),
-                html.Th("Created", style=_header),
-            ])),
-            html.Tbody(
-                _build_buyer_table_rows(buyers),
-                id="buyers-table-body",
-            ),
-        ], style={
-            "width": "100%",
-            "borderCollapse": "collapse",
-        }),
-    ], style={"overflowX": "auto"})
+        dash_table.DataTable(
+            id="buyers-directory-table",
+            columns=[
+                {"name": "Name", "id": "name"},
+                {"name": "Rep", "id": "rep"},
+                {"name": "Categories", "id": "categories"},
+                {"name": "Margin", "id": "margin", "type": "numeric"},
+                {"name": "Email", "id": "email"},
+                {"name": "Phone", "id": "phone"},
+                {"name": "Location", "id": "location"},
+            ],
+            data=buyer_table_data,
+            sort_action="native",
+            sort_mode="multi",
+            style_header={
+                "backgroundColor": COLORS["sidebar"],
+                "color": COLORS["text_muted"],
+                "fontWeight": "700",
+                "fontSize": "0.75rem",
+                "textTransform": "uppercase",
+                "letterSpacing": "0.05em",
+                "border": f"1px solid {COLORS['card_border']}",
+                "padding": "10px 14px",
+            },
+            style_cell={
+                "backgroundColor": COLORS["card"],
+                "color": COLORS["text"],
+                "border": f"1px solid {COLORS['card_border']}",
+                "fontSize": "0.82rem",
+                "padding": "8px 14px",
+                "textAlign": "left",
+                "maxWidth": "180px",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+            },
+            style_data_conditional=[
+                {"if": {"state": "active"}, "backgroundColor": COLORS["hover"]},
+                {"if": {"state": "selected"}, "backgroundColor": COLORS["hover"]},
+            ],
+            page_size=20,
+        ),
+    ])
 
     return html.Div([
         # Stores
@@ -338,14 +384,25 @@ def layout():
             buyer_table,
         ], className="dash-card", style={"marginBottom": "20px"}),
 
-        # Add Buyer form
+        # Add / Edit Buyer form
         html.Div([
             html.Div([
-                html.I(className="bi bi-person-plus me-2",
-                       style={"color": COLORS["success"], "fontSize": "1.2rem"}),
-                html.H6("Add Buyer", className="mb-0",
-                         style={"color": COLORS["text"], "fontWeight": "600"}),
-            ], style={"display": "flex", "alignItems": "center", "marginBottom": "16px"}),
+                html.Div([
+                    html.I(className="bi bi-person-plus me-2",
+                           style={"color": COLORS["success"], "fontSize": "1.2rem"}),
+                    html.H6("Add / Edit Buyer", className="mb-0",
+                             style={"color": COLORS["text"], "fontWeight": "600"}),
+                ], style={"display": "flex", "alignItems": "center"}),
+                html.Div([
+                    styled_dropdown("buyers-edit-select",
+                                    [{"label": f"{b['name']} ({b.get('rep','')})", "value": b["id"]}
+                                     for b in buyers],
+                                    placeholder="Select buyer to edit...",
+                                    clearable=True),
+                ], style={"minWidth": "250px"}),
+            ], style={"display": "flex", "justifyContent": "space-between",
+                       "alignItems": "center", "marginBottom": "16px", "gap": "16px"}),
+            dcc.Store(id="buyers-editing-id", data=None),
 
             # Row 1: Name + Rep
             html.Div([
@@ -370,17 +427,11 @@ def layout():
                                         min=0, max=100, step=0.5)),
             ], className="grid-row grid-2"),
 
-            # Row 3: Min Qty + Max Qty
-            html.Div([
-                form_group("Min Qty",
-                           styled_input("buyers-min-qty", "100", type="number",
-                                        min=0)),
-                form_group("Max Qty",
-                           styled_input("buyers-max-qty", "5000", type="number",
-                                        min=0)),
-            ], className="grid-row grid-2"),
+            # Hidden inputs to keep callbacks working
+            dcc.Input(id="buyers-min-qty", type="hidden", value=0),
+            dcc.Input(id="buyers-max-qty", type="hidden", value=0),
 
-            # Row 4: Contact Email + Phone
+            # Row 3: Contact Email + Phone
             html.Div([
                 form_group("Contact Email",
                            styled_input("buyers-email", "buyer@company.com",
@@ -390,11 +441,68 @@ def layout():
                                         type="tel")),
             ], className="grid-row grid-2"),
 
-            # Row 5: Notes
-            form_group("Notes",
-                       styled_input("buyers-notes",
-                                    "Payment terms, preferences, special instructions...",
-                                    type="text")),
+            # Row 5: Notes + Payment Terms
+            html.Div([
+                form_group("Payment Terms",
+                           styled_dropdown("buyers-payment-terms",
+                                           [{"label": t, "value": t} for t in
+                                            ["Wire before ship", "Net 15", "Net 30",
+                                             "COD", "50% deposit", "Zelle before ship"]],
+                                           placeholder="Select terms...",
+                                           value="Wire before ship")),
+                form_group("Notes",
+                           styled_input("buyers-notes",
+                                        "Preferences, special instructions...",
+                                        type="text")),
+            ], className="grid-row grid-2"),
+
+            # Shipping Address section
+            html.Div([
+                html.Div([
+                    html.I(className="bi bi-geo-alt me-2",
+                           style={"color": COLORS["info"], "fontSize": "1rem"}),
+                    html.Span("Shipping Address", style={"fontWeight": "600",
+                              "color": COLORS["text"], "fontSize": "0.9rem"}),
+                ], style={"display": "flex", "alignItems": "center", "marginBottom": "12px"}),
+
+                html.Div([
+                    form_group("Recipient Name",
+                               styled_input("buyers-addr-name", "Full name",
+                                            type="text")),
+                    form_group("Company",
+                               styled_input("buyers-addr-company", "Company (optional)",
+                                            type="text")),
+                ], className="grid-row grid-2"),
+                html.Div([
+                    form_group("Address Line 1",
+                               styled_input("buyers-addr-line1", "Street address",
+                                            type="text")),
+                    form_group("Address Line 2",
+                               styled_input("buyers-addr-line2", "Suite, unit (optional)",
+                                            type="text")),
+                ], className="grid-row grid-2"),
+                html.Div([
+                    form_group("City",
+                               styled_input("buyers-addr-city", "City",
+                                            type="text")),
+                    form_group("State",
+                               styled_input("buyers-addr-state", "CA",
+                                            type="text")),
+                    form_group("ZIP Code",
+                               styled_input("buyers-addr-zip", "90210",
+                                            type="text")),
+                ], className="grid-row grid-3"),
+                html.Div(id="buyers-addr-validation", style={"marginTop": "8px"}),
+                html.Button([
+                    html.I(className="bi bi-check2-circle me-2"),
+                    "Validate Address",
+                ], id="buyers-validate-addr-btn", className="btn-outline-dark",
+                   style={"fontSize": "0.8rem", "padding": "6px 14px", "marginTop": "4px"}),
+            ], style={
+                "background": f"{COLORS['info']}08",
+                "border": f"1px solid {COLORS['card_border']}",
+                "borderRadius": "8px", "padding": "16px", "marginBottom": "16px",
+            }),
 
             # Save button + status
             html.Div([
@@ -444,7 +552,7 @@ def layout():
 # -- Add buyer ---------------------------------------------------------------
 @callback(
     Output("buyers-add-status", "children"),
-    Output("buyers-table-body", "children"),
+    Output("buyers-directory-table", "data"),
     Output("buyers-name", "value"),
     Output("buyers-rep", "value"),
     Output("buyers-categories", "value"),
@@ -464,14 +572,24 @@ def layout():
     State("buyers-email", "value"),
     State("buyers-phone", "value"),
     State("buyers-notes", "value"),
+    State("buyers-payment-terms", "value"),
+    State("buyers-addr-name", "value"),
+    State("buyers-addr-company", "value"),
+    State("buyers-addr-line1", "value"),
+    State("buyers-addr-line2", "value"),
+    State("buyers-addr-city", "value"),
+    State("buyers-addr-state", "value"),
+    State("buyers-addr-zip", "value"),
+    State("buyers-editing-id", "data"),
     prevent_initial_call=True,
 )
-def add_buyer(n_clicks, name, rep, categories, margin, min_qty, max_qty,
-              email, phone, notes):
+def add_or_update_buyer(n_clicks, name, rep, categories, margin, min_qty, max_qty,
+                        email, phone, notes, payment_terms,
+                        addr_name, addr_company, addr_line1, addr_line2,
+                        addr_city, addr_state, addr_zip, editing_id):
     if not n_clicks:
         return (no_update,) * 11
 
-    # Validation
     if not name or not name.strip():
         return (
             html.Div([
@@ -485,10 +603,8 @@ def add_buyer(n_clicks, name, rep, categories, margin, min_qty, max_qty,
         )
 
     buyers = _load_buyers()
-    next_id = max((b["id"] for b in buyers), default=0) + 1
 
-    new_buyer = {
-        "id": next_id,
+    buyer_data = {
         "name": name.strip(),
         "rep": (rep or "").strip(),
         "categories": categories or [],
@@ -498,32 +614,178 @@ def add_buyer(n_clicks, name, rep, categories, margin, min_qty, max_qty,
         "contact_email": (email or "").strip(),
         "phone": (phone or "").strip(),
         "notes": (notes or "").strip(),
-        "created_at": datetime.now().strftime("%Y-%m-%d"),
+        "payment_terms": payment_terms or "Wire before ship",
+        "shipping_address": {
+            "name": (addr_name or name).strip(),
+            "company": (addr_company or "").strip(),
+            "line1": (addr_line1 or "").strip(),
+            "line2": (addr_line2 or "").strip(),
+            "city": (addr_city or "").strip(),
+            "state": (addr_state or "").strip(),
+            "zip": (addr_zip or "").strip(),
+            "phone": (phone or "").strip(),
+        },
     }
-    buyers.append(new_buyer)
+
+    if editing_id:
+        # Update existing buyer
+        for b in buyers:
+            if b.get("id") == editing_id:
+                b.update(buyer_data)
+                break
+        action = "Updated"
+    else:
+        # Add new buyer
+        next_id = max((b["id"] for b in buyers), default=0) + 1
+        buyer_data["id"] = next_id
+        buyer_data["created_at"] = datetime.now().strftime("%Y-%m-%d")
+        buyers.append(buyer_data)
+        action = "Added"
+
     _save_buyers(buyers)
 
     status = html.Div([
         html.I(className="bi bi-check-circle-fill me-2",
                style={"color": COLORS["success"]}),
-        html.Span(f"Added buyer \"{new_buyer['name']}\" successfully.",
+        html.Span(f"{action} buyer \"{buyer_data['name']}\" successfully.",
                   style={"color": COLORS["success"], "fontWeight": "500",
                          "fontSize": "0.85rem"}),
     ])
 
     return (
         status,
-        _build_buyer_table_rows(buyers),
-        "",   # clear name
-        "",   # clear rep
-        [],   # clear categories
-        None, # clear margin
-        None, # clear min_qty
-        None, # clear max_qty
-        "",   # clear email
-        "",   # clear phone
-        "",   # clear notes
+        _build_buyer_table_data(buyers),
+        "", "", [], None, None, None, "", "", "",
     )
+
+
+# -- Load buyer for editing ---------------------------------------------------
+@callback(
+    Output("buyers-name", "value", allow_duplicate=True),
+    Output("buyers-rep", "value", allow_duplicate=True),
+    Output("buyers-categories", "value", allow_duplicate=True),
+    Output("buyers-margin", "value", allow_duplicate=True),
+    Output("buyers-min-qty", "value", allow_duplicate=True),
+    Output("buyers-max-qty", "value", allow_duplicate=True),
+    Output("buyers-email", "value", allow_duplicate=True),
+    Output("buyers-phone", "value", allow_duplicate=True),
+    Output("buyers-notes", "value", allow_duplicate=True),
+    Output("buyers-payment-terms", "value"),
+    Output("buyers-addr-name", "value"),
+    Output("buyers-addr-company", "value"),
+    Output("buyers-addr-line1", "value"),
+    Output("buyers-addr-line2", "value"),
+    Output("buyers-addr-city", "value"),
+    Output("buyers-addr-state", "value"),
+    Output("buyers-addr-zip", "value"),
+    Output("buyers-editing-id", "data"),
+    Output("buyers-add-btn", "children"),
+    Input("buyers-edit-select", "value"),
+    prevent_initial_call=True,
+)
+def load_buyer_for_edit(buyer_id):
+    add_label = [html.I(className="bi bi-plus-circle me-2"), "Add Buyer"]
+    save_label = [html.I(className="bi bi-check-lg me-2"), "Save Changes"]
+
+    if not buyer_id:
+        return "", "", [], None, None, None, "", "", "", "Wire before ship", "", "", "", "", "", "", "", None, add_label
+
+    buyers = _load_buyers()
+    b = next((x for x in buyers if x.get("id") == buyer_id), None)
+    if not b:
+        return (no_update,) * 19
+
+    addr = b.get("shipping_address", {})
+
+    return (
+        b.get("name", ""),
+        b.get("rep", ""),
+        b.get("categories", []),
+        b.get("target_margin_pct", 25),
+        b.get("min_qty", 0),
+        b.get("max_qty", 0),
+        b.get("contact_email", ""),
+        b.get("phone", ""),
+        b.get("notes", ""),
+        b.get("payment_terms", "Wire before ship"),
+        addr.get("name", "") or b.get("name", ""),
+        addr.get("company", "") or b.get("name", ""),
+        addr.get("line1", ""),
+        addr.get("line2", ""),
+        addr.get("city", ""),
+        addr.get("state", ""),
+        addr.get("zip", ""),
+        buyer_id,
+        save_label,
+    )
+
+
+# -- Address validation --------------------------------------------------------
+@callback(
+    Output("buyers-addr-validation", "children"),
+    Input("buyers-validate-addr-btn", "n_clicks"),
+    State("buyers-addr-line1", "value"),
+    State("buyers-addr-city", "value"),
+    State("buyers-addr-state", "value"),
+    State("buyers-addr-zip", "value"),
+    prevent_initial_call=True,
+)
+def validate_address(n_clicks, line1, city, state, zip_code):
+    """Validate address using OpenStreetMap Nominatim geocoding."""
+    if not n_clicks:
+        return no_update
+
+    if not line1 or not city or not state:
+        return html.Div([
+            html.I(className="bi bi-exclamation-triangle me-2",
+                   style={"color": COLORS["warning"]}),
+            html.Span("Please enter at least street, city, and state.",
+                      style={"color": COLORS["warning"], "fontSize": "0.85rem"}),
+        ])
+
+    import requests as _req
+    query = f"{line1}, {city}, {state} {zip_code or ''}, USA"
+    try:
+        resp = _req.get("https://nominatim.openstreetmap.org/search", params={
+            "q": query,
+            "format": "json",
+            "countrycodes": "us",
+            "limit": 1,
+            "addressdetails": 1,
+        }, headers={"User-Agent": "KeithEnterprises/1.0"}, timeout=10)
+
+        results = resp.json()
+        if results:
+            display = results[0].get("display_name", "")
+            return html.Div([
+                html.Div([
+                    html.I(className="bi bi-patch-check-fill me-2",
+                           style={"color": COLORS["success"], "fontSize": "1.2rem"}),
+                    html.Span("ADDRESS VALIDATED",
+                              style={"color": COLORS["success"], "fontWeight": "700",
+                                     "fontSize": "0.9rem", "letterSpacing": "0.05em"}),
+                ], style={"display": "flex", "alignItems": "center", "marginBottom": "4px"}),
+                html.Span(display[:150],
+                          style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+            ], style={
+                "background": f"{COLORS['success']}15",
+                "border": f"1px solid {COLORS['success']}40",
+                "borderRadius": "6px", "padding": "10px 14px",
+            })
+        else:
+            return html.Div([
+                html.I(className="bi bi-x-circle me-2",
+                       style={"color": COLORS["danger"]}),
+                html.Span("Address not found. Please check and try again.",
+                          style={"color": COLORS["danger"], "fontSize": "0.85rem"}),
+            ])
+    except Exception as e:
+        return html.Div([
+            html.I(className="bi bi-exclamation-triangle me-2",
+                   style={"color": COLORS["warning"]}),
+            html.Span(f"Validation unavailable: {e}",
+                      style={"color": COLORS["warning"], "fontSize": "0.85rem"}),
+        ])
 
 
 # -- Refresh matches --------------------------------------------------------

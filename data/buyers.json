@@ -29,7 +29,18 @@
     "contact_email": "mike@toyboxwholesale.com",
     "phone": "555-0203",
     "notes": "Toys and electronics only. High volume buyer, takes large lots.",
-    "created_at": "2026-04-17"
+    "created_at": "2026-04-17",
+    "payment_terms": "Wire before ship",
+    "shipping_address": {
+      "name": "ToyBox Wholesale",
+      "company": "ToyBox Wholesale",
+      "line1": "1600 Exposition blvd",
+      "line2": "",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95815",
+      "phone": "555-0203"
+    }
   },
   {
     "id": 4,

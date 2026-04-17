@@ -15,7 +15,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus Zero Sugar Elderberry Immune Gummies for Kids, Immune Support*, with Vitamin C, Zinc, Black Elderberry Extract, 70 Count",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-16 23:57"
+      "last_checked": "2026-04-16 23:57",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -41,7 +42,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-10-31, 70 Gummies, Dry, 12/case, Lot 20197307",
     "per_unit_cost": 2.64,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B0DTRK5PHS",
+      "title": "Nature's Way Sambucus Zero Sugar Elderberry Immune Gummies for Kids, Immune Support*, with Vitamin C, Zinc, Black Elderberry Extract, 70 Count (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0DTRK5PHS",
+      "image_url": "https://m.media-amazon.com/images/I/41PiYiwtZ2L.jpg",
+      "buy_box_price": 16.57,
+      "fba_min_price": 16.57,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.95,
+      "referral_fee": 2.49,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.45,
+      "profit_per_unit": 7.48,
+      "roi_pct": 283.3,
+      "bsr": 18383,
+      "bsr_top_pct": 0.2,
+      "estimated_monthly_sales": 1183,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:17"
+    }
   },
   {
     "id": 5,
@@ -55,11 +87,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 11.62,
+      "amazon_price": 11.42,
       "walmart_price": null,
       "amazon_match": "Nature's Way Devil's Claw Root, 960 mg per 2-Capsule Serving, 100 Vegan Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-16 23:57"
+      "last_checked": "2026-04-16 23:57",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -90,11 +123,42 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 88.2,
+    "margin_pct": 88.0,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2030-08-31, 100 Vgn Cp, Dry, 12/case, Lot 20202206",
     "per_unit_cost": 1.37,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B000I48PIC",
+      "title": "Nature\u2019s Way Devil's Claw Root, Traditional Joint Support*, 960 mg per 2-Capsule Serving, Gluten-Free, Non-GMO Project Verified, 100 Vegan Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000I48PIC",
+      "image_url": "https://m.media-amazon.com/images/I/61Vs09IK-ZL.jpg",
+      "buy_box_price": 11.42,
+      "fba_min_price": 11.42,
+      "fbm_min_price": 17.09,
+      "fba_fee": 3.73,
+      "referral_fee": 1.71,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.45,
+      "profit_per_unit": 4.6,
+      "roi_pct": 335.8,
+      "bsr": 58613,
+      "bsr_top_pct": 0.64,
+      "estimated_monthly_sales": 237,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:17"
+    }
   },
   {
     "id": 6,
@@ -108,11 +172,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 18.99,
+      "amazon_price": 18.96,
       "walmart_price": null,
       "amazon_match": "Nature's Way MSM 1000 mg - Joint Health Supplement - With Methylsulfonylmethane - Gluten-Free & Vegan - 200 Tablets",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-16 23:57"
+      "last_checked": "2026-04-16 23:57",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -147,7 +212,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2027-08-31, 200 Tb, Dry, 12/case, Lot 20201090",
     "per_unit_cost": 2.75,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B00016AHIS",
+      "title": "Nature's Way MSM 1000 mg - Joint Health Supplement* - With Methylsulfonylmethane - Gluten-Free & Vegan - 200 Tablets",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00016AHIS",
+      "image_url": "https://m.media-amazon.com/images/I/61Rqrz87uuL.jpg",
+      "buy_box_price": 18.96,
+      "fba_min_price": 18.96,
+      "fbm_min_price": 30.39,
+      "fba_fee": 4.2,
+      "referral_fee": 2.84,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 7.06,
+      "profit_per_unit": 9.15,
+      "roi_pct": 332.7,
+      "bsr": 113615,
+      "bsr_top_pct": 1.24,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 4,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 4,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:17"
+    }
   },
   {
     "id": 7,
@@ -165,7 +261,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Premium Blend Echinacea Goldenseal 900 mg per Serving 180 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-16 23:58"
+      "last_checked": "2026-04-16 23:58",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -191,7 +288,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2029-11-30, 180 Vgn Cp, Dry, 12/case, Lot 20193540",
     "per_unit_cost": 4.6,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B00024D1HS",
+      "title": "Nature's Way Premium Blend Echinacea Goldenseal 900 mg per Serving 180 Capsules",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00024D1HS",
+      "image_url": "https://m.media-amazon.com/images/I/71D6OpfzTJL.jpg",
+      "buy_box_price": 29.94,
+      "fba_min_price": 29.94,
+      "fbm_min_price": 36.54,
+      "fba_fee": 3.73,
+      "referral_fee": 4.49,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 8.23,
+      "profit_per_unit": 17.11,
+      "roi_pct": 372.0,
+      "bsr": 75840,
+      "bsr_top_pct": 0.83,
+      "estimated_monthly_sales": 116,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 7,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 7,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:17"
+    }
   },
   {
     "id": 8,
@@ -209,7 +337,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Echinacea Astragalus & Reishi, Immune Support*, 100 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-16 23:58"
+      "last_checked": "2026-04-16 23:58",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -244,7 +373,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2030-01-31, 100 Vgn Cp, Dry, 12/case, Lot 20194948",
     "per_unit_cost": 1.32,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B000293W9A",
+      "title": "Nature's Way Echinacea Astragalus & Reishi, Immune Support*, 100 Capsules",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000293W9A",
+      "image_url": "https://m.media-amazon.com/images/I/61oN05a-WlL.jpg",
+      "buy_box_price": 8.61,
+      "fba_min_price": 8.61,
+      "fbm_min_price": 20.16,
+      "fba_fee": 2.91,
+      "referral_fee": 0.69,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.01,
+      "total_fees": 3.61,
+      "profit_per_unit": 3.68,
+      "roi_pct": 278.8,
+      "bsr": 125049,
+      "bsr_top_pct": 1.36,
+      "estimated_monthly_sales": 65,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:17"
+    }
   },
   {
     "id": 9,
@@ -258,11 +418,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 25.5,
+      "amazon_price": 25.43,
       "walmart_price": null,
       "amazon_match": "Nature's Way Extra Strength Vitamin C with Bioflavonoids, 1,000 mg per Capsule, 250 Vegan Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-16 23:58"
+      "last_checked": "2026-04-16 23:58",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -300,7 +461,38 @@
     "assigned_buyer_name": "buyer1",
     "assigned_at": "2026-04-16 23:59",
     "per_unit_cost": 3.52,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B000F4WTY6",
+      "title": "Nature's Way Extra Strength(1) Vitamin C with Bioflavonoids, Supports Immune Health*, Promotes Collagen Production for Healthy Skin*, 1,000 mg per Capsule, 250 Vegan Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000F4WTY6",
+      "image_url": "https://m.media-amazon.com/images/I/61v-gBGVZtL.jpg",
+      "buy_box_price": 25.43,
+      "fba_min_price": 25.43,
+      "fbm_min_price": 41.3,
+      "fba_fee": 4.6,
+      "referral_fee": 3.81,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.03,
+      "total_fees": 8.44,
+      "profit_per_unit": 13.47,
+      "roi_pct": 382.7,
+      "bsr": 106652,
+      "bsr_top_pct": 1.16,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 3,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 3,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:43"
+    }
   },
   {
     "id": 10,
@@ -312,13 +504,14 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
-      "amazon_price": 14.49,
+      "amazon_price": 14.42,
       "walmart_price": null,
       "amazon_match": "Nature's Way Vitamin C with Bioflavonoids, 1,000 mg per 2-Capsule Serving, 100 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-16 23:59"
+      "last_checked": "2026-04-16 23:59",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -349,11 +542,42 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 91.6,
+    "margin_pct": 91.5,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2028-04-30, 100 Cp, Dry, 12/case, Lot 20198222",
     "per_unit_cost": 1.22,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B00126XQV6",
+      "title": "Nature's Way Vitamin C with Bioflavonoids, Immune Support*, High Potency Vitamin C per 2-capsule serving, Promotes Collagen*, 1,000 mg per 2-Capsule Serving, 100 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00126XQV6",
+      "image_url": "https://m.media-amazon.com/images/I/61mCkIjdCqL.jpg",
+      "buy_box_price": 14.42,
+      "fba_min_price": 14.42,
+      "fbm_min_price": 21.72,
+      "fba_fee": 3.95,
+      "referral_fee": 2.16,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.12,
+      "profit_per_unit": 7.08,
+      "roi_pct": 580.3,
+      "bsr": 153247,
+      "bsr_top_pct": 1.67,
+      "estimated_monthly_sales": 53,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:43"
+    }
   },
   {
     "id": 11,
@@ -371,7 +595,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus Zero Sugar Immune Gummies, Daily Immune Support, Black Elderberry Extract, Vitamin C, Vitamin D3, Zinc, Sugar Free, Sugar Alcohol Free, Plant-Based Sweeteners, 70 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:04"
+      "last_checked": "2026-04-17 00:04",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -406,7 +631,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2027-01-31, 70 Gummies, Dry, 12/case, Lot 20200180",
     "per_unit_cost": 2.55,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B0CKTQJGYK",
+      "title": "Nature\u2019s Way Sambucus Zero Sugar Immune Gummies, Daily Immune Support*, Black Elderberry Extract, Vitamin C, Vitamin D3, Zinc, Sugar Free, Sugar Alcohol Free, Plant-Based Sweeteners, 70 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0CKTQJGYK",
+      "image_url": "https://m.media-amazon.com/images/I/41ulvj5wCcL.jpg",
+      "buy_box_price": 20.96,
+      "fba_min_price": 20.96,
+      "fbm_min_price": 34.33,
+      "fba_fee": 3.95,
+      "referral_fee": 3.14,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 7.1,
+      "profit_per_unit": 11.31,
+      "roi_pct": 443.5,
+      "bsr": 18391,
+      "bsr_top_pct": 0.2,
+      "estimated_monthly_sales": 1183,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:43"
+    }
   },
   {
     "id": 12,
@@ -424,7 +680,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus Sleep + Immune* Elderberry Gummies, Sleep Support for Adults and Immune Support*, With Melatonin, Vitamin C, L-Theanine, Zinc, 50 Gummies (Packaging May Vary) - Gummy 50 Count (Pack of 1)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:04"
+      "last_checked": "2026-04-17 00:04",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -459,7 +716,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-11-30, 50 Gummies, Dry, 24/case, Lot 6051994",
     "per_unit_cost": 2.03,
-    "pack_qty": 24
+    "pack_qty": 24,
+    "sa_data": {
+      "asin": "B087DHCD4J",
+      "title": "Nature\u2019s Way Sambucus Sleep + Immune* Elderberry Gummies, Sleep Support for Adults and Immune Support*, With Melatonin, Vitamin C, L-Theanine, Zinc, 50 Gummies (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B087DHCD4J",
+      "image_url": "https://m.media-amazon.com/images/I/710z9xxgNDL.jpg",
+      "buy_box_price": 12.74,
+      "fba_min_price": 12.74,
+      "fbm_min_price": 29.19,
+      "fba_fee": 3.95,
+      "referral_fee": 1.91,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.87,
+      "profit_per_unit": 4.84,
+      "roi_pct": 238.4,
+      "bsr": 32216,
+      "bsr_top_pct": 0.35,
+      "estimated_monthly_sales": 699,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 3,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 3,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:43"
+    }
   },
   {
     "id": 13,
@@ -475,7 +763,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:04"
+      "last_checked": "2026-04-17 02:26"
     },
     "matched_buyers": [
       {
@@ -492,7 +780,11 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-09-30, 50 Gummies, Dry, 24/case, Lot 20196455",
     "per_unit_cost": 1.91,
-    "pack_qty": 24
+    "pack_qty": 24,
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "033674146163"
+    }
   },
   {
     "id": 14,
@@ -506,11 +798,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 17.18,
+      "amazon_price": 17.1,
       "walmart_price": null,
       "amazon_match": "Nature's Way Vitamin C Gummies, Support Immune Health*, Antioxidant, 250 mg per 2-gummy Serving, Gummy Vitamins, Orange Flavored, 120 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:05"
+      "last_checked": "2026-04-17 00:05",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -545,7 +838,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-10-31, 120 Gummies, Dry, 12/case, Lot 6193984",
     "per_unit_cost": 3.17,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B087LPKXXW",
+      "title": "Nature's Way Vitamin C Gummies, Support Immune Health*, Antioxidant, 250 mg per 2-gummy Serving, Gummy Vitamins, Orange Flavored, 120 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B087LPKXXW",
+      "image_url": "https://m.media-amazon.com/images/I/41GoPIzD0iL.jpg",
+      "buy_box_price": 17.1,
+      "fba_min_price": 17.1,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.6,
+      "referral_fee": 2.57,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 7.19,
+      "profit_per_unit": 6.74,
+      "roi_pct": 212.6,
+      "bsr": 66171,
+      "bsr_top_pct": 0.72,
+      "estimated_monthly_sales": 203,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:43"
+    }
   },
   {
     "id": 15,
@@ -563,7 +887,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus Elderberry Immune Chewable for Kids, Ages 2+, Immune Support*, Vitamin C, Zinc, with Superfood Antioxidants(1), Gluten Free, 40 Chewable Tablets",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:05"
+      "last_checked": "2026-04-17 00:05",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -589,7 +914,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-10-31, 40 Chw Tb, Dry, 12/case, Lot 20192942",
     "per_unit_cost": 1.07,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B07ZGDXLSY",
+      "title": "Nature's Way Sambucus Elderberry Immune Chewable for Kids, Ages 2+, Immune Support*, Vitamin C, Zinc, with Superfood Antioxidants(1), Gluten Free, 40 Chewable Tablets (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B07ZGDXLSY",
+      "image_url": "https://m.media-amazon.com/images/I/41jgSmlnW3L.jpg",
+      "buy_box_price": 11.31,
+      "fba_min_price": 11.31,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.73,
+      "referral_fee": 1.7,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.44,
+      "profit_per_unit": 4.8,
+      "roi_pct": 448.6,
+      "bsr": 54685,
+      "bsr_top_pct": 0.6,
+      "estimated_monthly_sales": 319,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:43"
+    }
   },
   {
     "id": 16,
@@ -607,7 +963,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus Elderberry Zero Sugar Immune Gummies for Kids, 50 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:05"
+      "last_checked": "2026-04-17 00:05",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -633,7 +990,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-10-31, 50 Gummies, Dry, 24/case, Lot 20197306",
     "per_unit_cost": 1.88,
-    "pack_qty": 24
+    "pack_qty": 24,
+    "sa_data": {
+      "asin": "B0G8M467FZ",
+      "title": "Nature's Way Sambucus Elderberry Zero Sugar Immune Gummies for Kids, Daily Immune Support*, Superfood Antioxidants(1), Black Elderberry Extract, Vitamin C, Zinc, Plant-Based Sweeteners, 50 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0G8M467FZ",
+      "image_url": "https://m.media-amazon.com/images/I/71yOVzI685L.jpg",
+      "buy_box_price": 20.99,
+      "fba_min_price": 20.99,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.95,
+      "referral_fee": 3.15,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 7.11,
+      "profit_per_unit": 12.0,
+      "roi_pct": 638.3,
+      "bsr": 548214,
+      "bsr_top_pct": 5.94,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:43"
+    }
   },
   {
     "id": 17,
@@ -649,7 +1037,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:05"
+      "last_checked": "2026-04-17 02:26"
     },
     "matched_buyers": [
       {
@@ -684,7 +1072,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-08-31, 30 Gummies, Dry, 24/case, Lot 20189924",
     "per_unit_cost": 1.2,
-    "pack_qty": 24
+    "pack_qty": 24,
+    "sa_data": {
+      "asin": "B0BRKYQRP7",
+      "title": "Natures Way Quercetin with Zinc Gummies, 30 CT",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0BRKYQRP7",
+      "image_url": "https://m.media-amazon.com/images/I/61PdEKmCFJL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 0.0,
+      "referral_fee": 0.0,
+      "referral_fee_rate": 0,
+      "storage_fee": 0.01,
+      "total_fees": 0.01,
+      "profit_per_unit": 0,
+      "roi_pct": 0.0,
+      "bsr": 580033,
+      "bsr_top_pct": 6.29,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:43"
+    }
   },
   {
     "id": 18,
@@ -702,7 +1121,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus Immune Elderberry Syrup, Elderberry Extract, Vitamin C, Zinc, Echinacea, Propolis, Daily Immune Support, Superfood Antioxidants, Gluten Free, 4 Fl Oz (Pack of 1)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:06"
+      "last_checked": "2026-04-17 00:06",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -728,7 +1148,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-08-31, 4 Fl Oz, Dry, 12/case, Lot 20189680",
     "per_unit_cost": 1.23,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B0009F3NW8",
+      "title": "Nature's Way Sambucus Immune Elderberry Syrup, Elderberry Extract, Vitamin C, Zinc, Echinacea, Propolis, Daily Immune Support*, Superfood Antioxidants(1), Gluten Free, 8 Fl Oz (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0009F3NW8",
+      "image_url": "https://m.media-amazon.com/images/I/41U61CpF7wL.jpg",
+      "buy_box_price": 9.99,
+      "fba_min_price": 9.99,
+      "fbm_min_price": 27.45,
+      "fba_fee": 3.13,
+      "referral_fee": 0.8,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.01,
+      "total_fees": 3.94,
+      "profit_per_unit": 4.82,
+      "roi_pct": 391.9,
+      "bsr": 41129,
+      "bsr_top_pct": 0.45,
+      "estimated_monthly_sales": 486,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 19,
@@ -746,7 +1197,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Quercetin Gummies with Zinc, Immune Defense, Powerful Antioxidant, Lemon Flavored, 60 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:06"
+      "last_checked": "2026-04-17 00:06",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -763,7 +1215,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-08-31, 60 Gummies, Dry, 12/case, Lot 20189586",
     "per_unit_cost": 1.87,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B0B99HJGPZ",
+      "title": "Nature\u2019s Way Quercetin Gummies with Zinc, Immune Defense*, Powerful Antioxidant*, Lemon Flavored, 60 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0B99HJGPZ",
+      "image_url": "https://m.media-amazon.com/images/I/710hj5dTKRL.jpg",
+      "buy_box_price": 17.23,
+      "fba_min_price": 17.23,
+      "fbm_min_price": 22.11,
+      "fba_fee": 3.95,
+      "referral_fee": 2.58,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.54,
+      "profit_per_unit": 8.82,
+      "roi_pct": 471.7,
+      "bsr": 60047,
+      "bsr_top_pct": 0.66,
+      "estimated_monthly_sales": 220,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 20,
@@ -816,7 +1299,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2030-04-30, 100 Vgn Cp, Dry, 12/case, Lot 20198380",
     "per_unit_cost": 1.7,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B0009EXLYY",
+      "title": "Nature's Way Wild Yam Root Capsules, Women's Traditional Health Support*, 700 mg per 2-Capsule Serving, Non-GMO Project Verified, 100 Vegan Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0009EXLYY",
+      "image_url": "https://m.media-amazon.com/images/I/61QE0ZZcHxL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 9.19,
+      "fbm_min_price": 10.57,
+      "fba_fee": 2.91,
+      "referral_fee": 0.74,
+      "referral_fee_rate": 0.081,
+      "storage_fee": 0.01,
+      "total_fees": 3.66,
+      "profit_per_unit": 0,
+      "roi_pct": 0.0,
+      "bsr": 40356,
+      "bsr_top_pct": 0.44,
+      "estimated_monthly_sales": 486,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 3,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 21,
@@ -834,7 +1348,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Fenugreek Seed Supplement, Fenugreek for Breastfeeding Lactation Support, Non-GMO Project Verified, Vegan, 100 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:07"
+      "last_checked": "2026-04-17 00:07",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -851,7 +1366,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2029-07-08, 100 Vgn Cp, Dry, 12/case, Lot 420255001",
     "per_unit_cost": 0.99,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B00014DJL2",
+      "title": "Nature's Way Fenugreek Seed Supplement, Fenugreek for Traditional Breastfeeding Lactation Support*, Non-GMO Project Verified, Vegan, 100 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00014DJL2",
+      "image_url": "https://m.media-amazon.com/images/I/61AYDQPyYWL.jpg",
+      "buy_box_price": 8.5,
+      "fba_min_price": 8.5,
+      "fbm_min_price": 18.6,
+      "fba_fee": 2.91,
+      "referral_fee": 0.68,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.01,
+      "total_fees": 3.6,
+      "profit_per_unit": 3.91,
+      "roi_pct": 394.9,
+      "bsr": 6228,
+      "bsr_top_pct": 0.22,
+      "estimated_monthly_sales": 2696,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Grocery & Gourmet Food",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 22,
@@ -869,7 +1415,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Alive! Gummy Prenatal Vitamins, Prenatal Multivitamin Supplement with Plant-Based DHA for Brain & Eye Development*, Vegetarian Orange Raspberry Lemonade Flavored, 90 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:07"
+      "last_checked": "2026-04-17 00:07",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -895,7 +1442,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-11-30, 90 Gummies, Dry, 12/case, Lot 20198257",
     "per_unit_cost": 4.52,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B01KGLIVCQ",
+      "title": "Nature\u2019s Way Alive! Gummy Prenatal Vitamins, Prenatal Multivitamin Supplement with Plant-Based DHA for Brain & Eye Development*, Vegetarian Orange Raspberry Lemonade Flavored, 90 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B01KGLIVCQ",
+      "image_url": "https://m.media-amazon.com/images/I/41fPqsPlJQL.jpg",
+      "buy_box_price": 14.42,
+      "fba_min_price": 14.42,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.6,
+      "referral_fee": 2.16,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 6.78,
+      "profit_per_unit": 3.12,
+      "roi_pct": 69.0,
+      "bsr": 38445,
+      "bsr_top_pct": 0.42,
+      "estimated_monthly_sales": 519,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 23,
@@ -913,7 +1491,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Alive! Prenatal Premium Gummy Multivitamin, 75 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:07"
+      "last_checked": "2026-04-17 00:07",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -939,7 +1518,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-09-30, 75 Gummies, Dry, 12/case, Lot 20195733",
     "per_unit_cost": 4.18,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B00S970XPS",
+      "title": "Nature\u2019s Way Alive! Prenatal Premium Gummy Multivitamin, High Potency Folate, Plant-Based DHA, Vegetarian, Strawberry and Lemon Flavored, 75 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00S970XPS",
+      "image_url": "https://m.media-amazon.com/images/I/71Ot3wSR3CL.jpg",
+      "buy_box_price": 16.47,
+      "fba_min_price": 16.47,
+      "fbm_min_price": 22.67,
+      "fba_fee": 4.2,
+      "referral_fee": 2.47,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 6.69,
+      "profit_per_unit": 5.6,
+      "roi_pct": 134.0,
+      "bsr": 88663,
+      "bsr_top_pct": 0.97,
+      "estimated_monthly_sales": 101,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 24,
@@ -953,11 +1563,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 14.35,
+      "amazon_price": 14.97,
       "walmart_price": null,
       "amazon_match": "Nature's Way Alive! Zero Sugar Kid's Gummy 40 Gummy",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:07"
+      "last_checked": "2026-04-17 00:07",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -970,11 +1581,42 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 87.9,
+    "margin_pct": 88.4,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2026-12-31, 40 Gummies, Dry, 24/case, Lot 20198258",
     "per_unit_cost": 1.73,
-    "pack_qty": 24
+    "pack_qty": 24,
+    "sa_data": {
+      "asin": "B0FRS83PHJ",
+      "title": "Nature's Way Alive! Zero Sugar Kid's Gummy 40 Gummy",
+      "brand": "NutraSea",
+      "product_url": "https://www.amazon.com/dp/B0FRS83PHJ",
+      "image_url": "https://m.media-amazon.com/images/I/61BJ4b6ImmL.jpg",
+      "buy_box_price": 14.97,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 14.97,
+      "fba_fee": 3.95,
+      "referral_fee": 2.25,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.21,
+      "profit_per_unit": 7.03,
+      "roi_pct": 406.4,
+      "bsr": 0,
+      "bsr_top_pct": 0,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "APPROVAL_REQUIRED",
+      "fba_sellers": 0,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 25,
@@ -1027,7 +1669,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2027-01-31, 120 Chw Tb, Dry, 12/case, Lot 20198933",
     "per_unit_cost": 3.38,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B001GMT4W6",
+      "title": "Alive!Multi-Vit,Chew,Kids",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B001GMT4W6",
+      "image_url": "https://m.media-amazon.com/images/I/91pEWucVWzL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 25.44,
+      "fba_fee": 0.0,
+      "referral_fee": 3.82,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 3.82,
+      "profit_per_unit": 0,
+      "roi_pct": 0.0,
+      "bsr": 1236045,
+      "bsr_top_pct": 13.39,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 26,
@@ -1045,7 +1718,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Alive! Max6 Potency Adult Complete Multivitamin, with Iron, Vitamins A, C, E & B-Vitamins Including Methylated B12 & Folate, Supports Energy Metabolism*, 90 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:08"
+      "last_checked": "2026-04-17 00:08",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -1071,7 +1745,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2027-01-31, 90 Veg Cp, Dry, 12/case, Lot 20194222",
     "per_unit_cost": 2.27,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B00028Q6OO",
+      "title": "Nature's Way Alive! Max6 Potency Adult Complete Multivitamin, with Iron, Vitamins A, C, E & B-Vitamins Including Methylated B12 & Folate, Supports Energy Metabolism*, 90 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00028Q6OO",
+      "image_url": "https://m.media-amazon.com/images/I/71aBqDNm+hL.jpg",
+      "buy_box_price": 11.61,
+      "fba_min_price": 11.61,
+      "fbm_min_price": 24.73,
+      "fba_fee": 3.73,
+      "referral_fee": 1.74,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 5.49,
+      "profit_per_unit": 3.85,
+      "roi_pct": 169.6,
+      "bsr": 83912,
+      "bsr_top_pct": 0.91,
+      "estimated_monthly_sales": 101,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 27,
@@ -1089,7 +1794,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Alive! Immune Support* Gummies with Elderberry Extract, Vitamins C & D3, Zinc, No Gluten, Grape & Cherry Flavored, 90 Vegetarian Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:08"
+      "last_checked": "2026-04-17 00:08",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -1106,7 +1812,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Exp 2027-01-31, 90 Gummies, Dry, 12/case, Lot 20194651",
     "per_unit_cost": 3.84,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "sa_data": {
+      "asin": "B00MJ7QAKG",
+      "title": "Nature's Way Alive! Immune Support* Gummies with Elderberry Extract, Vitamins C & D3, Zinc, No Gluten, Grape & Cherry Flavored, 90 Vegetarian Gummies (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00MJ7QAKG",
+      "image_url": "https://m.media-amazon.com/images/I/41c86nJbWqL.jpg",
+      "buy_box_price": 21.19,
+      "fba_min_price": 21.19,
+      "fbm_min_price": 22.25,
+      "fba_fee": 5.04,
+      "referral_fee": 3.18,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.07,
+      "total_fees": 8.29,
+      "profit_per_unit": 9.06,
+      "roi_pct": 235.9,
+      "bsr": 132020,
+      "bsr_top_pct": 1.44,
+      "estimated_monthly_sales": 65,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 28,
@@ -1120,11 +1857,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "accepted",
     "marketplace_data": {
-      "amazon_price": 34.49,
+      "amazon_price": 37.9,
       "walmart_price": null,
       "amazon_match": "Nature's Way Liquid Coconut Oil, Superior Flavor and Aroma, Hexane Free, Stays Liquid, Non-GMO Project Verified, 20 Fl Oz (Packaging May Vary)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:08"
+      "last_checked": "2026-04-17 00:08",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -1137,11 +1875,42 @@
         "match_reason": "Category: Skin Health, margin OK"
       }
     ],
-    "margin_pct": 83.6,
+    "margin_pct": 85.1,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 408563, Exp 2026-10-31, 6pk, 8.74 lb/case",
     "pack_qty": 6,
-    "per_unit_cost": 5.64
+    "per_unit_cost": 5.64,
+    "sa_data": {
+      "asin": "B0090PQNG6",
+      "title": "Nature's Way Liquid Coconut Oil, Superior Flavor and Aroma, Hexane Free, Stays Liquid, Non-GMO Project Verified, 20 Fl Oz (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0090PQNG6",
+      "image_url": "https://m.media-amazon.com/images/I/31M98qkTXwL.jpg",
+      "buy_box_price": 37.9,
+      "fba_min_price": 37.9,
+      "fbm_min_price": 43.98,
+      "fba_fee": 5.42,
+      "referral_fee": 5.69,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 11.13,
+      "profit_per_unit": 21.13,
+      "roi_pct": 374.6,
+      "bsr": 224044,
+      "bsr_top_pct": 7.74,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 3,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Grocery & Gourmet Food",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 29,
@@ -1194,7 +1963,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20193220, Exp 2026-11-30, 12pk, 1.18 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 2.63
+    "per_unit_cost": 2.63,
+    "sa_data": {
+      "asin": "B000WSHTZ4",
+      "title": "Enzymatic Therapy - 7-KETO\u00ae3 DHEA 60 caps",
+      "brand": "Enzymatic Therapy",
+      "product_url": "https://www.amazon.com/dp/B000WSHTZ4",
+      "image_url": "https://m.media-amazon.com/images/I/812s3a5Pc+L.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 0.0,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 15.0,
+      "profit_per_unit": 0,
+      "roi_pct": 0.0,
+      "bsr": 0,
+      "bsr_top_pct": 0,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "APPROVAL_REQUIRED",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:44"
+    }
   },
   {
     "id": 30,
@@ -1212,7 +2012,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Eyebright Herb Premium Blend, Herbal Blend, Non-GMO Project Verified, Eyebright Supplement, Vegan, 100 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:09"
+      "last_checked": "2026-04-17 00:09",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -1247,7 +2048,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20195644, Exp 2030-01-31, 12pk, 2.38 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.53
+    "per_unit_cost": 1.53,
+    "sa_data": {
+      "asin": "B00016AHB0",
+      "title": "Nature's Way Eyebright Herb Premium Blend, Herbal Blend, Non-GMO Project Verified, Eyebright Supplement, Vegan, 100 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00016AHB0",
+      "image_url": "https://m.media-amazon.com/images/I/61JHHV-DwlL.jpg",
+      "buy_box_price": 13.57,
+      "fba_min_price": 13.55,
+      "fbm_min_price": 26.49,
+      "fba_fee": 3.73,
+      "referral_fee": 2.04,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.78,
+      "profit_per_unit": 6.26,
+      "roi_pct": 409.2,
+      "bsr": 41096,
+      "bsr_top_pct": 0.45,
+      "estimated_monthly_sales": 486,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:45"
+    }
   },
   {
     "id": 31,
@@ -1263,7 +2095,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:09"
+      "last_checked": "2026-04-17 02:26"
     },
     "matched_buyers": [
       {
@@ -1280,7 +2112,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20188619, Exp 2027-06-30, 12pk, 1.76 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 2.62
+    "per_unit_cost": 2.62,
+    "sa_data": {
+      "asin": "B0000WAADA",
+      "title": "Standardized Saw Palmetto, 60 Softgels",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0000WAADA",
+      "image_url": "https://m.media-amazon.com/images/I/213y-gO44BL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 0.0,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 15.0,
+      "profit_per_unit": 0,
+      "roi_pct": 0.0,
+      "bsr": 0,
+      "bsr_top_pct": null,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": null,
+      "enriched_at": "2026-04-17 03:45"
+    }
   },
   {
     "id": 32,
@@ -1298,7 +2161,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Premium Blend Cranberry, Urinary Tract Health Support, with 100% Cranberry Concentrate, 400 mg Per Serving, 60 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:09"
+      "last_checked": "2026-04-17 00:09",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -1333,7 +2197,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20194593, Exp 2027-12-31, 12pk, 1.85 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.3
+    "per_unit_cost": 1.3,
+    "sa_data": {
+      "asin": "B0011DJF6K",
+      "title": "Nature's Way Premium Blend Cranberry, Urinary Tract Health Support*, with 100% Cranberry Concentrate, 400 mg Per Serving, 60 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0011DJF6K",
+      "image_url": "https://m.media-amazon.com/images/I/61MlP7DeQlL.jpg",
+      "buy_box_price": 10.49,
+      "fba_min_price": 10.49,
+      "fbm_min_price": 14.03,
+      "fba_fee": 3.73,
+      "referral_fee": 1.57,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.31,
+      "profit_per_unit": 3.88,
+      "roi_pct": 298.5,
+      "bsr": 54873,
+      "bsr_top_pct": 0.6,
+      "estimated_monthly_sales": 319,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 4,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:45"
+    }
   },
   {
     "id": 33,
@@ -1351,7 +2246,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Premium Blend Cranberry, Urinary Tract Health Support* Supplement with Vitamin C, 60 Tablets",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:10"
+      "last_checked": "2026-04-17 00:10",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -1386,7 +2282,38 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20196328, Exp 2027-02-28, 12pk, 2.39 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.42
+    "per_unit_cost": 1.42,
+    "sa_data": {
+      "asin": "B0006ZITIE",
+      "title": "Nature's Way Premium Blend Cranberry, Urinary Tract Health Support* Supplement with Vitamin C, 60 Tablets",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0006ZITIE",
+      "image_url": "https://m.media-amazon.com/images/I/6198GvsI6kL.jpg",
+      "buy_box_price": 8.4,
+      "fba_min_price": 8.4,
+      "fbm_min_price": 19.91,
+      "fba_fee": 2.91,
+      "referral_fee": 0.67,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.01,
+      "total_fees": 3.59,
+      "profit_per_unit": 3.39,
+      "roi_pct": 238.7,
+      "bsr": 100583,
+      "bsr_top_pct": 1.09,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 03:45"
+    }
   },
   {
     "id": 34,
@@ -1402,7 +2329,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:10"
+      "last_checked": "2026-04-17 02:27"
     },
     "matched_buyers": [
       {
@@ -1590,7 +2517,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 18.19,
       "walmart_price": null,
@@ -1863,7 +2790,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 25.23,
       "walmart_price": null,
@@ -2096,7 +3023,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:14"
+      "last_checked": "2026-04-17 02:27"
     },
     "matched_buyers": [
       {
@@ -2323,7 +3250,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:15"
+      "last_checked": "2026-04-17 02:27"
     },
     "matched_buyers": [
       {
@@ -2488,7 +3415,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:16"
+      "last_checked": "2026-04-17 02:27"
     },
     "matched_buyers": [
       {
@@ -2729,7 +3656,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 15.63,
       "walmart_price": null,
@@ -3077,7 +4004,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:19"
+      "last_checked": "2026-04-17 02:27"
     },
     "matched_buyers": [
       {
@@ -3873,7 +4800,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 18.49,
       "walmart_price": null,
@@ -4308,7 +5235,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:27"
+      "last_checked": "2026-04-17 02:27"
     },
     "matched_buyers": [
       {
@@ -4375,7 +5302,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:27"
+      "last_checked": "2026-04-17 02:28"
     },
     "matched_buyers": [
       {
@@ -4442,7 +5369,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:27"
+      "last_checked": "2026-04-17 02:28"
     },
     "matched_buyers": [
       {
@@ -4509,7 +5436,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:28"
+      "last_checked": "2026-04-17 02:28"
     },
     "matched_buyers": [
       {
@@ -4574,9 +5501,11 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
+      "amazon_price": 17.99,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:28"
+      "last_checked": "2026-04-17 02:28",
+      "amazon_match": "18oz Honeydew Melon Jar Candle by Farberware",
+      "amazon_confidence": "medium"
     },
     "matched_buyers": [
       {
@@ -4625,7 +5554,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 00:28"
+      "last_checked": "2026-04-17 02:28"
     },
     "matched_buyers": [
       {
@@ -4663,8 +5592,11 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 30.0,
+      "walmart_price": null,
+      "amazon_match": "Anastasia Beverly Hills - Blush Trio",
+      "amazon_confidence": "high",
+      "last_checked": "2026-04-17 02:28"
     },
     "matched_buyers": [
       {
@@ -4695,7 +5627,7 @@
         "match_reason": "Category: HBA, margin OK"
       }
     ],
-    "margin_pct": null,
+    "margin_pct": 60.0,
     "created_at": "2026-04-17 01:13:47",
     "notes": "Auto-created from inbox message #108"
   },
@@ -4711,8 +5643,11 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 18.4,
+      "walmart_price": null,
+      "amazon_match": "Anastasia Beverly Hills - Lip Gloss Gel 1 Fl Oz (Pack of 1)",
+      "amazon_confidence": "high",
+      "last_checked": "2026-04-17 02:28"
     },
     "matched_buyers": [
       {
@@ -4743,7 +5678,7 @@
         "match_reason": "Category: HBA, margin OK"
       }
     ],
-    "margin_pct": null,
+    "margin_pct": 59.2,
     "created_at": "2026-04-17 01:13:47",
     "notes": "Auto-created from inbox message #108"
   },
@@ -4760,7 +5695,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-17 02:28"
     },
     "matched_buyers": [
       {
@@ -4817,7 +5753,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-17 02:29"
     },
     "matched_buyers": [
       {
@@ -4864,8 +5801,11 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 10.0,
+      "walmart_price": null,
+      "amazon_match": "Ardell Professional Magnetic Liner & Lash Demi Wispies Black Pair 1 Count (Pack of 1)",
+      "amazon_confidence": "high",
+      "last_checked": "2026-04-17 02:29"
     },
     "matched_buyers": [
       {
@@ -4896,7 +5836,7 @@
         "match_reason": "Category: HBA, margin OK"
       }
     ],
-    "margin_pct": null,
+    "margin_pct": 90.0,
     "created_at": "2026-04-17 01:13:47",
     "notes": "Auto-created from inbox message #108"
   },
@@ -4912,8 +5852,11 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 7.37,
+      "walmart_price": null,
+      "amazon_match": "Magnetic Single Naked Lashes 420 Pair 1 pair (Pack of 1)",
+      "amazon_confidence": "medium",
+      "last_checked": "2026-04-17 02:29"
     },
     "matched_buyers": [
       {
@@ -4944,7 +5887,7 @@
         "match_reason": "Category: HBA, margin OK"
       }
     ],
-    "margin_pct": null,
+    "margin_pct": 87.1,
     "created_at": "2026-04-17 01:13:47",
     "notes": "Auto-created from inbox message #108"
   },
@@ -4960,8 +5903,11 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 16.99,
+      "walmart_price": null,
+      "amazon_match": "Ardell Magnetic Naked Liquid Liner & Lashes 424, 1 pair",
+      "amazon_confidence": "medium",
+      "last_checked": "2026-04-17 02:29"
     },
     "matched_buyers": [
       {
@@ -4992,7 +5938,7 @@
         "match_reason": "Category: HBA, margin OK"
       }
     ],
-    "margin_pct": null,
+    "margin_pct": 82.3,
     "created_at": "2026-04-17 01:13:47",
     "notes": "Auto-created from inbox message #108"
   },
@@ -5009,7 +5955,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-17 02:29"
     },
     "matched_buyers": [
       {
@@ -5057,7 +6004,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-17 02:29"
     },
     "matched_buyers": [
       {
@@ -5105,7 +6053,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-17 02:29"
     },
     "matched_buyers": [
       {
@@ -5153,7 +6102,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-17 02:29"
     },
     "matched_buyers": [
       {
