@@ -527,4 +527,23 @@ def trigger_auto_process(message_ids=None):
     logger.info("Auto-processed %d WhatsApp messages, found %d products",
                 processed_count, products_found)
 
+    # Full pipeline: create offers → price lookup → match buyers
+    if products_found > 0:
+        try:
+            from utils.pipeline import ingest_products_from_inbox, auto_match_buyers, _load_json, _save_json
+            ingest_result = ingest_products_from_inbox()
+            logger.info("Pipeline: created %d offers from WhatsApp products", ingest_result.get("new_offers", 0))
+
+            if ingest_result.get("new_offers", 0) > 0:
+                from utils.pricing import bulk_lookup_prices
+                price_result = bulk_lookup_prices(max_offers=ingest_result["new_offers"], delay=1)
+                logger.info("Pipeline: found %d Amazon prices", price_result.get("amazon_found", 0))
+
+                offers = _load_json("offers.json")
+                matched = auto_match_buyers(offers)
+                _save_json("offers.json", offers)
+                logger.info("Pipeline: matched %d offers to buyers", matched)
+        except Exception as e:
+            logger.error("Pipeline error after WhatsApp processing: %s", e)
+
     return {"processed": processed_count, "products_found": products_found}

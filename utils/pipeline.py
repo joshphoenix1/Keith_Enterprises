@@ -144,19 +144,45 @@ def auto_match_buyers(offers=None):
                     if bc.lower() == offer_cat.lower():
                         cat_match = True
                         break
-                # Also try mapping common category names
+                # Also try mapping offer categories to buyer categories
+                # Maps subcategories/variants to standard buyer categories
                 cat_map = {
+                    # OTC subcategories
                     "immune": "OTC", "joint": "OTC", "digestive": "OTC",
-                    "vitamins": "OTC", "supplements": "OTC", "sleep": "OTC",
+                    "vitamins": "OTC", "supplements": "OTC",
+                    "pain/inflammation": "OTC", "urinary": "OTC",
+                    "multivitamin": "OTC", "skin health": "OTC",
+                    "memory/brain health": "OTC", "weight management": "OTC",
+                    "vision/eye health": "OTC", "sleep": "OTC",
+                    "energy": "OTC", "sexual health": "OTC",
+                    "cough & cold": "OTC",
+                    "health & wellness supplements": "OTC",
+                    "sports nutrition / amino acid supplements": "OTC",
+                    # HBA subcategories
                     "beauty": "HBA", "skincare": "HBA", "cosmetics": "HBA",
                     "personal care": "HBA", "hair care": "HBA",
+                    "hair care / shampoo": "HBA", "makeup": "HBA",
+                    "fragrance": "HBA", "haircare": "HBA",
+                    "cosmetic_tools": "HBA",
+                    # Household
                     "candles": "Household", "home": "Household",
+                    "home_decor": "Household",
+                    # Others
                     "games": "Toys", "toys": "Toys",
                     "food": "Grocery", "beverage": "Grocery",
                 }
-                mapped = cat_map.get(offer_cat.lower(), "")
+                offer_cat_lower = offer_cat.lower()
+                mapped = cat_map.get(offer_cat_lower, "")
                 if mapped and mapped in buyer_cats:
                     cat_match = True
+                # Also check if any buyer category is a substring match
+                # (e.g. buyer has "Pain/Inflammation" and offer is "Pain/Inflammation")
+                if not cat_match:
+                    for bc in buyer_cats:
+                        if (bc.lower() in offer_cat_lower or
+                                offer_cat_lower in bc.lower()):
+                            cat_match = True
+                            break
 
             if not cat_match:
                 continue
@@ -170,11 +196,13 @@ def auto_match_buyers(offers=None):
                 continue
 
             # Margin check (if marketplace data exists)
+            # Use per-unit cost (case price / pack qty) for margin calc
             target_margin = buyer.get("target_margin_pct") or 0
             if target_margin and offer_price:
                 amazon_price = (offer.get("marketplace_data") or {}).get("amazon_price")
                 if amazon_price and amazon_price > 0:
-                    margin = ((amazon_price - offer_price) / amazon_price) * 100
+                    per_unit = offer.get("per_unit_cost") or offer_price
+                    margin = ((amazon_price - per_unit) / amazon_price) * 100
                     offer["margin_pct"] = round(margin, 1)
                     if margin < target_margin:
                         continue

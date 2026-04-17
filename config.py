@@ -25,6 +25,7 @@ PAGE_ORDER = [
     {"name": "Inbox", "path": "/inbox", "icon": "bi-chat-left-text"},
     {"name": "Scanner", "path": "/scanner", "icon": "bi-camera"},
     {"name": "Offers", "path": "/offers", "icon": "bi-tag"},
+    {"name": "Orders", "path": "/orders", "icon": "bi-cart-check"},
     {"name": "Buyers", "path": "/buyers", "icon": "bi-people"},
     {"name": "Accounts", "path": "/accounts", "icon": "bi-gear", "admin": True},
     {"name": "System Health", "path": "/health", "icon": "bi-heart-pulse", "admin": True},

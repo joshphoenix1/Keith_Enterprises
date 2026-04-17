@@ -1,0 +1,19 @@
+{
+  "ed102854d28f418a": {
+    "28": {
+      "decision": "accept",
+      "qty": 100,
+      "responded_at": "2026-04-17 02:12"
+    },
+    "42": {
+      "decision": "accept",
+      "qty": 500,
+      "responded_at": "2026-04-17 02:12"
+    },
+    "57": {
+      "decision": "accept",
+      "qty": 300,
+      "responded_at": "2026-04-17 02:12"
+    }
+  }
+}

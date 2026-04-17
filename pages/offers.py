@@ -8,6 +8,7 @@ from components.cards import kpi_card
 from components.forms import styled_input, styled_dropdown, form_group
 
 DATA_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "offers.json")
+BUYERS_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "buyers.json")
 
 CATEGORIES = ["OTC", "HBA", "Toys", "Tools", "Electronics", "Grocery", "Household", "Apparel", "Other"]
 SOURCES = ["WhatsApp", "Email", "Phone", "Walk-in", "Other"]
@@ -66,6 +67,14 @@ def _save_offers(offers):
             json.dump(offers, f, indent=2)
     except (IOError, OSError) as e:
         raise RuntimeError(f"Failed to save offers: {e}")
+
+
+def _load_buyers():
+    try:
+        with open(BUYERS_PATH) as f:
+            return json.load(f)
+    except Exception:
+        return []
 
 
 def _next_id(offers):
@@ -197,13 +206,13 @@ def _build_table_data(offers, status_filter="all", category_filter=None):
             "product_name": o.get("product_name", ""),
             "upc": o.get("upc", ""),
             "category": o.get("category", ""),
-            "quantity": o.get("quantity", 0),
-            "case_price": _format_currency(o.get("offered_price")),
-            "pack_qty": o.get("pack_qty") or "",
-            "unit_cost": _format_currency(o.get("per_unit_cost")),
-            "amazon_price": _format_currency(mp.get("amazon_price")),
-            "walmart_price": _format_currency(mp.get("walmart_price")),
-            "margin_pct": _format_pct(o.get("margin_pct")),
+            "quantity": o.get("quantity") or 0,
+            "case_price": round(float(o.get("offered_price") or 0), 2),
+            "pack_qty": o.get("pack_qty") or 0,
+            "unit_cost": round(float(o.get("per_unit_cost") or 0), 2),
+            "amazon_price": round(float(mp.get("amazon_price") or 0), 2),
+            "walmart_price": round(float(mp.get("walmart_price") or 0), 2),
+            "margin_pct": round(float(o.get("margin_pct") or 0), 1),
             "matched_buyer": buyer_name,
             "source": (o.get("source") or "").capitalize(),
             "expiry": _format_date(o.get("expiry", "")),
@@ -218,12 +227,12 @@ TABLE_COLUMNS = [
     {"name": "UPC", "id": "upc"},
     {"name": "Category", "id": "category"},
     {"name": "Qty", "id": "quantity", "type": "numeric"},
-    {"name": "Case Price", "id": "case_price"},
-    {"name": "Pack", "id": "pack_qty"},
-    {"name": "Unit Cost", "id": "unit_cost"},
-    {"name": "Amazon Price", "id": "amazon_price"},
-    {"name": "Walmart Price", "id": "walmart_price"},
-    {"name": "Margin %", "id": "margin_pct"},
+    {"name": "Case Price", "id": "case_price", "type": "numeric"},
+    {"name": "Pack", "id": "pack_qty", "type": "numeric"},
+    {"name": "Unit Cost", "id": "unit_cost", "type": "numeric"},
+    {"name": "Amazon Price", "id": "amazon_price", "type": "numeric"},
+    {"name": "Walmart Price", "id": "walmart_price", "type": "numeric"},
+    {"name": "Margin %", "id": "margin_pct", "type": "numeric"},
     {"name": "Matched Buyer", "id": "matched_buyer"},
     {"name": "Source", "id": "source"},
     {"name": "Expiry", "id": "expiry"},
@@ -253,6 +262,7 @@ def _status_conditional_styles():
 def layout():
     offers = _load_offers()
     table_data = _build_table_data(offers)
+    no_price = sum(1 for o in offers if not (o.get("marketplace_data") or {}).get("amazon_price"))
 
     return html.Div([
         # Hidden stores
@@ -296,6 +306,48 @@ def layout():
             "marginBottom": "20px", "padding": "16px",
             "background": COLORS["card"], "borderRadius": "8px",
             "border": f"1px solid {COLORS['card_border']}",
+        }),
+
+        # Price lookup banner
+        html.Div([
+            html.Div([
+                html.Div([
+                    html.I(className="bi bi-currency-dollar",
+                           style={"fontSize": "1.3rem", "color": COLORS["success"]}),
+                ], style={"flexShrink": "0"}),
+                html.Div([
+                    html.Span("Amazon Price Lookup ",
+                              style={"color": COLORS["text"], "fontWeight": "600"}),
+                    html.Span(id="offers-price-pending-text",
+                              children=f"— {no_price} offers without pricing",
+                              style={"color": COLORS["text_muted"]}),
+                ], style={"fontSize": "0.85rem", "flex": "1"}),
+                html.Div([
+                    styled_dropdown(
+                        "offers-price-batch-size",
+                        [{"label": f"{n} offers", "value": n} for n in [10, 25, 50, 100]],
+                        value=25,
+                        placeholder="Batch size",
+                        clearable=False,
+                    ),
+                ], style={"minWidth": "130px"}),
+                html.Div([
+                    html.Button([
+                        html.I(className="bi bi-search me-2"),
+                        "Run Price Check",
+                    ], id="offers-price-check-btn", className="btn-primary-dark",
+                        style={"fontSize": "0.8rem", "padding": "8px 16px", "whiteSpace": "nowrap"}),
+                ]),
+            ], style={"display": "flex", "alignItems": "center", "gap": "16px"}),
+            dcc.Loading(
+                id="offers-price-loading",
+                type="default",
+                color=COLORS["primary"],
+                children=html.Div(id="offers-price-status"),
+            ),
+        ], style={
+            "background": f"{COLORS['success']}10", "border": f"1px solid {COLORS['success']}30",
+            "padding": "14px 18px", "borderRadius": "10px", "marginBottom": "20px",
         }),
 
         # Main data table
@@ -448,9 +500,8 @@ def _set_filter(n_clicks_list):
     Input("offers-active-filter", "data"),
     Input("offers-category-filter", "value"),
     Input("offers-add-btn", "n_clicks"),
-    Input("offers-main-table", "data_timestamp"),
 )
-def _update_table(status_filter, category_filter, _add_click, _ts):
+def _update_table(status_filter, category_filter, _add_click):
     """Re-render the table and KPIs when filters change or data is added."""
     offers = _load_offers()
     status_filter = status_filter or "all"
@@ -770,3 +821,62 @@ def _update_status(n_clicks, new_status, offer_id):
                    style={"color": COLORS["danger"]}),
             f"Error: {str(e)}",
         ], style={"color": COLORS["danger"], "fontSize": "0.85rem"})
+
+
+@callback(
+    Output("offers-price-status", "children"),
+    Output("offers-price-pending-text", "children"),
+    Input("offers-price-check-btn", "n_clicks"),
+    State("offers-price-batch-size", "value"),
+    prevent_initial_call=True,
+)
+def _run_price_check(n_clicks, batch_size):
+    if not n_clicks:
+        return no_update, no_update
+
+    from utils.pricing import bulk_lookup_prices
+    batch_size = int(batch_size or 25)
+
+    try:
+        result = bulk_lookup_prices(max_offers=batch_size, delay=1)
+        found = result.get("amazon_found", 0)
+        processed = result.get("processed", 0)
+        remaining = result.get("remaining", 0)
+
+        if found > 0:
+            status = html.Div([
+                html.I(className="bi bi-check-circle-fill me-2",
+                       style={"color": COLORS["success"]}),
+                html.Span(
+                    f"Found {found} Amazon price{'s' if found != 1 else ''} "
+                    f"out of {processed} checked. {remaining} still pending.",
+                    style={"color": COLORS["success"], "fontWeight": "500",
+                           "fontSize": "0.85rem"}),
+            ], style={
+                "background": f"{COLORS['success']}10", "padding": "10px 14px",
+                "borderRadius": "8px", "marginTop": "12px",
+            })
+        else:
+            status = html.Div([
+                html.I(className="bi bi-info-circle me-2",
+                       style={"color": COLORS["info"]}),
+                html.Span(
+                    f"Checked {processed} offers, no new prices found. {remaining} still pending.",
+                    style={"color": COLORS["text_muted"], "fontSize": "0.85rem"}),
+            ], style={
+                "background": f"{COLORS['info']}10", "padding": "10px 14px",
+                "borderRadius": "8px", "marginTop": "12px",
+            })
+
+        return status, f"— {remaining} offers without pricing"
+
+    except Exception as e:
+        return html.Div([
+            html.I(className="bi bi-x-circle-fill me-2",
+                   style={"color": COLORS["danger"]}),
+            html.Span(f"Error: {str(e)}",
+                      style={"color": COLORS["danger"], "fontSize": "0.85rem"}),
+        ], style={
+            "padding": "10px 14px", "borderRadius": "8px", "marginTop": "12px",
+            "background": f"{COLORS['danger']}10",
+        }), no_update
