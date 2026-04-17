@@ -383,59 +383,7 @@ def layout():
             "padding": "10px 14px", "borderRadius": "8px", "marginBottom": "20px",
         }),
 
-        # Main data table
-        html.Div([
-            dash_table.DataTable(
-                id="offers-main-table",
-                columns=TABLE_COLUMNS,
-                data=table_data,
-                style_header={
-                    "backgroundColor": COLORS["sidebar"],
-                    "color": COLORS["text"],
-                    "fontWeight": "600",
-                    "border": f"1px solid {COLORS['card_border']}",
-                    "fontSize": "0.8rem",
-                    "padding": "10px 14px",
-                    "whiteSpace": "normal",
-                },
-                style_cell={
-                    "backgroundColor": COLORS["card"],
-                    "color": COLORS["text"],
-                    "border": f"1px solid {COLORS['card_border']}",
-                    "fontSize": "0.82rem",
-                    "padding": "8px 14px",
-                    "textAlign": "left",
-                    "maxWidth": "200px",
-                    "overflow": "hidden",
-                    "textOverflow": "ellipsis",
-                },
-                style_data_conditional=[
-                    {"if": {"state": "active"},
-                     "backgroundColor": COLORS["hover"],
-                     "border": f"1px solid {COLORS['primary']}"},
-                    {"if": {"state": "selected"},
-                     "backgroundColor": COLORS["hover"],
-                     "border": f"1px solid {COLORS['primary']}"},
-                ] + _status_conditional_styles(),
-                style_filter={
-                    "backgroundColor": COLORS["input_bg"],
-                    "color": COLORS["text"],
-                },
-                style_table={"overflowX": "auto"},
-                page_size=20,
-                page_action="native",
-                sort_action="native",
-                sort_mode="multi",
-                filter_action="native",
-                row_selectable="single",
-                selected_rows=[],
-            ),
-        ], className="dash-card", style={"marginBottom": "24px", "padding": "0", "overflow": "hidden"}),
-
-        # Detail / Status update panel (hidden by default)
-        html.Div(id="offers-detail-panel", style={"marginBottom": "24px"}),
-
-        # ── Send Offer panel ──────────────────────────────────────────────────
+        # ── Send Offer panel (primary action area) ─────────────────────────────
         html.Div([
             html.Div([
                 html.Div([
@@ -567,6 +515,58 @@ def layout():
 
         ], className="dash-card", style={"marginBottom": "24px",
                                           "border": f"1px solid {COLORS['success']}30"}),
+
+        # Main data table
+        html.Div([
+            dash_table.DataTable(
+                id="offers-main-table",
+                columns=TABLE_COLUMNS,
+                data=table_data,
+                style_header={
+                    "backgroundColor": COLORS["sidebar"],
+                    "color": COLORS["text"],
+                    "fontWeight": "600",
+                    "border": f"1px solid {COLORS['card_border']}",
+                    "fontSize": "0.8rem",
+                    "padding": "10px 14px",
+                    "whiteSpace": "normal",
+                },
+                style_cell={
+                    "backgroundColor": COLORS["card"],
+                    "color": COLORS["text"],
+                    "border": f"1px solid {COLORS['card_border']}",
+                    "fontSize": "0.82rem",
+                    "padding": "8px 14px",
+                    "textAlign": "left",
+                    "maxWidth": "200px",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                },
+                style_data_conditional=[
+                    {"if": {"state": "active"},
+                     "backgroundColor": COLORS["hover"],
+                     "border": f"1px solid {COLORS['primary']}"},
+                    {"if": {"state": "selected"},
+                     "backgroundColor": COLORS["hover"],
+                     "border": f"1px solid {COLORS['primary']}"},
+                ] + _status_conditional_styles(),
+                style_filter={
+                    "backgroundColor": COLORS["input_bg"],
+                    "color": COLORS["text"],
+                },
+                style_table={"overflowX": "auto"},
+                page_size=20,
+                page_action="native",
+                sort_action="native",
+                sort_mode="multi",
+                filter_action="native",
+                row_selectable="single",
+                selected_rows=[],
+            ),
+        ], className="dash-card", style={"marginBottom": "24px", "padding": "0", "overflow": "hidden"}),
+
+        # Detail / Status update panel (hidden by default)
+        html.Div(id="offers-detail-panel", style={"marginBottom": "24px"}),
 
         # Add Offer form
         html.Div([
@@ -974,7 +974,10 @@ def _build_buyer_suggestion_cards():
                 buyer_matches.setdefault(bid, []).append(o)
 
     if not buyer_matches:
-        return html.Div()
+        return html.Div([
+            html.Span("No buyers with matched products yet — match offers to buyers first.",
+                       style={"color": COLORS["text_muted"], "fontSize": "0.85rem"}),
+        ], style={"marginBottom": "16px"})
 
     cards = []
     buyer_map = {b["id"]: b for b in buyers}
@@ -989,28 +992,36 @@ def _build_buyer_suggestion_cards():
             cats[c] = cats.get(c, 0) + 1
         cat_str = ", ".join(f"{v} {k}" for k, v in sorted(cats.items(), key=lambda x: -x[1])[:3])
 
-        cards.append(html.Div([
+        cards.append(html.Button([
             html.Div([
                 html.Span(b["name"], style={"fontWeight": "600", "color": COLORS["text"],
                                              "fontSize": "0.9rem"}),
-                html.Span(f" ({b.get('rep', '')})", style={"color": COLORS["text_muted"],
-                                                             "fontSize": "0.8rem"}),
             ]),
             html.Div([
                 html.Span(f"{n} products", style={"color": COLORS["success"],
-                                                    "fontWeight": "600", "fontSize": "0.85rem"}),
+                                                    "fontWeight": "700", "fontSize": "0.95rem"}),
                 html.Span(f" — {cat_str}", style={"color": COLORS["text_muted"],
                                                      "fontSize": "0.8rem"}),
             ], style={"marginTop": "4px"}),
-        ], style={
+        ], id={"type": "buyer-suggest-card", "buyer_id": bid},
+           n_clicks=0,
+           style={
             "background": COLORS["card"], "border": f"1px solid {COLORS['card_border']}",
-            "borderRadius": "8px", "padding": "12px 16px", "cursor": "default",
-            "minWidth": "200px",
+            "borderRadius": "8px", "padding": "12px 16px", "cursor": "pointer",
+            "minWidth": "200px", "textAlign": "left",
+            "transition": "border-color 0.15s ease",
         }))
 
-    return html.Div(cards, style={
-        "display": "flex", "gap": "12px", "flexWrap": "wrap", "marginBottom": "16px",
-    })
+    return html.Div([
+        html.Div([
+            html.I(className="bi bi-lightbulb me-2", style={"color": COLORS["warning"]}),
+            html.Span("Suggested offers — click a customer to load their products:",
+                       style={"color": COLORS["text_muted"], "fontSize": "0.85rem"}),
+        ], style={"marginBottom": "10px"}),
+        html.Div(cards, style={
+            "display": "flex", "gap": "12px", "flexWrap": "wrap",
+        }),
+    ], style={"marginBottom": "16px"})
 
 
 def _get_buyer_matched_offers(buyer_id):
@@ -1180,6 +1191,24 @@ def _run_price_check(n_clicks, batch_size):
             "padding": "10px 14px", "borderRadius": "8px", "marginTop": "12px",
             "background": f"{COLORS['danger']}10",
         }), no_update
+
+
+# ── Click suggestion card → set buyer dropdown ───────────────────────────────
+
+@callback(
+    Output("offers-send-buyer", "value"),
+    Input({"type": "buyer-suggest-card", "buyer_id": ALL}, "n_clicks"),
+    prevent_initial_call=True,
+)
+def _suggestion_card_clicked(n_clicks_list):
+    """When a suggestion card is clicked, set the buyer dropdown to that buyer."""
+    if not n_clicks_list or not any(n_clicks_list):
+        return no_update
+    # Find which card was clicked
+    triggered = ctx.triggered_id
+    if triggered and isinstance(triggered, dict):
+        return triggered.get("buyer_id")
+    return no_update
 
 
 # ── Load matched products when buyer is selected ─────────────────────────────
