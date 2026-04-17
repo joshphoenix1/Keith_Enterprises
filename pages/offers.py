@@ -435,6 +435,139 @@ def layout():
         # Detail / Status update panel (hidden by default)
         html.Div(id="offers-detail-panel", style={"marginBottom": "24px"}),
 
+        # ── Send Offer panel ──────────────────────────────────────────────────
+        html.Div([
+            html.Div([
+                html.Div([
+                    html.I(className="bi bi-send",
+                           style={"fontSize": "1.3rem", "color": COLORS["success"]}),
+                ], style={
+                    "width": "42px", "height": "42px", "borderRadius": "10px",
+                    "background": f"{COLORS['success']}15", "display": "flex",
+                    "alignItems": "center", "justifyContent": "center", "flexShrink": "0",
+                }),
+                html.Div([
+                    html.H5("Send Offers", style={"marginBottom": "2px", "color": COLORS["text"]}),
+                    html.P("Pick a customer, adjust markup per item or globally, preview and send",
+                           style={"color": COLORS["text_muted"], "fontSize": "0.8rem",
+                                  "marginBottom": "0"}),
+                ]),
+            ], style={"display": "flex", "gap": "14px", "alignItems": "center",
+                      "marginBottom": "16px"}),
+
+            # Buyer suggestion cards
+            _build_buyer_suggestion_cards(),
+
+            # Customer selector + markup controls
+            html.Div([
+                form_group("Customer",
+                           dcc.Dropdown(
+                               id="offers-send-buyer",
+                               options=_buyer_options(),
+                               placeholder="Search or select customer...",
+                               searchable=True,
+                               clearable=True,
+                               className="dark-dropdown",
+                               style={"fontSize": "0.9rem"},
+                           )),
+                form_group("Global Markup %",
+                           dcc.Input(id="offers-markup-pct", type="number", value=30,
+                                     min=0, max=500, step=1,
+                                     style={
+                                         "backgroundColor": COLORS["input_bg"],
+                                         "border": f"1px solid {COLORS['input_border']}",
+                                         "color": COLORS["text"], "borderRadius": "8px",
+                                         "padding": "8px 12px", "width": "100%",
+                                         "fontSize": "0.9rem",
+                                     }, className="dark-input")),
+                html.Div([
+                    html.Button([
+                        html.I(className="bi bi-arrow-repeat me-2"),
+                        "Apply to All",
+                    ], id="offers-apply-markup-btn", className="btn-outline-dark",
+                       style={"padding": "8px 16px", "marginTop": "24px", "whiteSpace": "nowrap",
+                              "fontSize": "0.82rem"}),
+                ]),
+            ], style={"display": "grid", "gridTemplateColumns": "1fr 1fr auto",
+                      "gap": "16px", "alignItems": "start"}),
+
+            # Summary line
+            html.Div(id="offers-send-summary", style={"marginBottom": "8px"}),
+
+            # Editable product table — always in layout so callbacks work
+            dash_table.DataTable(
+                id="offers-send-table",
+                columns=SEND_TABLE_COLUMNS,
+                data=[],
+                editable=True,
+                style_header={
+                    "backgroundColor": COLORS["sidebar"],
+                    "color": COLORS["text"],
+                    "fontWeight": "600",
+                    "border": f"1px solid {COLORS['card_border']}",
+                    "fontSize": "0.78rem",
+                    "padding": "8px 10px",
+                },
+                style_cell={
+                    "backgroundColor": COLORS["card"],
+                    "color": COLORS["text"],
+                    "border": f"1px solid {COLORS['card_border']}",
+                    "fontSize": "0.82rem",
+                    "padding": "6px 10px",
+                    "textAlign": "left",
+                    "maxWidth": "220px",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                },
+                style_data_conditional=[
+                    {"if": {"column_id": "markup_pct"},
+                     "backgroundColor": f"{COLORS['warning']}15",
+                     "color": COLORS["warning"], "fontWeight": "600"},
+                    {"if": {"column_id": "offer_price"},
+                     "color": COLORS["success"], "fontWeight": "600"},
+                    {"if": {"column_id": "amazon"},
+                     "color": COLORS["primary"]},
+                    {"if": {"column_id": "below_amz", "filter_query": "{below_amz} > 0"},
+                     "color": COLORS["success"], "fontWeight": "600"},
+                    {"if": {"column_id": "below_amz", "filter_query": "{below_amz} <= 0"},
+                     "color": COLORS["danger"], "fontWeight": "600"},
+                    {"if": {"column_id": "cost"},
+                     "color": COLORS["text_muted"]},
+                ],
+                style_table={"overflowX": "auto", "display": "none"},
+                page_size=50,
+                sort_action="native",
+                sort_mode="multi",
+            ),
+
+            # Action buttons
+            html.Div([
+                html.Button([
+                    html.I(className="bi bi-eye me-2"),
+                    "Preview Email",
+                ], id="offers-build-btn", className="btn-primary-dark",
+                   style={"padding": "10px 24px", "display": "none"}),
+                html.Button([
+                    html.I(className="bi bi-send-fill me-2"),
+                    "Send Email",
+                ], id="offers-send-btn", className="btn-primary-dark",
+                   style={"padding": "10px 24px", "display": "none",
+                          "background": COLORS["success"],
+                          "border": f"1px solid {COLORS['success']}",
+                          "marginLeft": "12px"}),
+                html.Div(id="offers-send-status", style={"display": "inline-block",
+                          "marginLeft": "16px"}),
+            ], style={"marginTop": "16px"}),
+
+            # Email preview
+            html.Div(id="offers-email-preview", style={"marginTop": "20px"}),
+
+            # Hidden store
+            dcc.Store(id="offers-send-data", data=[]),
+
+        ], className="dash-card", style={"marginBottom": "24px",
+                                          "border": f"1px solid {COLORS['success']}30"}),
+
         # Add Offer form
         html.Div([
             html.Div([
@@ -799,6 +932,140 @@ def _show_detail(selected_rows, table_data):
     return detail, offer_id
 
 
+def _buyer_options():
+    """Build dropdown options from all buyers, with match counts."""
+    buyers = _load_buyers()
+    offers = _load_offers()
+
+    # Count matches per buyer
+    counts = {}
+    for o in offers:
+        if o.get("status") == "rejected":
+            continue
+        for mb in (o.get("matched_buyers") or []):
+            bid = mb.get("buyer_id")
+            if bid:
+                counts[bid] = counts.get(bid, 0) + 1
+
+    options = []
+    for b in buyers:
+        n = counts.get(b["id"], 0)
+        label = f"{b['name']} — {n} products matched" if n else f"{b['name']} (no matches)"
+        options.append({"label": label, "value": b["id"]})
+
+    # Sort: buyers with matches first, then by count desc
+    options.sort(key=lambda x: -counts.get(x["value"], 0))
+    return options
+
+
+def _build_buyer_suggestion_cards():
+    """Build clickable suggestion cards for buyers with matched products."""
+    buyers = _load_buyers()
+    offers = _load_offers()
+
+    # Aggregate matches per buyer
+    buyer_matches = {}
+    for o in offers:
+        if o.get("status") == "rejected":
+            continue
+        for mb in (o.get("matched_buyers") or []):
+            bid = mb.get("buyer_id")
+            if bid:
+                buyer_matches.setdefault(bid, []).append(o)
+
+    if not buyer_matches:
+        return html.Div()
+
+    cards = []
+    buyer_map = {b["id"]: b for b in buyers}
+    for bid, matched in sorted(buyer_matches.items(), key=lambda x: -len(x[1])):
+        b = buyer_map.get(bid)
+        if not b:
+            continue
+        n = len(matched)
+        cats = {}
+        for o in matched:
+            c = o.get("category", "Other")
+            cats[c] = cats.get(c, 0) + 1
+        cat_str = ", ".join(f"{v} {k}" for k, v in sorted(cats.items(), key=lambda x: -x[1])[:3])
+
+        cards.append(html.Div([
+            html.Div([
+                html.Span(b["name"], style={"fontWeight": "600", "color": COLORS["text"],
+                                             "fontSize": "0.9rem"}),
+                html.Span(f" ({b.get('rep', '')})", style={"color": COLORS["text_muted"],
+                                                             "fontSize": "0.8rem"}),
+            ]),
+            html.Div([
+                html.Span(f"{n} products", style={"color": COLORS["success"],
+                                                    "fontWeight": "600", "fontSize": "0.85rem"}),
+                html.Span(f" — {cat_str}", style={"color": COLORS["text_muted"],
+                                                     "fontSize": "0.8rem"}),
+            ], style={"marginTop": "4px"}),
+        ], style={
+            "background": COLORS["card"], "border": f"1px solid {COLORS['card_border']}",
+            "borderRadius": "8px", "padding": "12px 16px", "cursor": "default",
+            "minWidth": "200px",
+        }))
+
+    return html.Div(cards, style={
+        "display": "flex", "gap": "12px", "flexWrap": "wrap", "marginBottom": "16px",
+    })
+
+
+def _get_buyer_matched_offers(buyer_id):
+    """Get all non-rejected offers matched to a specific buyer."""
+    offers = _load_offers()
+    matched = []
+    for o in offers:
+        if o.get("status") == "rejected":
+            continue
+        buyers = o.get("matched_buyers") or []
+        for b in buyers:
+            if b.get("buyer_id") == buyer_id:
+                matched.append(o)
+                break
+    return matched
+
+
+def _build_send_table_data(buyer_id, default_markup=30):
+    """Build editable table rows for all offers matched to a buyer."""
+    matched = _get_buyer_matched_offers(buyer_id)
+    rows = []
+    for o in matched:
+        sa = o.get("sa_data") or {}
+        mp = o.get("marketplace_data") or {}
+        per_unit = float(o.get("per_unit_cost") or o.get("offered_price") or 0)
+        amazon_price = float(sa.get("buy_box_price") or mp.get("amazon_price") or 0)
+        sell = round(per_unit * (1 + default_markup / 100), 2)
+        savings_pct = round((amazon_price - sell) / amazon_price * 100, 1) if amazon_price else 0
+
+        rows.append({
+            "id": o.get("id"),
+            "product_name": o.get("product_name", "Unknown"),
+            "category": o.get("category", ""),
+            "quantity": o.get("quantity") or 0,
+            "cost": round(per_unit, 2),
+            "markup_pct": default_markup,
+            "offer_price": sell,
+            "amazon": round(amazon_price, 2),
+            "below_amz": savings_pct,
+        })
+    return rows
+
+
+SEND_TABLE_COLUMNS = [
+    {"name": "Product", "id": "product_name", "editable": False},
+    {"name": "Category", "id": "category", "editable": False},
+    {"name": "Qty", "id": "quantity", "type": "numeric", "editable": False},
+    {"name": "Cost", "id": "cost", "type": "numeric", "editable": False},
+    {"name": "Markup %", "id": "markup_pct", "type": "numeric", "editable": True},
+    {"name": "Offer $", "id": "offer_price", "type": "numeric", "editable": False},
+    {"name": "Amazon $", "id": "amazon", "type": "numeric", "editable": False},
+    {"name": "% Below AMZ", "id": "below_amz", "type": "numeric", "editable": False},
+]
+
+
 def _detail_field(label, value):
     """Render a label: value row in the detail panel."""
     return html.Div([
@@ -913,6 +1180,336 @@ def _run_price_check(n_clicks, batch_size):
             "padding": "10px 14px", "borderRadius": "8px", "marginTop": "12px",
             "background": f"{COLORS['danger']}10",
         }), no_update
+
+
+# ── Load matched products when buyer is selected ─────────────────────────────
+
+@callback(
+    Output("offers-send-table", "data"),
+    Output("offers-send-table", "style_table"),
+    Output("offers-send-summary", "children"),
+    Output("offers-build-btn", "style"),
+    Output("offers-send-btn", "style", allow_duplicate=True),
+    Output("offers-email-preview", "children", allow_duplicate=True),
+    Input("offers-send-buyer", "value"),
+    State("offers-markup-pct", "value"),
+    prevent_initial_call=True,
+)
+def _load_send_products(buyer_id, markup_pct):
+    """Load all matched products for the selected buyer into the send table."""
+    hide_btn = {"padding": "10px 24px", "display": "none",
+                "background": COLORS["success"], "border": f"1px solid {COLORS['success']}",
+                "marginLeft": "12px"}
+    hide_build = {"padding": "10px 24px", "display": "none"}
+    show_build = {"padding": "10px 24px", "display": "inline-block"}
+    hide_table = {"overflowX": "auto", "display": "none"}
+    show_table = {"overflowX": "auto", "display": "block"}
+
+    if not buyer_id:
+        return [], hide_table, html.Div(), hide_build, hide_btn, html.Div()
+
+    try:
+        markup_pct = float(markup_pct or 30)
+    except (ValueError, TypeError):
+        markup_pct = 30
+
+    rows = _build_send_table_data(buyer_id, markup_pct)
+
+    if not rows:
+        msg = html.Span("No matched offers for this buyer — match products to buyers first",
+                         style={"color": COLORS["text_muted"], "fontSize": "0.85rem"})
+        return [], hide_table, msg, hide_build, hide_btn, html.Div()
+
+    # Count by category
+    cats = {}
+    for r in rows:
+        c = r.get("category", "Other")
+        cats[c] = cats.get(c, 0) + 1
+    cat_str = ", ".join(f"{v} {k}" for k, v in sorted(cats.items(), key=lambda x: -x[1]))
+
+    summary = html.Div([
+        html.Span(f"{len(rows)} products matched", style={
+            "color": COLORS["text"], "fontWeight": "600", "fontSize": "0.85rem"}),
+        html.Span(f" — {cat_str}", style={
+            "color": COLORS["text_muted"], "fontSize": "0.82rem"}),
+        html.Span(" — edit Markup % per row or Apply to All",
+                  style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
+    ])
+
+    # Reset: show table + build btn, hide send btn + preview
+    return rows, show_table, summary, show_build, hide_btn, html.Div()
+
+
+# ── Apply global markup to all rows ──────────────────────────────────────────
+
+@callback(
+    Output("offers-send-table", "data"),
+    Input("offers-apply-markup-btn", "n_clicks"),
+    Input("offers-send-table", "data_timestamp"),
+    State("offers-markup-pct", "value"),
+    State("offers-send-table", "data"),
+    prevent_initial_call=True,
+)
+def _apply_markup_or_recalc(apply_clicks, data_ts, global_markup, table_data):
+    """Apply global markup to all rows, or recalculate offer prices when a row is edited."""
+    if not table_data:
+        return no_update
+
+    triggered = ctx.triggered_id
+
+    try:
+        global_markup = float(global_markup or 30)
+    except (ValueError, TypeError):
+        global_markup = 30
+
+    for row in table_data:
+        if triggered == "offers-apply-markup-btn":
+            row["markup_pct"] = global_markup
+
+        cost = float(row.get("cost") or 0)
+        mkp = float(row.get("markup_pct") or 0)
+        sell = round(cost * (1 + mkp / 100), 2)
+        amazon = float(row.get("amazon") or 0)
+        row["offer_price"] = sell
+        row["below_amz"] = round((amazon - sell) / amazon * 100, 1) if amazon else 0
+
+    return table_data
+
+
+# ── Build email body from table data (with per-item markups) ─────────────────
+
+def _build_offer_email_body(buyer_name, table_data, offers_lookup):
+    """Build the email subject + body from the send table data (per-item markups)."""
+    # Group by category
+    by_cat = {}
+    for row in table_data:
+        cat = row.get("category", "Other")
+        by_cat.setdefault(cat, []).append(row)
+
+    sections = []
+    total_value = 0
+
+    for cat in sorted(by_cat.keys()):
+        cat_rows = by_cat[cat]
+        lines = []
+        for row in cat_rows:
+            oid = row.get("id")
+            offer = offers_lookup.get(oid, {})
+            name = row.get("product_name", "Unknown")
+            qty = row.get("quantity") or 0
+            sell_price = float(row.get("offer_price") or 0)
+            amazon_price = float(row.get("amazon") or 0)
+            upc = offer.get("upc", "")
+            pack_qty = offer.get("pack_qty", "")
+            expiry = offer.get("expiry", "")
+            line_total = sell_price * qty
+            total_value += line_total
+
+            line = f"  - {name}"
+            if upc:
+                line += f"  (UPC: {upc})"
+            line += f"\n    Qty Available: {qty:,}"
+            if pack_qty:
+                line += f"  |  Pack: {pack_qty}/case"
+            line += f"\n    Our Price: ${sell_price:.2f}/unit"
+            if amazon_price:
+                savings = amazon_price - sell_price
+                savings_pct = (savings / amazon_price * 100) if amazon_price else 0
+                line += f"  |  Amazon Price: ${amazon_price:.2f}/unit"
+                line += f"\n    You Save: ${savings:.2f}/unit ({savings_pct:.0f}% below Amazon)"
+            line += f"\n    Line Total: ${line_total:,.2f}"
+            if expiry:
+                line += f"  |  Expiry: {expiry}"
+            lines.append(line)
+
+        section = f"=== {cat} ({len(cat_rows)} items) ===\n\n" + "\n\n".join(lines)
+        sections.append(section)
+
+    product_list = "\n\n\n".join(sections)
+    subject = f"Wholesale Offer: {len(table_data)} Products Available"
+
+    body = f"""Hi {buyer_name},
+
+We have the following products available for you:
+
+{product_list}
+
+---
+Total Products: {len(table_data)}
+Total Value: ${total_value:,.2f}
+
+All prices shown alongside current Amazon retail pricing for your reference.
+
+Please let us know which items you'd like to move forward on, or if you'd like to take the full lot.
+
+Best regards,
+Keith Enterprises
+"""
+    return subject, body
+
+
+# ── Preview Email callback ───────────────────────────────────────────────────
+
+@callback(
+    Output("offers-email-preview", "children"),
+    Output("offers-send-btn", "style"),
+    Input("offers-build-btn", "n_clicks"),
+    State("offers-send-buyer", "value"),
+    State("offers-send-table", "data"),
+    prevent_initial_call=True,
+)
+def _build_offer_preview(n_clicks, buyer_id, table_data):
+    """Build and display the email preview using per-item markups from the table."""
+    hide_btn = {"padding": "10px 24px", "display": "none",
+                "background": COLORS["success"], "border": f"1px solid {COLORS['success']}",
+                "marginLeft": "12px"}
+    show_btn = {"padding": "10px 24px", "display": "inline-block",
+                "background": COLORS["success"], "border": f"1px solid {COLORS['success']}",
+                "marginLeft": "12px"}
+
+    if not n_clicks or not buyer_id or not table_data:
+        return no_update, no_update
+
+    buyers = _load_buyers()
+    buyer = next((b for b in buyers if b.get("id") == buyer_id), None)
+    if not buyer:
+        return html.Span("Buyer not found",
+                         style={"color": COLORS["danger"], "fontSize": "0.85rem"}), hide_btn
+
+    buyer_name = buyer.get("name", "")
+    buyer_email = buyer.get("contact_email", "")
+
+    # Build offers lookup for UPC/expiry etc
+    offers = _load_offers()
+    offers_lookup = {o["id"]: o for o in offers}
+
+    subject, body = _build_offer_email_body(buyer_name, table_data, offers_lookup)
+
+    preview = html.Div([
+        html.Div([
+            html.I(className="bi bi-envelope me-2", style={"color": COLORS["primary"]}),
+            html.Span("Email Preview", style={"fontWeight": "600", "color": COLORS["text"]}),
+        ], style={"marginBottom": "8px"}),
+        html.Div([
+            html.Span("To: ", style={"color": COLORS["text_muted"], "fontSize": "0.82rem", "fontWeight": "500"}),
+            html.Span(f"{buyer_name} <{buyer_email}>",
+                      style={"color": COLORS["text"], "fontSize": "0.82rem"}),
+        ], style={"marginBottom": "4px"}),
+        html.Div([
+            html.Span("Subject: ", style={"color": COLORS["text_muted"], "fontSize": "0.82rem", "fontWeight": "500"}),
+            html.Span(subject, style={"color": COLORS["text"], "fontSize": "0.82rem"}),
+        ], style={"marginBottom": "8px"}),
+        html.Pre(body, style={
+            "backgroundColor": COLORS["sidebar"], "color": COLORS["text"],
+            "padding": "16px", "borderRadius": "8px", "fontSize": "0.82rem",
+            "border": f"1px solid {COLORS['card_border']}",
+            "whiteSpace": "pre-wrap", "maxHeight": "400px", "overflowY": "auto",
+        }),
+    ], style={
+        "background": COLORS["card"], "padding": "16px",
+        "borderRadius": "8px", "border": f"1px solid {COLORS['card_border']}",
+    })
+
+    return preview, show_btn
+
+
+# ── Send the email ───────────────────────────────────────────────────────────
+
+@callback(
+    Output("offers-send-status", "children"),
+    Input("offers-send-btn", "n_clicks"),
+    State("offers-send-buyer", "value"),
+    State("offers-send-table", "data"),
+    prevent_initial_call=True,
+)
+def _send_offer(n_clicks, buyer_id, table_data):
+    """Send the master offer email using per-item markups from the table."""
+    if not n_clicks or not buyer_id or not table_data:
+        return no_update
+
+    buyers = _load_buyers()
+    buyer = next((b for b in buyers if b.get("id") == buyer_id), None)
+    if not buyer:
+        return html.Span("Buyer not found",
+                         style={"color": COLORS["danger"], "fontSize": "0.85rem"})
+
+    buyer_email = buyer.get("contact_email", "")
+    buyer_name = buyer.get("name", "")
+    if not buyer_email:
+        return html.Span(f"No email on file for {buyer_name}",
+                         style={"color": COLORS["warning"], "fontSize": "0.85rem"})
+
+    # Save per-item markup and sell price
+    offers = _load_offers()
+    table_by_id = {row["id"]: row for row in table_data}
+    for o in offers:
+        if o["id"] in table_by_id:
+            row = table_by_id[o["id"]]
+            o["send_markup_pct"] = float(row.get("markup_pct") or 0)
+            o["send_sell_price"] = float(row.get("offer_price") or 0)
+    _save_offers(offers)
+
+    # Build and send email
+    offers_lookup = {o["id"]: o for o in offers}
+    subject, body = _build_offer_email_body(buyer_name, table_data, offers_lookup)
+
+    try:
+        _send_offer_email_smtp(buyer_email, subject, body)
+    except Exception as e:
+        return html.Span([
+            html.I(className="bi bi-x-circle-fill me-2", style={"color": COLORS["danger"]}),
+            f"Email failed: {str(e)}",
+        ], style={"color": COLORS["danger"], "fontSize": "0.85rem"})
+
+    return html.Span([
+        html.I(className="bi bi-check-circle-fill me-2", style={"color": COLORS["success"]}),
+        f"Sent {len(table_data)} products to {buyer_name}",
+    ], style={"color": COLORS["success"], "fontSize": "0.85rem"})
+
+
+def _send_offer_email_smtp(to_email, subject, body):
+    """Send an email via SMTP using configured email account."""
+    import smtplib
+    from email.mime.text import MIMEText
+    from email.mime.multipart import MIMEMultipart
+
+    accounts_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "accounts.json")
+    try:
+        with open(accounts_path) as f:
+            accounts = json.load(f)
+        email_cfg = accounts.get("email", {})
+    except Exception:
+        raise RuntimeError("Email not configured — check Accounts settings")
+
+    if not email_cfg.get("enabled"):
+        raise RuntimeError("Email not enabled in Accounts settings")
+
+    from_email = email_cfg.get("email_address", "")
+    password = email_cfg.get("password", "")
+    if not from_email or not password:
+        raise RuntimeError("Email credentials not configured")
+
+    msg = MIMEMultipart()
+    msg["From"] = from_email
+    msg["To"] = to_email
+    msg["Subject"] = subject
+    msg.attach(MIMEText(body, "plain"))
+
+    provider = email_cfg.get("provider", "Gmail")
+    if "outlook" in provider.lower() or "hotmail" in from_email.lower():
+        smtp_server = "smtp.office365.com"
+        smtp_port = 587
+    elif "yahoo" in provider.lower() or "yahoo" in from_email.lower():
+        smtp_server = "smtp.mail.yahoo.com"
+        smtp_port = 587
+    else:
+        smtp_server = "smtp.gmail.com"
+        smtp_port = 587
+
+    with smtplib.SMTP(smtp_server, smtp_port) as server:
+        server.starttls()
+        server.login(from_email, password)
+        server.send_message(msg)
 
 
 @callback(
