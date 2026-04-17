@@ -55,12 +55,13 @@ def styled_slider(id, min_val=0, max_val=100, value=50, step=1, marks=None):
 
 
 def form_group(label, input_component, help_text=None):
-    return html.Div([
+    children = [
         html.Label(label, style={
             "color": COLORS["text"], "fontSize": "0.85rem",
             "fontWeight": "500", "marginBottom": "4px", "display": "block",
         }),
         input_component,
-        html.Small(help_text, style={"color": COLORS["text_muted"]})
-        if help_text else None,
-    ], style={"marginBottom": "16px"})
+    ]
+    if help_text:
+        children.append(html.Small(help_text, style={"color": COLORS["text_muted"]}))
+    return html.Div(children, style={"marginBottom": "16px"})

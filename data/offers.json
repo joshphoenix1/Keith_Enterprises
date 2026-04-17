@@ -72,8 +72,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:17"
-    }
+      "enriched_at": "2026-04-17 03:17",
+      "buyer_profit": 6.69,
+      "buyer_roi_pct": 195.0,
+      "our_profit": 0.79,
+      "our_margin_pct": 23.0
+    },
+    "wholesale_price": 3.43,
+    "our_margin_pct": 23.0
   },
   {
     "id": 5,
@@ -157,8 +163,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:17"
-    }
+      "enriched_at": "2026-04-17 03:17",
+      "buyer_profit": 4.19,
+      "buyer_roi_pct": 235.4,
+      "our_profit": 0.41,
+      "our_margin_pct": 23.0
+    },
+    "wholesale_price": 1.78,
+    "our_margin_pct": 23.0
   },
   {
     "id": 6,
@@ -242,8 +254,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:17"
-    }
+      "enriched_at": "2026-04-17 03:17",
+      "buyer_profit": 8.32,
+      "buyer_roi_pct": 232.4,
+      "our_profit": 0.83,
+      "our_margin_pct": 23.2
+    },
+    "wholesale_price": 3.58,
+    "our_margin_pct": 23.2
   },
   {
     "id": 7,
@@ -318,8 +336,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:17"
-    }
+      "enriched_at": "2026-04-17 03:17",
+      "buyer_profit": 15.73,
+      "buyer_roi_pct": 263.0,
+      "our_profit": 1.38,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 5.98,
+    "our_margin_pct": 23.1
   },
   {
     "id": 8,
@@ -403,8 +427,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:17"
-    }
+      "enriched_at": "2026-04-17 03:17",
+      "buyer_profit": 3.28,
+      "buyer_roi_pct": 190.7,
+      "our_profit": 0.4,
+      "our_margin_pct": 23.3
+    },
+    "wholesale_price": 1.72,
+    "our_margin_pct": 23.3
   },
   {
     "id": 9,
@@ -491,8 +521,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:43"
-    }
+      "enriched_at": "2026-04-17 03:43",
+      "buyer_profit": 12.41,
+      "buyer_roi_pct": 271.0,
+      "our_profit": 1.06,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 4.58,
+    "our_margin_pct": 23.1
   },
   {
     "id": 10,
@@ -576,8 +612,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:43"
-    }
+      "enriched_at": "2026-04-17 03:43",
+      "buyer_profit": 6.71,
+      "buyer_roi_pct": 422.0,
+      "our_profit": 0.37,
+      "our_margin_pct": 23.3
+    },
+    "wholesale_price": 1.59,
+    "our_margin_pct": 23.3
   },
   {
     "id": 11,
@@ -661,8 +703,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:43"
-    }
+      "enriched_at": "2026-04-17 03:43",
+      "buyer_profit": 10.55,
+      "buyer_roi_pct": 318.7,
+      "our_profit": 0.76,
+      "our_margin_pct": 23.0
+    },
+    "wholesale_price": 3.31,
+    "our_margin_pct": 23.0
   },
   {
     "id": 12,
@@ -746,8 +794,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:43"
-    }
+      "enriched_at": "2026-04-17 03:43",
+      "buyer_profit": 4.23,
+      "buyer_roi_pct": 160.2,
+      "our_profit": 0.61,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 2.64,
+    "our_margin_pct": 23.1
   },
   {
     "id": 13,
@@ -759,7 +813,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
@@ -784,7 +838,10 @@
     "sa_data": {
       "error": "No ASIN found",
       "upc": "033674146163"
-    }
+    },
+    "wholesale_price": 2.86,
+    "send_markup_pct": 50.0,
+    "send_sell_price": 2.86
   },
   {
     "id": 14,
@@ -868,8 +925,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:43"
-    }
+      "enriched_at": "2026-04-17 03:43",
+      "buyer_profit": 5.79,
+      "buyer_roi_pct": 140.5,
+      "our_profit": 0.95,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 4.12,
+    "our_margin_pct": 23.1
   },
   {
     "id": 15,
@@ -944,8 +1007,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:43"
-    }
+      "enriched_at": "2026-04-17 03:43",
+      "buyer_profit": 4.48,
+      "buyer_roi_pct": 322.3,
+      "our_profit": 0.32,
+      "our_margin_pct": 23.0
+    },
+    "wholesale_price": 1.39,
+    "our_margin_pct": 23.0
   },
   {
     "id": 16,
@@ -1020,8 +1089,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:43"
-    }
+      "enriched_at": "2026-04-17 03:43",
+      "buyer_profit": 11.44,
+      "buyer_roi_pct": 468.9,
+      "our_profit": 0.56,
+      "our_margin_pct": 23.0
+    },
+    "wholesale_price": 2.44,
+    "our_margin_pct": 23.0
   },
   {
     "id": 17,
@@ -1078,7 +1153,7 @@
       "title": "Natures Way Quercetin with Zinc Gummies, 30 CT",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B0BRKYQRP7",
-      "image_url": "https://m.media-amazon.com/images/I/61PdEKmCFJL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/31i18ms6eKL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -1087,10 +1162,12 @@
       "referral_fee_rate": 0,
       "storage_fee": 0.01,
       "total_fees": 0.01,
-      "profit_per_unit": 0,
-      "roi_pct": 0.0,
-      "bsr": 580033,
-      "bsr_top_pct": 6.29,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.36,
+      "our_margin_pct": 23.1,
+      "bsr": 592369,
+      "bsr_top_pct": 6.42,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -1102,8 +1179,10 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:43"
-    }
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "wholesale_price": 1.56,
+    "our_margin_pct": 23.1
   },
   {
     "id": 18,
@@ -1178,8 +1257,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 03:44",
+      "buyer_profit": 4.45,
+      "buyer_roi_pct": 278.1,
+      "our_profit": 0.37,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 1.6,
+    "our_margin_pct": 23.1
   },
   {
     "id": 19,
@@ -1191,7 +1276,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 17.23,
       "walmart_price": null,
@@ -1245,8 +1330,16 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 03:44",
+      "buyer_profit": 8.26,
+      "buyer_roi_pct": 339.9,
+      "our_profit": 0.56,
+      "our_margin_pct": 23.0
+    },
+    "wholesale_price": 2.81,
+    "our_margin_pct": 23.0,
+    "send_markup_pct": 50.0,
+    "send_sell_price": 2.81
   },
   {
     "id": 20,
@@ -1305,7 +1398,7 @@
       "title": "Nature's Way Wild Yam Root Capsules, Women's Traditional Health Support*, 700 mg per 2-Capsule Serving, Non-GMO Project Verified, 100 Vegan Capsules (Packaging May Vary)",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B0009EXLYY",
-      "image_url": "https://m.media-amazon.com/images/I/61QE0ZZcHxL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/41hGi+HoHOL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 9.19,
       "fbm_min_price": 10.57,
@@ -1314,11 +1407,13 @@
       "referral_fee_rate": 0.081,
       "storage_fee": 0.01,
       "total_fees": 3.66,
-      "profit_per_unit": 0,
-      "roi_pct": 0.0,
-      "bsr": 40356,
-      "bsr_top_pct": 0.44,
-      "estimated_monthly_sales": 486,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.51,
+      "our_margin_pct": 23.1,
+      "bsr": 38522,
+      "bsr_top_pct": 0.42,
+      "estimated_monthly_sales": 519,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 1,
       "fbm_sellers": 3,
@@ -1329,8 +1424,10 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "wholesale_price": 2.21,
+    "our_margin_pct": 23.1
   },
   {
     "id": 21,
@@ -1396,8 +1493,16 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Grocery & Gourmet Food",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 03:44",
+      "buyer_profit": 3.61,
+      "buyer_roi_pct": 279.8,
+      "our_profit": 0.3,
+      "our_margin_pct": 23.3
+    },
+    "wholesale_price": 1.58,
+    "our_margin_pct": 23.3,
+    "send_markup_pct": 60.0,
+    "send_sell_price": 1.58
   },
   {
     "id": 22,
@@ -1472,8 +1577,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 03:44",
+      "buyer_profit": 1.76,
+      "buyer_roi_pct": 29.9,
+      "our_profit": 1.36,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 5.88,
+    "our_margin_pct": 23.1
   },
   {
     "id": 23,
@@ -1548,8 +1659,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 03:44",
+      "buyer_profit": 4.35,
+      "buyer_roi_pct": 80.1,
+      "our_profit": 1.25,
+      "our_margin_pct": 23.0
+    },
+    "wholesale_price": 5.43,
+    "our_margin_pct": 23.0
   },
   {
     "id": 24,
@@ -1615,8 +1732,16 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 03:44",
+      "buyer_profit": 6.51,
+      "buyer_roi_pct": 289.3,
+      "our_profit": 0.52,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 2.59,
+    "our_margin_pct": 23.1,
+    "send_markup_pct": 50.0,
+    "send_sell_price": 2.59
   },
   {
     "id": 25,
@@ -1675,7 +1800,7 @@
       "title": "Alive!Multi-Vit,Chew,Kids",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B001GMT4W6",
-      "image_url": "https://m.media-amazon.com/images/I/91pEWucVWzL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51OkCMbGCXL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 25.44,
@@ -1684,9 +1809,11 @@
       "referral_fee_rate": 0.15,
       "storage_fee": 0.0,
       "total_fees": 3.82,
-      "profit_per_unit": 0,
-      "roi_pct": 0.0,
-      "bsr": 1236045,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 1.01,
+      "our_margin_pct": 23.0,
+      "bsr": 1235879,
       "bsr_top_pct": 13.39,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
@@ -1699,8 +1826,10 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "wholesale_price": 4.39,
+    "our_margin_pct": 23.0
   },
   {
     "id": 26,
@@ -1775,8 +1904,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 03:44",
+      "buyer_profit": 3.17,
+      "buyer_roi_pct": 107.5,
+      "our_profit": 0.68,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 2.95,
+    "our_margin_pct": 23.1
   },
   {
     "id": 27,
@@ -1842,8 +1977,16 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 03:44",
+      "buyer_profit": 7.91,
+      "buyer_roi_pct": 158.5,
+      "our_profit": 1.15,
+      "our_margin_pct": 23.0
+    },
+    "wholesale_price": 4.99,
+    "our_margin_pct": 23.0,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 4.99
   },
   {
     "id": 28,
@@ -1909,8 +2052,16 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Grocery & Gourmet Food",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 03:44",
+      "buyer_profit": 19.44,
+      "buyer_roi_pct": 265.2,
+      "our_profit": 1.69,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 7.33,
+    "our_margin_pct": 23.1,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 7.33
   },
   {
     "id": 29,
@@ -1969,7 +2120,7 @@
       "title": "Enzymatic Therapy - 7-KETO\u00ae3 DHEA 60 caps",
       "brand": "Enzymatic Therapy",
       "product_url": "https://www.amazon.com/dp/B000WSHTZ4",
-      "image_url": "https://m.media-amazon.com/images/I/812s3a5Pc+L.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51Ymcu5AnOL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -1978,8 +2129,10 @@
       "referral_fee_rate": 0.15,
       "storage_fee": 0.0,
       "total_fees": 15.0,
-      "profit_per_unit": 0,
-      "roi_pct": 0.0,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.79,
+      "our_margin_pct": 23.1,
       "bsr": 0,
       "bsr_top_pct": 0,
       "estimated_monthly_sales": 0,
@@ -1993,8 +2146,10 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:44"
-    }
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "wholesale_price": 3.42,
+    "our_margin_pct": 23.1
   },
   {
     "id": 30,
@@ -2078,8 +2233,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:45"
-    }
+      "enriched_at": "2026-04-17 03:45",
+      "buyer_profit": 5.8,
+      "buyer_roi_pct": 291.5,
+      "our_profit": 0.46,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 1.99,
+    "our_margin_pct": 23.1
   },
   {
     "id": 31,
@@ -2127,8 +2288,10 @@
       "referral_fee_rate": 0.15,
       "storage_fee": 0.0,
       "total_fees": 15.0,
-      "profit_per_unit": 0,
-      "roi_pct": 0.0,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.79,
+      "our_margin_pct": 23.2,
       "bsr": 0,
       "bsr_top_pct": null,
       "estimated_monthly_sales": 0,
@@ -2142,8 +2305,12 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": null,
-      "enriched_at": "2026-04-17 03:45"
-    }
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "wholesale_price": 3.41,
+    "our_margin_pct": 23.2,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 3.41
   },
   {
     "id": 32,
@@ -2227,8 +2394,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:45"
-    }
+      "enriched_at": "2026-04-17 03:45",
+      "buyer_profit": 3.49,
+      "buyer_roi_pct": 206.5,
+      "our_profit": 0.39,
+      "our_margin_pct": 23.1
+    },
+    "wholesale_price": 1.69,
+    "our_margin_pct": 23.1
   },
   {
     "id": 33,
@@ -2312,8 +2485,14 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 03:45"
-    }
+      "enriched_at": "2026-04-17 03:45",
+      "buyer_profit": 2.96,
+      "buyer_roi_pct": 160.0,
+      "our_profit": 0.43,
+      "our_margin_pct": 23.2
+    },
+    "wholesale_price": 1.85,
+    "our_margin_pct": 23.2
   },
   {
     "id": 34,
@@ -2327,9 +2506,10 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
+      "amazon_price": 12.99,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:27"
+      "last_checked": "2026-04-17 02:27",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -2360,11 +2540,46 @@
         "match_reason": "Category: Sleep, margin OK"
       }
     ],
-    "margin_pct": null,
+    "margin_pct": 82.4,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20192586, Exp 2027-10-31, 12pk, 2.71 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.76
+    "per_unit_cost": 1.76,
+    "wholesale_price": 2.29,
+    "sa_data": {
+      "asin": "B0001FVFBC",
+      "title": "Nature's Way Valerian Premium Extract, Supports Restful Sleep*, 220 mg of valerian extract per 2-capsule Serving, Non-GMO Project Verified, Herbal Supplements, Vegan, 90 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0001FVFBC",
+      "image_url": "https://m.media-amazon.com/images/I/41qOzyBcvDL.jpg",
+      "buy_box_price": 12.99,
+      "fba_min_price": 12.94,
+      "fbm_min_price": 20.42,
+      "fba_fee": 3.73,
+      "referral_fee": 1.95,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.69,
+      "buyer_profit": 5.01,
+      "buyer_roi_pct": 218.8,
+      "our_profit": 0.53,
+      "our_margin_pct": 23.1,
+      "bsr": 42546,
+      "bsr_top_pct": 0.47,
+      "estimated_monthly_sales": 428,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 35,
@@ -2417,7 +2632,42 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 8100568, Exp 2026-09-30, 12pk, 2.4 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 2.02
+    "per_unit_cost": 2.02,
+    "wholesale_price": 2.63,
+    "sa_data": {
+      "asin": "B0001APXWY",
+      "title": "Nature's Way Boericke & Tafel Oral Ivy Liquid, Poison Ivy & Oak Treatment**, Relieves Itching & Burning**, 1 Fl. Oz",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0001APXWY",
+      "image_url": "https://m.media-amazon.com/images/I/41y-Dbrfj7L.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 28.22,
+      "fba_fee": 4.55,
+      "referral_fee": 4.23,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 8.78,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.61,
+      "our_margin_pct": 23.2,
+      "bsr": 114682,
+      "bsr_top_pct": 1.25,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "our_margin_pct": 23.2
   },
   {
     "id": 36,
@@ -2435,7 +2685,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Alive! Vitamin B Complex Gummies, Cellular Energy Support*, 8 B-Vitamins, Vegetarian, Mango Flavored, 60 Count (Packaging May Vary)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:10"
+      "last_checked": "2026-04-17 00:10",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -2448,11 +2699,48 @@
         "match_reason": "Category: Energy, margin OK"
       }
     ],
-    "margin_pct": 85.8,
+    "margin_pct": 81.5,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20197431, Exp 2028-10-31, 12pk, 6.42 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.86
+    "per_unit_cost": 1.86,
+    "wholesale_price": 2.42,
+    "sa_data": {
+      "asin": "B00RKOIAI8",
+      "title": "Nature's Way Alive! Vitamin B Complex Gummies, Cellular Energy Support*, 8 B-Vitamins, Vegetarian, Mango Flavored, 60 Count (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00RKOIAI8",
+      "image_url": "https://m.media-amazon.com/images/I/416B7wuXTQL.jpg",
+      "buy_box_price": 13.11,
+      "fba_min_price": 13.11,
+      "fbm_min_price": 23.2,
+      "fba_fee": 3.95,
+      "referral_fee": 1.97,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.93,
+      "buyer_profit": 4.76,
+      "buyer_roi_pct": 196.7,
+      "our_profit": 0.56,
+      "our_margin_pct": 23.1,
+      "bsr": 30615,
+      "bsr_top_pct": 0.34,
+      "estimated_monthly_sales": 699,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "our_margin_pct": 23.1,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.42
   },
   {
     "id": 37,
@@ -2470,7 +2758,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Maca Standardized Extract, Supports a Healthy Libido*, Standardized to 0.6% Glucosinolates, Non-GMO Project Verified, 60 Vegan Capsules (Packaging May Vary)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:11"
+      "last_checked": "2026-04-17 00:11",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -2501,11 +2790,46 @@
         "match_reason": "Category: Sexual Health, margin OK"
       }
     ],
-    "margin_pct": 83.1,
+    "margin_pct": 78.1,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20196526, Exp 2028-03-31, 12pk, 1.86 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 2.58
+    "per_unit_cost": 2.58,
+    "wholesale_price": 3.35,
+    "sa_data": {
+      "asin": "B0009EXLJO",
+      "title": "Nature's Way Maca Standardized Extract, Supports a Healthy Libido*, Standardized to 0.6% Glucosinolates, Non-GMO Project Verified, 60 Vegan Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0009EXLJO",
+      "image_url": "https://m.media-amazon.com/images/I/31DyKmbz2tL.jpg",
+      "buy_box_price": 15.27,
+      "fba_min_price": 15.27,
+      "fbm_min_price": 28.58,
+      "fba_fee": 3.73,
+      "referral_fee": 2.29,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.03,
+      "buyer_profit": 5.89,
+      "buyer_roi_pct": 175.8,
+      "our_profit": 0.77,
+      "our_margin_pct": 23.0,
+      "bsr": 168263,
+      "bsr_top_pct": 1.83,
+      "estimated_monthly_sales": 53,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 38,
@@ -2558,7 +2882,42 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20193793, Exp 2029-11-30, 12pk, 2.38 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.08
+    "per_unit_cost": 1.08,
+    "wholesale_price": 1.4,
+    "sa_data": {
+      "asin": "B000PG5I4W",
+      "title": "Nature's Way Willow Bark, Traditional Relief of Discomfort Due to Occasional Overexertion*, Non-GMO Project Verified, 680 mg per Serving, 100 Vegan Capsules",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000PG5I4W",
+      "image_url": "https://m.media-amazon.com/images/I/41zmdk6b7TL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 6.81,
+      "fbm_min_price": 18.19,
+      "fba_fee": 2.91,
+      "referral_fee": 0.54,
+      "referral_fee_rate": 0.079,
+      "storage_fee": 0.01,
+      "total_fees": 3.46,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.32,
+      "our_margin_pct": 22.9,
+      "bsr": 79780,
+      "bsr_top_pct": 0.87,
+      "estimated_monthly_sales": 109,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "our_margin_pct": 22.9
   },
   {
     "id": 39,
@@ -2570,13 +2929,14 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 9.52,
       "walmart_price": null,
       "amazon_match": "Nature's Way Feverfew Herb, Traditional Support for Blood Vessel Relaxation*, 380 mg per Serving, Non-GMO Project Verified, 100 Vegan Feverfew Capsules (Packaging May Vary)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:11"
+      "last_checked": "2026-04-17 00:11",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -2589,11 +2949,48 @@
         "match_reason": "Category: Pain/Inflammation, margin OK"
       }
     ],
-    "margin_pct": 86.9,
+    "margin_pct": 83.0,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20198070, Exp 2028-04-30, 12pk, 2.26 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.25
+    "per_unit_cost": 1.25,
+    "wholesale_price": 1.62,
+    "sa_data": {
+      "asin": "B0002IHF6M",
+      "title": "Nature's Way Feverfew Herb, Traditional Support for Blood Vessel Relaxation*, 380 mg per Serving, Non-GMO Project Verified, 100 Vegan Feverfew Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0002IHF6M",
+      "image_url": "https://m.media-amazon.com/images/I/41M5Cog5MXL.jpg",
+      "buy_box_price": 9.52,
+      "fba_min_price": 9.5,
+      "fbm_min_price": 15.29,
+      "fba_fee": 2.91,
+      "referral_fee": 0.76,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.01,
+      "total_fees": 3.68,
+      "buyer_profit": 4.22,
+      "buyer_roi_pct": 260.5,
+      "our_profit": 0.37,
+      "our_margin_pct": 22.8,
+      "bsr": 114214,
+      "bsr_top_pct": 1.24,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 4,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:48"
+    },
+    "our_margin_pct": 22.8,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 1.62
   },
   {
     "id": 40,
@@ -2607,11 +3004,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 37.99,
+      "amazon_price": 39.54,
       "walmart_price": null,
       "amazon_match": "Nature's Way Premium Extract Turmeric Max Potency\u2021 Standardized to 95% Curcuminoids, 750 mg per serving, 60 VCaps",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:11"
+      "last_checked": "2026-04-17 00:11",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -2642,11 +3040,46 @@
         "match_reason": "Category: Pain/Inflammation, margin OK"
       }
     ],
-    "margin_pct": 90.1,
+    "margin_pct": 87.6,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20196563, Exp 2028-03-31, 12pk, 2.34 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 3.76
+    "per_unit_cost": 3.76,
+    "wholesale_price": 4.89,
+    "sa_data": {
+      "asin": "B00I0VQ1J0",
+      "title": "Turmeric Standardized 750 mg 60 Capsules",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00I0VQ1J0",
+      "image_url": "https://m.media-amazon.com/images/I/41KG2L1G3FL.jpg",
+      "buy_box_price": 39.54,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 39.54,
+      "fba_fee": 3.73,
+      "referral_fee": 5.93,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 9.67,
+      "buyer_profit": 24.98,
+      "buyer_roi_pct": 510.8,
+      "our_profit": 1.13,
+      "our_margin_pct": 23.1,
+      "bsr": 783286,
+      "bsr_top_pct": 8.49,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 41,
@@ -2699,7 +3132,42 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20195453, Exp 2028-01-31, 12pk, 3.8 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 2.07
+    "per_unit_cost": 2.07,
+    "wholesale_price": 2.69,
+    "sa_data": {
+      "asin": "B00014WCQK",
+      "title": "Nature's Way - Feverfew Leaves, 380 mg",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00014WCQK",
+      "image_url": "https://m.media-amazon.com/images/I/41uEUkD7VdL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 28.94,
+      "fba_fee": 5.92,
+      "referral_fee": 4.34,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 10.26,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.62,
+      "our_margin_pct": 23.0,
+      "bsr": 1092576,
+      "bsr_top_pct": 11.84,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 42,
@@ -2717,7 +3185,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Alive! Kids Zero Sugar Gummy Multivitamins, for Kids Ages 2+, Supports Bone, Eye & Immune Health*, No Sugar Alcohols, Plant-Based Sweeteners, Berry-Citrus Flavored, 60 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:12"
+      "last_checked": "2026-04-17 00:12",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -2730,11 +3199,48 @@
         "match_reason": "Category: Multivitamin, margin OK"
       }
     ],
-    "margin_pct": 80.8,
+    "margin_pct": 75.0,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20198259, Exp 2026-12-31, 12pk, 5.9 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 2.42
+    "per_unit_cost": 2.42,
+    "wholesale_price": 3.15,
+    "sa_data": {
+      "asin": "B0DTRNTQGY",
+      "title": "Nature\u2019s Way Alive! Kids Zero Sugar Gummy Multivitamins, for Kids Ages 2+, Supports Bone, Eye & Immune Health*, No Sugar Alcohols, Plant-Based Sweeteners, Berry-Citrus Flavored, 60 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0DTRNTQGY",
+      "image_url": "https://m.media-amazon.com/images/I/41LC5v3lLvL.jpg",
+      "buy_box_price": 12.6,
+      "fba_min_price": 12.6,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.95,
+      "referral_fee": 1.89,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 5.86,
+      "buyer_profit": 3.59,
+      "buyer_roi_pct": 114.0,
+      "our_profit": 0.73,
+      "our_margin_pct": 23.2,
+      "bsr": 113735,
+      "bsr_top_pct": 1.24,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.2,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 3.15
   },
   {
     "id": 43,
@@ -2778,7 +3284,42 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20201219, Exp 2027-03-31, 12pk, 5.12 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.94
+    "per_unit_cost": 1.94,
+    "wholesale_price": 2.52,
+    "sa_data": {
+      "asin": "B0DNN47VYP",
+      "title": "Nature's Way, Alive Zero Sugar Women's Gummy Multi, 50 Count",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0DNN47VYP",
+      "image_url": "https://m.media-amazon.com/images/I/41WRL8SoeGL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 25.23,
+      "fba_fee": 3.95,
+      "referral_fee": 3.78,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 7.75,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.58,
+      "our_margin_pct": 23.0,
+      "bsr": 1224859,
+      "bsr_top_pct": 13.27,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 44,
@@ -2796,7 +3337,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way, Alive Zero Sugar Men's Gummy Multi, 50 Count",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:13"
+      "last_checked": "2026-04-17 00:13",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -2809,11 +3351,48 @@
         "match_reason": "Category: Multivitamin, margin OK"
       }
     ],
-    "margin_pct": 92.7,
+    "margin_pct": 90.4,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20195333, Exp 2026-09-30, 12pk, 5.22 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.85
+    "per_unit_cost": 1.85,
+    "wholesale_price": 2.41,
+    "sa_data": {
+      "asin": "B0DNN21DTM",
+      "title": "Nature's Way, Alive Zero Sugar Men's Gummy Multi, 50 Count",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0DNN21DTM",
+      "image_url": "https://m.media-amazon.com/images/I/411V7wDrVCL.jpg",
+      "buy_box_price": 25.23,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 25.23,
+      "fba_fee": 3.95,
+      "referral_fee": 3.78,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 7.75,
+      "buyer_profit": 15.07,
+      "buyer_roi_pct": 625.3,
+      "our_profit": 0.56,
+      "our_margin_pct": 23.2,
+      "bsr": 492299,
+      "bsr_top_pct": 5.34,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.2,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.41
   },
   {
     "id": 45,
@@ -2827,11 +3406,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 14.49,
+      "amazon_price": 43.1,
       "walmart_price": null,
       "amazon_match": "Nature's Way Inositol, 500 mg per serving, 100 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:13"
+      "last_checked": "2026-04-17 00:13",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -2862,11 +3442,46 @@
         "match_reason": "Category: Memory/Brain Health, margin OK"
       }
     ],
-    "margin_pct": 90.3,
+    "margin_pct": 95.8,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20199889, Exp 2028-06-30, 12pk, 2.82 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.41
+    "per_unit_cost": 1.41,
+    "wholesale_price": 1.83,
+    "sa_data": {
+      "asin": "B003M632QI",
+      "title": "Inositol 100 Capsules (Pack of 2)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B003M632QI",
+      "image_url": "https://m.media-amazon.com/images/I/41RBMCJV75L.jpg",
+      "buy_box_price": 43.1,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 43.1,
+      "fba_fee": 3.73,
+      "referral_fee": 6.47,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 10.2,
+      "buyer_profit": 31.07,
+      "buyer_roi_pct": 1697.8,
+      "our_profit": 0.42,
+      "our_margin_pct": 23.0,
+      "bsr": 0,
+      "bsr_top_pct": 0,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 46,
@@ -2880,11 +3495,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 18.64,
+      "amazon_price": 19.04,
       "walmart_price": null,
       "amazon_match": "Nature's Way Choline & Inositol, Supports Brain Health & Cellular Energy*, 500 mg Choline & 500 mg Inositol per 2-capsule serving, Gluten Free, 100 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:13"
+      "last_checked": "2026-04-17 00:13",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -2915,11 +3531,46 @@
         "match_reason": "Category: Memory/Brain Health, margin OK"
       }
     ],
-    "margin_pct": 89.4,
+    "margin_pct": 86.5,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 20198404, Exp 2028-05-31, 12pk, 3.9 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 1.98
+    "per_unit_cost": 1.98,
+    "wholesale_price": 2.57,
+    "sa_data": {
+      "asin": "B002S4PC3G",
+      "title": "Nature's Way Choline & Inositol, Supports Brain Health & Cellular Energy*, 500 mg Choline & 500 mg Inositol per 2-capsule serving, Gluten Free, 100 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B002S4PC3G",
+      "image_url": "https://m.media-amazon.com/images/I/31Ev+XKuVGL.jpg",
+      "buy_box_price": 19.04,
+      "fba_min_price": 18.25,
+      "fbm_min_price": 26.85,
+      "fba_fee": 3.95,
+      "referral_fee": 2.86,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.82,
+      "buyer_profit": 9.65,
+      "buyer_roi_pct": 375.5,
+      "our_profit": 0.59,
+      "our_margin_pct": 23.0,
+      "bsr": 65652,
+      "bsr_top_pct": 0.72,
+      "estimated_monthly_sales": 203,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 4,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 47,
@@ -2937,7 +3588,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Umcka Kids Cold Relief Chewables, Homeopathic Cold Medicine and Remedy, Shortens & Reduces Severity of Cough, Congestion & Sore Throat for Children Ages 6+, Cherry Flavored, 10 Count",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:13"
+      "last_checked": "2026-04-17 00:13",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -2950,11 +3602,48 @@
         "match_reason": "Category: Cough & Cold, margin OK"
       }
     ],
-    "margin_pct": 82.9,
+    "margin_pct": 77.8,
     "created_at": "2026-04-16 23:47:47",
     "notes": "Lot 2019132502, Exp 2026-08-31, 12pk, 1.55 lb/case",
     "pack_qty": 12,
-    "per_unit_cost": 0.94
+    "per_unit_cost": 0.94,
+    "wholesale_price": 1.22,
+    "sa_data": {
+      "asin": "B07GTRRYCS",
+      "title": "Nature\u2019s Way Umcka Kids Cold Relief Chewables, Homeopathic Cold Medicine and Remedy, Shortens & Reduces Severity of Cough, Congestion & Sore Throat for Children Ages 6+, Cherry Flavored, 10 Count",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B07GTRRYCS",
+      "image_url": "https://m.media-amazon.com/images/I/410ADS+MxuL.jpg",
+      "buy_box_price": 5.5,
+      "fba_min_price": 5.5,
+      "fbm_min_price": 0.0,
+      "fba_fee": 2.91,
+      "referral_fee": 0.44,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.01,
+      "total_fees": 3.36,
+      "buyer_profit": 0.92,
+      "buyer_roi_pct": 75.4,
+      "our_profit": 0.28,
+      "our_margin_pct": 23.0,
+      "bsr": 31524,
+      "bsr_top_pct": 0.35,
+      "estimated_monthly_sales": 699,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.0,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 1.22
   },
   {
     "id": 48,
@@ -3007,7 +3696,12 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "10 Pkts, 12/case, exp 2026-10-31",
     "per_unit_cost": 1.82,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 2.37,
+    "sa_data": {
+      "asin": "B077JX45Q5",
+      "error": "Product not found"
+    }
   },
   {
     "id": 49,
@@ -3058,7 +3752,42 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, 48/case, exp 2026-09-30",
     "per_unit_cost": 1.71,
-    "pack_qty": 48
+    "pack_qty": 48,
+    "wholesale_price": 2.22,
+    "sa_data": {
+      "asin": "B0007DGLYE",
+      "title": "Nature's Way Boericke & Tafel Nighttime Cough & Bronchial Syrup, Cough Suppressant\u2020\u2020, Promotes Restful Sleep\u2020\u2020, 4 Fl. Oz",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0007DGLYE",
+      "image_url": "https://m.media-amazon.com/images/I/41dzslmTqwL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.99,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 19.0,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.51,
+      "our_margin_pct": 23.0,
+      "bsr": 228286,
+      "bsr_top_pct": 2.48,
+      "estimated_monthly_sales": 15,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 50,
@@ -3076,7 +3805,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Umcka Cough Syrup, Fast-Acting | Non-Drowsy | Homeopathic | Suitable for Adults & Children, 4 Ounce",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:14"
+      "last_checked": "2026-04-17 00:14",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3107,11 +3837,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 85.7,
+    "margin_pct": 81.5,
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, 12/case, exp 2026-09-30, lot 20191400",
     "per_unit_cost": 1.51,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 1.96,
+    "sa_data": {
+      "asin": "B009NTEYLK",
+      "title": "Nature's Way Umcka Cough Syrup, Fast-Acting | Non-Drowsy | Homeopathic | Suitable for Adults & Children, 4 Ounce",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B009NTEYLK",
+      "image_url": "https://m.media-amazon.com/images/I/41V9YA6TK2L.jpg",
+      "buy_box_price": 10.58,
+      "fba_min_price": 10.58,
+      "fbm_min_price": 27.46,
+      "fba_fee": 3.95,
+      "referral_fee": 1.59,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.55,
+      "buyer_profit": 3.07,
+      "buyer_roi_pct": 156.6,
+      "our_profit": 0.45,
+      "our_margin_pct": 23.0,
+      "bsr": 55437,
+      "bsr_top_pct": 0.61,
+      "estimated_monthly_sales": 295,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 51,
@@ -3125,11 +3890,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 13.06,
+      "amazon_price": 12.97,
       "walmart_price": null,
       "amazon_match": "Nature's Way Umcka Cold and Flu Relief Syrup, Fever*, Sore Throat, Cough, Congestion, Body Aches*, Homeopathic, Phenylephrine Free, 0.05% Alcohol, Berry Flavored, 4 Fl Oz (Packaging May Vary)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:14"
+      "last_checked": "2026-04-17 00:14",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3160,11 +3926,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 89.5,
+    "margin_pct": 86.3,
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, 12/case, exp 2026-09-30, lot 20190338",
     "per_unit_cost": 1.37,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 1.78,
+    "sa_data": {
+      "asin": "B001E8KSPE",
+      "title": "Nature's Way Umcka Cold and Flu Relief Syrup, Fever*, Sore Throat, Cough, Congestion, Body Aches*, Homeopathic, Phenylephrine Free, 0.05% Alcohol, Berry Flavored, 4 Fl Oz (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B001E8KSPE",
+      "image_url": "https://m.media-amazon.com/images/I/71CMHmR9r6L.jpg",
+      "buy_box_price": 12.97,
+      "fba_min_price": 12.97,
+      "fbm_min_price": 27.46,
+      "fba_fee": 3.95,
+      "referral_fee": 1.95,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.91,
+      "buyer_profit": 5.28,
+      "buyer_roi_pct": 296.6,
+      "our_profit": 0.41,
+      "our_margin_pct": 23.0,
+      "bsr": 59711,
+      "bsr_top_pct": 0.65,
+      "estimated_monthly_sales": 237,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 52,
@@ -3182,7 +3983,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Cold Relief Hot Drink, Umcka, Homeopathic, Clinically Proven Pelargonium Sidoides 1X, for Cough, Congestion, Sore Throat, Stuffy Nose, Lemon Flavored, 10 Packets",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:15"
+      "last_checked": "2026-04-17 00:15",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3195,11 +3997,48 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 83.0,
+    "margin_pct": 78.0,
     "created_at": "2026-04-16 23:47:47",
     "notes": "10 Pkts Bx, 12/case, exp 2026-09-30",
     "per_unit_cost": 1.78,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 2.31,
+    "sa_data": {
+      "asin": "B000WKW6S2",
+      "title": "Nature's Way Cold Relief Hot Drink, Umcka, Homeopathic, Clinically Proven Pelargonium Sidoides 1X, for Cough, Congestion, Sore Throat, Stuffy Nose, Lemon Flavored, 10 Packets",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000WKW6S2",
+      "image_url": "https://m.media-amazon.com/images/I/71jIYRzVbbL.jpg",
+      "buy_box_price": 10.49,
+      "fba_min_price": 9.99,
+      "fbm_min_price": 20.85,
+      "fba_fee": 3.95,
+      "referral_fee": 1.57,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.53,
+      "buyer_profit": 2.65,
+      "buyer_roi_pct": 114.7,
+      "our_profit": 0.53,
+      "our_margin_pct": 22.9,
+      "bsr": 30632,
+      "bsr_top_pct": 0.34,
+      "estimated_monthly_sales": 699,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 3,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 22.9,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.31
   },
   {
     "id": 53,
@@ -3213,11 +4052,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 13.47,
+      "amazon_price": 14.03,
       "walmart_price": null,
       "amazon_match": "NATURES WAY Umcka Elderberry Syrup, 4 FZ Liquid 4 Fl Oz (Pack of 1)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:15"
+      "last_checked": "2026-04-17 00:15",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3230,11 +4070,48 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 87.6,
+    "margin_pct": 84.5,
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, 12/case, exp 2026-09-30",
     "per_unit_cost": 1.67,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 2.17,
+    "sa_data": {
+      "asin": "B009NTEZM8",
+      "title": "Nature's Way Umcka Cold & Flu Relief Elderberry Syrup, Non-Drowsy Homeopathic Cold and Flu* Relief for Sore Throat, Cough, Congestion, Fever*, Body Aches*, Berry Flavored, 4 Fl Oz (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B009NTEZM8",
+      "image_url": "https://m.media-amazon.com/images/I/41wQ9VlZlkL.jpg",
+      "buy_box_price": 14.03,
+      "fba_min_price": 14.03,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.95,
+      "referral_fee": 2.1,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.06,
+      "buyer_profit": 5.8,
+      "buyer_roi_pct": 267.3,
+      "our_profit": 0.5,
+      "our_margin_pct": 23.0,
+      "bsr": 29224,
+      "bsr_top_pct": 0.32,
+      "estimated_monthly_sales": 799,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:49"
+    },
+    "our_margin_pct": 23.0,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.17
   },
   {
     "id": 54,
@@ -3248,9 +4125,10 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
+      "amazon_price": 21.48,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:27"
+      "last_checked": "2026-04-17 02:27",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3281,11 +4159,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": null,
+    "margin_pct": 85.8,
     "created_at": "2026-04-16 23:47:47",
     "notes": "8 Fl Oz, 24/case, exp 2026-08-31, lot 8100549",
     "per_unit_cost": 2.35,
-    "pack_qty": 24
+    "pack_qty": 24,
+    "wholesale_price": 3.06,
+    "sa_data": {
+      "asin": "B0006NYHJQ",
+      "title": "Nature's Way Boericke & Tafel Daytime Cough & Bronchial Syrup, Cough Suppressant and Expectorant*, Non-Drowsy, 8 fl oz",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0006NYHJQ",
+      "image_url": "https://m.media-amazon.com/images/I/41i51sYDMiL.jpg",
+      "buy_box_price": 21.48,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 21.4,
+      "fba_fee": 4.2,
+      "referral_fee": 3.22,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 7.44,
+      "buyer_profit": 10.98,
+      "buyer_roi_pct": 358.8,
+      "our_profit": 0.71,
+      "our_margin_pct": 23.2,
+      "bsr": 77730,
+      "bsr_top_pct": 0.85,
+      "estimated_monthly_sales": 109,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.2
   },
   {
     "id": 55,
@@ -3303,7 +4216,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus Kids Cough Relief + Immune Gummy, Clinically Proven South African Geranium, with Elderberry, Vitamin C & Zinc, Gluten Free, Vegetarian, 36 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:15"
+      "last_checked": "2026-04-17 00:15",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3325,11 +4239,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 85.3,
+    "margin_pct": 80.9,
     "created_at": "2026-04-16 23:47:47",
     "notes": "36 Gummies, 24/case, exp 2026-08-31",
     "per_unit_cost": 1.5,
-    "pack_qty": 24
+    "pack_qty": 24,
+    "wholesale_price": 1.95,
+    "sa_data": {
+      "asin": "B0BGW7W9YQ",
+      "title": "Nature\u2019s Way Sambucus Kids Cough Relief +(1) Immune Gummy*, Feel Better Faster(1), Clinically Proven South African Geranium, with Elderberry, Vitamin C & Zinc, Gluten Free, Vegetarian, 36 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0BGW7W9YQ",
+      "image_url": "https://m.media-amazon.com/images/I/41hEoDmFGgL.jpg",
+      "buy_box_price": 10.19,
+      "fba_min_price": 10.19,
+      "fbm_min_price": 16.04,
+      "fba_fee": 3.95,
+      "referral_fee": 1.53,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.49,
+      "buyer_profit": 2.75,
+      "buyer_roi_pct": 141.0,
+      "our_profit": 0.45,
+      "our_margin_pct": 23.1,
+      "bsr": 63308,
+      "bsr_top_pct": 0.69,
+      "estimated_monthly_sales": 210,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 3,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 56,
@@ -3347,7 +4296,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus HoneyBerry Cough Syrup with Black Elderberry Extract & Organic Honey, Immune Support*, 4 Fl. Oz",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:16"
+      "last_checked": "2026-04-17 00:16",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3360,11 +4310,48 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 86.4,
+    "margin_pct": 82.3,
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, 12/case, exp 2026-11-30",
     "per_unit_cost": 2.92,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 3.8,
+    "sa_data": {
+      "asin": "B087LJXSYX",
+      "title": "Nature's Way Sambucus HoneyBerry Cough Syrup with Black Elderberry Extract & Organic Honey, Immune Support*, 4 Fl. Oz",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B087LJXSYX",
+      "image_url": "https://m.media-amazon.com/images/I/71cFqlT8FPL.jpg",
+      "buy_box_price": 21.49,
+      "fba_min_price": 21.49,
+      "fbm_min_price": 29.51,
+      "fba_fee": 3.95,
+      "referral_fee": 3.22,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 7.18,
+      "buyer_profit": 10.51,
+      "buyer_roi_pct": 276.6,
+      "our_profit": 0.88,
+      "our_margin_pct": 23.2,
+      "bsr": 147590,
+      "bsr_top_pct": 1.6,
+      "estimated_monthly_sales": 60,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.2,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 3.8
   },
   {
     "id": 57,
@@ -3382,7 +4369,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Umcka Cold Relief, Shortens Duration and Reduces Severity, Multi-Symptom Cold Relief, Homeopathic, Phenylephrine Free, Cherry Flavored, 20 Chewable Tablets",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:16"
+      "last_checked": "2026-04-17 00:16",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3395,11 +4383,48 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 90.6,
+    "margin_pct": 87.7,
     "created_at": "2026-04-16 23:47:47",
     "notes": "20 Chw Tb, 12/case, exp 2026-08-31",
     "per_unit_cost": 1.43,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 1.86,
+    "sa_data": {
+      "asin": "B00138YEZK",
+      "title": "Nature's Way Umcka Cold Relief, Shortens Duration and Reduces Severity, Multi-Symptom Cold Relief, Homeopathic, Phenylephrine Free, Cherry Flavored, 20 Chewable Tablets",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00138YEZK",
+      "image_url": "https://m.media-amazon.com/images/I/41Kf8R1CJdL.jpg",
+      "buy_box_price": 15.14,
+      "fba_min_price": 14.5,
+      "fbm_min_price": 11.85,
+      "fba_fee": 3.73,
+      "referral_fee": 2.27,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.01,
+      "buyer_profit": 7.27,
+      "buyer_roi_pct": 390.9,
+      "our_profit": 0.43,
+      "our_margin_pct": 23.1,
+      "bsr": 27392,
+      "bsr_top_pct": 0.3,
+      "estimated_monthly_sales": 958,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.1,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 1.86
   },
   {
     "id": 58,
@@ -3450,7 +4475,42 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "1.9 Oz Pwd, 12/case, exp 2027-11-30",
     "per_unit_cost": 2.46,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 3.2,
+    "sa_data": {
+      "asin": "B0768KXG9P",
+      "title": "Nature's Way Premium Herbal Charcoal Powder, 800 mg Per serving; Powder; BPA Free Packaging (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0768KXG9P",
+      "image_url": "https://m.media-amazon.com/images/I/415DuA9PdrL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.21,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 19.23,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.74,
+      "our_margin_pct": 23.1,
+      "bsr": 739219,
+      "bsr_top_pct": 8.01,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 59,
@@ -3468,7 +4528,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Chlorofresh Chlorophyll Gummies, Supports Healthy Skin and Body Detox*, Internal Deodorant*, Orchard Fruit Flavored, 60 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:17"
+      "last_checked": "2026-04-17 00:17",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3481,11 +4542,48 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 88.1,
+    "margin_pct": 84.5,
     "created_at": "2026-04-16 23:47:47",
     "notes": "60 Gummies, 12/case, exp 2027-01-31",
     "per_unit_cost": 2.15,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 2.79,
+    "sa_data": {
+      "asin": "B0B98P9FMF",
+      "title": "Nature\u2019s Way Chlorofresh Chlorophyll Gummies, Supports Healthy Skin and Body Detox*, Internal Deodorant*, Orchard Fruit Flavored, 60 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0B98P9FMF",
+      "image_url": "https://m.media-amazon.com/images/I/41nfyR3F7wL.jpg",
+      "buy_box_price": 18.0,
+      "fba_min_price": 18.0,
+      "fbm_min_price": 19.0,
+      "fba_fee": 3.95,
+      "referral_fee": 2.7,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.66,
+      "buyer_profit": 8.55,
+      "buyer_roi_pct": 306.5,
+      "our_profit": 0.64,
+      "our_margin_pct": 22.9,
+      "bsr": 35169,
+      "bsr_top_pct": 0.39,
+      "estimated_monthly_sales": 543,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 3,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 22.9,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.79
   },
   {
     "id": 60,
@@ -3503,7 +4601,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Garlinase 5000, Garlic Extract, Supports Heart Health*, Odor-Free, Vegan, 100 Tablets (Packaging May Vary)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:17"
+      "last_checked": "2026-04-17 00:17",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3534,11 +4633,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 85.3,
+    "margin_pct": 80.9,
     "created_at": "2026-04-16 23:47:47",
     "notes": "100 Tb, 12/case, exp 2027-01-31",
     "per_unit_cost": 2.88,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 3.74,
+    "sa_data": {
+      "asin": "B0013OQC4U",
+      "title": "Nature's Way Garlinase 5000, Garlic Extract, Supports Heart Health*, Odor-Free, Vegan, 100 Tablets (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0013OQC4U",
+      "image_url": "https://m.media-amazon.com/images/I/41z7Eb3gzWL.jpg",
+      "buy_box_price": 19.63,
+      "fba_min_price": 19.59,
+      "fbm_min_price": 42.02,
+      "fba_fee": 3.95,
+      "referral_fee": 2.94,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 6.91,
+      "buyer_profit": 8.98,
+      "buyer_roi_pct": 240.1,
+      "our_profit": 0.86,
+      "our_margin_pct": 23.0,
+      "bsr": 42007,
+      "bsr_top_pct": 0.46,
+      "estimated_monthly_sales": 486,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 61,
@@ -3591,7 +4725,42 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Tb, 12/case, exp 2027-01-31",
     "per_unit_cost": 1.54,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 2.0,
+    "sa_data": {
+      "asin": "B00014EERU",
+      "title": "NATURES WAY Garlinase Fresh, 30 CT",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00014EERU",
+      "image_url": "https://m.media-amazon.com/images/I/51Q-tXQLpML.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 24.77,
+      "fba_fee": 3.73,
+      "referral_fee": 3.72,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 7.46,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.46,
+      "our_margin_pct": 23.0,
+      "bsr": 625806,
+      "bsr_top_pct": 6.78,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 62,
@@ -3605,11 +4774,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 8.86,
+      "amazon_price": 8.88,
       "walmart_price": null,
       "amazon_match": "Nature's Way Grape Seed Standardized Extract, Supports Healthy Skin and Veins*, Antioxidant Support*, Non-GMO Project Verified, 30 Vegan Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:17"
+      "last_checked": "2026-04-17 00:17",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3640,11 +4810,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 90.2,
+    "margin_pct": 87.3,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Vgn Cp, 12/case, exp 2028-04-30",
     "per_unit_cost": 0.87,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 1.13,
+    "sa_data": {
+      "asin": "B0002JHYLC",
+      "title": "Nature's Way Grape Seed Standardized Extract, Supports Healthy Skin and Veins*, Antioxidant Support*, Non-GMO Project Verified, 30 Vegan Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0002JHYLC",
+      "image_url": "https://m.media-amazon.com/images/I/41DZo+Lr6WL.jpg",
+      "buy_box_price": 8.88,
+      "fba_min_price": 8.88,
+      "fbm_min_price": 18.98,
+      "fba_fee": 2.91,
+      "referral_fee": 0.71,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.01,
+      "total_fees": 3.63,
+      "buyer_profit": 4.12,
+      "buyer_roi_pct": 364.6,
+      "our_profit": 0.26,
+      "our_margin_pct": 23.0,
+      "bsr": 146474,
+      "bsr_top_pct": 1.59,
+      "estimated_monthly_sales": 63,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 63,
@@ -3688,7 +4893,42 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "60 Vgn Cp, 12/case, exp 2028-04-30",
     "per_unit_cost": 1.38,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 1.79,
+    "sa_data": {
+      "asin": "B000EPYGLK",
+      "title": "Resveratrol Nature's Way 60 VCaps",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000EPYGLK",
+      "image_url": "https://m.media-amazon.com/images/I/411jFkxSaEL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 33.27,
+      "fba_fee": 3.73,
+      "referral_fee": 4.99,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 8.73,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.41,
+      "our_margin_pct": 22.9,
+      "bsr": 693824,
+      "bsr_top_pct": 7.52,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 4,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 22.9
   },
   {
     "id": 64,
@@ -3706,7 +4946,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Premium Hem-Care, Unique Vein Health Blend*, 90 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:18"
+      "last_checked": "2026-04-17 00:18",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3737,11 +4978,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 86.1,
+    "margin_pct": 81.9,
     "created_at": "2026-04-16 23:47:47",
     "notes": "90 Cp, 12/case, exp 2026-12-31",
     "per_unit_cost": 2.9,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 3.77,
+    "sa_data": {
+      "asin": "B000POS9EU",
+      "title": "Nature's Way Premium Hem-Care, Unique Vein Health Blend*, 90 Capsules",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000POS9EU",
+      "image_url": "https://m.media-amazon.com/images/I/31sMDPyqptL.jpg",
+      "buy_box_price": 20.82,
+      "fba_min_price": 20.82,
+      "fbm_min_price": 35.52,
+      "fba_fee": 3.95,
+      "referral_fee": 3.12,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 7.08,
+      "buyer_profit": 9.97,
+      "buyer_roi_pct": 264.5,
+      "our_profit": 0.87,
+      "our_margin_pct": 23.1,
+      "bsr": 107006,
+      "bsr_top_pct": 1.16,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 65,
@@ -3759,7 +5035,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sustained Focus, Improved Focus & Concentration, with Clinically Studied Neumentix Spearmint Extract, L-Theanine, 60 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:18"
+      "last_checked": "2026-04-17 00:18",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3790,11 +5067,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 84.3,
+    "margin_pct": 79.6,
     "created_at": "2026-04-16 23:47:47",
     "notes": "60 Veg Cp, 12/case, exp 2027-03-31",
     "per_unit_cost": 2.72,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 3.54,
+    "sa_data": {
+      "asin": "B08W8Q3QS6",
+      "title": "Nature\u2019s Way Sustained Focus, Improved Focus & Concentration*, with Clinically Studied Neumentix Spearmint Extract, L-Theanine, 60 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B08W8Q3QS6",
+      "image_url": "https://m.media-amazon.com/images/I/41+ED5Y9r2L.jpg",
+      "buy_box_price": 17.36,
+      "fba_min_price": 17.36,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.73,
+      "referral_fee": 2.6,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.34,
+      "buyer_profit": 7.48,
+      "buyer_roi_pct": 211.3,
+      "our_profit": 0.82,
+      "our_margin_pct": 23.2,
+      "bsr": 375777,
+      "bsr_top_pct": 4.08,
+      "estimated_monthly_sales": 1,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.2
   },
   {
     "id": 66,
@@ -3812,7 +5124,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Kids Brain Supplement Gummies, Supports Healthy Brain Function*, Lemonade Flavored, 60 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:18"
+      "last_checked": "2026-04-17 00:18",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3825,11 +5138,48 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 80.6,
+    "margin_pct": 74.8,
     "created_at": "2026-04-16 23:47:47",
     "notes": "60 Gummies, 12/case, exp 2026-11-30",
     "per_unit_cost": 1.94,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 2.52,
+    "sa_data": {
+      "asin": "B09F7SZBRF",
+      "title": "Nature's Way Kids Brain Supplement Gummies, Supports Healthy Brain Function*, Lemonade Flavored, 60 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B09F7SZBRF",
+      "image_url": "https://m.media-amazon.com/images/I/419oRgOar0L.jpg",
+      "buy_box_price": 9.99,
+      "fba_min_price": 9.99,
+      "fbm_min_price": 17.5,
+      "fba_fee": 3.13,
+      "referral_fee": 0.8,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.02,
+      "total_fees": 3.95,
+      "buyer_profit": 3.52,
+      "buyer_roi_pct": 139.7,
+      "our_profit": 0.58,
+      "our_margin_pct": 23.0,
+      "bsr": 103244,
+      "bsr_top_pct": 1.12,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 6,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:50"
+    },
+    "our_margin_pct": 23.0,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.52
   },
   {
     "id": 67,
@@ -3882,7 +5232,42 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "60 Vgn Cp, 12/case, exp 2028-04-30",
     "per_unit_cost": 1.31,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 1.7,
+    "sa_data": {
+      "asin": "B00014EVM8",
+      "title": "Natures Way Gymnema Standardized 60 Vegetarian capsule, 60 ct",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00014EVM8",
+      "image_url": "https://m.media-amazon.com/images/I/61VV0d9Z6+L.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 32.73,
+      "fba_fee": 3.73,
+      "referral_fee": 4.91,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 8.65,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.39,
+      "our_margin_pct": 22.9,
+      "bsr": 635780,
+      "bsr_top_pct": 6.89,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 22.9
   },
   {
     "id": 68,
@@ -3935,7 +5320,42 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "100 Vgn Cp, 12/case, exp 2030-01-31",
     "per_unit_cost": 1.76,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 2.29,
+    "sa_data": {
+      "asin": "B0002JISJO",
+      "title": "Nature's Way Nature's Way Schisandra Fruit, 1,160 Mg Per Serving, 100 Count",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0002JISJO",
+      "image_url": "https://m.media-amazon.com/images/I/81nkpyz7OXL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 19.0,
+      "fbm_min_price": 19.91,
+      "fba_fee": 3.73,
+      "referral_fee": 2.85,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.59,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.53,
+      "our_margin_pct": 23.1,
+      "bsr": 470641,
+      "bsr_top_pct": 5.1,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 69,
@@ -3953,7 +5373,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Premium Extract Holy Basil, 450 mg per serving, 60 Vcaps",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:19"
+      "last_checked": "2026-04-17 00:19",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3984,11 +5405,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 87.5,
+    "margin_pct": 83.8,
     "created_at": "2026-04-16 23:47:47",
     "notes": "60 Vgn Cp, 12/case, exp 2027-03-31",
     "per_unit_cost": 2.37,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 3.08,
+    "sa_data": {
+      "asin": "B0010TN1Y2",
+      "title": "Nature's Way Premium Extract Holy Basil, 450 mg per serving, 60 Vcaps (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0010TN1Y2",
+      "image_url": "https://m.media-amazon.com/images/I/61mpvexmMJL.jpg",
+      "buy_box_price": 18.99,
+      "fba_min_price": 18.99,
+      "fbm_min_price": 27.19,
+      "fba_fee": 3.73,
+      "referral_fee": 2.85,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.59,
+      "buyer_profit": 9.32,
+      "buyer_roi_pct": 302.6,
+      "our_profit": 0.71,
+      "our_margin_pct": 23.1,
+      "bsr": 109456,
+      "bsr_top_pct": 1.19,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 70,
@@ -4021,7 +5477,44 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "40 Gummies, Pack 24, Exp 2026-10-31, Lot 20193441",
     "pack_qty": 24,
-    "per_unit_cost": 1.66
+    "per_unit_cost": 1.66,
+    "wholesale_price": 2.16,
+    "sa_data": {
+      "asin": "B0CKTQH2LL",
+      "title": "Nature\u2019s Way Quick Calm, 40 Gummies",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0CKTQH2LL",
+      "image_url": "https://m.media-amazon.com/images/I/41V7l-KKoiL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 25.0,
+      "fba_fee": 3.95,
+      "referral_fee": 3.75,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 7.71,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.5,
+      "our_margin_pct": 23.1,
+      "bsr": 1089433,
+      "bsr_top_pct": 11.81,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 23.1,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.16
   },
   {
     "id": 71,
@@ -4039,7 +5532,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Primadophilus Kids 3 Billion, 30 Chewables",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:20"
+      "last_checked": "2026-04-17 00:20",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -4052,11 +5546,48 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 85.0,
+    "margin_pct": 80.6,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Chw Tb, 12/case, exp 2026-09-30",
     "per_unit_cost": 1.57,
-    "pack_qty": 12
+    "pack_qty": 12,
+    "wholesale_price": 2.04,
+    "sa_data": {
+      "asin": "B00016WU4W",
+      "title": "Nature's Way Primadophilus Kids 3 Billion, 30 Chewables",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00016WU4W",
+      "image_url": "https://m.media-amazon.com/images/I/71NOaUAd8jL.jpg",
+      "buy_box_price": 10.49,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 10.49,
+      "fba_fee": 3.73,
+      "referral_fee": 1.57,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.31,
+      "buyer_profit": 3.14,
+      "buyer_roi_pct": 153.9,
+      "our_profit": 0.47,
+      "our_margin_pct": 23.0,
+      "bsr": 143143,
+      "bsr_top_pct": 1.56,
+      "estimated_monthly_sales": 65,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 23.0,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.04
   },
   {
     "id": 72,
@@ -4074,7 +5605,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Rhodiola Premium Extract, 250 mg per serving, Supports Energy & Cognitive Performance*, Adaptogenic Herb*, Non-GMO Project Verified, Vegan, Gluten Free, 60 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:20"
+      "last_checked": "2026-04-17 00:20",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -4105,11 +5637,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 77.5,
+    "margin_pct": 70.7,
     "created_at": "2026-04-16 23:47:47",
     "notes": "60 Vgn Cp, Exp 2026-09-30, Lot 20191396",
     "pack_qty": 12,
-    "per_unit_cost": 4.16
+    "per_unit_cost": 4.16,
+    "wholesale_price": 5.41,
+    "sa_data": {
+      "asin": "B0001APVP8",
+      "title": "Nature's Way Rhodiola Premium Extract, 250 mg per serving, Supports Energy & Cognitive Performance*, Adaptogenic Herb*, Non-GMO Project Verified, Vegan, Gluten Free, 60 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0001APVP8",
+      "image_url": "https://m.media-amazon.com/images/I/41N1s62CvTL.jpg",
+      "buy_box_price": 18.49,
+      "fba_min_price": 17.94,
+      "fbm_min_price": 26.85,
+      "fba_fee": 3.73,
+      "referral_fee": 2.77,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.51,
+      "buyer_profit": 6.57,
+      "buyer_roi_pct": 121.4,
+      "our_profit": 1.25,
+      "our_margin_pct": 23.1,
+      "bsr": 50626,
+      "bsr_top_pct": 0.55,
+      "estimated_monthly_sales": 335,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 3,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 73,
@@ -4127,7 +5694,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way NutraVege Plant Based Omega-3, Heart Health and Eye and Brain Function*, 30 Vegan Softgels",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:20"
+      "last_checked": "2026-04-17 00:20",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -4158,11 +5726,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 86.2,
+    "margin_pct": 82.1,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Sg, Exp 2026-10-31, Lot G24071",
     "pack_qty": 12,
-    "per_unit_cost": 2.51
+    "per_unit_cost": 2.51,
+    "wholesale_price": 3.26,
+    "sa_data": {
+      "asin": "B076MMC3FS",
+      "title": "Nature's Way NutraVege Plant Based Omega-3, Heart Health and Eye and Brain Function*, 30 Vegan Softgels",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B076MMC3FS",
+      "image_url": "https://m.media-amazon.com/images/I/41soiyK7HRL.jpg",
+      "buy_box_price": 18.17,
+      "fba_min_price": 18.17,
+      "fbm_min_price": 33.41,
+      "fba_fee": 3.73,
+      "referral_fee": 2.73,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.47,
+      "buyer_profit": 8.44,
+      "buyer_roi_pct": 258.9,
+      "our_profit": 0.75,
+      "our_margin_pct": 23.0,
+      "bsr": 50133,
+      "bsr_top_pct": 0.55,
+      "estimated_monthly_sales": 335,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 74,
@@ -4180,7 +5783,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Artichoke, Digestion Support, Non-GMO Project Verified, Vegan, Gluten-Free, 60 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:20"
+      "last_checked": "2026-04-17 00:20",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -4211,11 +5815,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 81.8,
+    "margin_pct": 76.3,
     "created_at": "2026-04-16 23:47:47",
     "notes": "60 Vgn Cp, Exp 2028-02-29, Lot 20196475",
     "pack_qty": 12,
-    "per_unit_cost": 1.82
+    "per_unit_cost": 1.82,
+    "wholesale_price": 2.37,
+    "sa_data": {
+      "asin": "B000MXCP08",
+      "title": "Nature's Way Artichoke, Digestion Support*, Non-GMO Project Verified, Vegan, Gluten-Free, 60 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000MXCP08",
+      "image_url": "https://m.media-amazon.com/images/I/41Omnvf4UHL.jpg",
+      "buy_box_price": 9.99,
+      "fba_min_price": 9.99,
+      "fbm_min_price": 14.03,
+      "fba_fee": 2.91,
+      "referral_fee": 0.8,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.01,
+      "total_fees": 3.72,
+      "buyer_profit": 3.9,
+      "buyer_roi_pct": 164.6,
+      "our_profit": 0.55,
+      "our_margin_pct": 23.2,
+      "bsr": 33672,
+      "bsr_top_pct": 0.37,
+      "estimated_monthly_sales": 566,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 23.2
   },
   {
     "id": 75,
@@ -4233,7 +5872,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Weight Manager Drink Mix Packets, Supports Craving Management & Abdominal Fat Loss, with Clinically Studied Ingredients, Plant-Based Fiber, No Sugar, Mixed Fruit Flavored, 30 Packets",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:21"
+      "last_checked": "2026-04-17 00:21",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -4255,11 +5895,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 77.8,
+    "margin_pct": 71.1,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 ct Pkt, Exp 2027-04-30, Lot 521488001",
     "pack_qty": 12,
-    "per_unit_cost": 6.68
+    "per_unit_cost": 6.68,
+    "wholesale_price": 8.68,
+    "sa_data": {
+      "asin": "B0DW12QGWM",
+      "title": "Nature's Way Weight Manager Drink Mix Packets, Supports Craving Management & Abdominal Fat Loss*(1), with Clinically Studied Ingredients, Plant-Based Fiber, No Sugar, Mixed Fruit Flavored, 30 Packets",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0DW12QGWM",
+      "image_url": "https://m.media-amazon.com/images/I/51tctdZxbgL.jpg",
+      "buy_box_price": 30.06,
+      "fba_min_price": 30.06,
+      "fbm_min_price": 0.0,
+      "fba_fee": 5.42,
+      "referral_fee": 4.51,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.09,
+      "total_fees": 10.02,
+      "buyer_profit": 11.36,
+      "buyer_roi_pct": 130.9,
+      "our_profit": 2.0,
+      "our_margin_pct": 23.0,
+      "bsr": 40519,
+      "bsr_top_pct": 0.44,
+      "estimated_monthly_sales": 486,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 76,
@@ -4277,7 +5952,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Fortify Optima Probiotic for Women, Ultra Potency Probiotic for Vaginal Health, 90 Billion Live Cultures, Supports Digestive Balance and Immune Health, 30 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:21"
+      "last_checked": "2026-04-17 00:21",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -4299,11 +5975,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 88.1,
+    "margin_pct": 84.5,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2027-02-28, Lot 20195603",
     "pack_qty": 12,
-    "per_unit_cost": 4.48
+    "per_unit_cost": 4.48,
+    "wholesale_price": 5.82,
+    "sa_data": {
+      "asin": "B009NTEVWC",
+      "title": "Nature's Way Fortify Optima Probiotic for Women, Ultra Potency Probiotic for Vaginal Health*, 90 Billion Live Cultures, Supports Digestive Balance and Immune Health*, 30 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B009NTEVWC",
+      "image_url": "https://m.media-amazon.com/images/I/41-YBOEZ0QL.jpg",
+      "buy_box_price": 37.49,
+      "fba_min_price": 37.49,
+      "fbm_min_price": 37.49,
+      "fba_fee": 3.73,
+      "referral_fee": 5.62,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 9.36,
+      "buyer_profit": 22.31,
+      "buyer_roi_pct": 383.3,
+      "our_profit": 1.34,
+      "our_margin_pct": 23.0,
+      "bsr": 134628,
+      "bsr_top_pct": 1.46,
+      "estimated_monthly_sales": 65,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 77,
@@ -4321,7 +6032,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Fortify Daily Pre+Probiotic Adult 30 Billion, Probiotics for Immune and Digestive Health Support*, 30 Billion Live Cultures, 30 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:21"
+      "last_checked": "2026-04-17 00:21",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -4343,11 +6055,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 83.1,
+    "margin_pct": 78.0,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2027-02-28, Lot W0043071",
     "pack_qty": 12,
-    "per_unit_cost": 2.87
+    "per_unit_cost": 2.87,
+    "wholesale_price": 3.73,
+    "sa_data": {
+      "asin": "B00T0CVZYY",
+      "title": "Nature's Way Fortify Daily Pre+Probiotic Adult 30 Billion, Probiotics for Immune and Digestive Health Support*, 30 Billion Live Cultures, 30 Capsules",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00T0CVZYY",
+      "image_url": "https://m.media-amazon.com/images/I/41fSx+ENE4L.jpg",
+      "buy_box_price": 16.99,
+      "fba_min_price": 16.99,
+      "fbm_min_price": 26.14,
+      "fba_fee": 3.91,
+      "referral_fee": 2.55,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 6.48,
+      "buyer_profit": 6.78,
+      "buyer_roi_pct": 181.8,
+      "our_profit": 0.86,
+      "our_margin_pct": 23.1,
+      "bsr": 34356,
+      "bsr_top_pct": 0.38,
+      "estimated_monthly_sales": 566,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-17 04:51"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 78,
@@ -4391,7 +6138,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Cp, Exp 2027-02-28, Lot 20193812",
     "pack_qty": 12,
-    "per_unit_cost": 5.98
+    "per_unit_cost": 5.98,
+    "wholesale_price": 7.77
   },
   {
     "id": 79,
@@ -4444,7 +6192,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2027-01-31, Lot W0042941",
     "pack_qty": 12,
-    "per_unit_cost": 3.6
+    "per_unit_cost": 3.6,
+    "wholesale_price": 4.68
   },
   {
     "id": 80,
@@ -4497,7 +6246,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2027-01-31, Lot 20193813",
     "pack_qty": 12,
-    "per_unit_cost": 5.98
+    "per_unit_cost": 5.98,
+    "wholesale_price": 7.77
   },
   {
     "id": 81,
@@ -4550,7 +6300,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Sg, Exp 2026-12-31, Lot 2019689902",
     "pack_qty": 12,
-    "per_unit_cost": 3.88
+    "per_unit_cost": 3.88,
+    "wholesale_price": 5.04
   },
   {
     "id": 82,
@@ -4594,7 +6345,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2026-11-30, Lot W0042344",
     "pack_qty": 12,
-    "per_unit_cost": 3.2
+    "per_unit_cost": 3.2,
+    "wholesale_price": 4.16
   },
   {
     "id": 83,
@@ -4638,7 +6390,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2026-11-30, Lot W0042342",
     "pack_qty": 12,
-    "per_unit_cost": 3.19
+    "per_unit_cost": 3.19,
+    "wholesale_price": 4.15
   },
   {
     "id": 84,
@@ -4682,7 +6435,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "50 Gummies, Exp 2026-10-31, Lot 428151986",
     "pack_qty": 12,
-    "per_unit_cost": 2.04
+    "per_unit_cost": 2.04,
+    "wholesale_price": 2.65
   },
   {
     "id": 85,
@@ -4735,7 +6489,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "180 Veg Cp, Exp 2026-09-30, Lot 20191250",
     "pack_qty": 12,
-    "per_unit_cost": 3.88
+    "per_unit_cost": 3.88,
+    "wholesale_price": 5.04
   },
   {
     "id": 86,
@@ -4788,7 +6543,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2026-08-31, Lot W0040799",
     "pack_qty": 12,
-    "per_unit_cost": 4.33
+    "per_unit_cost": 4.33,
+    "wholesale_price": 5.63
   },
   {
     "id": 87,
@@ -4823,7 +6579,10 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, Exp 2027-12-31, Lot 20199753",
     "pack_qty": 12,
-    "per_unit_cost": 1.41
+    "per_unit_cost": 1.41,
+    "wholesale_price": 1.83,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 1.83
   },
   {
     "id": 88,
@@ -4876,7 +6635,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "1 Fl Oz, Exp 2027-08-31, Lot 20196417",
     "pack_qty": 12,
-    "per_unit_cost": 1.78
+    "per_unit_cost": 1.78,
+    "wholesale_price": 2.31
   },
   {
     "id": 89,
@@ -4920,7 +6680,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, Exp 2027-06-30, Lot 20200153",
     "pack_qty": 12,
-    "per_unit_cost": 1.53
+    "per_unit_cost": 1.53,
+    "wholesale_price": 1.99
   },
   {
     "id": 90,
@@ -4932,7 +6693,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 15.36,
       "walmart_price": null,
@@ -4955,7 +6716,10 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, Exp 2027-03-31, Lot 142783-C5",
     "pack_qty": 12,
-    "per_unit_cost": 2.79
+    "per_unit_cost": 2.79,
+    "wholesale_price": 3.63,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 3.63
   },
   {
     "id": 91,
@@ -4990,7 +6754,10 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "10 Pkts, Exp 2027-03-31, Lot 20193446",
     "pack_qty": 12,
-    "per_unit_cost": 1.81
+    "per_unit_cost": 1.81,
+    "wholesale_price": 2.35,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.35
   },
   {
     "id": 92,
@@ -5043,7 +6810,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, Exp 2027-02-28, Lot 20194395",
     "pack_qty": 12,
-    "per_unit_cost": 1.37
+    "per_unit_cost": 1.37,
+    "wholesale_price": 1.78
   },
   {
     "id": 93,
@@ -5096,7 +6864,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "36 Gummies, Pack 24, Exp 2026-12-31, Lot 20194095",
     "pack_qty": 24,
-    "per_unit_cost": 2.51
+    "per_unit_cost": 2.51,
+    "wholesale_price": 3.26
   },
   {
     "id": 94,
@@ -5108,7 +6877,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 14.99,
       "walmart_price": null,
@@ -5131,7 +6900,10 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "20 Chw Tb, Exp 2026-12-31, Lot 2019525701",
     "pack_qty": 12,
-    "per_unit_cost": 1.79
+    "per_unit_cost": 1.79,
+    "wholesale_price": 2.33,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.33
   },
   {
     "id": 95,
@@ -5175,7 +6947,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, Exp 2026-11-30, Lot 20193472",
     "pack_qty": 12,
-    "per_unit_cost": 1.51
+    "per_unit_cost": 1.51,
+    "wholesale_price": 1.96
   },
   {
     "id": 96,
@@ -5219,7 +6992,8 @@
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Oz, Exp 2026-11-30, Lot 20193469",
     "pack_qty": 12,
-    "per_unit_cost": 1.11
+    "per_unit_cost": 1.11,
+    "wholesale_price": 1.44
   },
   {
     "id": 97,

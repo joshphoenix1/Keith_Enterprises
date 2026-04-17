@@ -453,6 +453,25 @@ def packing_slip(order_id):
     return page
 
 
+# ── USPS Address Verification API ──
+
+@server.route("/api/verify-address", methods=["POST"])
+def verify_address_api():
+    """AJAX endpoint for USPS address verification."""
+    from utils.usps import verify_address
+    data = request.get_json()
+    if not data:
+        return jsonify({"verified": False, "error": "No data"}), 400
+    result = verify_address(
+        line1=data.get("line1", ""),
+        line2=data.get("line2", ""),
+        city=data.get("city", ""),
+        state=data.get("state", ""),
+        zip5=data.get("zip", ""),
+    )
+    return jsonify(result)
+
+
 # ── Buyer Offer Response Page ──
 
 @server.route("/api/buyer/respond/<token>", methods=["GET", "POST"])
@@ -540,6 +559,34 @@ def buyer_respond(token):
                 "zip": form.get("ship_zip", "").strip(),
                 "phone": form.get("ship_phone", "").strip(),
             }
+
+            # Address verification — use standardized address if verified
+            addr_line1 = shipping_address["line1"] or shipping_address["line2"]
+            addr_line2 = shipping_address["line2"] if shipping_address["line1"] else ""
+            if addr_line1:
+                try:
+                    from utils.usps import verify_address
+                    usps_result = verify_address(
+                        line1=addr_line1,
+                        line2=addr_line2,
+                        city=shipping_address["city"],
+                        state=shipping_address["state"],
+                        zip5=shipping_address["zip"],
+                    )
+                    if usps_result.get("verified"):
+                        std = usps_result["address"]
+                        shipping_address["line1"] = std.get("line1") or shipping_address["line1"]
+                        shipping_address["line2"] = std.get("line2") or ""
+                        shipping_address["city"] = std.get("city") or shipping_address["city"]
+                        shipping_address["state"] = std.get("state") or shipping_address["state"]
+                        shipping_address["zip"] = std.get("zip_full") or shipping_address["zip"]
+                        shipping_address["usps_verified"] = True
+                    else:
+                        shipping_address["usps_verified"] = False
+                        shipping_address["usps_error"] = usps_result.get("error", "")
+                except Exception as e:
+                    logging.getLogger("keith.usps").error("USPS verify error: %s", e)
+                    shipping_address["usps_verified"] = False
 
             # Create the order
             order_created = create_order(
@@ -630,7 +677,7 @@ def buyer_respond(token):
             <td style="padding:10px;color:#e6edf3;">${(o.get('wholesale_price') or o.get('per_unit_cost') or 0):.2f}</td>
             <td style="padding:10px;color:#3fb950;">{buy_box_display}</td>
             <td style="padding:10px;color:{profit_color};font-weight:600;">{profit_display}</td>
-            <td style="padding:10px;color:#58a6ff;">{o.get('margin_pct',0):.0f}%</td>
+            <td style="padding:10px;color:#58a6ff;">{(o.get('margin_pct') or 0):.0f}%</td>
             <td style="padding:10px;color:#8b949e;">{mo_sales_display}</td>
             <td style="padding:10px;color:#8b949e;">{fba_display}</td>
             <td style="padding:10px;color:{avail_color};font-weight:600;">{available}</td>
@@ -719,8 +766,8 @@ def buyer_respond(token):
         <thead><tr style="background:#161b22;">
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Product</th>
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Category</th>
-            <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Price</th>
-            <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Buy Box</th>
+            <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Your Price</th>
+            <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Amazon Price</th>
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Profit</th>
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Margin</th>
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Mo. Sales</th>
@@ -780,6 +827,14 @@ def buyer_respond(token):
                     style="width:100%;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:4px;padding:8px 10px;box-sizing:border-box;">
             </div>
         </div>
+        <div style="margin-top:14px;display:flex;align-items:center;gap:12px;">
+            <button type="button" id="verify-addr-btn" onclick="verifyAddress()" style="background:#d29922;color:#fff;
+                border:none;padding:8px 20px;border-radius:6px;font-size:0.85rem;font-weight:600;cursor:pointer;">
+                Verify Address
+            </button>
+            <span id="verify-status" style="font-size:0.82rem;"></span>
+        </div>
+        <div id="verify-result" style="display:none;margin-top:12px;padding:12px 16px;border-radius:6px;font-size:0.85rem;"></div>
     </div>
 
     <div style="margin-top:20px;text-align:right;">
@@ -804,6 +859,74 @@ document.querySelectorAll('.qty-input').forEach(function(input) {
         }
     });
 });
+
+function verifyAddress() {
+    var btn = document.getElementById('verify-addr-btn');
+    var status = document.getElementById('verify-status');
+    var result = document.getElementById('verify-result');
+    btn.disabled = true;
+    btn.textContent = 'Verifying...';
+    status.innerHTML = '';
+    result.style.display = 'none';
+
+    var l1 = document.querySelector('[name=ship_line1]').value.trim();
+    var l2 = document.querySelector('[name=ship_line2]').value.trim();
+    var data = {
+        line1: l1 || l2,
+        line2: l1 ? l2 : '',
+        city: document.querySelector('[name=ship_city]').value,
+        state: document.querySelector('[name=ship_state]').value,
+        zip: document.querySelector('[name=ship_zip]').value
+    };
+
+    fetch('/api/verify-address', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+        btn.disabled = false;
+        btn.textContent = 'Verify Address';
+        if (d.verified && d.address) {
+            var a = d.address;
+            status.innerHTML = '<span style="color:#3fb950;">&#10003; Address Verified</span>';
+            result.style.display = 'block';
+            result.style.background = '#3fb95015';
+            result.style.border = '1px solid #3fb95040';
+            result.innerHTML = '<strong style="color:#3fb950;">Standardized Address:</strong><br>' +
+                '<span style="color:#e6edf3;">' + a.line1 +
+                (a.line2 ? '<br>' + a.line2 : '') +
+                '<br>' + a.city + ', ' + a.state + ' ' + a.zip_full + '</span>' +
+                '<br><button type="button" onclick="applyVerified()" style="margin-top:8px;background:#3fb950;color:#fff;' +
+                'border:none;padding:6px 16px;border-radius:4px;font-size:0.82rem;font-weight:600;cursor:pointer;">Use This Address</button>';
+            window._verifiedAddr = a;
+        } else {
+            status.innerHTML = '<span style="color:#f85149;">&#10007; ' + (d.error || 'Not verified') + '</span>';
+            result.style.display = 'block';
+            result.style.background = '#f8514915';
+            result.style.border = '1px solid #f8514940';
+            result.innerHTML = '<span style="color:#f85149;">' + (d.error || 'Address could not be verified. You can still submit.') + '</span>';
+        }
+    })
+    .catch(function(e) {
+        btn.disabled = false;
+        btn.textContent = 'Verify Address';
+        status.innerHTML = '<span style="color:#f85149;">Network error</span>';
+    });
+}
+
+function applyVerified() {
+    var a = window._verifiedAddr;
+    if (!a) return;
+    document.querySelector('[name=ship_line1]').value = a.line1 || '';
+    document.querySelector('[name=ship_line2]').value = a.line2 || '';
+    document.querySelector('[name=ship_city]').value = a.city || '';
+    document.querySelector('[name=ship_state]').value = a.state || '';
+    document.querySelector('[name=ship_zip]').value = a.zip_full || a.zip5 || '';
+    document.getElementById('verify-status').innerHTML = '<span style="color:#3fb950;">&#10003; Applied</span>';
+    document.getElementById('verify-result').style.display = 'none';
+}
 </script>
 </body></html>'''
 

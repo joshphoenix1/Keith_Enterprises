@@ -216,8 +216,19 @@
     "min_qty": 0,
     "max_qty": 0,
     "contact_email": "mtrxinfra@gmail.com",
-    "phone": "",
+    "phone": "7753577667",
     "notes": "Owner. All categories.",
-    "created_at": "2026-04-17"
+    "created_at": "2026-04-17",
+    "payment_terms": "Wire before ship",
+    "shipping_address": {
+      "name": "Josh",
+      "company": "Josh",
+      "line1": "1600 Exposition blvd",
+      "line2": "",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95815",
+      "phone": "7753577667"
+    }
   }
 ]

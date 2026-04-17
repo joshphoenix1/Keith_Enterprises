@@ -34,5 +34,23 @@
     "action": "created",
     "detail": "Order ORD-20260417-001 from Josh: 5 items, $1,741.45",
     "time": "2026-04-17 02:36:56"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260417-002 from Josh: 3 items, $3,929.34",
+    "time": "2026-04-17 06:08:13"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260417-003 from Josh: 2 items, $2,980.00",
+    "time": "2026-04-17 06:18:12"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260417-004 from Josh: 4 items, $4,711.34",
+    "time": "2026-04-17 06:39:13"
   }
 ]

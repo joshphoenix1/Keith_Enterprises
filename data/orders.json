@@ -4,7 +4,7 @@
     "buyer_id": 13,
     "buyer_name": "Josh",
     "buyer_email": "mtrxinfra@gmail.com",
-    "status": "confirmed",
+    "status": "invoiced",
     "items": [
       {
         "offer_id": 10,
@@ -58,5 +58,169 @@
     "paid_at": null,
     "shipped_at": null,
     "notes": ""
+  },
+  {
+    "id": "ORD-20260417-002",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "pending_review",
+    "items": [
+      {
+        "offer_id": 19,
+        "product_name": "Quercetin with Zinc Gummy 60ct",
+        "upc": "033674142615",
+        "unit_cost": 2.43,
+        "qty": 1000,
+        "line_total": 2430.0
+      },
+      {
+        "offer_id": 28,
+        "product_name": "Fractionated Coconut Oil, 20 Fl Oz",
+        "upc": "033674158586",
+        "unit_cost": 7.33,
+        "qty": 3,
+        "line_total": 21.99
+      },
+      {
+        "offer_id": 42,
+        "product_name": "Alive! Zero Sugar Kid's Gummy Multivitamin, 60 Gummies",
+        "upc": "033674152034",
+        "unit_cost": 3.15,
+        "qty": 469,
+        "line_total": 1477.35
+      }
+    ],
+    "subtotal": 3929.34,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-17 06:08",
+    "confirmed_at": null,
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": "",
+    "shipping_address": {
+      "name": "Josh",
+      "company": "ToyBox Wholesale",
+      "line1": "1600 Exposition blvd",
+      "line2": "",
+      "city": "Sacramento",
+      "state": "",
+      "zip": "95815",
+      "phone": ""
+    }
+  },
+  {
+    "id": "ORD-20260417-003",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "pending_review",
+    "items": [
+      {
+        "offer_id": 90,
+        "product_name": "Sambucus Organic Cough + Immune Formula for Kids",
+        "upc": "033674133156",
+        "unit_cost": 3.63,
+        "qty": 500,
+        "line_total": 1815.0
+      },
+      {
+        "offer_id": 94,
+        "product_name": "Cold + Flu Relief, Orange Flavor Chewable",
+        "upc": "033674151617",
+        "unit_cost": 2.33,
+        "qty": 500,
+        "line_total": 1165.0
+      }
+    ],
+    "subtotal": 2980.0,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-17 06:18",
+    "confirmed_at": null,
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": "",
+    "shipping_address": {
+      "name": "Josh",
+      "company": "ToyBox Wholesale",
+      "line1": "1600 EXPOSITION BOULEVARD",
+      "line2": "",
+      "city": "SACRAMENTO",
+      "state": "CA",
+      "zip": "95815",
+      "phone": "",
+      "usps_verified": true
+    }
+  },
+  {
+    "id": "ORD-20260417-004",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "confirmed",
+    "items": [
+      {
+        "offer_id": 13,
+        "product_name": "Sambucus Zero Sugar Elderberry Gummies 50ct",
+        "upc": "033674146163",
+        "unit_cost": 2.86,
+        "qty": 100,
+        "line_total": 286.0
+      },
+      {
+        "offer_id": 28,
+        "product_name": "Fractionated Coconut Oil, 20 Fl Oz",
+        "upc": "033674158586",
+        "unit_cost": 7.33,
+        "qty": 600,
+        "line_total": 4398.0
+      },
+      {
+        "offer_id": 39,
+        "product_name": "Feverfew Herb, 100 Vegan Capsules",
+        "upc": "033674128503",
+        "unit_cost": 1.62,
+        "qty": 2,
+        "line_total": 3.24
+      },
+      {
+        "offer_id": 44,
+        "product_name": "Alive! Zero Sugar Men's Multivitamin Gummies, 50 Gummies",
+        "upc": "033674146200",
+        "unit_cost": 2.41,
+        "qty": 10,
+        "line_total": 24.1
+      }
+    ],
+    "subtotal": 4711.34,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-17 06:39",
+    "confirmed_at": "2026-04-17 06:40",
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": "",
+    "shipping_address": {
+      "name": "Josh",
+      "company": "Josh",
+      "line1": "1600 EXPOSITION BOULEVARD",
+      "line2": "",
+      "city": "SACRAMENTO",
+      "state": "CA",
+      "zip": "95815",
+      "phone": "7753577667",
+      "usps_verified": true
+    }
   }
 ]

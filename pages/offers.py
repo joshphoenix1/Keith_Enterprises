@@ -1272,7 +1272,7 @@ def _load_send_products(buyer_id, markup_pct):
 # ── Apply global markup to all rows ──────────────────────────────────────────
 
 @callback(
-    Output("offers-send-table", "data"),
+    Output("offers-send-table", "data", allow_duplicate=True),
     Input("offers-apply-markup-btn", "n_clicks"),
     Input("offers-send-table", "data_timestamp"),
     State("offers-markup-pct", "value"),
@@ -1307,73 +1307,84 @@ def _apply_markup_or_recalc(apply_clicks, data_ts, global_markup, table_data):
 
 # ── Build email body from table data (with per-item markups) ─────────────────
 
-def _build_offer_email_body(buyer_name, table_data, offers_lookup):
-    """Build the email subject + body from the send table data (per-item markups)."""
-    # Group by category
-    by_cat = {}
-    for row in table_data:
-        cat = row.get("category", "Other")
-        by_cat.setdefault(cat, []).append(row)
+def _build_offer_email_body(buyer_name, table_data, offers_lookup, review_url=""):
+    """Build HTML email subject + body from the send table data."""
+    subject = f"Keith Enterprises — New Offers for Review"
 
-    sections = []
-    total_value = 0
+    # Build table rows
+    rows_html = ""
+    for row in sorted(table_data, key=lambda r: -float(r.get("below_amz") or 0)):
+        oid = row.get("id")
+        offer = offers_lookup.get(oid, {})
+        sa = offer.get("sa_data") or {}
+        name = row.get("product_name", "Unknown")
+        category = row.get("category", "")
+        sell_price = float(row.get("offer_price") or 0)
+        amazon_price = float(row.get("amazon") or 0)
+        qty = row.get("quantity") or 0
+        margin_pct = round((amazon_price - sell_price) / amazon_price * 100) if amazon_price else 0
 
-    for cat in sorted(by_cat.keys()):
-        cat_rows = by_cat[cat]
-        lines = []
-        for row in cat_rows:
-            oid = row.get("id")
-            offer = offers_lookup.get(oid, {})
-            name = row.get("product_name", "Unknown")
-            qty = row.get("quantity") or 0
-            sell_price = float(row.get("offer_price") or 0)
-            amazon_price = float(row.get("amazon") or 0)
-            upc = offer.get("upc", "")
-            pack_qty = offer.get("pack_qty", "")
-            expiry = offer.get("expiry", "")
-            line_total = sell_price * qty
-            total_value += line_total
+        # Amazon link
+        amazon_url = sa.get("product_url", "")
+        if not amazon_url and offer.get("upc"):
+            amazon_url = f"https://www.amazon.com/s?k={offer['upc']}"
+        name_cell = f'<a href="{amazon_url}" style="color:#58a6ff;text-decoration:none;">{name}</a>' if amazon_url else name
 
-            line = f"  - {name}"
-            if upc:
-                line += f"  (UPC: {upc})"
-            line += f"\n    Qty Available: {qty:,}"
-            if pack_qty:
-                line += f"  |  Pack: {pack_qty}/case"
-            line += f"\n    Our Price: ${sell_price:.2f}/unit"
-            if amazon_price:
-                savings = amazon_price - sell_price
-                savings_pct = (savings / amazon_price * 100) if amazon_price else 0
-                line += f"  |  Amazon Price: ${amazon_price:.2f}/unit"
-                line += f"\n    You Save: ${savings:.2f}/unit ({savings_pct:.0f}% below Amazon)"
-            line += f"\n    Line Total: ${line_total:,.2f}"
-            if expiry:
-                line += f"  |  Expiry: {expiry}"
-            lines.append(line)
+        rows_html += f"""<tr>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;">{name_cell}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#8b949e;">{category}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;">${sell_price:.2f}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#3fb950;">${amazon_price:.2f}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#3fb950;font-weight:600;">{margin_pct}%</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;">{qty:,}</td>
+        </tr>"""
 
-        section = f"=== {cat} ({len(cat_rows)} items) ===\n\n" + "\n\n".join(lines)
-        sections.append(section)
+    # CTA button
+    cta_html = ""
+    if review_url:
+        cta_html = f"""<div style="text-align:center;margin:28px 0;">
+            <a href="{review_url}" style="display:inline-block;background:#1f6feb;color:#ffffff;
+                padding:14px 36px;border-radius:8px;font-size:1rem;font-weight:600;
+                text-decoration:none;">Review &amp; Place Order &rarr;</a>
+        </div>"""
 
-    product_list = "\n\n\n".join(sections)
-    subject = f"Wholesale Offer: {len(table_data)} Products Available"
+    body = f"""<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="background:#0f1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;">
+<div style="max-width:700px;margin:0 auto;padding:32px 20px;">
 
-    body = f"""Hi {buyer_name},
+    <h2 style="color:#e6edf3;margin:0 0 20px;font-size:1.3rem;">Keith Enterprises — New Offers for Review</h2>
 
-We have the following products available for you:
+    <p style="color:#e6edf3;margin:0 0 8px;">Hi {buyer_name},</p>
+    <p style="color:#8b949e;margin:0 0 6px;">
+        We've got <strong style="color:#e6edf3;">{len(table_data)} products</strong> matched to your criteria
+        — all with strong margins. Click the link below to review, accept, and place your order.</p>
+    <p style="color:#d29922;margin:0 0 24px;font-size:0.85rem;">Quantities are held for 48 hours.</p>
 
-{product_list}
+    <div style="overflow-x:auto;border:1px solid #30363d;border-radius:8px;">
+    <table style="width:100%;border-collapse:collapse;background:#1c2128;">
+        <thead><tr style="background:#161b22;">
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Product</th>
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Category</th>
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Unit Cost</th>
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Amazon</th>
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Margin</th>
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Available</th>
+        </tr></thead>
+        <tbody>{rows_html}</tbody>
+    </table>
+    </div>
 
----
-Total Products: {len(table_data)}
-Total Value: ${total_value:,.2f}
+    {cta_html}
 
-All prices shown alongside current Amazon retail pricing for your reference.
+    <p style="color:#8b949e;font-size:0.8rem;margin:16px 0 0;">Product names link to Amazon listings for verification.</p>
 
-Please let us know which items you'd like to move forward on, or if you'd like to take the full lot.
+    <p style="color:#e6edf3;margin:24px 0 0;">Best,</p>
+    <p style="color:#e6edf3;margin:4px 0 0;font-weight:600;">Keith Enterprises</p>
 
-Best regards,
-Keith Enterprises
-"""
+</div>
+</body></html>"""
+
     return subject, body
 
 
@@ -1412,7 +1423,8 @@ def _build_offer_preview(n_clicks, buyer_id, table_data):
     offers = _load_offers()
     offers_lookup = {o["id"]: o for o in offers}
 
-    subject, body = _build_offer_email_body(buyer_name, table_data, offers_lookup)
+    subject, body = _build_offer_email_body(buyer_name, table_data, offers_lookup,
+                                              review_url="#review-link-generated-on-send")
 
     preview = html.Div([
         html.Div([
@@ -1428,11 +1440,9 @@ def _build_offer_preview(n_clicks, buyer_id, table_data):
             html.Span("Subject: ", style={"color": COLORS["text_muted"], "fontSize": "0.82rem", "fontWeight": "500"}),
             html.Span(subject, style={"color": COLORS["text"], "fontSize": "0.82rem"}),
         ], style={"marginBottom": "8px"}),
-        html.Pre(body, style={
-            "backgroundColor": COLORS["sidebar"], "color": COLORS["text"],
-            "padding": "16px", "borderRadius": "8px", "fontSize": "0.82rem",
-            "border": f"1px solid {COLORS['card_border']}",
-            "whiteSpace": "pre-wrap", "maxHeight": "400px", "overflowY": "auto",
+        html.Iframe(srcDoc=body, style={
+            "width": "100%", "height": "600px", "border": f"1px solid {COLORS['card_border']}",
+            "borderRadius": "8px", "backgroundColor": "#0f1117",
         }),
     ], style={
         "background": COLORS["card"], "padding": "16px",
@@ -1453,6 +1463,8 @@ def _build_offer_preview(n_clicks, buyer_id, table_data):
 )
 def _send_offer(n_clicks, buyer_id, table_data):
     """Send the master offer email using per-item markups from the table."""
+    import uuid
+
     if not n_clicks or not buyer_id or not table_data:
         return no_update
 
@@ -1471,16 +1483,50 @@ def _send_offer(n_clicks, buyer_id, table_data):
     # Save per-item markup and sell price
     offers = _load_offers()
     table_by_id = {row["id"]: row for row in table_data}
+    offer_ids = []
     for o in offers:
         if o["id"] in table_by_id:
             row = table_by_id[o["id"]]
             o["send_markup_pct"] = float(row.get("markup_pct") or 0)
             o["send_sell_price"] = float(row.get("offer_price") or 0)
+            o["wholesale_price"] = float(row.get("offer_price") or 0)
+            offer_ids.append(o["id"])
     _save_offers(offers)
 
-    # Build and send email
+    # Create batch token for buyer review page
+    token = uuid.uuid4().hex[:16]
+    batches_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "offer_batches.json")
+    try:
+        with open(batches_path) as f:
+            batches = json.load(f)
+    except Exception:
+        batches = {}
+    batches[token] = {
+        "buyer_id": buyer_id,
+        "buyer_name": buyer_name,
+        "buyer_email": buyer_email,
+        "offer_ids": offer_ids,
+        "created_at": datetime.now().isoformat(),
+    }
+    os.makedirs(os.path.dirname(batches_path), exist_ok=True)
+    with open(batches_path, "w") as f:
+        json.dump(batches, f, indent=2)
+
+    # Detect public URL from accounts or fall back to request host
+    accounts_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "accounts.json")
+    try:
+        with open(accounts_path) as f:
+            accts = json.load(f)
+        base_url = accts.get("public_url", "").rstrip("/")
+    except Exception:
+        base_url = ""
+    if not base_url:
+        base_url = f"http://localhost:{os.environ.get('PORT', '8080')}"
+    review_url = f"{base_url}/api/buyer/respond/{token}"
+
+    # Build and send HTML email
     offers_lookup = {o["id"]: o for o in offers}
-    subject, body = _build_offer_email_body(buyer_name, table_data, offers_lookup)
+    subject, body = _build_offer_email_body(buyer_name, table_data, offers_lookup, review_url)
 
     try:
         _send_offer_email_smtp(buyer_email, subject, body)
@@ -1518,11 +1564,11 @@ def _send_offer_email_smtp(to_email, subject, body):
     if not from_email or not password:
         raise RuntimeError("Email credentials not configured")
 
-    msg = MIMEMultipart()
+    msg = MIMEMultipart("alternative")
     msg["From"] = from_email
     msg["To"] = to_email
     msg["Subject"] = subject
-    msg.attach(MIMEText(body, "plain"))
+    msg.attach(MIMEText(body, "html"))
 
     provider = email_cfg.get("provider", "Gmail")
     if "outlook" in provider.lower() or "hotmail" in from_email.lower():

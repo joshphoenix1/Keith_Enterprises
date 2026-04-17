@@ -299,37 +299,91 @@ def send_buyer_confirmation(order, buyer_email):
     return _smtp_send(buyer_email, subject, html)
 
 
-def send_invoice_email(order, buyer_email, invoice_html):
-    """Send an invoice HTML email to the buyer.
-
-    The invoice_html is pre-rendered HTML content passed in by the caller.
-    """
+def send_invoice_email(order, buyer_email, invoice_html=""):
+    """Send an invoice HTML email to the buyer with line items and payment info."""
     order_id = order.get("id", "N/A")
     buyer = order.get("buyer_name", "")
     subtotal = order.get("subtotal", 0)
+    items = order.get("items", [])
+    created = order.get("created_at", "")
 
-    subject = f"Invoice for Order {order_id} — ${subtotal:,.2f}"
+    subject = f"Keith Enterprises — Invoice {order_id} — ${subtotal:,.2f}"
 
-    html = f"""
-    <div style="font-family:Arial,sans-serif;max-width:700px;margin:0 auto;">
-        <div style="background:#1a1a2e;color:#fff;padding:20px 24px;border-radius:8px 8px 0 0;">
-            <h2 style="margin:0;">Keith Enterprises — Invoice</h2>
-            <p style="margin:6px 0 0;opacity:0.8;font-size:14px;">Order {order_id}</p>
+    # Build line items table
+    items_html = ""
+    for i, item in enumerate(items, 1):
+        qty = item.get("qty", 0)
+        unit = item.get("unit_cost", 0)
+        total = item.get("line_total", qty * unit)
+        items_html += f"""<tr>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;">{i}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;">{item.get('product_name','')}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#8b949e;font-size:0.8rem;">{item.get('upc','')}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;text-align:center;">{qty:,}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;text-align:right;">${unit:.2f}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#3fb950;text-align:right;font-weight:600;">${total:,.2f}</td>
+        </tr>"""
+
+    # Shipping address
+    ship = order.get("shipping_address", {})
+    ship_lines = [s for s in [
+        ship.get("name", ""), ship.get("company", ""), ship.get("line1", ""),
+        ship.get("line2", ""),
+        f"{ship.get('city', '')}, {ship.get('state', '')} {ship.get('zip', '')}".strip(", "),
+        f"Phone: {ship.get('phone', '')}" if ship.get("phone") else "",
+    ] if s and s.strip()]
+    ship_html = "<br>".join(ship_lines) if ship_lines else "To be confirmed"
+
+    html = f"""<!DOCTYPE html>
+<html><head><meta charset="utf-8"></head>
+<body style="background:#0f1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;">
+<div style="max-width:700px;margin:0 auto;padding:32px 20px;">
+
+    <h2 style="color:#e6edf3;margin:0 0 4px;font-size:1.3rem;">Keith Enterprises — Invoice</h2>
+    <p style="color:#8b949e;margin:0 0 24px;font-size:0.85rem;">Order {order_id} &bull; {created}</p>
+
+    <p style="color:#e6edf3;margin:0 0 20px;">Hi {buyer or 'there'},</p>
+
+    <div style="overflow-x:auto;border:1px solid #30363d;border-radius:8px;">
+    <table style="width:100%;border-collapse:collapse;background:#1c2128;">
+        <thead><tr style="background:#161b22;">
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;width:30px;">#</th>
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;">Product</th>
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;">UPC</th>
+            <th style="padding:10px 14px;text-align:center;color:#8b949e;font-size:0.8rem;">Qty</th>
+            <th style="padding:10px 14px;text-align:right;color:#8b949e;font-size:0.8rem;">Unit Price</th>
+            <th style="padding:10px 14px;text-align:right;color:#8b949e;font-size:0.8rem;">Total</th>
+        </tr></thead>
+        <tbody>{items_html}</tbody>
+        <tfoot><tr style="background:#161b22;">
+            <td colspan="5" style="padding:12px 14px;text-align:right;color:#e6edf3;font-weight:600;font-size:1rem;">Invoice Total:</td>
+            <td style="padding:12px 14px;text-align:right;color:#3fb950;font-weight:700;font-size:1.1rem;">${subtotal:,.2f}</td>
+        </tr></tfoot>
+    </table>
+    </div>
+
+    <div style="display:flex;gap:16px;margin-top:20px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:250px;background:#1c2128;border:1px solid #30363d;border-radius:8px;padding:16px;">
+            <p style="margin:0 0 8px;font-size:0.75rem;color:#8b949e;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Ship To</p>
+            <p style="margin:0;color:#e6edf3;font-size:0.85rem;line-height:1.6;">{ship_html}</p>
         </div>
-        <div style="background:#fff;padding:24px;border:1px solid #e0e0e0;border-top:none;">
-            <p>Hi {buyer or 'there'},</p>
-            <p>Please find your invoice below for order <strong>{order_id}</strong>.</p>
-        </div>
-        <div style="padding:0 24px 24px;background:#fff;border:1px solid #e0e0e0;border-top:none;border-radius:0 0 8px 8px;">
-            {invoice_html}
-            <div style="margin-top:24px;padding-top:16px;border-top:1px solid #eee;">
-                <p style="color:#666;font-size:13px;">
-                    Payment Terms: {order.get('payment_terms', '—')}<br>
-                    If you have any questions, reply to this email.
-                </p>
-            </div>
+        <div style="flex:1;min-width:250px;background:#d2992215;border:1px solid #d2992240;border-radius:8px;padding:16px;">
+            <p style="margin:0 0 8px;font-size:0.75rem;color:#d29922;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Payment Details</p>
+            <table style="font-size:0.85rem;line-height:1.8;color:#e6edf3;">
+                <tr><td style="color:#8b949e;padding:2px 12px 2px 0;">Amount Due:</td><td style="font-weight:700;color:#3fb950;">${subtotal:,.2f}</td></tr>
+                <tr><td style="color:#8b949e;padding:2px 12px 2px 0;">Terms:</td><td>{order.get('payment_terms', 'Wire before ship')}</td></tr>
+                <tr><td style="color:#8b949e;padding:2px 12px 2px 0;">Zelle:</td><td>jaxonbelgiano@gmail.com</td></tr>
+                <tr><td style="color:#8b949e;padding:2px 12px 2px 0;">Reference:</td><td style="font-weight:600;">{order_id}</td></tr>
+            </table>
+            <p style="margin:10px 0 0;font-size:0.75rem;color:#8b949e;">Include your order number with payment.</p>
         </div>
     </div>
-    """
+
+    <p style="color:#8b949e;font-size:0.8rem;margin:20px 0 0;">If you have any questions, reply to this email.</p>
+    <p style="color:#e6edf3;margin:16px 0 0;">Best,</p>
+    <p style="color:#e6edf3;margin:4px 0 0;font-weight:600;">Keith Enterprises</p>
+
+</div>
+</body></html>"""
 
     return _smtp_send(buyer_email, subject, html)

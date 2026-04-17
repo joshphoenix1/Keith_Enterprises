@@ -20,3 +20,4 @@
 - AI calls use `claude -p` CLI (NOT Anthropic SDK directly — OAuth token is session-scoped)
 - Push with: `git push https://<PAT>@github.com/joshphoenix1/Keith_Enterprises.git main`
 - App runs on port 8080, debug=False (no hot-reload)
+- This is an EC2 server — public URL is http://3.132.194.55:8080, never use localhost in user-facing links or emails
