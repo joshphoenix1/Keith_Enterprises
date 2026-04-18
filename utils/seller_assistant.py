@@ -13,6 +13,7 @@ import json
 import os
 import time
 import logging
+import threading
 import requests
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
@@ -278,3 +279,57 @@ def bulk_enrich(max_offers=50, delay=1.1):
         "restricted": restricted,
         "remaining": remaining,
     }
+
+
+def _count_unenriched():
+    """Return count of offers that need SA enrichment."""
+    offers_path = os.path.join(DATA_DIR, "offers.json")
+    try:
+        with open(offers_path) as f:
+            offers = json.load(f)
+    except Exception:
+        return 0
+    return sum(1 for o in offers
+               if o.get("upc") and not o.get("sa_data", {}).get("buy_box_price"))
+
+
+class EnrichmentPoller:
+    """Background thread that checks for unenriched products every interval
+    and runs bulk_enrich when any are found."""
+
+    def __init__(self, interval=1800, batch_size=50):
+        self.interval = interval  # seconds (default 30 min)
+        self.batch_size = batch_size
+        self._thread = None
+        self._stop_event = threading.Event()
+
+    def start(self):
+        if self._thread and self._thread.is_alive():
+            return
+        self._stop_event.clear()
+        self._thread = threading.Thread(target=self._run, daemon=True)
+        self._thread.start()
+        logger.info("SA enrichment poller started (every %ds, batch=%d)",
+                    self.interval, self.batch_size)
+
+    def stop(self):
+        self._stop_event.set()
+        if self._thread:
+            self._thread.join(timeout=5)
+        logger.info("SA enrichment poller stopped")
+
+    def _run(self):
+        # Initial delay to let app start up
+        time.sleep(30)
+        while not self._stop_event.is_set():
+            try:
+                pending = _count_unenriched()
+                if pending > 0:
+                    logger.info("SA poller: %d unenriched offers found, running enrichment", pending)
+                    result = bulk_enrich(max_offers=self.batch_size)
+                    logger.info("SA poller result: %s", result)
+                else:
+                    logger.debug("SA poller: all offers enriched, skipping")
+            except Exception as e:
+                logger.error("SA poller error: %s", e)
+            self._stop_event.wait(self.interval)

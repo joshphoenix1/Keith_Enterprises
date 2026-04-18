@@ -20,6 +20,7 @@ OFFERS_PATH = os.path.join(DATA_DIR, "offers.json")
 logger = logging.getLogger("keith.orders")
 
 HOLD_DURATION_HOURS = 48
+ORDER_PENDING_EXPIRY_HOURS = 48
 
 
 def _load_json(path, default=None):
@@ -111,13 +112,41 @@ def convert_holds_to_order(offer_ids, buyer_id):
     return converted
 
 
+def expire_stale_orders():
+    """Auto-cancel pending_review orders older than 48 hours.
+
+    Returns count of orders cancelled.
+    """
+    orders = _load_json(ORDERS_PATH, [])
+    now = datetime.now()
+    cancelled = 0
+
+    for order in orders:
+        if order.get("status") != "pending_review":
+            continue
+        try:
+            created = datetime.fromisoformat(order["created_at"])
+            if now - created > timedelta(hours=ORDER_PENDING_EXPIRY_HOURS):
+                order["status"] = "cancelled"
+                order["cancelled_reason"] = "auto-expired after 48h pending_review"
+                cancelled += 1
+        except (ValueError, KeyError):
+            pass
+
+    if cancelled:
+        _save_json(ORDERS_PATH, orders)
+        logger.info("Auto-cancelled %d stale pending_review orders", cancelled)
+    return cancelled
+
+
 def get_available_qty(offer_id):
     """Calculate available quantity for an offer accounting for holds and orders.
 
     available = total_qty - sum(active_hold_qtys) - sum(ordered_qtys)
     """
-    # Expire stale holds first
+    # Expire stale holds and orders first
     expire_holds()
+    expire_stale_orders()
 
     offers = _load_json(OFFERS_PATH, [])
     offer = next((o for o in offers if o.get("id") == offer_id), None)
@@ -143,6 +172,7 @@ def get_available_qty(offer_id):
 def get_available_qty_bulk(offer_ids):
     """Get available quantities for multiple offers efficiently."""
     expire_holds()
+    expire_stale_orders()
 
     offers = _load_json(OFFERS_PATH, [])
     orders = _load_json(ORDERS_PATH, [])

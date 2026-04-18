@@ -4,7 +4,7 @@
     "buyer_id": 13,
     "buyer_name": "Josh",
     "buyer_email": "mtrxinfra@gmail.com",
-    "status": "invoiced",
+    "status": "cancelled",
     "items": [
       {
         "offer_id": 10,
@@ -49,14 +49,14 @@
     ],
     "subtotal": 1741.45,
     "payment_terms": "Wire before ship",
-    "payment_status": "unpaid",
-    "shipping_status": "not_shipped",
+    "payment_status": "paid",
+    "shipping_status": "shipped",
     "tracking_number": "",
     "carrier": "",
     "created_at": "2026-04-17 02:36",
     "confirmed_at": "2026-04-17 02:38",
-    "paid_at": null,
-    "shipped_at": null,
+    "paid_at": "2026-04-18 00:33",
+    "shipped_at": "2026-04-18 00:34",
     "notes": ""
   },
   {
@@ -64,7 +64,7 @@
     "buyer_id": 13,
     "buyer_name": "Josh",
     "buyer_email": "mtrxinfra@gmail.com",
-    "status": "pending_review",
+    "status": "cancelled",
     "items": [
       {
         "offer_id": 19,
@@ -118,7 +118,7 @@
     "buyer_id": 13,
     "buyer_name": "Josh",
     "buyer_email": "mtrxinfra@gmail.com",
-    "status": "pending_review",
+    "status": "cancelled",
     "items": [
       {
         "offer_id": 90,
@@ -165,7 +165,7 @@
     "buyer_id": 13,
     "buyer_name": "Josh",
     "buyer_email": "mtrxinfra@gmail.com",
-    "status": "confirmed",
+    "status": "cancelled",
     "items": [
       {
         "offer_id": 13,
@@ -222,5 +222,287 @@
       "phone": "7753577667",
       "usps_verified": true
     }
+  },
+  {
+    "id": "ORD-20260417-005",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "cancelled",
+    "items": [
+      {
+        "offer_id": 91,
+        "product_name": "Cold Relief Children's Formula, Cherry Flavor",
+        "upc": "033674601662",
+        "unit_cost": 2.35,
+        "qty": 776,
+        "line_total": 1823.6
+      }
+    ],
+    "subtotal": 1823.6,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-17 06:52",
+    "confirmed_at": null,
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": "",
+    "shipping_address": {
+      "name": "Josh",
+      "company": "Josh",
+      "line1": "1600 EXPOSITION BOULEVARD",
+      "line2": "",
+      "city": "SACRAMENTO",
+      "state": "CA",
+      "zip": "95815",
+      "phone": "7753577667",
+      "usps_verified": true
+    }
+  },
+  {
+    "id": "ORD-20260418-001",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "cancelled",
+    "items": [
+      {
+        "offer_id": 19,
+        "product_name": "Quercetin with Zinc Gummy 60ct",
+        "upc": "033674142615",
+        "unit_cost": 2.43,
+        "qty": 100,
+        "line_total": 243.0
+      },
+      {
+        "offer_id": 21,
+        "product_name": "Fenugreek Seed 100ct",
+        "upc": "033674128008",
+        "unit_cost": 1.29,
+        "qty": 200,
+        "line_total": 258.0
+      },
+      {
+        "offer_id": 24,
+        "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+        "upc": "033674150009",
+        "unit_cost": 2.25,
+        "qty": 25,
+        "line_total": 56.25
+      },
+      {
+        "offer_id": 57,
+        "product_name": "Cold Relief Cough Drops, Cherry Flavor",
+        "upc": "033674151440",
+        "unit_cost": 1.86,
+        "qty": 200,
+        "line_total": 372.0
+      },
+      {
+        "offer_id": 94,
+        "product_name": "Cold + Flu Relief, Orange Flavor Chewable",
+        "upc": "033674151617",
+        "unit_cost": 2.33,
+        "qty": 10,
+        "line_total": 23.3
+      }
+    ],
+    "subtotal": 952.55,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-18 00:32",
+    "confirmed_at": "2026-04-18 00:34",
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": "",
+    "shipping_address": {
+      "name": "Josh",
+      "company": "Josh",
+      "line1": "1600 EXPOSITION BOULEVARD",
+      "line2": "",
+      "city": "SACRAMENTO",
+      "state": "CA",
+      "zip": "95815",
+      "phone": "7753577667",
+      "usps_verified": true
+    }
+  },
+  {
+    "id": "ORD-20260418-002",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "cancelled",
+    "items": [
+      {
+        "offer_id": 19,
+        "product_name": "Quercetin with Zinc Gummy 60ct",
+        "upc": "033674142615",
+        "unit_cost": 2.43,
+        "qty": 50,
+        "line_total": 121.5
+      },
+      {
+        "offer_id": 21,
+        "product_name": "Fenugreek Seed 100ct",
+        "upc": "033674128008",
+        "unit_cost": 1.29,
+        "qty": 20,
+        "line_total": 25.8
+      },
+      {
+        "offer_id": 44,
+        "product_name": "Alive! Zero Sugar Men's Multivitamin Gummies, 50 Gummies",
+        "upc": "033674146200",
+        "unit_cost": 2.41,
+        "qty": 100,
+        "line_total": 241.0
+      },
+      {
+        "offer_id": 57,
+        "product_name": "Cold Relief Cough Drops, Cherry Flavor",
+        "upc": "033674151440",
+        "unit_cost": 1.86,
+        "qty": 1300,
+        "line_total": 2418.0
+      }
+    ],
+    "subtotal": 2806.3,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-18 01:24",
+    "confirmed_at": null,
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": ""
+  },
+  {
+    "id": "ORD-20260418-003",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "cancelled",
+    "items": [
+      {
+        "offer_id": 19,
+        "product_name": "Quercetin with Zinc Gummy 60ct",
+        "upc": "033674142615",
+        "unit_cost": 2.43,
+        "qty": 100,
+        "line_total": 243.0
+      },
+      {
+        "offer_id": 21,
+        "product_name": "Fenugreek Seed 100ct",
+        "upc": "033674128008",
+        "unit_cost": 1.29,
+        "qty": 200,
+        "line_total": 258.0
+      },
+      {
+        "offer_id": 24,
+        "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+        "upc": "033674150009",
+        "unit_cost": 2.25,
+        "qty": 100,
+        "line_total": 225.0
+      },
+      {
+        "offer_id": 44,
+        "product_name": "Alive! Zero Sugar Men's Multivitamin Gummies, 50 Gummies",
+        "upc": "033674146200",
+        "unit_cost": 2.41,
+        "qty": 400,
+        "line_total": 964.0
+      },
+      {
+        "offer_id": 57,
+        "product_name": "Cold Relief Cough Drops, Cherry Flavor",
+        "upc": "033674151440",
+        "unit_cost": 1.86,
+        "qty": 30,
+        "line_total": 55.8
+      }
+    ],
+    "subtotal": 1745.8,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-18 01:29",
+    "confirmed_at": null,
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": ""
+  },
+  {
+    "id": "ORD-20260418-004",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "cancelled",
+    "items": [
+      {
+        "offer_id": 19,
+        "product_name": "Quercetin with Zinc Gummy 60ct",
+        "upc": "033674142615",
+        "unit_cost": 2.43,
+        "qty": 100,
+        "line_total": 243.0
+      },
+      {
+        "offer_id": 21,
+        "product_name": "Fenugreek Seed 100ct",
+        "upc": "033674128008",
+        "unit_cost": 1.29,
+        "qty": 200,
+        "line_total": 258.0
+      },
+      {
+        "offer_id": 24,
+        "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+        "upc": "033674150009",
+        "unit_cost": 2.25,
+        "qty": 100,
+        "line_total": 225.0
+      },
+      {
+        "offer_id": 44,
+        "product_name": "Alive! Zero Sugar Men's Multivitamin Gummies, 50 Gummies",
+        "upc": "033674146200",
+        "unit_cost": 2.41,
+        "qty": 372,
+        "line_total": 896.52
+      },
+      {
+        "offer_id": 57,
+        "product_name": "Cold Relief Cough Drops, Cherry Flavor",
+        "upc": "033674151440",
+        "unit_cost": 1.86,
+        "qty": 30,
+        "line_total": 55.8
+      }
+    ],
+    "subtotal": 1678.32,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-18 01:48",
+    "confirmed_at": null,
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": ""
   }
 ]

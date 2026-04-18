@@ -511,15 +511,6 @@ def buyer_respond(token):
     # Dynamic availability
     avail_map = get_available_qty_bulk(offer_ids)
 
-    # Load buyer's default shipping address
-    buyers_path = os.path.join(data_dir, "buyers.json")
-    try:
-        with open(buyers_path) as f:
-            all_buyers = json.load(f)
-    except Exception:
-        all_buyers = []
-    buyer_record = next((b for b in all_buyers if b.get("id") == buyer_id), None)
-    default_addr = (buyer_record or {}).get("shipping_address", {})
 
     order_created = None
     submitted = False
@@ -548,46 +539,6 @@ def buyer_respond(token):
                     })
 
         if accepted_items:
-            # Capture shipping address from form
-            shipping_address = {
-                "name": form.get("ship_name", "").strip(),
-                "company": form.get("ship_company", "").strip(),
-                "line1": form.get("ship_line1", "").strip(),
-                "line2": form.get("ship_line2", "").strip(),
-                "city": form.get("ship_city", "").strip(),
-                "state": form.get("ship_state", "").strip(),
-                "zip": form.get("ship_zip", "").strip(),
-                "phone": form.get("ship_phone", "").strip(),
-            }
-
-            # Address verification — use standardized address if verified
-            addr_line1 = shipping_address["line1"] or shipping_address["line2"]
-            addr_line2 = shipping_address["line2"] if shipping_address["line1"] else ""
-            if addr_line1:
-                try:
-                    from utils.usps import verify_address
-                    usps_result = verify_address(
-                        line1=addr_line1,
-                        line2=addr_line2,
-                        city=shipping_address["city"],
-                        state=shipping_address["state"],
-                        zip5=shipping_address["zip"],
-                    )
-                    if usps_result.get("verified"):
-                        std = usps_result["address"]
-                        shipping_address["line1"] = std.get("line1") or shipping_address["line1"]
-                        shipping_address["line2"] = std.get("line2") or ""
-                        shipping_address["city"] = std.get("city") or shipping_address["city"]
-                        shipping_address["state"] = std.get("state") or shipping_address["state"]
-                        shipping_address["zip"] = std.get("zip_full") or shipping_address["zip"]
-                        shipping_address["usps_verified"] = True
-                    else:
-                        shipping_address["usps_verified"] = False
-                        shipping_address["usps_error"] = usps_result.get("error", "")
-                except Exception as e:
-                    logging.getLogger("keith.usps").error("USPS verify error: %s", e)
-                    shipping_address["usps_verified"] = False
-
             # Create the order
             order_created = create_order(
                 buyer_id=buyer_id,
@@ -595,16 +546,6 @@ def buyer_respond(token):
                 buyer_email=buyer_email,
                 accepted_items=accepted_items,
             )
-            order_created["shipping_address"] = shipping_address
-
-            # Save shipping address back to order
-            from utils.orders import load_orders, save_orders
-            all_orders = load_orders()
-            for ordr in all_orders:
-                if ordr.get("id") == order_created["id"]:
-                    ordr["shipping_address"] = shipping_address
-                    break
-            save_orders(all_orders)
 
             # Update offer statuses
             accepted_offer_ids = {item["offer_id"] for item in accepted_items}
@@ -661,7 +602,7 @@ def buyer_respond(token):
         mo_sales_display = f"{mo_sales:,}" if mo_sales else "—"
 
         # Profit from SA
-        profit = sa.get('profit_per_unit') or 0
+        profit = sa.get('profit_per_unit') or sa.get('buyer_profit') or 0
         profit_display = f"${profit:.2f}" if profit else "—"
         profit_color = "#3fb950" if profit > 0 else "#f85149" if profit < 0 else "#8b949e"
 
@@ -692,6 +633,7 @@ def buyer_respond(token):
             <td style="padding:10px;">
                 <input type="number" name="qty_{oid}" min="0" max="{available}" placeholder="0"
                     class="qty-input" data-oid="{oid}" data-max="{available}"
+                    data-price="{(o.get('wholesale_price') or o.get('per_unit_cost') or 0):.2f}"
                     style="width:80px;background:#0d1117;border:1px solid #30363d;color:#e6edf3;
                     border-radius:4px;padding:4px 6px;text-align:center;">
             </td>
@@ -736,8 +678,7 @@ def buyer_respond(token):
             </table>
             <div style="margin-top:14px;padding:12px;background:#58a6ff15;border-radius:6px;">
                 <p style="margin:0;color:#58a6ff;font-size:0.85rem;">
-                    <strong>Next steps:</strong> We'll confirm availability within 24 hours and send payment instructions.
-                    Quantities are held for 48 hours.</p>
+                    <strong>Next steps:</strong> We will be in contact to arrange payment &amp; shipping.</p>
             </div>
         </div>'''
     elif submitted and not order_created:
@@ -768,7 +709,7 @@ def buyer_respond(token):
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Category</th>
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Your Price</th>
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Amazon Price</th>
-            <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Profit</th>
+            <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Est. Profit</th>
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Margin</th>
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">Mo. Sales</th>
             <th style="padding:10px;text-align:left;color:#8b949e;font-size:0.8rem;">FBA</th>
@@ -779,73 +720,41 @@ def buyer_respond(token):
         <tbody>{rows_html}</tbody>
     </table>
     </div>
-    <!-- Shipping Address -->
-    <div style="border:1px solid #30363d;border-radius:8px;padding:20px;margin-top:20px;background:#161b22;">
-        <h3 style="margin:0 0 4px;color:#e6edf3;font-size:1rem;">Shipping Address</h3>
-        <p style="margin:0 0 16px;color:#8b949e;font-size:0.8rem;">Where should we ship this order? Leave blank to confirm later.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-            <div>
-                <label style="color:#8b949e;font-size:0.75rem;display:block;margin-bottom:4px;">Recipient Name *</label>
-                <input type="text" name="ship_name" value="{default_addr.get('name', buyer_name)}" placeholder="Full name"
-                    style="width:100%;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:4px;padding:8px 10px;box-sizing:border-box;">
-            </div>
-            <div>
-                <label style="color:#8b949e;font-size:0.75rem;display:block;margin-bottom:4px;">Company</label>
-                <input type="text" name="ship_company" value="{default_addr.get('company', '')}" placeholder="Company name (optional)"
-                    style="width:100%;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:4px;padding:8px 10px;box-sizing:border-box;">
-            </div>
-            <div style="grid-column:1/-1;">
-                <label style="color:#8b949e;font-size:0.75rem;display:block;margin-bottom:4px;">Address Line 1 *</label>
-                <input type="text" name="ship_line1" value="{default_addr.get('line1', '')}" placeholder="Street address"
-                    style="width:100%;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:4px;padding:8px 10px;box-sizing:border-box;">
-            </div>
-            <div style="grid-column:1/-1;">
-                <label style="color:#8b949e;font-size:0.75rem;display:block;margin-bottom:4px;">Address Line 2</label>
-                <input type="text" name="ship_line2" value="{default_addr.get('line2', '')}" placeholder="Suite, unit, building (optional)"
-                    style="width:100%;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:4px;padding:8px 10px;box-sizing:border-box;">
-            </div>
-            <div>
-                <label style="color:#8b949e;font-size:0.75rem;display:block;margin-bottom:4px;">City *</label>
-                <input type="text" name="ship_city" value="{default_addr.get('city', '')}" placeholder="City"
-                    style="width:100%;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:4px;padding:8px 10px;box-sizing:border-box;">
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-                <div>
-                    <label style="color:#8b949e;font-size:0.75rem;display:block;margin-bottom:4px;">State *</label>
-                    <input type="text" name="ship_state" value="{default_addr.get('state', '')}" placeholder="CA" maxlength="2"
-                        style="width:100%;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:4px;padding:8px 10px;box-sizing:border-box;">
-                </div>
-                <div>
-                    <label style="color:#8b949e;font-size:0.75rem;display:block;margin-bottom:4px;">ZIP Code *</label>
-                    <input type="text" name="ship_zip" value="{default_addr.get('zip', '')}" placeholder="90210"
-                        style="width:100%;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:4px;padding:8px 10px;box-sizing:border-box;">
-                </div>
-            </div>
-            <div>
-                <label style="color:#8b949e;font-size:0.75rem;display:block;margin-bottom:4px;">Phone</label>
-                <input type="tel" name="ship_phone" value="{default_addr.get('phone', '')}" placeholder="(555) 123-4567"
-                    style="width:100%;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:4px;padding:8px 10px;box-sizing:border-box;">
-            </div>
+    <p style="color:#8b949e;font-size:0.75rem;margin:10px 0 0;">Est. Profit is calculated per unit after Amazon referral and FBA fulfillment fees.</p>
+    <div id="order-summary" style="position:sticky;bottom:0;background:#161b22;border:1px solid #30363d;
+        border-radius:8px 8px 0 0;padding:14px 20px;margin-top:20px;display:flex;align-items:center;
+        justify-content:space-between;box-shadow:0 -4px 12px rgba(0,0,0,0.4);">
+        <div style="display:flex;gap:24px;align-items:center;">
+            <span style="color:#8b949e;font-size:0.85rem;"><span id="item-count" style="color:#e6edf3;font-weight:600;">0</span> items</span>
+            <span style="color:#8b949e;font-size:0.85rem;"><span id="unit-count" style="color:#e6edf3;font-weight:600;">0</span> units</span>
+            <span style="color:#8b949e;font-size:0.85rem;">Total: <span id="rolling-total" style="color:#3fb950;font-weight:700;font-size:1.1rem;">$0.00</span></span>
         </div>
-        <div style="margin-top:14px;display:flex;align-items:center;gap:12px;">
-            <button type="button" id="verify-addr-btn" onclick="verifyAddress()" style="background:#d29922;color:#fff;
-                border:none;padding:8px 20px;border-radius:6px;font-size:0.85rem;font-weight:600;cursor:pointer;">
-                Verify Address
-            </button>
-            <span id="verify-status" style="font-size:0.82rem;"></span>
-        </div>
-        <div id="verify-result" style="display:none;margin-top:12px;padding:12px 16px;border-radius:6px;font-size:0.85rem;"></div>
-    </div>
-
-    <div style="margin-top:20px;text-align:right;">
-        <button type="submit" style="background:#1f6feb;color:#fff;border:none;padding:12px 32px;
-            border-radius:6px;font-size:1rem;font-weight:600;cursor:pointer;">
-            Place Order
+        <button type="submit" style="background:#1f6feb;color:#fff;border:none;padding:10px 28px;
+            border-radius:6px;font-size:0.95rem;font-weight:600;cursor:pointer;">
+            Submit Selection
         </button>
     </div>
     </form>
 </div>
 ''' + '''<script>
+function updateTotal() {
+    var total = 0, items = 0, units = 0;
+    document.querySelectorAll('.qty-input').forEach(function(input) {
+        var oid = input.dataset.oid;
+        var qty = parseInt(input.value) || 0;
+        var accept = document.querySelector('input[name="decision_' + oid + '"][value="accept"]');
+        if (accept && accept.checked && qty > 0) {
+            var price = parseFloat(input.dataset.price) || 0;
+            total += price * qty;
+            units += qty;
+            items++;
+        }
+    });
+    document.getElementById('rolling-total').textContent = '$' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    document.getElementById('item-count').textContent = items;
+    document.getElementById('unit-count').textContent = units.toLocaleString();
+}
+
 document.querySelectorAll('.qty-input').forEach(function(input) {
     input.addEventListener('input', function() {
         var oid = this.dataset.oid;
@@ -857,76 +766,13 @@ document.querySelectorAll('.qty-input').forEach(function(input) {
             var accept = document.querySelector('input[name="decision_' + oid + '"][value="accept"]');
             if (accept) accept.checked = true;
         }
+        updateTotal();
     });
 });
 
-function verifyAddress() {
-    var btn = document.getElementById('verify-addr-btn');
-    var status = document.getElementById('verify-status');
-    var result = document.getElementById('verify-result');
-    btn.disabled = true;
-    btn.textContent = 'Verifying...';
-    status.innerHTML = '';
-    result.style.display = 'none';
-
-    var l1 = document.querySelector('[name=ship_line1]').value.trim();
-    var l2 = document.querySelector('[name=ship_line2]').value.trim();
-    var data = {
-        line1: l1 || l2,
-        line2: l1 ? l2 : '',
-        city: document.querySelector('[name=ship_city]').value,
-        state: document.querySelector('[name=ship_state]').value,
-        zip: document.querySelector('[name=ship_zip]').value
-    };
-
-    fetch('/api/verify-address', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(d) {
-        btn.disabled = false;
-        btn.textContent = 'Verify Address';
-        if (d.verified && d.address) {
-            var a = d.address;
-            status.innerHTML = '<span style="color:#3fb950;">&#10003; Address Verified</span>';
-            result.style.display = 'block';
-            result.style.background = '#3fb95015';
-            result.style.border = '1px solid #3fb95040';
-            result.innerHTML = '<strong style="color:#3fb950;">Standardized Address:</strong><br>' +
-                '<span style="color:#e6edf3;">' + a.line1 +
-                (a.line2 ? '<br>' + a.line2 : '') +
-                '<br>' + a.city + ', ' + a.state + ' ' + a.zip_full + '</span>' +
-                '<br><button type="button" onclick="applyVerified()" style="margin-top:8px;background:#3fb950;color:#fff;' +
-                'border:none;padding:6px 16px;border-radius:4px;font-size:0.82rem;font-weight:600;cursor:pointer;">Use This Address</button>';
-            window._verifiedAddr = a;
-        } else {
-            status.innerHTML = '<span style="color:#f85149;">&#10007; ' + (d.error || 'Not verified') + '</span>';
-            result.style.display = 'block';
-            result.style.background = '#f8514915';
-            result.style.border = '1px solid #f8514940';
-            result.innerHTML = '<span style="color:#f85149;">' + (d.error || 'Address could not be verified. You can still submit.') + '</span>';
-        }
-    })
-    .catch(function(e) {
-        btn.disabled = false;
-        btn.textContent = 'Verify Address';
-        status.innerHTML = '<span style="color:#f85149;">Network error</span>';
-    });
-}
-
-function applyVerified() {
-    var a = window._verifiedAddr;
-    if (!a) return;
-    document.querySelector('[name=ship_line1]').value = a.line1 || '';
-    document.querySelector('[name=ship_line2]').value = a.line2 || '';
-    document.querySelector('[name=ship_city]').value = a.city || '';
-    document.querySelector('[name=ship_state]').value = a.state || '';
-    document.querySelector('[name=ship_zip]').value = a.zip_full || a.zip5 || '';
-    document.getElementById('verify-status').innerHTML = '<span style="color:#3fb950;">&#10003; Applied</span>';
-    document.getElementById('verify-result').style.display = 'none';
-}
+document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+    radio.addEventListener('change', updateTotal);
+});
 </script>
 </body></html>'''
 
@@ -937,8 +783,9 @@ if __name__ == "__main__":
     import os
     from utils.healthcheck import HealthChecker
     from utils.email_client import EmailPoller
-    # Only start health checker in the reloader's child process (or non-debug mode)
-    if os.environ.get("WERKZEUG_RUN_MAIN") == "true" or not True:
+    from utils.seller_assistant import EnrichmentPoller
+    # Start background services (debug=False so no reloader — always start)
+    if True:
         checker = HealthChecker(app=app, interval=60)
         app.server.health_checker = checker
         checker.start()
@@ -946,4 +793,8 @@ if __name__ == "__main__":
         email_poller = EmailPoller(interval=120)
         app.server.email_poller = email_poller
         email_poller.start()
+
+        sa_poller = EnrichmentPoller(interval=1800, batch_size=50)
+        app.server.sa_poller = sa_poller
+        sa_poller.start()
     app.run(debug=False, host="0.0.0.0", port=APP_PORT)

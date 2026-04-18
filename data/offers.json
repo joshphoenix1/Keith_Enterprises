@@ -839,9 +839,9 @@
       "error": "No ASIN found",
       "upc": "033674146163"
     },
-    "wholesale_price": 2.86,
-    "send_markup_pct": 50.0,
-    "send_sell_price": 2.86
+    "wholesale_price": 2.48,
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.48
   },
   {
     "id": 14,
@@ -1166,8 +1166,8 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 0.36,
       "our_margin_pct": 23.1,
-      "bsr": 592369,
-      "bsr_top_pct": 6.42,
+      "bsr": 598493,
+      "bsr_top_pct": 6.49,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -1179,7 +1179,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:48"
+      "enriched_at": "2026-04-18 02:10"
     },
     "wholesale_price": 1.56,
     "our_margin_pct": 23.1
@@ -1336,10 +1336,10 @@
       "our_profit": 0.56,
       "our_margin_pct": 23.0
     },
-    "wholesale_price": 2.81,
+    "wholesale_price": 2.43,
     "our_margin_pct": 23.0,
-    "send_markup_pct": 50.0,
-    "send_sell_price": 2.81
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.43
   },
   {
     "id": 20,
@@ -1402,18 +1402,18 @@
       "buy_box_price": 0.0,
       "fba_min_price": 9.19,
       "fbm_min_price": 10.57,
-      "fba_fee": 2.91,
+      "fba_fee": 3.01,
       "referral_fee": 0.74,
       "referral_fee_rate": 0.081,
       "storage_fee": 0.01,
-      "total_fees": 3.66,
+      "total_fees": 3.76,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.51,
       "our_margin_pct": 23.1,
-      "bsr": 38522,
-      "bsr_top_pct": 0.42,
-      "estimated_monthly_sales": 519,
+      "bsr": 33232,
+      "bsr_top_pct": 0.36,
+      "estimated_monthly_sales": 566,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 1,
       "fbm_sellers": 3,
@@ -1424,7 +1424,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:48"
+      "enriched_at": "2026-04-18 02:10"
     },
     "wholesale_price": 2.21,
     "our_margin_pct": 23.1
@@ -1439,7 +1439,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 8.5,
       "walmart_price": null,
@@ -1499,10 +1499,10 @@
       "our_profit": 0.3,
       "our_margin_pct": 23.3
     },
-    "wholesale_price": 1.58,
+    "wholesale_price": 1.29,
     "our_margin_pct": 23.3,
-    "send_markup_pct": 60.0,
-    "send_sell_price": 1.58
+    "send_markup_pct": 30.0,
+    "send_sell_price": 1.29
   },
   {
     "id": 22,
@@ -1678,7 +1678,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 14.97,
       "walmart_price": null,
@@ -1738,10 +1738,10 @@
       "our_profit": 0.52,
       "our_margin_pct": 23.1
     },
-    "wholesale_price": 2.59,
+    "wholesale_price": 2.25,
     "our_margin_pct": 23.1,
-    "send_markup_pct": 50.0,
-    "send_sell_price": 2.59
+    "send_markup_pct": 30.0,
+    "send_sell_price": 2.25
   },
   {
     "id": 25,
@@ -1797,36 +1797,7 @@
     "pack_qty": 12,
     "sa_data": {
       "asin": "B001GMT4W6",
-      "title": "Alive!Multi-Vit,Chew,Kids",
-      "brand": "Nature's Way",
-      "product_url": "https://www.amazon.com/dp/B001GMT4W6",
-      "image_url": "https://m.media-amazon.com/images/I/51OkCMbGCXL.jpg",
-      "buy_box_price": 0.0,
-      "fba_min_price": 0.0,
-      "fbm_min_price": 25.44,
-      "fba_fee": 0.0,
-      "referral_fee": 3.82,
-      "referral_fee_rate": 0.15,
-      "storage_fee": 0.0,
-      "total_fees": 3.82,
-      "buyer_profit": 0,
-      "buyer_roi_pct": 0.0,
-      "our_profit": 1.01,
-      "our_margin_pct": 23.0,
-      "bsr": 1235879,
-      "bsr_top_pct": 13.39,
-      "estimated_monthly_sales": 0,
-      "restriction_status": "NOT_ELIGIBLE",
-      "fba_sellers": 0,
-      "fbm_sellers": 2,
-      "fba_within_2pct": 0,
-      "is_hazmat": false,
-      "is_meltable": false,
-      "is_oversize": false,
-      "is_fragile": false,
-      "is_adult": false,
-      "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:48"
+      "error": "Product not found"
     },
     "wholesale_price": 4.39,
     "our_margin_pct": 23.0
@@ -2146,7 +2117,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:48"
+      "enriched_at": "2026-04-18 02:10"
     },
     "wholesale_price": 3.42,
     "our_margin_pct": 23.1
@@ -2305,7 +2276,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": null,
-      "enriched_at": "2026-04-17 04:48"
+      "enriched_at": "2026-04-18 02:10"
     },
     "wholesale_price": 3.41,
     "our_margin_pct": 23.2,
@@ -2643,18 +2614,18 @@
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 28.22,
-      "fba_fee": 4.55,
+      "fba_fee": 4.71,
       "referral_fee": 4.23,
       "referral_fee_rate": 0.15,
       "storage_fee": 0.0,
-      "total_fees": 8.78,
+      "total_fees": 8.94,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.61,
       "our_margin_pct": 23.2,
-      "bsr": 114682,
-      "bsr_top_pct": 1.25,
-      "estimated_monthly_sales": 104,
+      "bsr": 121529,
+      "bsr_top_pct": 1.32,
+      "estimated_monthly_sales": 98,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
       "fbm_sellers": 2,
@@ -2665,7 +2636,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:48"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 23.2
   },
@@ -2893,18 +2864,18 @@
       "buy_box_price": 0.0,
       "fba_min_price": 6.81,
       "fbm_min_price": 18.19,
-      "fba_fee": 2.91,
+      "fba_fee": 3.01,
       "referral_fee": 0.54,
       "referral_fee_rate": 0.079,
       "storage_fee": 0.01,
-      "total_fees": 3.46,
+      "total_fees": 3.56,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.32,
       "our_margin_pct": 22.9,
-      "bsr": 79780,
-      "bsr_top_pct": 0.87,
-      "estimated_monthly_sales": 109,
+      "bsr": 91010,
+      "bsr_top_pct": 0.99,
+      "estimated_monthly_sales": 101,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 1,
       "fbm_sellers": 1,
@@ -2915,7 +2886,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:48"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 22.9
   },
@@ -3143,17 +3114,17 @@
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 28.94,
-      "fba_fee": 5.92,
+      "fba_fee": 6.13,
       "referral_fee": 4.34,
       "referral_fee_rate": 0.15,
       "storage_fee": 0.0,
-      "total_fees": 10.26,
+      "total_fees": 10.47,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.62,
       "our_margin_pct": 23.0,
-      "bsr": 1092576,
-      "bsr_top_pct": 11.84,
+      "bsr": 1093416,
+      "bsr_top_pct": 11.85,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -3165,7 +3136,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:49"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 23.0
   },
@@ -3295,17 +3266,17 @@
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 25.23,
-      "fba_fee": 3.95,
+      "fba_fee": 4.09,
       "referral_fee": 3.78,
       "referral_fee_rate": 0.15,
       "storage_fee": 0.02,
-      "total_fees": 7.75,
+      "total_fees": 7.89,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.58,
       "our_margin_pct": 23.0,
-      "bsr": 1224859,
-      "bsr_top_pct": 13.27,
+      "bsr": 1225474,
+      "bsr_top_pct": 13.28,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -3317,7 +3288,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:49"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 23.0
   },
@@ -3661,7 +3632,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus Elderberry Hot Drink Mix with Vitamin C and Echinacea, Immune Support, Honey Lemon-Berry Flavored, 10 Packets (Packaging May Vary)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:13"
+      "last_checked": "2026-04-17 00:13",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -3692,7 +3664,7 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 84.4,
+    "margin_pct": 79.7,
     "created_at": "2026-04-16 23:47:47",
     "notes": "10 Pkts, 12/case, exp 2026-10-31",
     "per_unit_cost": 1.82,
@@ -3700,8 +3672,38 @@
     "wholesale_price": 2.37,
     "sa_data": {
       "asin": "B077JX45Q5",
-      "error": "Product not found"
-    }
+      "title": "Nature's Way Sambucus Elderberry Hot Drink Mix with Vitamin C and Echinacea, Immune Support*, Honey Lemon-Berry Flavored, 10 Packets (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B077JX45Q5",
+      "image_url": "https://m.media-amazon.com/images/I/71asd-PHWDL.jpg",
+      "buy_box_price": 11.68,
+      "fba_min_price": 11.68,
+      "fbm_min_price": 27.45,
+      "fba_fee": 3.86,
+      "referral_fee": 1.75,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.62,
+      "buyer_profit": 3.69,
+      "buyer_roi_pct": 155.7,
+      "our_profit": 0.55,
+      "our_margin_pct": 23.2,
+      "bsr": 100820,
+      "bsr_top_pct": 1.1,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 00:57"
+    },
+    "our_margin_pct": 23.2
   },
   {
     "id": 49,
@@ -3763,16 +3765,16 @@
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
-      "fba_fee": 3.99,
+      "fba_fee": 4.13,
       "referral_fee": 15.0,
       "referral_fee_rate": 0.15,
       "storage_fee": 0.01,
-      "total_fees": 19.0,
+      "total_fees": 19.14,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.51,
       "our_margin_pct": 23.0,
-      "bsr": 228286,
+      "bsr": 228162,
       "bsr_top_pct": 2.48,
       "estimated_monthly_sales": 15,
       "restriction_status": "NOT_ELIGIBLE",
@@ -3785,7 +3787,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:49"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 23.0
   },
@@ -4486,17 +4488,17 @@
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
-      "fba_fee": 4.21,
+      "fba_fee": 4.36,
       "referral_fee": 15.0,
       "referral_fee_rate": 0.15,
       "storage_fee": 0.02,
-      "total_fees": 19.23,
+      "total_fees": 19.38,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.74,
       "our_margin_pct": 23.1,
-      "bsr": 739219,
-      "bsr_top_pct": 8.01,
+      "bsr": 742315,
+      "bsr_top_pct": 8.05,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -4508,7 +4510,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:50"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 23.1
   },
@@ -4736,17 +4738,17 @@
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 24.77,
-      "fba_fee": 3.73,
+      "fba_fee": 3.86,
       "referral_fee": 3.72,
       "referral_fee_rate": 0.15,
       "storage_fee": 0.01,
-      "total_fees": 7.46,
+      "total_fees": 7.59,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.46,
       "our_margin_pct": 23.0,
-      "bsr": 625806,
-      "bsr_top_pct": 6.78,
+      "bsr": 629620,
+      "bsr_top_pct": 6.83,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -4758,7 +4760,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:50"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 23.0
   },
@@ -4904,17 +4906,17 @@
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 33.27,
-      "fba_fee": 3.73,
+      "fba_fee": 3.86,
       "referral_fee": 4.99,
       "referral_fee_rate": 0.15,
       "storage_fee": 0.01,
-      "total_fees": 8.73,
+      "total_fees": 8.86,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.41,
       "our_margin_pct": 22.9,
-      "bsr": 693824,
-      "bsr_top_pct": 7.52,
+      "bsr": 698725,
+      "bsr_top_pct": 7.57,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -4926,7 +4928,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:50"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 22.9
   },
@@ -5239,21 +5241,21 @@
       "title": "Natures Way Gymnema Standardized 60 Vegetarian capsule, 60 ct",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B00014EVM8",
-      "image_url": "https://m.media-amazon.com/images/I/61VV0d9Z6+L.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/411+os86KAL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 32.73,
-      "fba_fee": 3.73,
+      "fba_fee": 3.86,
       "referral_fee": 4.91,
       "referral_fee_rate": 0.15,
       "storage_fee": 0.01,
-      "total_fees": 8.65,
+      "total_fees": 8.78,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.39,
       "our_margin_pct": 22.9,
-      "bsr": 635780,
-      "bsr_top_pct": 6.89,
+      "bsr": 640615,
+      "bsr_top_pct": 6.94,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -5265,7 +5267,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:51"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 22.9
   },
@@ -5327,21 +5329,21 @@
       "title": "Nature's Way Nature's Way Schisandra Fruit, 1,160 Mg Per Serving, 100 Count",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B0002JISJO",
-      "image_url": "https://m.media-amazon.com/images/I/81nkpyz7OXL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/41OFC+U7YZL.jpg",
       "buy_box_price": 0.0,
-      "fba_min_price": 19.0,
-      "fbm_min_price": 19.91,
-      "fba_fee": 3.73,
-      "referral_fee": 2.85,
+      "fba_min_price": 21.99,
+      "fbm_min_price": 21.77,
+      "fba_fee": 3.86,
+      "referral_fee": 3.27,
       "referral_fee_rate": 0.15,
       "storage_fee": 0.01,
-      "total_fees": 6.59,
+      "total_fees": 7.14,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.53,
       "our_margin_pct": 23.1,
-      "bsr": 470641,
-      "bsr_top_pct": 5.1,
+      "bsr": 482224,
+      "bsr_top_pct": 5.23,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 1,
@@ -5353,7 +5355,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:51"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 23.1
   },
@@ -5488,16 +5490,16 @@
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 25.0,
-      "fba_fee": 3.95,
+      "fba_fee": 4.09,
       "referral_fee": 3.75,
       "referral_fee_rate": 0.15,
       "storage_fee": 0.01,
-      "total_fees": 7.71,
+      "total_fees": 7.85,
       "buyer_profit": 0,
       "buyer_roi_pct": 0.0,
       "our_profit": 0.5,
       "our_margin_pct": 23.1,
-      "bsr": 1089433,
+      "bsr": 1090244,
       "bsr_top_pct": 11.81,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
@@ -5510,7 +5512,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-17 04:51"
+      "enriched_at": "2026-04-18 02:11"
     },
     "our_margin_pct": 23.1,
     "send_markup_pct": 30.0,
@@ -6112,7 +6114,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Fortify Optima Probiotic for Adults 50+, 90 Billion Live Cultures, 15 Strains, Colon Health*, Supports Digestive Balance and Immune Health*, 30 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:22"
+      "last_checked": "2026-04-17 00:22",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6134,12 +6137,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 86.7,
+    "margin_pct": 82.7,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Cp, Exp 2027-02-28, Lot 20193812",
     "pack_qty": 12,
     "per_unit_cost": 5.98,
-    "wholesale_price": 7.77
+    "wholesale_price": 7.77,
+    "sa_data": {
+      "asin": "B005S6W96Y",
+      "title": "Nature's Way Fortify Optima Probiotic for Adults 50+, 90 Billion Live Cultures, 15 Strains, Colon Health*, Supports Digestive Balance and Immune Health*, 30 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B005S6W96Y",
+      "image_url": "https://m.media-amazon.com/images/I/71Ay-r6Uc7L.jpg",
+      "buy_box_price": 44.99,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 42.9,
+      "fba_fee": 3.86,
+      "referral_fee": 6.75,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 10.62,
+      "buyer_profit": 26.6,
+      "buyer_roi_pct": 342.3,
+      "our_profit": 1.79,
+      "our_margin_pct": 23.0,
+      "bsr": 407082,
+      "bsr_top_pct": 4.41,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 3,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 00:58"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 79,
@@ -6157,7 +6194,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Extra Strength Fortify Probiotic, Probiotics for Digestive Health, Prebiotics, 50 Billion Live Cultures, Digestive & Immune Health Support, 30 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:22"
+      "last_checked": "2026-04-17 00:22",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6188,12 +6226,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 83.3,
+    "margin_pct": 78.3,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2027-01-31, Lot W0042941",
     "pack_qty": 12,
     "per_unit_cost": 3.6,
-    "wholesale_price": 4.68
+    "wholesale_price": 4.68,
+    "sa_data": {
+      "asin": "B071Y8DDYP",
+      "title": "Nature's Way Extra Strength(1) Fortify Probiotic, Probiotics for Digestive Health, Prebiotics, 50 Billion Live Cultures, Digestive & Immune Health Support*, 30 Capsules",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B071Y8DDYP",
+      "image_url": "https://m.media-amazon.com/images/I/816WXCC1wzL.jpg",
+      "buy_box_price": 21.6,
+      "fba_min_price": 21.6,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.09,
+      "referral_fee": 3.24,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 7.35,
+      "buyer_profit": 9.57,
+      "buyer_roi_pct": 204.5,
+      "our_profit": 1.08,
+      "our_margin_pct": 23.1,
+      "bsr": 35207,
+      "bsr_top_pct": 0.39,
+      "estimated_monthly_sales": 543,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 00:58"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 80,
@@ -6211,7 +6283,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Fortify Optima Probiotic for Adults, 100 Billion Live Cultures, 15 Strains, Supports Digestive and Immune Health*, Plant-Based Prebiotic Fiber, 30 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:22"
+      "last_checked": "2026-04-17 00:22",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6242,12 +6315,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 86.6,
+    "margin_pct": 82.6,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2027-01-31, Lot 20193813",
     "pack_qty": 12,
     "per_unit_cost": 5.98,
-    "wholesale_price": 7.77
+    "wholesale_price": 7.77,
+    "sa_data": {
+      "asin": "B005S6Y8OU",
+      "title": "Nature's Way Fortify Optima Probiotic for Adults, 100 Billion Live Cultures, 15 Strains, Supports Digestive and Immune Health*, Plant-Based Prebiotic Fiber, 30 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B005S6Y8OU",
+      "image_url": "https://m.media-amazon.com/images/I/41r5WBrX13L.jpg",
+      "buy_box_price": 44.69,
+      "fba_min_price": 44.69,
+      "fbm_min_price": 42.83,
+      "fba_fee": 3.86,
+      "referral_fee": 6.7,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 10.57,
+      "buyer_profit": 26.35,
+      "buyer_roi_pct": 339.1,
+      "our_profit": 1.79,
+      "our_margin_pct": 23.0,
+      "bsr": 139847,
+      "bsr_top_pct": 1.52,
+      "estimated_monthly_sales": 65,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 5,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 5,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 00:58"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 81,
@@ -6261,11 +6368,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 17.02,
+      "amazon_price": 17.29,
       "walmart_price": null,
       "amazon_match": "Nature's Way Probiotic Pearls Max Potency, 5 Billion Active Cultures, 30 Softgels",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:23"
+      "last_checked": "2026-04-17 00:23",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6296,12 +6404,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 77.2,
+    "margin_pct": 70.9,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Sg, Exp 2026-12-31, Lot 2019689902",
     "pack_qty": 12,
     "per_unit_cost": 3.88,
-    "wholesale_price": 5.04
+    "wholesale_price": 5.04,
+    "sa_data": {
+      "asin": "B005MXKPQO",
+      "title": "Nature's Way Probiotic Pearls Max Potency, 5 Billion Active Cultures, 30 Softgels",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B005MXKPQO",
+      "image_url": "https://m.media-amazon.com/images/I/7174pWIAOvL.jpg",
+      "buy_box_price": 17.29,
+      "fba_min_price": 17.29,
+      "fbm_min_price": 15.97,
+      "fba_fee": 3.86,
+      "referral_fee": 2.59,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.46,
+      "buyer_profit": 5.79,
+      "buyer_roi_pct": 114.9,
+      "our_profit": 1.16,
+      "our_margin_pct": 23.0,
+      "bsr": 16170,
+      "bsr_top_pct": 0.18,
+      "estimated_monthly_sales": 1471,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 00:58"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 82,
@@ -6319,7 +6461,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Fortify Optima Women's Probiotics, 50 Billion Live Cultures, 7 Strains, Supports Digestive and Immune Health*, 30 Capsules (Packaging May Vary)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:23"
+      "last_checked": "2026-04-17 00:23",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6341,12 +6484,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 84.0,
+    "margin_pct": 79.2,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2026-11-30, Lot W0042344",
     "pack_qty": 12,
     "per_unit_cost": 3.2,
-    "wholesale_price": 4.16
+    "wholesale_price": 4.16,
+    "sa_data": {
+      "asin": "B00K73ACIA",
+      "title": "Nature's Way Fortify Optima Women's Probiotics, 50 Billion Live Cultures, 7 Strains, Supports Digestive and Immune Health*, 30 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00K73ACIA",
+      "image_url": "https://m.media-amazon.com/images/I/71ijZbbGcoL.jpg",
+      "buy_box_price": 19.97,
+      "fba_min_price": 19.97,
+      "fbm_min_price": 41.62,
+      "fba_fee": 3.86,
+      "referral_fee": 3.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.87,
+      "buyer_profit": 8.94,
+      "buyer_roi_pct": 214.9,
+      "our_profit": 0.96,
+      "our_margin_pct": 23.1,
+      "bsr": 41677,
+      "bsr_top_pct": 0.46,
+      "estimated_monthly_sales": 486,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 00:58"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 83,
@@ -6364,7 +6541,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Fortify Optima Probiotic for Men and Women, 50 Billion Live Cultures, 6 Strains, Supports Digestive and Immune Health*, 30 Capsules",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:23"
+      "last_checked": "2026-04-17 00:23",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6386,12 +6564,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 86.1,
+    "margin_pct": 81.9,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2026-11-30, Lot W0042342",
     "pack_qty": 12,
     "per_unit_cost": 3.19,
-    "wholesale_price": 4.15
+    "wholesale_price": 4.15,
+    "sa_data": {
+      "asin": "B00K73HG5C",
+      "title": "Nature's Way Fortify Optima Probiotic for Men and Women, 50 Billion Live Cultures, 6 Strains, Supports Digestive and Immune Health*, 30 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B00K73HG5C",
+      "image_url": "https://m.media-amazon.com/images/I/41E7K9c2jDL.jpg",
+      "buy_box_price": 22.94,
+      "fba_min_price": 22.94,
+      "fbm_min_price": 41.62,
+      "fba_fee": 3.86,
+      "referral_fee": 3.44,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 7.31,
+      "buyer_profit": 11.48,
+      "buyer_roi_pct": 276.6,
+      "our_profit": 0.96,
+      "our_margin_pct": 23.1,
+      "bsr": 128006,
+      "bsr_top_pct": 1.39,
+      "estimated_monthly_sales": 65,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 00:58"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 84,
@@ -6436,7 +6648,41 @@
     "notes": "50 Gummies, Exp 2026-10-31, Lot 428151986",
     "pack_qty": 12,
     "per_unit_cost": 2.04,
-    "wholesale_price": 2.65
+    "wholesale_price": 2.65,
+    "sa_data": {
+      "asin": "B0DMFHYJ6T",
+      "title": "Natures Way, Probiotic Gummy 3 in 1, 50 Count",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0DMFHYJ6T",
+      "image_url": "https://m.media-amazon.com/images/I/416-Xlg+44L.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 30.77,
+      "fba_fee": 4.09,
+      "referral_fee": 4.62,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 8.73,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.61,
+      "our_margin_pct": 23.0,
+      "bsr": 270350,
+      "bsr_top_pct": 3.63,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Pet Supplies",
+      "enriched_at": "2026-04-18 02:11"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 85,
@@ -6490,7 +6736,41 @@
     "notes": "180 Veg Cp, Exp 2026-09-30, Lot 20191250",
     "pack_qty": 12,
     "per_unit_cost": 3.88,
-    "wholesale_price": 5.04
+    "wholesale_price": 5.04,
+    "sa_data": {
+      "asin": "B000GUHMVO",
+      "title": "Nature's Way Primadophilus Bifidus 5 Billion 180 Capsules",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000GUHMVO",
+      "image_url": "https://m.media-amazon.com/images/I/312XE8BqWgL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 39.99,
+      "fbm_min_price": 39.49,
+      "fba_fee": 3.86,
+      "referral_fee": 5.92,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 9.79,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 1.16,
+      "our_margin_pct": 23.0,
+      "bsr": 304456,
+      "bsr_top_pct": 3.3,
+      "estimated_monthly_sales": 33,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 02:11"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 86,
@@ -6504,11 +6784,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 21.26,
+      "amazon_price": 21.0,
       "walmart_price": null,
       "amazon_match": "Nature's Way Fortify Optima Probiotic for Adults 50+, 50 Billion Live Cultures, Supports Digestive Balance, Colon & Immune Health*, No Refrigeration Needed, 30 Capsules (Packaging May Vary)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:24"
+      "last_checked": "2026-04-17 00:24",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6539,12 +6820,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 79.6,
+    "margin_pct": 73.2,
     "created_at": "2026-04-16 23:47:47",
     "notes": "30 Veg Cp, Exp 2026-08-31, Lot W0040799",
     "pack_qty": 12,
     "per_unit_cost": 4.33,
-    "wholesale_price": 5.63
+    "wholesale_price": 5.63,
+    "sa_data": {
+      "asin": "B0106PG9SA",
+      "title": "Nature's Way Fortify Optima Probiotic for Adults 50+, 50 Billion Live Cultures, Supports Digestive Balance, Colon & Immune Health*, No Refrigeration Needed, 30 Capsules (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0106PG9SA",
+      "image_url": "https://m.media-amazon.com/images/I/41nVCn4+2sL.jpg",
+      "buy_box_price": 21.0,
+      "fba_min_price": 20.95,
+      "fbm_min_price": 41.62,
+      "fba_fee": 3.86,
+      "referral_fee": 3.15,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 7.02,
+      "buyer_profit": 8.35,
+      "buyer_roi_pct": 148.3,
+      "our_profit": 1.3,
+      "our_margin_pct": 23.1,
+      "bsr": 114669,
+      "bsr_top_pct": 1.25,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 7,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 01:38"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 87,
@@ -6562,7 +6877,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Umcka Cold Relief Syrup, Umcka, Homeopathic, Shortens Duration and Reduces Severity, Cough, Congestion, Sore Throat, Stuffy Nose, Mint-Menthol Flavored, 4 Fl Oz",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:24"
+      "last_checked": "2026-04-17 00:24",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6575,14 +6891,48 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 92.4,
+    "margin_pct": 90.1,
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, Exp 2027-12-31, Lot 20199753",
     "pack_qty": 12,
     "per_unit_cost": 1.41,
     "wholesale_price": 1.83,
     "send_markup_pct": 30.0,
-    "send_sell_price": 1.83
+    "send_sell_price": 1.83,
+    "sa_data": {
+      "asin": "B0009EXLT4",
+      "title": "Nature's Way Umcka Cold Relief Syrup, Umcka, Homeopathic, Shortens Duration and Reduces Severity, Cough, Congestion, Sore Throat, Stuffy Nose, Mint-Menthol Flavored, 4 Fl Oz (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0009EXLT4",
+      "image_url": "https://m.media-amazon.com/images/I/71TkecbkAGL.jpg",
+      "buy_box_price": 18.49,
+      "fba_min_price": 18.49,
+      "fbm_min_price": 26.42,
+      "fba_fee": 4.93,
+      "referral_fee": 2.77,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 7.71,
+      "buyer_profit": 8.95,
+      "buyer_roi_pct": 489.1,
+      "our_profit": 0.42,
+      "our_margin_pct": 23.0,
+      "bsr": 118553,
+      "bsr_top_pct": 1.29,
+      "estimated_monthly_sales": 101,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 01:39"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 88,
@@ -6600,7 +6950,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Umcka Cold Relief Drops, Feel Better Faster, Multi-Symptom Cold Relief, Homeopathic, Shortens Sore Throat, Cough and Congestion, Non-Drowsy, 1 Fl Oz",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:25"
+      "last_checked": "2026-04-17 00:25",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6631,12 +6982,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 86.5,
+    "margin_pct": 82.5,
     "created_at": "2026-04-16 23:47:47",
     "notes": "1 Fl Oz, Exp 2027-08-31, Lot 20196417",
     "pack_qty": 12,
     "per_unit_cost": 1.78,
-    "wholesale_price": 2.31
+    "wholesale_price": 2.31,
+    "sa_data": {
+      "asin": "B0009EXLRQ",
+      "title": "Nature's Way Umcka Cold Relief Drops, Feel Better Faster, Multi-Symptom Cold Relief, Homeopathic, Shortens Sore Throat, Cough and Congestion, Non-Drowsy, 1 Fl Oz (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B0009EXLRQ",
+      "image_url": "https://m.media-amazon.com/images/I/61aNFwLfDAL.jpg",
+      "buy_box_price": 13.2,
+      "fba_min_price": 13.2,
+      "fbm_min_price": 26.0,
+      "fba_fee": 3.86,
+      "referral_fee": 1.98,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.85,
+      "buyer_profit": 5.04,
+      "buyer_roi_pct": 218.2,
+      "our_profit": 0.53,
+      "our_margin_pct": 22.9,
+      "bsr": 107192,
+      "bsr_top_pct": 1.17,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 01:39"
+    },
+    "our_margin_pct": 22.9
   },
   {
     "id": 89,
@@ -6654,7 +7039,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Umcka Cold Relief Zero Sugar Syrup, Umcka, Homeopathic, Shortens Colds, Sore Throat, Cough, Congestion, and Stuffy Nose, Phenylephrine Free, Grape Flavored, 4 Fl Oz",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:25"
+      "last_checked": "2026-04-17 00:25",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6676,12 +7062,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 91.5,
+    "margin_pct": 88.9,
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, Exp 2027-06-30, Lot 20200153",
     "pack_qty": 12,
     "per_unit_cost": 1.53,
-    "wholesale_price": 1.99
+    "wholesale_price": 1.99,
+    "sa_data": {
+      "asin": "B000YMMQDS",
+      "title": "Nature's Way Umcka Cold Relief Zero Sugar Syrup, Umcka, Homeopathic, Shortens Colds, Sore Throat, Cough, Congestion, and Stuffy Nose, Phenylephrine Free, Grape Flavored, 4 Fl Oz (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000YMMQDS",
+      "image_url": "https://m.media-amazon.com/images/I/71Rg0p-FvSL.jpg",
+      "buy_box_price": 17.99,
+      "fba_min_price": 17.99,
+      "fbm_min_price": 26.42,
+      "fba_fee": 4.09,
+      "referral_fee": 2.7,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.8,
+      "buyer_profit": 9.2,
+      "buyer_roi_pct": 462.3,
+      "our_profit": 0.46,
+      "our_margin_pct": 23.1,
+      "bsr": 195679,
+      "bsr_top_pct": 2.12,
+      "estimated_monthly_sales": 48,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 01:39"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 90,
@@ -6699,7 +7119,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus HoneyBerry Cough Syrup for Kids with Black Elderberry Extract & Organic Honey, Immune Support, 4 Fl. Oz.",
       "amazon_confidence": "medium",
-      "last_checked": "2026-04-17 00:25"
+      "last_checked": "2026-04-17 00:25",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6712,14 +7133,48 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 81.8,
+    "margin_pct": 76.4,
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, Exp 2027-03-31, Lot 142783-C5",
     "pack_qty": 12,
     "per_unit_cost": 2.79,
     "wholesale_price": 3.63,
     "send_markup_pct": 30.0,
-    "send_sell_price": 3.63
+    "send_sell_price": 3.63,
+    "sa_data": {
+      "asin": "B087LQ6GB6",
+      "title": "Nature's Way Sambucus HoneyBerry Cough Syrup for Kids with Black Elderberry Extract & Organic Honey, Immune Support*, 4 Fl. Oz.",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B087LQ6GB6",
+      "image_url": "https://m.media-amazon.com/images/I/71s9oc6H+IL.jpg",
+      "buy_box_price": 15.36,
+      "fba_min_price": 15.36,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.09,
+      "referral_fee": 2.3,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.4,
+      "buyer_profit": 5.33,
+      "buyer_roi_pct": 146.8,
+      "our_profit": 0.84,
+      "our_margin_pct": 23.1,
+      "bsr": 276541,
+      "bsr_top_pct": 3,
+      "estimated_monthly_sales": 33,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 01:39"
+    },
+    "our_margin_pct": 23.1
   },
   {
     "id": 91,
@@ -6731,7 +7186,7 @@
     "expiry": "2026-04-23",
     "source": "email",
     "source_from": "Taatjes Belgiano",
-    "status": "matched",
+    "status": "accepted",
     "marketplace_data": {
       "amazon_price": 21.19,
       "walmart_price": null,
@@ -6757,7 +7212,41 @@
     "per_unit_cost": 1.81,
     "wholesale_price": 2.35,
     "send_markup_pct": 30.0,
-    "send_sell_price": 2.35
+    "send_sell_price": 2.35,
+    "sa_data": {
+      "asin": "B002Q6W1MG",
+      "title": "NATURE'S WAY Umcka ColdCare Childrens Cherry FastActives 10 PKTS",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B002Q6W1MG",
+      "image_url": "https://m.media-amazon.com/images/I/51ccrIW1jBL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 21.19,
+      "fba_fee": 3.86,
+      "referral_fee": 3.18,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 7.04,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 0.54,
+      "our_margin_pct": 23.0,
+      "bsr": 876057,
+      "bsr_top_pct": 9.49,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 02:11"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 92,
@@ -6771,11 +7260,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 13.06,
+      "amazon_price": 12.97,
       "walmart_price": null,
       "amazon_match": "Nature's Way Umcka Cold and Flu Relief Syrup, Fever*, Sore Throat, Cough, Congestion, Body Aches*, Homeopathic, Phenylephrine Free, 0.05% Alcohol, Berry Flavored, 4 Fl Oz (Packaging May Vary)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:25"
+      "last_checked": "2026-04-17 00:25",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6806,12 +7296,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 89.5,
+    "margin_pct": 86.3,
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, Exp 2027-02-28, Lot 20194395",
     "pack_qty": 12,
     "per_unit_cost": 1.37,
-    "wholesale_price": 1.78
+    "wholesale_price": 1.78,
+    "sa_data": {
+      "asin": "B001E8KSPE",
+      "title": "Nature's Way Umcka Cold and Flu Relief Syrup, Fever*, Sore Throat, Cough, Congestion, Body Aches*, Homeopathic, Phenylephrine Free, 0.05% Alcohol, Berry Flavored, 4 Fl Oz (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B001E8KSPE",
+      "image_url": "https://m.media-amazon.com/images/I/71CMHmR9r6L.jpg",
+      "buy_box_price": 12.97,
+      "fba_min_price": 12.97,
+      "fbm_min_price": 27.46,
+      "fba_fee": 4.09,
+      "referral_fee": 1.95,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.05,
+      "buyer_profit": 5.14,
+      "buyer_roi_pct": 288.8,
+      "our_profit": 0.41,
+      "our_margin_pct": 23.0,
+      "bsr": 58165,
+      "bsr_top_pct": 0.64,
+      "estimated_monthly_sales": 237,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 01:39"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 93,
@@ -6829,7 +7353,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus Cough Relief + Immune Elderberry Gummy, 36 Gummies",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:26"
+      "last_checked": "2026-04-17 00:26",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6860,12 +7385,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 75.4,
+    "margin_pct": 68.0,
     "created_at": "2026-04-16 23:47:47",
     "notes": "36 Gummies, Pack 24, Exp 2026-12-31, Lot 20194095",
     "pack_qty": 24,
     "per_unit_cost": 2.51,
-    "wholesale_price": 3.26
+    "wholesale_price": 3.26,
+    "sa_data": {
+      "asin": "B09NFDHWSG",
+      "title": "Nature's Way Sambucus Cough Relief +(1) Immune* Elderberry Gummy, Clinically Proven South African Geranium Root Extract(1), Elderberry Extract, Vitamin C & Zinc, 36 Gummies (Packaging May Vary)",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B09NFDHWSG",
+      "image_url": "https://m.media-amazon.com/images/I/71rwgFZIKcL.jpg",
+      "buy_box_price": 10.19,
+      "fba_min_price": 10.19,
+      "fbm_min_price": 22.99,
+      "fba_fee": 4.09,
+      "referral_fee": 1.53,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.63,
+      "buyer_profit": 1.3,
+      "buyer_roi_pct": 39.9,
+      "our_profit": 0.75,
+      "our_margin_pct": 23.0,
+      "bsr": 173182,
+      "bsr_top_pct": 1.88,
+      "estimated_monthly_sales": 52,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 01:39"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 94,
@@ -6879,11 +7438,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "accepted",
     "marketplace_data": {
-      "amazon_price": 14.99,
+      "amazon_price": 15.59,
       "walmart_price": null,
       "amazon_match": "Nature's Way Umcka Cold and Flu Relief Chewables, Non-Drowsy Multi-Symptom Relief, Homeopathic Cold Medicine and Remedy, Shortens & Reduces Severity of Colds, Orange-Flavored Tablets, 20 Count",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:26"
+      "last_checked": "2026-04-17 00:26",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6896,14 +7456,48 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 88.1,
+    "margin_pct": 85.1,
     "created_at": "2026-04-16 23:47:47",
     "notes": "20 Chw Tb, Exp 2026-12-31, Lot 2019525701",
     "pack_qty": 12,
     "per_unit_cost": 1.79,
     "wholesale_price": 2.33,
     "send_markup_pct": 30.0,
-    "send_sell_price": 2.33
+    "send_sell_price": 2.33,
+    "sa_data": {
+      "asin": "B000WKW6TG",
+      "title": "Nature\u2019s Way Umcka Cold and Flu Relief Chewables, Non-Drowsy Multi-Symptom Relief, Homeopathic Cold Medicine and Remedy, Shortens & Reduces Severity of Colds, Orange-Flavored Tablets, 20 Count",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B000WKW6TG",
+      "image_url": "https://m.media-amazon.com/images/I/71C0Mkhm+zL.jpg",
+      "buy_box_price": 15.59,
+      "fba_min_price": 14.99,
+      "fbm_min_price": 19.24,
+      "fba_fee": 3.86,
+      "referral_fee": 2.34,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.21,
+      "buyer_profit": 7.05,
+      "buyer_roi_pct": 302.6,
+      "our_profit": 0.54,
+      "our_margin_pct": 23.2,
+      "bsr": 99747,
+      "bsr_top_pct": 1.09,
+      "estimated_monthly_sales": 104,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 2,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 01:39"
+    },
+    "our_margin_pct": 23.2
   },
   {
     "id": 95,
@@ -6921,7 +7515,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Umcka Cough Syrup, Fast-Acting | Non-Drowsy | Homeopathic | Suitable for Adults & Children, 4 Ounce",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:26"
+      "last_checked": "2026-04-17 00:26",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6943,12 +7538,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 85.7,
+    "margin_pct": 81.5,
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Fl Oz, Exp 2026-11-30, Lot 20193472",
     "pack_qty": 12,
     "per_unit_cost": 1.51,
-    "wholesale_price": 1.96
+    "wholesale_price": 1.96,
+    "sa_data": {
+      "asin": "B009NTEYLK",
+      "title": "Nature's Way Umcka Cough Syrup, Fast-Acting | Non-Drowsy | Homeopathic | Suitable for Adults & Children, 4 Ounce",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B009NTEYLK",
+      "image_url": "https://m.media-amazon.com/images/I/71KFD29KWjL.jpg",
+      "buy_box_price": 10.58,
+      "fba_min_price": 10.58,
+      "fbm_min_price": 27.46,
+      "fba_fee": 4.09,
+      "referral_fee": 1.59,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.69,
+      "buyer_profit": 2.93,
+      "buyer_roi_pct": 149.5,
+      "our_profit": 0.45,
+      "our_margin_pct": 23.0,
+      "bsr": 58759,
+      "bsr_top_pct": 0.64,
+      "estimated_monthly_sales": 237,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 01:39"
+    },
+    "our_margin_pct": 23.0
   },
   {
     "id": 96,
@@ -6966,7 +7595,8 @@
       "walmart_price": null,
       "amazon_match": "Nature's Way Sambucus Kids Cough Relief + Immune Syrup, Clinically Proven South African Geranium, with Elderberry Extract, Vitamin C & Zinc, Gluten Free, Vegan, 4 Fl Oz",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 00:27"
+      "last_checked": "2026-04-17 00:27",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -6988,12 +7618,46 @@
         "match_reason": "Category: OTC, margin OK"
       }
     ],
-    "margin_pct": 90.4,
+    "margin_pct": 87.5,
     "created_at": "2026-04-16 23:47:47",
     "notes": "4 Oz, Exp 2026-11-30, Lot 20193469",
     "pack_qty": 12,
     "per_unit_cost": 1.11,
-    "wholesale_price": 1.44
+    "wholesale_price": 1.44,
+    "sa_data": {
+      "asin": "B09F1S4QBZ",
+      "title": "Nature\u2019s Way Sambucus Kids Cough Relief +(1) Immune Syrup*, Feel Better Faster(1), Clinically Proven South African Geranium, with Elderberry Extract, Vitamin C & Zinc, Gluten Free, Vegan, 4 Fl Oz",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B09F1S4QBZ",
+      "image_url": "https://m.media-amazon.com/images/I/713szwsNmLL.jpg",
+      "buy_box_price": 11.51,
+      "fba_min_price": 11.51,
+      "fbm_min_price": 18.22,
+      "fba_fee": 4.09,
+      "referral_fee": 1.73,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 5.83,
+      "buyer_profit": 4.24,
+      "buyer_roi_pct": 294.4,
+      "our_profit": 0.33,
+      "our_margin_pct": 22.9,
+      "bsr": 141347,
+      "bsr_top_pct": 1.54,
+      "estimated_monthly_sales": 65,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 01:39"
+    },
+    "our_margin_pct": 22.9
   },
   {
     "id": 97,
@@ -7370,7 +8034,8 @@
       "walmart_price": null,
       "amazon_match": "Anastasia Beverly Hills - Blush Trio",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 02:28"
+      "last_checked": "2026-04-17 02:28",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -7403,7 +8068,40 @@
     ],
     "margin_pct": 60.0,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B0725W1D66",
+      "title": "Anastasia Beverly Hills - Blush Trios - Peachy Love",
+      "brand": "Anastasia Beverly Hills",
+      "product_url": "https://www.amazon.com/dp/B0725W1D66",
+      "image_url": "https://m.media-amazon.com/images/I/51Hox7w-7xL.jpg",
+      "buy_box_price": 30.0,
+      "fba_min_price": 30.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.86,
+      "referral_fee": 4.5,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 8.36,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 84655,
+      "bsr_top_pct": 0.74,
+      "estimated_monthly_sales": 105,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:39"
+    }
   },
   {
     "id": 104,
@@ -7421,7 +8119,8 @@
       "walmart_price": null,
       "amazon_match": "Anastasia Beverly Hills - Lip Gloss Gel 1 Fl Oz (Pack of 1)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 02:28"
+      "last_checked": "2026-04-17 02:28",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -7454,7 +8153,40 @@
     ],
     "margin_pct": 59.2,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B0C7D2N6FD",
+      "title": "Anastasia Beverly Hills - Lip Gloss - Butterscotch",
+      "brand": "Anastasia Beverly Hills",
+      "product_url": "https://www.amazon.com/dp/B0C7D2N6FD",
+      "image_url": "https://m.media-amazon.com/images/I/71LjhkbctrL.jpg",
+      "buy_box_price": 18.4,
+      "fba_min_price": 18.4,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.44,
+      "referral_fee": 2.76,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 6.2,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 14284,
+      "bsr_top_pct": 0.13,
+      "estimated_monthly_sales": 1431,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:39"
+    }
   },
   {
     "id": 105,
@@ -7512,7 +8244,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B0BS4B7SLJ",
+      "title": "Anastasia Beverly Hills - Matte Lipstick - Warm Taupe",
+      "brand": "Anastasia Beverly Hills",
+      "product_url": "https://www.amazon.com/dp/B0BS4B7SLJ",
+      "image_url": "https://m.media-amazon.com/images/I/31pViTR+u6L.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.13,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 19.13,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 20483,
+      "bsr_top_pct": 0.18,
+      "estimated_monthly_sales": 919,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:11"
+    }
   },
   {
     "id": 106,
@@ -7526,9 +8291,10 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
+      "amazon_price": 6.19,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:29"
+      "last_checked": "2026-04-17 02:29",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -7561,7 +8327,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B09C9P35C3",
+      "title": "Ardell Magnetic MegaHold Liquid Liner & Lash 056, 1 pair",
+      "brand": "Ardell",
+      "product_url": "https://www.amazon.com/dp/B09C9P35C3",
+      "image_url": "https://m.media-amazon.com/images/I/51k-HJfHj+L.jpg",
+      "buy_box_price": 6.19,
+      "fba_min_price": 6.15,
+      "fbm_min_price": 6.19,
+      "fba_fee": 2.52,
+      "referral_fee": 0.5,
+      "referral_fee_rate": 0.081,
+      "storage_fee": 0.01,
+      "total_fees": 3.03,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 129942,
+      "bsr_top_pct": 1.13,
+      "estimated_monthly_sales": 72,
+      "restriction_status": "APPROVAL_REQUIRED",
+      "fba_sellers": 2,
+      "fbm_sellers": 5,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:40"
+    }
   },
   {
     "id": 107,
@@ -7575,11 +8374,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 10.0,
+      "amazon_price": 9.8,
       "walmart_price": null,
       "amazon_match": "Ardell Professional Magnetic Liner & Lash Demi Wispies Black Pair 1 Count (Pack of 1)",
       "amazon_confidence": "high",
-      "last_checked": "2026-04-17 02:29"
+      "last_checked": "2026-04-17 02:29",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -7612,7 +8412,40 @@
     ],
     "margin_pct": 90.0,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B07VNH8J8G",
+      "title": "Ardell Professional Magnetic Liner & Lash Demi Wispies Black",
+      "brand": "Ardell",
+      "product_url": "https://www.amazon.com/dp/B07VNH8J8G",
+      "image_url": "https://m.media-amazon.com/images/I/61k8PdugXEL.jpg",
+      "buy_box_price": 9.8,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 9.8,
+      "fba_fee": 3.01,
+      "referral_fee": 0.78,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.01,
+      "total_fees": 3.8,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 688406,
+      "bsr_top_pct": 5.99,
+      "estimated_monthly_sales": 1,
+      "restriction_status": "APPROVAL_REQUIRED",
+      "fba_sellers": 0,
+      "fbm_sellers": 7,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:40"
+    }
   },
   {
     "id": 108,
@@ -7626,11 +8459,12 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": 7.37,
+      "amazon_price": 7.74,
       "walmart_price": null,
       "amazon_match": "Magnetic Single Naked Lashes 420 Pair 1 pair (Pack of 1)",
       "amazon_confidence": "medium",
-      "last_checked": "2026-04-17 02:29"
+      "last_checked": "2026-04-17 02:29",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -7663,7 +8497,40 @@
     ],
     "margin_pct": 87.1,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B08LQYVYBR",
+      "title": "Magnetic Single Naked Lashes 420",
+      "brand": "Ardell",
+      "product_url": "https://www.amazon.com/dp/B08LQYVYBR",
+      "image_url": "https://m.media-amazon.com/images/I/61kiUfIN7kL.jpg",
+      "buy_box_price": 7.74,
+      "fba_min_price": 7.37,
+      "fbm_min_price": 6.99,
+      "fba_fee": 2.52,
+      "referral_fee": 0.62,
+      "referral_fee_rate": 0.08,
+      "storage_fee": 0.0,
+      "total_fees": 3.14,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 143612,
+      "bsr_top_pct": 1.25,
+      "estimated_monthly_sales": 71,
+      "restriction_status": "APPROVAL_REQUIRED",
+      "fba_sellers": 3,
+      "fbm_sellers": 7,
+      "fba_within_2pct": 2,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:40"
+    }
   },
   {
     "id": 109,
@@ -7681,7 +8548,8 @@
       "walmart_price": null,
       "amazon_match": "Ardell Magnetic Naked Liquid Liner & Lashes 424, 1 pair",
       "amazon_confidence": "medium",
-      "last_checked": "2026-04-17 02:29"
+      "last_checked": "2026-04-17 02:29",
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -7714,7 +8582,40 @@
     ],
     "margin_pct": 82.3,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B09NB4KDJT",
+      "title": "Ardell Magnetic Naked Liquid Liner & Lashes 424, 1 pair",
+      "brand": "Ardell",
+      "product_url": "https://www.amazon.com/dp/B09NB4KDJT",
+      "image_url": "https://m.media-amazon.com/images/I/81Ep548J10L.jpg",
+      "buy_box_price": 16.99,
+      "fba_min_price": 16.99,
+      "fbm_min_price": 17.95,
+      "fba_fee": 3.86,
+      "referral_fee": 2.55,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 6.42,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 532061,
+      "bsr_top_pct": 4.63,
+      "estimated_monthly_sales": 1,
+      "restriction_status": "APPROVAL_REQUIRED",
+      "fba_sellers": 1,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:40"
+    }
   },
   {
     "id": 110,
@@ -7763,7 +8664,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "074764649003"
+    }
   },
   {
     "id": 111,
@@ -8281,8 +9186,9 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 24.99,
+      "walmart_price": null,
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -8315,7 +9221,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B003YOMJW6",
+      "title": "Cargo Cosmetics All-in-One Multi Use Magic Makeup Face Brush",
+      "brand": "Cargo",
+      "product_url": "https://www.amazon.com/dp/B003YOMJW6",
+      "image_url": "https://m.media-amazon.com/images/I/71iT77zkciL.jpg",
+      "buy_box_price": 24.99,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 24.99,
+      "fba_fee": 3.86,
+      "referral_fee": 3.75,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 7.61,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 763547,
+      "bsr_top_pct": 6.64,
+      "estimated_monthly_sales": 1,
+      "restriction_status": "APPROVAL_REQUIRED",
+      "fba_sellers": 0,
+      "fbm_sellers": 1,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:40"
+    }
   },
   {
     "id": 123,
@@ -8329,8 +9268,9 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 48.0,
+      "walmart_price": null,
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -8363,7 +9303,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B0B5VKZ151",
+      "title": "Clarins Beauty Flash Peel | 10-Minute At-Home Facial | Visibly Tightens Pores | Gently Eliminates Dead Skin Cells | Refines Skin Texture | Renews Radiance | Contains AHAs and BHAs | All Skin Types",
+      "brand": "Clarins",
+      "product_url": "https://www.amazon.com/dp/B0B5VKZ151",
+      "image_url": "https://m.media-amazon.com/images/I/61QrSy6O8HL.jpg",
+      "buy_box_price": 48.0,
+      "fba_min_price": 48.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.86,
+      "referral_fee": 7.2,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 11.07,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 160982,
+      "bsr_top_pct": 1.4,
+      "estimated_monthly_sales": 59,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:40"
+    }
   },
   {
     "id": 124,
@@ -8411,7 +9384,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B08VTGP81J",
+      "title": "Clarins Extra-Firming Energy Moisturizer | 2-in-1 Anti-Aging Day Cream | Radiance Boost | 1.7 Ounces",
+      "brand": "Clarins",
+      "product_url": "https://www.amazon.com/dp/B08VTGP81J",
+      "image_url": "https://m.media-amazon.com/images/I/41GQ9dz5wDL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.36,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 19.37,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 414906,
+      "bsr_top_pct": 3.61,
+      "estimated_monthly_sales": 6,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:11"
+    }
   },
   {
     "id": 125,
@@ -8459,7 +9465,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "3666057103858"
+    }
   },
   {
     "id": 126,
@@ -8525,7 +9535,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B08VTCPRST",
+      "title": "Clarins Hydrating Toning Lotion | Softer Skin After 14 Days of Use* | Cleanses, Tones, Hydrates and Balances Skin's Microbiota | Plant-Based Ingredients | Colorant-Free | Normal to Dry Skin",
+      "brand": "Clarins",
+      "product_url": "https://www.amazon.com/dp/B08VTCPRST",
+      "image_url": "https://m.media-amazon.com/images/I/31csWiUCRxL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 5.49,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.02,
+      "total_fees": 20.51,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 1844093,
+      "bsr_top_pct": 16.03,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:11"
+    }
   },
   {
     "id": 127,
@@ -8591,7 +9634,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B0B9Y49PDC",
+      "title": "EXTRA FIRMING yeux 15 ml",
+      "brand": "Clarins",
+      "product_url": "https://www.amazon.com/dp/B0B9Y49PDC",
+      "image_url": "https://m.media-amazon.com/images/I/31xm+uovc+L.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.36,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 19.37,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 0,
+      "bsr_top_pct": 0,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:11"
+    }
   },
   {
     "id": 128,
@@ -8639,7 +9715,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B0B5VKHKTQ",
+      "title": "Clarins Multi-Active Night CreamMulti-Tasking Anti-Aging MoisturizerTargets Fine LinesRevitalizes, Tones and NourishesHydrates and SmoothesNormal To Combination Skin Types1.6 Ounces",
+      "brand": "Clarins",
+      "product_url": "https://www.amazon.com/dp/B0B5VKHKTQ",
+      "image_url": "https://m.media-amazon.com/images/I/41D+SIKwELL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.36,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 19.37,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 1728145,
+      "bsr_top_pct": 15.02,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:12"
+    }
   },
   {
     "id": 129,
@@ -8696,7 +9805,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B07DKZ8JC9",
+      "title": "kuraransu One Step Exfoliating Cleanser 125ml [parallel import goods]",
+      "brand": "Clarins",
+      "product_url": "https://www.amazon.com/dp/B07DKZ8JC9",
+      "image_url": "https://m.media-amazon.com/images/I/51KCDl34shL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.36,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 19.37,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 0,
+      "bsr_top_pct": 0,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:12"
+    }
   },
   {
     "id": 130,
@@ -8744,7 +9886,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "020714498177"
+    }
   },
   {
     "id": 131,
@@ -8801,7 +9947,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "020714498177"
+    }
   },
   {
     "id": 132,
@@ -8815,8 +9965,9 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 24.0,
+      "walmart_price": null,
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -8858,7 +10009,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B08K8N7ZYB",
+      "title": "Clinique Even Better All-Over Full Coverage Concealer + Eraser Makeup For Dark Undereye Circles | With Hyaluronic Acid + Caffeine | Hydrating, Brightening + Depuffing, Mahogany, 0.2 Fl Oz",
+      "brand": "Clinique",
+      "product_url": "https://www.amazon.com/dp/B08K8N7ZYB",
+      "image_url": "https://m.media-amazon.com/images/I/61qmsDN8MEL.jpg",
+      "buy_box_price": 24.0,
+      "fba_min_price": 24.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.44,
+      "referral_fee": 3.6,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 7.04,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 3394,
+      "bsr_top_pct": 0.03,
+      "estimated_monthly_sales": 8563,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:41"
+    }
   },
   {
     "id": 133,
@@ -8872,8 +10056,9 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 38.4,
+      "walmart_price": null,
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -8915,7 +10100,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B0CCPFDNVW",
+      "title": "Clinique Even Better Clinical Serum Liquid Foundation SPF 25 With Vitamin C, Salicylic Acid + Hyaluronic Acid For Combination to Oily Skin Types | Full Coverage + Matte Finish, Mahogany, 1 Fl Oz",
+      "brand": "Clinique",
+      "product_url": "https://www.amazon.com/dp/B0CCPFDNVW",
+      "image_url": "https://m.media-amazon.com/images/I/61yBbpI0s2L.jpg",
+      "buy_box_price": 38.4,
+      "fba_min_price": 38.4,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.09,
+      "referral_fee": 5.76,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 9.86,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 10820,
+      "bsr_top_pct": 0.1,
+      "estimated_monthly_sales": 2328,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:41"
+    }
   },
   {
     "id": 134,
@@ -8929,8 +10147,9 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 29.25,
+      "walmart_price": null,
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -8963,7 +10182,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B07ZD93CP7",
+      "title": "Clinique Even Better Makeup Liquid Foundation SPF 15 With Vitamin C For Dry + Oily Combination Skin Types | Medium Coverage + Natural Finish | Evens Skin Tone + Reduces Dark Spots, Mahogany, 1 Fl Oz",
+      "brand": "Clinique",
+      "product_url": "https://www.amazon.com/dp/B07ZD93CP7",
+      "image_url": "https://m.media-amazon.com/images/I/71Ar2lDvavL.jpg",
+      "buy_box_price": 29.25,
+      "fba_min_price": 29.25,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.86,
+      "referral_fee": 4.39,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 8.25,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 1084,
+      "bsr_top_pct": 0.01,
+      "estimated_monthly_sales": 10000,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:56"
+    }
   },
   {
     "id": 135,
@@ -8977,8 +10229,9 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 29.25,
+      "walmart_price": null,
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -9011,7 +10264,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B004XJ9TYW",
+      "title": "Clinique Even Better Makeup Liquid Foundation SPF 15 With Vitamin C For Dry + Oily Combination Skin Types | Medium Coverage + Natural Finish | Evens Skin Tone + Reduces Dark Spots, Latte, 1 Fl Oz",
+      "brand": "Clinique",
+      "product_url": "https://www.amazon.com/dp/B004XJ9TYW",
+      "image_url": "https://m.media-amazon.com/images/I/61BOugGkdZL.jpg",
+      "buy_box_price": 29.25,
+      "fba_min_price": 29.25,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.86,
+      "referral_fee": 4.39,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 8.25,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 1084,
+      "bsr_top_pct": 0.01,
+      "estimated_monthly_sales": 10000,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:56"
+    }
   },
   {
     "id": 136,
@@ -9068,7 +10354,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "020714739256"
+    }
   },
   {
     "id": 137,
@@ -9116,7 +10406,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "192333162330"
+    }
   },
   {
     "id": 138,
@@ -9164,7 +10458,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "192333162330"
+    }
   },
   {
     "id": 139,
@@ -11771,7 +13069,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "860004158813"
+    }
   },
   {
     "id": 189,
@@ -11819,7 +13121,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "860004158813"
+    }
   },
   {
     "id": 190,
@@ -11867,7 +13173,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "860004158813"
+    }
   },
   {
     "id": 191,
@@ -11915,7 +13225,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "860004158813"
+    }
   },
   {
     "id": 192,
@@ -11963,7 +13277,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "860004158813"
+    }
   },
   {
     "id": 193,
@@ -12011,7 +13329,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B081ZCBYN2",
+      "title": "Beautiful Color Brow Perfector",
+      "brand": "Elizabeth Arden",
+      "product_url": "https://www.amazon.com/dp/B081ZCBYN2",
+      "image_url": "https://m.media-amazon.com/images/I/61RYVkn3TaL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.71,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 18.71,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 0,
+      "bsr_top_pct": 0,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:12"
+    }
   },
   {
     "id": 194,
@@ -12077,7 +13428,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B074NFF898",
+      "title": "Elizabeth Arden Flawless Finish Everyday Perfection Bouncy Makeup, Shade 13 - Espresso",
+      "brand": "Elizabeth Arden",
+      "product_url": "https://www.amazon.com/dp/B074NFF898",
+      "image_url": "https://m.media-amazon.com/images/I/713YpZg6S+L.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.13,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.01,
+      "total_fees": 19.14,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 0,
+      "bsr_top_pct": 0,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:12"
+    }
   },
   {
     "id": 195,
@@ -12134,7 +13518,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "085805164140"
+    }
   },
   {
     "id": 196,
@@ -12182,7 +13570,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B09FTBQSDK",
+      "title": "Elizabeth Arden Flawless Finish Skincaring Concealer with Hyaluronic Acid, Vitamin C and E, 625 (Deep), 0.2 oz",
+      "brand": "Elizabeth Arden",
+      "product_url": "https://www.amazon.com/dp/B09FTBQSDK",
+      "image_url": "https://m.media-amazon.com/images/I/51vNXZj1QgL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.13,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 19.13,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 85718,
+      "bsr_top_pct": 0.75,
+      "estimated_monthly_sales": 100,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:12"
+    }
   },
   {
     "id": 197,
@@ -12248,7 +13669,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "085805244392"
+    }
   },
   {
     "id": 198,
@@ -12262,8 +13687,9 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 49.0,
+      "walmart_price": null,
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -12305,7 +13731,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B08KYJNRH6",
+      "title": "Elizabeth Arden Flawless Finish Skincaring Foundation with Hyaluronic Acid, Vitamin C & E, 540W (Deep skin with warm undertones), 1 fl. oz.",
+      "brand": "Elizabeth Arden",
+      "product_url": "https://www.amazon.com/dp/B08KYJNRH6",
+      "image_url": "https://m.media-amazon.com/images/I/51uB5bFckyL.jpg",
+      "buy_box_price": 49.0,
+      "fba_min_price": 49.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 4.09,
+      "referral_fee": 7.35,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 11.44,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 117316,
+      "bsr_top_pct": 1.02,
+      "estimated_monthly_sales": 101,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 01:57"
+    }
   },
   {
     "id": 199,
@@ -12353,7 +13812,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "085805231149"
+    }
   },
   {
     "id": 200,
@@ -12419,7 +13882,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B0785P5LQF",
+      "title": "Elizabeth Arden High Drama Eyeliner, Purple Passion",
+      "brand": "Elizabeth Arden",
+      "product_url": "https://www.amazon.com/dp/B0785P5LQF",
+      "image_url": "https://m.media-amazon.com/images/I/41WFCXp4ysL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.71,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 18.71,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 419204,
+      "bsr_top_pct": 3.65,
+      "estimated_monthly_sales": 6,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:12"
+    }
   },
   {
     "id": 201,
@@ -12476,7 +13972,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "085805079475"
+    }
   },
   {
     "id": 202,
@@ -12524,7 +14024,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B00DYSQBTY",
+      "title": "ELIZABETH ARDEN by Elizabeth Arden Elizabeth Arden",
+      "brand": "Elizabeth Arden",
+      "product_url": "https://www.amazon.com/dp/B00DYSQBTY",
+      "image_url": "https://m.media-amazon.com/images/I/21rZ0+A2IcL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 0.0,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 15.0,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 0,
+      "bsr_top_pct": 0,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Books",
+      "enriched_at": "2026-04-18 02:12"
+    }
   },
   {
     "id": 203,
@@ -12572,7 +14105,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "085805155155"
+    }
   },
   {
     "id": 204,
@@ -12620,7 +14157,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B077Y8KH9T",
+      "title": "Elizabeth Arden Stroke Of Perfection Concealer, Deep",
+      "brand": "Elizabeth Arden",
+      "product_url": "https://www.amazon.com/dp/B077Y8KH9T",
+      "image_url": "https://m.media-amazon.com/images/I/61ywi8QyJWL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 3.71,
+      "referral_fee": 15.0,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 18.71,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 0,
+      "bsr_top_pct": 0,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:13"
+    }
   },
   {
     "id": 205,
@@ -12634,8 +14204,9 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 80.0,
+      "walmart_price": null,
+      "amazon_source": "seller_assistant"
     },
     "matched_buyers": [
       {
@@ -12677,7 +14248,40 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "asin": "B095MQHB5J",
+      "title": "Elizabeth Arden Visible Brightening CicaGlow Concentrate, Dark Spot Corrector for Smooth and Repaired Glowing Skin, Alcohol-Free, 1.0 fl oz",
+      "brand": "Elizabeth Arden",
+      "product_url": "https://www.amazon.com/dp/B095MQHB5J",
+      "image_url": "https://m.media-amazon.com/images/I/71Fo8IUYfHL.jpg",
+      "buy_box_price": 80.0,
+      "fba_min_price": 80.0,
+      "fbm_min_price": 0.0,
+      "fba_fee": 0.0,
+      "referral_fee": 0.0,
+      "referral_fee_rate": 0,
+      "storage_fee": 0.01,
+      "total_fees": 0.01,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0,
+      "our_profit": 0,
+      "our_margin_pct": 0,
+      "bsr": 419045,
+      "bsr_top_pct": 3.65,
+      "estimated_monthly_sales": 6,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 1,
+      "fbm_sellers": 0,
+      "fba_within_2pct": 1,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Beauty & Personal Care",
+      "enriched_at": "2026-04-18 02:03"
+    }
   },
   {
     "id": 206,
@@ -12725,7 +14329,11 @@
     ],
     "margin_pct": null,
     "created_at": "2026-04-17 01:13:47",
-    "notes": "Auto-created from inbox message #108"
+    "notes": "Auto-created from inbox message #108",
+    "sa_data": {
+      "error": "No ASIN found",
+      "upc": "085805242923"
+    }
   },
   {
     "id": 207,
