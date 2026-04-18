@@ -817,7 +817,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:26"
+      "last_checked": "2026-04-18 03:59"
     },
     "matched_buyers": [
       {
@@ -1112,7 +1112,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:26"
+      "last_checked": "2026-04-18 04:00"
     },
     "matched_buyers": [
       {
@@ -1153,7 +1153,7 @@
       "title": "Natures Way Quercetin with Zinc Gummies, 30 CT",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B0BRKYQRP7",
-      "image_url": "https://m.media-amazon.com/images/I/31i18ms6eKL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61PdEKmCFJL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -1179,7 +1179,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:10"
+      "enriched_at": "2026-04-18 04:08"
     },
     "wholesale_price": 1.56,
     "our_margin_pct": 23.1
@@ -1411,7 +1411,7 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 0.51,
       "our_margin_pct": 23.1,
-      "bsr": 33232,
+      "bsr": 33224,
       "bsr_top_pct": 0.36,
       "estimated_monthly_sales": 566,
       "restriction_status": "NOT_ELIGIBLE",
@@ -1424,7 +1424,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:10"
+      "enriched_at": "2026-04-18 04:08"
     },
     "wholesale_price": 2.21,
     "our_margin_pct": 23.1
@@ -1797,7 +1797,36 @@
     "pack_qty": 12,
     "sa_data": {
       "asin": "B001GMT4W6",
-      "error": "Product not found"
+      "title": "Alive!Multi-Vit,Chew,Kids",
+      "brand": "Nature's Way",
+      "product_url": "https://www.amazon.com/dp/B001GMT4W6",
+      "image_url": "https://m.media-amazon.com/images/I/91pEWucVWzL.jpg",
+      "buy_box_price": 0.0,
+      "fba_min_price": 0.0,
+      "fbm_min_price": 25.44,
+      "fba_fee": 0.0,
+      "referral_fee": 3.82,
+      "referral_fee_rate": 0.15,
+      "storage_fee": 0.0,
+      "total_fees": 3.82,
+      "buyer_profit": 0,
+      "buyer_roi_pct": 0.0,
+      "our_profit": 1.01,
+      "our_margin_pct": 23.0,
+      "bsr": 1236491,
+      "bsr_top_pct": 13.4,
+      "estimated_monthly_sales": 0,
+      "restriction_status": "NOT_ELIGIBLE",
+      "fba_sellers": 0,
+      "fbm_sellers": 2,
+      "fba_within_2pct": 0,
+      "is_hazmat": false,
+      "is_meltable": false,
+      "is_oversize": false,
+      "is_fragile": false,
+      "is_adult": false,
+      "amazon_category": "Health & Household",
+      "enriched_at": "2026-04-18 04:08"
     },
     "wholesale_price": 4.39,
     "our_margin_pct": 23.0
@@ -2091,7 +2120,7 @@
       "title": "Enzymatic Therapy - 7-KETO\u00ae3 DHEA 60 caps",
       "brand": "Enzymatic Therapy",
       "product_url": "https://www.amazon.com/dp/B000WSHTZ4",
-      "image_url": "https://m.media-amazon.com/images/I/51Ymcu5AnOL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/812s3a5Pc+L.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -2117,7 +2146,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:10"
+      "enriched_at": "2026-04-18 04:08"
     },
     "wholesale_price": 3.42,
     "our_margin_pct": 23.1
@@ -2227,7 +2256,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:26"
+      "last_checked": "2026-04-18 04:00"
     },
     "matched_buyers": [
       {
@@ -2276,7 +2305,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": null,
-      "enriched_at": "2026-04-18 02:10"
+      "enriched_at": "2026-04-18 04:08"
     },
     "wholesale_price": 3.41,
     "our_margin_pct": 23.2,
@@ -2610,7 +2639,7 @@
       "title": "Nature's Way Boericke & Tafel Oral Ivy Liquid, Poison Ivy & Oak Treatment**, Relieves Itching & Burning**, 1 Fl. Oz",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B0001APXWY",
-      "image_url": "https://m.media-amazon.com/images/I/41y-Dbrfj7L.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71N-MLV4s5L.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 28.22,
@@ -2623,7 +2652,7 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 0.61,
       "our_margin_pct": 23.2,
-      "bsr": 121529,
+      "bsr": 121518,
       "bsr_top_pct": 1.32,
       "estimated_monthly_sales": 98,
       "restriction_status": "NOT_ELIGIBLE",
@@ -2636,7 +2665,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 23.2
   },
@@ -2860,7 +2889,7 @@
       "title": "Nature's Way Willow Bark, Traditional Relief of Discomfort Due to Occasional Overexertion*, Non-GMO Project Verified, 680 mg per Serving, 100 Vegan Capsules",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B000PG5I4W",
-      "image_url": "https://m.media-amazon.com/images/I/41zmdk6b7TL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/712BrTJVT4L.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 6.81,
       "fbm_min_price": 18.19,
@@ -2873,8 +2902,8 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 0.32,
       "our_margin_pct": 22.9,
-      "bsr": 91010,
-      "bsr_top_pct": 0.99,
+      "bsr": 89580,
+      "bsr_top_pct": 0.98,
       "estimated_monthly_sales": 101,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 1,
@@ -2886,7 +2915,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 22.9
   },
@@ -3110,7 +3139,7 @@
       "title": "Nature's Way - Feverfew Leaves, 380 mg",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B00014WCQK",
-      "image_url": "https://m.media-amazon.com/images/I/41uEUkD7VdL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61hKyK7jbYL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 28.94,
@@ -3136,7 +3165,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 23.0
   },
@@ -3259,36 +3288,7 @@
     "wholesale_price": 2.52,
     "sa_data": {
       "asin": "B0DNN47VYP",
-      "title": "Nature's Way, Alive Zero Sugar Women's Gummy Multi, 50 Count",
-      "brand": "Nature's Way",
-      "product_url": "https://www.amazon.com/dp/B0DNN47VYP",
-      "image_url": "https://m.media-amazon.com/images/I/41WRL8SoeGL.jpg",
-      "buy_box_price": 0.0,
-      "fba_min_price": 0.0,
-      "fbm_min_price": 25.23,
-      "fba_fee": 4.09,
-      "referral_fee": 3.78,
-      "referral_fee_rate": 0.15,
-      "storage_fee": 0.02,
-      "total_fees": 7.89,
-      "buyer_profit": 0,
-      "buyer_roi_pct": 0.0,
-      "our_profit": 0.58,
-      "our_margin_pct": 23.0,
-      "bsr": 1225474,
-      "bsr_top_pct": 13.28,
-      "estimated_monthly_sales": 0,
-      "restriction_status": "NOT_ELIGIBLE",
-      "fba_sellers": 0,
-      "fbm_sellers": 1,
-      "fba_within_2pct": 0,
-      "is_hazmat": false,
-      "is_meltable": false,
-      "is_oversize": false,
-      "is_fragile": false,
-      "is_adult": false,
-      "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "error": "Product not found"
     },
     "our_margin_pct": 23.0
   },
@@ -3719,7 +3719,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:27"
+      "last_checked": "2026-04-18 04:00"
     },
     "matched_buyers": [
       {
@@ -3761,7 +3761,7 @@
       "title": "Nature's Way Boericke & Tafel Nighttime Cough & Bronchial Syrup, Cough Suppressant\u2020\u2020, Promotes Restful Sleep\u2020\u2020, 4 Fl. Oz",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B0007DGLYE",
-      "image_url": "https://m.media-amazon.com/images/I/41dzslmTqwL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71DIDpXKwEL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -3787,7 +3787,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 23.0
   },
@@ -4442,7 +4442,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:27"
+      "last_checked": "2026-04-18 04:00"
     },
     "matched_buyers": [
       {
@@ -4484,7 +4484,7 @@
       "title": "Nature's Way Premium Herbal Charcoal Powder, 800 mg Per serving; Powder; BPA Free Packaging (Packaging May Vary)",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B0768KXG9P",
-      "image_url": "https://m.media-amazon.com/images/I/415DuA9PdrL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61KjkrQG6HL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -4497,7 +4497,7 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 0.74,
       "our_margin_pct": 23.1,
-      "bsr": 742315,
+      "bsr": 742332,
       "bsr_top_pct": 8.05,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
@@ -4510,7 +4510,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 23.1
   },
@@ -4734,7 +4734,7 @@
       "title": "NATURES WAY Garlinase Fresh, 30 CT",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B00014EERU",
-      "image_url": "https://m.media-amazon.com/images/I/51Q-tXQLpML.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/712+qFI0kLL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 24.77,
@@ -4747,7 +4747,7 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 0.46,
       "our_margin_pct": 23.0,
-      "bsr": 629620,
+      "bsr": 629685,
       "bsr_top_pct": 6.83,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
@@ -4760,7 +4760,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 23.0
   },
@@ -4902,7 +4902,7 @@
       "title": "Resveratrol Nature's Way 60 VCaps",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B000EPYGLK",
-      "image_url": "https://m.media-amazon.com/images/I/411jFkxSaEL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71nXP4FvqrL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 33.27,
@@ -4915,7 +4915,7 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 0.41,
       "our_margin_pct": 22.9,
-      "bsr": 698725,
+      "bsr": 698742,
       "bsr_top_pct": 7.57,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
@@ -4928,7 +4928,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 22.9
   },
@@ -5241,7 +5241,7 @@
       "title": "Natures Way Gymnema Standardized 60 Vegetarian capsule, 60 ct",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B00014EVM8",
-      "image_url": "https://m.media-amazon.com/images/I/411+os86KAL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61VV0d9Z6+L.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 32.73,
@@ -5254,7 +5254,7 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 0.39,
       "our_margin_pct": 22.9,
-      "bsr": 640615,
+      "bsr": 640680,
       "bsr_top_pct": 6.94,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
@@ -5267,7 +5267,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 22.9
   },
@@ -5329,7 +5329,7 @@
       "title": "Nature's Way Nature's Way Schisandra Fruit, 1,160 Mg Per Serving, 100 Count",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B0002JISJO",
-      "image_url": "https://m.media-amazon.com/images/I/41OFC+U7YZL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/81nkpyz7OXL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 21.99,
       "fbm_min_price": 21.77,
@@ -5355,7 +5355,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 23.1
   },
@@ -5462,7 +5462,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:27"
+      "last_checked": "2026-04-18 04:00"
     },
     "matched_buyers": [
       {
@@ -5486,7 +5486,7 @@
       "title": "Nature\u2019s Way Quick Calm, 40 Gummies",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B0CKTQH2LL",
-      "image_url": "https://m.media-amazon.com/images/I/41V7l-KKoiL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/6127bWETnjL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 25.0,
@@ -5499,8 +5499,8 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 0.5,
       "our_margin_pct": 23.1,
-      "bsr": 1090244,
-      "bsr_top_pct": 11.81,
+      "bsr": 1090267,
+      "bsr_top_pct": 11.82,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -5512,7 +5512,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 23.1,
     "send_markup_pct": 30.0,
@@ -6654,7 +6654,7 @@
       "title": "Natures Way, Probiotic Gummy 3 in 1, 50 Count",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B0DMFHYJ6T",
-      "image_url": "https://m.media-amazon.com/images/I/416-Xlg+44L.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71uYNfSxthL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 30.77,
@@ -6680,7 +6680,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Pet Supplies",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 23.0
   },
@@ -6742,7 +6742,7 @@
       "title": "Nature's Way Primadophilus Bifidus 5 Billion 180 Capsules",
       "brand": "Nature's Way",
       "product_url": "https://www.amazon.com/dp/B000GUHMVO",
-      "image_url": "https://m.media-amazon.com/images/I/312XE8BqWgL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71XhF-nr1EL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 39.99,
       "fbm_min_price": 39.49,
@@ -6755,9 +6755,9 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 1.16,
       "our_margin_pct": 23.0,
-      "bsr": 304456,
-      "bsr_top_pct": 3.3,
-      "estimated_monthly_sales": 33,
+      "bsr": 273881,
+      "bsr_top_pct": 2.97,
+      "estimated_monthly_sales": 13,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 1,
       "fbm_sellers": 2,
@@ -6768,7 +6768,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 23.0
   },
@@ -7231,8 +7231,8 @@
       "buyer_roi_pct": 0.0,
       "our_profit": 0.54,
       "our_margin_pct": 23.0,
-      "bsr": 876057,
-      "bsr_top_pct": 9.49,
+      "bsr": 876293,
+      "bsr_top_pct": 9.5,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -7244,7 +7244,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Health & Household",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     },
     "our_margin_pct": 23.0
   },
@@ -7673,7 +7673,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:27"
+      "last_checked": "2026-04-18 04:00"
     },
     "matched_buyers": [
       {
@@ -7740,7 +7740,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:28"
+      "last_checked": "2026-04-18 04:00"
     },
     "matched_buyers": [
       {
@@ -7807,7 +7807,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:28"
+      "last_checked": "2026-04-18 04:00"
     },
     "matched_buyers": [
       {
@@ -7874,7 +7874,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:28"
+      "last_checked": "2026-04-18 04:00"
     },
     "matched_buyers": [
       {
@@ -7992,7 +7992,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:28"
+      "last_checked": "2026-04-18 04:01"
     },
     "matched_buyers": [
       {
@@ -8202,7 +8202,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:28"
+      "last_checked": "2026-04-18 04:01"
     },
     "matched_buyers": [
       {
@@ -8250,7 +8250,7 @@
       "title": "Anastasia Beverly Hills - Matte Lipstick - Warm Taupe",
       "brand": "Anastasia Beverly Hills",
       "product_url": "https://www.amazon.com/dp/B0BS4B7SLJ",
-      "image_url": "https://m.media-amazon.com/images/I/31pViTR+u6L.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71uiFxb6rJL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -8263,7 +8263,7 @@
       "buyer_roi_pct": 0,
       "our_profit": 0,
       "our_margin_pct": 0,
-      "bsr": 20483,
+      "bsr": 20476,
       "bsr_top_pct": 0.18,
       "estimated_monthly_sales": 919,
       "restriction_status": "NOT_ELIGIBLE",
@@ -8276,7 +8276,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     }
   },
   {
@@ -8631,7 +8631,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:29"
+      "last_checked": "2026-04-18 04:01"
     },
     "matched_buyers": [
       {
@@ -8684,7 +8684,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:29"
+      "last_checked": "2026-04-18 04:01"
     },
     "matched_buyers": [
       {
@@ -8733,7 +8733,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:29"
+      "last_checked": "2026-04-18 04:01"
     },
     "matched_buyers": [
       {
@@ -8782,7 +8782,7 @@
     "marketplace_data": {
       "amazon_price": null,
       "walmart_price": null,
-      "last_checked": "2026-04-17 02:29"
+      "last_checked": "2026-04-18 04:01"
     },
     "matched_buyers": [
       {
@@ -8830,7 +8830,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-18 04:01"
     },
     "matched_buyers": [
       {
@@ -8878,7 +8879,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-18 04:01"
     },
     "matched_buyers": [
       {
@@ -8926,7 +8928,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-18 04:01"
     },
     "matched_buyers": [
       {
@@ -8973,8 +8976,11 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 21.95,
+      "walmart_price": null,
+      "amazon_match": "SexyHair Big Powder Play Lite Soft Volumizing & Texturizing Powder, 0.4 Oz",
+      "amazon_confidence": "high",
+      "last_checked": "2026-04-18 04:02"
     },
     "matched_buyers": [
       {
@@ -9005,7 +9011,7 @@
         "match_reason": "Category: HBA, margin OK"
       }
     ],
-    "margin_pct": null,
+    "margin_pct": 86.7,
     "created_at": "2026-04-17 01:13:47",
     "notes": "Auto-created from inbox message #108"
   },
@@ -9021,8 +9027,11 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 21.95,
+      "walmart_price": null,
+      "amazon_match": "SexyHair Big Creme 2 Powder Play All Over Volumizer and Texturizer, 3.4 Oz",
+      "amazon_confidence": "high",
+      "last_checked": "2026-04-18 04:02"
     },
     "matched_buyers": [
       {
@@ -9053,7 +9062,7 @@
         "match_reason": "Category: HBA, margin OK"
       }
     ],
-    "margin_pct": null,
+    "margin_pct": 86.7,
     "created_at": "2026-04-17 01:13:47",
     "notes": "Auto-created from inbox message #108"
   },
@@ -9069,8 +9078,11 @@
     "source_from": "Taatjes Belgiano",
     "status": "matched",
     "marketplace_data": {
-      "amazon_price": null,
-      "walmart_price": null
+      "amazon_price": 17.99,
+      "walmart_price": null,
+      "amazon_match": "Strawberry Candles,Boba Candle,Strawberry Boba Scented, Valentines Day Galientines Brithday Funny Food Gift Candle for Milk Tea Lovers,12oz",
+      "amazon_confidence": "medium",
+      "last_checked": "2026-04-18 04:02"
     },
     "matched_buyers": [
       {
@@ -9092,7 +9104,7 @@
         "match_reason": "Category: Household, margin OK"
       }
     ],
-    "margin_pct": null,
+    "margin_pct": 83.6,
     "created_at": "2026-04-17 01:13:47",
     "notes": "Auto-created from inbox message #108"
   },
@@ -9109,7 +9121,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-18 04:02"
     },
     "matched_buyers": [
       {
@@ -9148,7 +9161,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-18 04:02"
     },
     "matched_buyers": [
       {
@@ -9351,7 +9365,8 @@
     "status": "matched",
     "marketplace_data": {
       "amazon_price": null,
-      "walmart_price": null
+      "walmart_price": null,
+      "last_checked": "2026-04-18 04:02"
     },
     "matched_buyers": [
       {
@@ -9390,7 +9405,7 @@
       "title": "Clarins Extra-Firming Energy Moisturizer | 2-in-1 Anti-Aging Day Cream | Radiance Boost | 1.7 Ounces",
       "brand": "Clarins",
       "product_url": "https://www.amazon.com/dp/B08VTGP81J",
-      "image_url": "https://m.media-amazon.com/images/I/41GQ9dz5wDL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71F+g1WO9cL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -9403,9 +9418,9 @@
       "buyer_roi_pct": 0,
       "our_profit": 0,
       "our_margin_pct": 0,
-      "bsr": 414906,
-      "bsr_top_pct": 3.61,
-      "estimated_monthly_sales": 6,
+      "bsr": 392027,
+      "bsr_top_pct": 3.41,
+      "estimated_monthly_sales": 14,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
       "fbm_sellers": 0,
@@ -9416,7 +9431,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     }
   },
   {
@@ -9541,7 +9556,7 @@
       "title": "Clarins Hydrating Toning Lotion | Softer Skin After 14 Days of Use* | Cleanses, Tones, Hydrates and Balances Skin's Microbiota | Plant-Based Ingredients | Colorant-Free | Normal to Dry Skin",
       "brand": "Clarins",
       "product_url": "https://www.amazon.com/dp/B08VTCPRST",
-      "image_url": "https://m.media-amazon.com/images/I/31csWiUCRxL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51hNCSQiw1L.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -9554,7 +9569,7 @@
       "buyer_roi_pct": 0,
       "our_profit": 0,
       "our_margin_pct": 0,
-      "bsr": 1844093,
+      "bsr": 1844523,
       "bsr_top_pct": 16.03,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
@@ -9567,7 +9582,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     }
   },
   {
@@ -9640,7 +9655,7 @@
       "title": "EXTRA FIRMING yeux 15 ml",
       "brand": "Clarins",
       "product_url": "https://www.amazon.com/dp/B0B9Y49PDC",
-      "image_url": "https://m.media-amazon.com/images/I/31xm+uovc+L.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/41lv9bYyZvL.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -9666,7 +9681,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:11"
+      "enriched_at": "2026-04-18 04:09"
     }
   },
   {
@@ -9721,7 +9736,7 @@
       "title": "Clarins Multi-Active Night CreamMulti-Tasking Anti-Aging MoisturizerTargets Fine LinesRevitalizes, Tones and NourishesHydrates and SmoothesNormal To Combination Skin Types1.6 Ounces",
       "brand": "Clarins",
       "product_url": "https://www.amazon.com/dp/B0B5VKHKTQ",
-      "image_url": "https://m.media-amazon.com/images/I/41D+SIKwELL.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71SQwbvgt+L.jpg",
       "buy_box_price": 0.0,
       "fba_min_price": 0.0,
       "fbm_min_price": 0.0,
@@ -9734,7 +9749,7 @@
       "buyer_roi_pct": 0,
       "our_profit": 0,
       "our_margin_pct": 0,
-      "bsr": 1728145,
+      "bsr": 1728657,
       "bsr_top_pct": 15.02,
       "estimated_monthly_sales": 0,
       "restriction_status": "NOT_ELIGIBLE",
@@ -9747,7 +9762,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:12"
+      "enriched_at": "2026-04-18 04:09"
     }
   },
   {
@@ -9837,7 +9852,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:12"
+      "enriched_at": "2026-04-18 04:10"
     }
   },
   {
@@ -13361,7 +13376,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:12"
+      "enriched_at": "2026-04-18 04:10"
     }
   },
   {
@@ -13460,7 +13475,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:12"
+      "enriched_at": "2026-04-18 04:10"
     }
   },
   {
@@ -13589,9 +13604,9 @@
       "buyer_roi_pct": 0,
       "our_profit": 0,
       "our_margin_pct": 0,
-      "bsr": 85718,
-      "bsr_top_pct": 0.75,
-      "estimated_monthly_sales": 100,
+      "bsr": 88125,
+      "bsr_top_pct": 0.77,
+      "estimated_monthly_sales": 90,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
       "fbm_sellers": 0,
@@ -13602,7 +13617,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:12"
+      "enriched_at": "2026-04-18 04:10"
     }
   },
   {
@@ -13901,8 +13916,8 @@
       "buyer_roi_pct": 0,
       "our_profit": 0,
       "our_margin_pct": 0,
-      "bsr": 419204,
-      "bsr_top_pct": 3.65,
+      "bsr": 417375,
+      "bsr_top_pct": 3.63,
       "estimated_monthly_sales": 6,
       "restriction_status": "NOT_ELIGIBLE",
       "fba_sellers": 0,
@@ -13914,7 +13929,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:12"
+      "enriched_at": "2026-04-18 04:10"
     }
   },
   {
@@ -14056,7 +14071,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Books",
-      "enriched_at": "2026-04-18 02:12"
+      "enriched_at": "2026-04-18 04:10"
     }
   },
   {
@@ -14189,7 +14204,7 @@
       "is_fragile": false,
       "is_adult": false,
       "amazon_category": "Beauty & Personal Care",
-      "enriched_at": "2026-04-18 02:13"
+      "enriched_at": "2026-04-18 04:10"
     }
   },
   {

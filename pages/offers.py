@@ -404,21 +404,25 @@ def layout():
                       "marginBottom": "16px"}),
 
             # Buyer suggestion cards
-            _build_buyer_suggestion_cards(),
+            _build_buyer_suggestion_cards(offers),
 
-            # Customer selector + markup controls
+            # Customer selector
             html.Div([
                 form_group("Customer",
                            dcc.Dropdown(
                                id="offers-send-buyer",
-                               options=_buyer_options(),
+                               options=_buyer_options(offers),
                                placeholder="Search or select customer...",
                                searchable=True,
                                clearable=True,
                                className="dark-dropdown",
                                style={"fontSize": "0.9rem"},
                            )),
-                form_group("Global Markup %",
+            ], style={"marginBottom": "12px"}),
+
+            # Margin controls — all on one row
+            html.Div([
+                form_group("Markup %",
                            dcc.Input(id="offers-markup-pct", type="number", value=30,
                                      min=0, max=500, step=1,
                                      style={
@@ -431,30 +435,12 @@ def layout():
                 html.Div([
                     html.Button([
                         html.I(className="bi bi-arrow-repeat me-2"),
-                        "Apply Markup",
+                        "Apply",
                     ], id="offers-apply-markup-btn", className="btn-outline-dark",
-                       style={"padding": "8px 16px", "marginTop": "24px", "whiteSpace": "nowrap",
+                       style={"padding": "8px 14px", "marginTop": "24px", "whiteSpace": "nowrap",
                               "fontSize": "0.82rem"}),
                 ]),
-                form_group("Global % Below AMZ",
-                           dcc.Input(id="offers-below-amz-pct", type="number", value=20,
-                                     min=0, max=99, step=1,
-                                     style={
-                                         "backgroundColor": COLORS["input_bg"],
-                                         "border": f"1px solid {COLORS['input_border']}",
-                                         "color": COLORS["text"], "borderRadius": "8px",
-                                         "padding": "8px 12px", "width": "100%",
-                                         "fontSize": "0.9rem",
-                                     }, className="dark-input")),
-                html.Div([
-                    html.Button([
-                        html.I(className="bi bi-arrow-repeat me-2"),
-                        "Apply Below AMZ",
-                    ], id="offers-apply-below-amz-btn", className="btn-outline-dark",
-                       style={"padding": "8px 16px", "marginTop": "24px", "whiteSpace": "nowrap",
-                              "fontSize": "0.82rem"}),
-                ]),
-                form_group("Cust Margin % (after fees)",
+                form_group("Cust Margin %",
                            dcc.Input(id="offers-cust-margin-pct", type="number", value=40,
                                      min=0, max=90, step=1,
                                      style={
@@ -467,13 +453,13 @@ def layout():
                 html.Div([
                     html.Button([
                         html.I(className="bi bi-arrow-repeat me-2"),
-                        "Apply Margin",
+                        "Apply",
                     ], id="offers-apply-cust-margin-btn", className="btn-outline-dark",
-                       style={"padding": "8px 16px", "marginTop": "24px", "whiteSpace": "nowrap",
+                       style={"padding": "8px 14px", "marginTop": "24px", "whiteSpace": "nowrap",
                               "fontSize": "0.82rem"}),
                 ]),
-            ], style={"display": "grid", "gridTemplateColumns": "1fr auto 1fr auto 1fr auto",
-                      "gap": "16px", "alignItems": "start"}),
+            ], style={"display": "grid", "gridTemplateColumns": "1fr auto 1fr auto",
+                      "gap": "10px", "alignItems": "start"}),
 
             # Summary line
             html.Div(id="offers-send-summary", style={"marginBottom": "8px"}),
@@ -504,53 +490,20 @@ def layout():
                     "textOverflow": "ellipsis",
                 },
                 style_data_conditional=[
-                    # Markup gradient (ordered low→high, last match wins)
-                    {"if": {"column_id": "markup_pct", "filter_query": "{markup_pct} >= 0"},
-                     "backgroundColor": "#f8514920", "color": "#f85149", "fontWeight": "600"},
-                    {"if": {"column_id": "markup_pct", "filter_query": "{markup_pct} >= 40"},
-                     "backgroundColor": "#db6d2820", "color": "#db6d28", "fontWeight": "600"},
-                    {"if": {"column_id": "markup_pct", "filter_query": "{markup_pct} >= 60"},
-                     "backgroundColor": "#d2992220", "color": "#d29922", "fontWeight": "600"},
-                    {"if": {"column_id": "markup_pct", "filter_query": "{markup_pct} >= 90"},
-                     "backgroundColor": "#58a6ff20", "color": "#58a6ff", "fontWeight": "600"},
-                    {"if": {"column_id": "markup_pct", "filter_query": "{markup_pct} >= 120"},
-                     "backgroundColor": "#3fb95020", "color": "#3fb950", "fontWeight": "600"},
-                    {"if": {"column_id": "markup_pct", "filter_query": "{markup_pct} >= 150"},
-                     "backgroundColor": "#23903020", "color": "#239030", "fontWeight": "600"},
+                    # Static column styles (no filter_query needed)
                     {"if": {"column_id": "offer_price"},
                      "color": COLORS["success"], "fontWeight": "600"},
                     {"if": {"column_id": "amazon"},
                      "color": COLORS["primary"]},
-                    {"if": {"column_id": "below_amz", "filter_query": "{below_amz} > 0"},
-                     "backgroundColor": f"{COLORS['success']}15",
-                     "color": COLORS["success"], "fontWeight": "600"},
-                    {"if": {"column_id": "below_amz", "filter_query": "{below_amz} <= 0"},
-                     "backgroundColor": f"{COLORS['danger']}15",
-                     "color": COLORS["danger"], "fontWeight": "600"},
                     {"if": {"column_id": "cost"},
                      "color": COLORS["text_muted"]},
-                    # Customer margin gradient (ordered low→high, last match wins)
-                    {"if": {"column_id": "est_margin", "filter_query": "{est_margin} < 30"},
-                     "backgroundColor": "#f8514920", "color": "#f85149", "fontWeight": "600"},
-                    {"if": {"column_id": "est_margin", "filter_query": "{est_margin} >= 30"},
-                     "backgroundColor": "#d2992220", "color": "#d29922", "fontWeight": "600"},
-                    {"if": {"column_id": "est_margin", "filter_query": "{est_margin} >= 40"},
-                     "backgroundColor": "#58a6ff20", "color": "#58a6ff", "fontWeight": "600"},
-                    {"if": {"column_id": "est_margin", "filter_query": "{est_margin} >= 50"},
-                     "backgroundColor": "#3fb95020", "color": "#3fb950", "fontWeight": "600"},
-                    {"if": {"column_id": "est_margin", "filter_query": "{est_margin} >= 60"},
-                     "backgroundColor": "#23903020", "color": "#239030", "fontWeight": "600"},
-                    # Est. profit color
-                    {"if": {"column_id": "est_profit", "filter_query": "{est_profit} > 0"},
-                     "color": COLORS["success"], "fontWeight": "600"},
-                    {"if": {"column_id": "est_profit", "filter_query": "{est_profit} <= 0"},
-                     "color": COLORS["danger"], "fontWeight": "600"},
                 ],
-                hidden_columns=["_fba_fee", "_referral_fee", "_storage_fee"],
                 style_table={"overflowX": "auto", "display": "none"},
                 page_size=50,
                 sort_action="native",
                 sort_mode="multi",
+                row_selectable="multi",
+                selected_rows=[],
                 data_previous=[],
             ),
 
@@ -1001,10 +954,11 @@ def _show_detail(selected_rows, table_data):
     return detail, offer_id
 
 
-def _buyer_options():
+def _buyer_options(offers=None):
     """Build dropdown options from all buyers, with match counts."""
     buyers = _load_buyers()
-    offers = _load_offers()
+    if offers is None:
+        offers = _load_offers()
 
     # Count matches per buyer
     counts = {}
@@ -1027,10 +981,11 @@ def _buyer_options():
     return options
 
 
-def _build_buyer_suggestion_cards():
+def _build_buyer_suggestion_cards(offers=None):
     """Build clickable suggestion cards for buyers with matched products."""
     buyers = _load_buyers()
-    offers = _load_offers()
+    if offers is None:
+        offers = _load_offers()
 
     # Aggregate matches per buyer
     buyer_matches = {}
@@ -1129,6 +1084,8 @@ def _build_send_table_data(buyer_id, default_markup=30):
     matched = _get_buyer_matched_offers(buyer_id)
     rows = []
     for o in matched:
+        if (o.get("quantity") or 0) < 20:
+            continue
         sa = o.get("sa_data") or {}
         mp = o.get("marketplace_data") or {}
         per_unit = float(o.get("per_unit_cost") or o.get("offered_price") or 0)
@@ -1164,12 +1121,8 @@ SEND_TABLE_COLUMNS = [
     {"name": "Markup %", "id": "markup_pct", "type": "numeric", "editable": True},
     {"name": "Offer $", "id": "offer_price", "type": "numeric", "editable": False},
     {"name": "Amazon $", "id": "amazon", "type": "numeric", "editable": False},
-    {"name": "% Below AMZ", "id": "below_amz", "type": "numeric", "editable": True},
-    {"name": "Est. Profit", "id": "est_profit", "type": "numeric", "editable": False},
-    {"name": "Cust Margin", "id": "est_margin", "type": "numeric", "editable": False},
-    {"name": "_fba_fee", "id": "_fba_fee", "type": "numeric", "editable": False},
-    {"name": "_referral_fee", "id": "_referral_fee", "type": "numeric", "editable": False},
-    {"name": "_storage_fee", "id": "_storage_fee", "type": "numeric", "editable": False},
+    {"name": "Est. Cust Profit", "id": "est_profit", "type": "numeric", "editable": False},
+    {"name": "Cust Margin %", "id": "est_margin", "type": "numeric", "editable": False},
 ]
 
 
@@ -1311,6 +1264,9 @@ def _suggestion_card_clicked(n_clicks_list):
 
 @callback(
     Output("offers-send-table", "data"),
+    Output("offers-send-table", "selected_rows"),
+    Output("offers-send-table", "style_data_conditional"),
+    Output("offers-avg-markup", "children"),
     Output("offers-send-table", "style_table"),
     Output("offers-send-summary", "children"),
     Output("offers-build-btn", "style"),
@@ -1329,9 +1285,10 @@ def _load_send_products(buyer_id, markup_pct):
     show_build = {"padding": "10px 24px", "display": "inline-block"}
     hide_table = {"overflowX": "auto", "display": "none"}
     show_table = {"overflowX": "auto", "display": "block"}
+    empty_styles = []
 
     if not buyer_id:
-        return [], hide_table, html.Div(), hide_build, hide_btn, html.Div()
+        return [], [], empty_styles, "", hide_table, html.Div(), hide_build, hide_btn, html.Div()
 
     try:
         markup_pct = float(markup_pct or 30)
@@ -1343,9 +1300,8 @@ def _load_send_products(buyer_id, markup_pct):
     if not rows:
         msg = html.Span("No matched offers for this buyer — match products to buyers first",
                          style={"color": COLORS["text_muted"], "fontSize": "0.85rem"})
-        return [], hide_table, msg, hide_build, hide_btn, html.Div()
+        return [], [], empty_styles, "", hide_table, msg, hide_build, hide_btn, html.Div()
 
-    # Count by category
     cats = {}
     for r in rows:
         c = r.get("category", "Other")
@@ -1357,23 +1313,14 @@ def _load_send_products(buyer_id, markup_pct):
             "color": COLORS["text"], "fontWeight": "600", "fontSize": "0.85rem"}),
         html.Span(f" — {cat_str}", style={
             "color": COLORS["text_muted"], "fontSize": "0.82rem"}),
-        html.Span(" — edit Markup % or % Below AMZ per row, or apply globally",
+        html.Span(" — edit Markup % or Cust Margin per row, or apply globally",
                   style={"color": COLORS["text_muted"], "fontSize": "0.8rem"}),
     ])
 
-    # Reset: show table + build btn, hide send btn + preview
-    return rows, show_table, summary, show_build, hide_btn, html.Div()
+    all_selected = list(range(len(rows)))
+    return rows, all_selected, _build_send_table_styles(rows, all_selected), _build_avg_markup(rows, all_selected), show_table, summary, show_build, hide_btn, html.Div()
 
 
-# ── Apply global markup to all rows ──────────────────────────────────────────
-
-@callback(
-    Output("offers-send-table", "data", allow_duplicate=True),
-    Input("offers-apply-markup-btn", "n_clicks"),
-    State("offers-markup-pct", "value"),
-    State("offers-send-table", "data"),
-    prevent_initial_call=True,
-)
 def _recalc_row_profit(row):
     """Recalculate est_profit and est_margin from row's offer_price and fee data."""
     sell = float(row.get("offer_price") or 0)
@@ -1389,15 +1336,90 @@ def _recalc_row_profit(row):
         row["est_margin"] = None
 
 
-def _apply_global_markup(n_clicks, global_markup, table_data):
-    """Apply global markup to all rows."""
+def _green_red_color(val, green_at=100, red_at=20):
+    """Return (bg, text) color for a value on a green→red scale with 8 steps."""
+    if val >= green_at:
+        return "rgba(35,144,48,0.15)", "#239030"        # deep green
+    if val <= red_at:
+        return "rgba(248,81,73,0.15)", "#f85149"        # red
+    ratio = (val - red_at) / (green_at - red_at)        # 0=red, 1=green
+    if ratio >= 0.875:
+        return "rgba(55,170,60,0.15)", "#37aa3c"        # bright green
+    if ratio >= 0.75:
+        return "rgba(80,190,70,0.15)", "#50be46"        # green
+    if ratio >= 0.625:
+        return "rgba(120,190,50,0.15)", "#78be32"       # lime green
+    if ratio >= 0.5:
+        return "rgba(160,180,40,0.15)", "#a0b428"       # yellow-green
+    if ratio >= 0.375:
+        return "rgba(200,165,30,0.15)", "#c8a51e"       # gold
+    if ratio >= 0.25:
+        return "rgba(220,140,30,0.15)", "#dc8c1e"       # orange-yellow
+    if ratio >= 0.125:
+        return "rgba(230,115,35,0.15)", "#e67323"       # orange
+    return "rgba(240,95,50,0.15)", "#f05f32"            # red-orange
+
+
+def _markup_color(val):
+    """Green at 100%+, red at 20% or less."""
+    return _green_red_color(val, green_at=100, red_at=20)
+
+
+def _margin_color(val):
+    """Green at 45%+, red at <20%."""
+    return _green_red_color(val, green_at=45, red_at=20)
+
+
+def _build_send_table_styles(data, selected_rows=None):
+    """Build per-row style_data_conditional from current table data."""
+    selected = set(selected_rows or [])
+    styles = [
+        {"if": {"column_id": "offer_price"}, "color": "#3fb950", "fontWeight": "600"},
+        {"if": {"column_id": "amazon"}, "color": "#58a6ff"},
+        {"if": {"column_id": "cost"}, "color": "#8b949e"},
+    ]
+    for i, row in enumerate(data):
+        if i not in selected:
+            styles.append({"if": {"row_index": i}, "backgroundColor": "rgba(100,100,100,0.08)", "color": "#484f58", "fontStyle": "italic"})
+            continue
+        _, fg = _markup_color(float(row.get("markup_pct") or 0))
+        styles.append({"if": {"row_index": i, "column_id": "markup_pct"}, "color": fg, "fontWeight": "600"})
+        m = row.get("est_margin")
+        if m is not None:
+            _, fg = _margin_color(float(m))
+            styles.append({"if": {"row_index": i, "column_id": "est_margin"}, "color": fg, "fontWeight": "600"})
+        p = row.get("est_profit")
+        if p is not None:
+            styles.append({"if": {"row_index": i, "column_id": "est_profit"}, "color": "#3fb950" if float(p) > 0 else "#f85149", "fontWeight": "600"})
+    return styles
+
+
+
+
+# ── Apply global markup to all rows ──────────────────────────────────────────
+
+@callback(
+    Output("offers-send-table", "data", allow_duplicate=True),
+    Output("offers-send-table", "style_data_conditional", allow_duplicate=True),
+    Output("offers-avg-markup", "children", allow_duplicate=True),
+    Input("offers-apply-markup-btn", "n_clicks"),
+    State("offers-markup-pct", "value"),
+    State("offers-send-table", "data"),
+    State("offers-send-table", "selected_rows"),
+    prevent_initial_call=True,
+)
+def _apply_global_markup(n_clicks, global_markup, table_data, selected_rows):
+    """Apply global markup to selected rows only."""
     if not n_clicks or not table_data:
-        return no_update
+        return no_update, no_update, no_update
+    selected = set(selected_rows or [])
     try:
         global_markup = float(global_markup or 30)
     except (ValueError, TypeError):
         global_markup = 30
-    for row in table_data:
+    for i, row in enumerate(table_data):
+        if i not in selected:
+            continue
         row["markup_pct"] = global_markup
         cost = float(row.get("cost") or 0)
         amazon = float(row.get("amazon") or 0)
@@ -1405,146 +1427,120 @@ def _apply_global_markup(n_clicks, global_markup, table_data):
         row["offer_price"] = sell
         row["below_amz"] = round((amazon - sell) / amazon * 100, 1) if amazon else 0
         _recalc_row_profit(row)
-    return table_data
+    return table_data, _build_send_table_styles(table_data, selected_rows), _build_avg_markup(table_data, selected_rows)
 
 
 @callback(
     Output("offers-send-table", "data", allow_duplicate=True),
-    Input("offers-apply-below-amz-btn", "n_clicks"),
-    State("offers-below-amz-pct", "value"),
-    State("offers-send-table", "data"),
-    prevent_initial_call=True,
-)
-def _apply_global_below_amz(n_clicks, global_below_amz, table_data):
-    """Apply global % below AMZ to all rows."""
-    if not n_clicks or not table_data:
-        return no_update
-    try:
-        global_below_amz = float(global_below_amz or 20)
-    except (ValueError, TypeError):
-        global_below_amz = 20
-    for row in table_data:
-        cost = float(row.get("cost") or 0)
-        amazon = float(row.get("amazon") or 0)
-        row["below_amz"] = global_below_amz
-        if amazon > 0:
-            sell = round(amazon * (1 - global_below_amz / 100), 2)
-            row["offer_price"] = sell
-            row["markup_pct"] = round((sell / cost - 1) * 100, 1) if cost > 0 else 0
-        _recalc_row_profit(row)
-    return table_data
-
-
-@callback(
-    Output("offers-send-table", "data", allow_duplicate=True),
+    Output("offers-send-table", "style_data_conditional", allow_duplicate=True),
+    Output("offers-avg-markup", "children", allow_duplicate=True),
     Input("offers-apply-cust-margin-btn", "n_clicks"),
     State("offers-cust-margin-pct", "value"),
     State("offers-send-table", "data"),
+    State("offers-send-table", "selected_rows"),
     prevent_initial_call=True,
 )
-def _apply_global_cust_margin(n_clicks, target_margin, table_data):
-    """Apply a fixed customer margin to all rows — reverse-calculate offer price."""
+def _apply_global_cust_margin(n_clicks, target_margin, table_data, selected_rows):
+    """Apply a fixed customer margin to selected rows only."""
     if not n_clicks or not table_data:
-        return no_update
+        return no_update, no_update, no_update
+    selected = set(selected_rows or [])
     try:
         target_margin = float(target_margin or 40)
     except (ValueError, TypeError):
         target_margin = 40
-    for row in table_data:
+    for i, row in enumerate(table_data):
+        if i not in selected:
+            continue
         cost = float(row.get("cost") or 0)
         amazon = float(row.get("amazon") or 0)
         fees = float(row.get("_fba_fee") or 0) + float(row.get("_referral_fee") or 0) + float(row.get("_storage_fee") or 0)
-        if amazon > 0 and fees > 0:
+        if amazon > 0 and fees > 0 and cost > 0:
             # target: (amazon - sell - fees) / amazon = margin/100
-            # so: sell = amazon - fees - amazon * margin/100
             sell = round(amazon - fees - amazon * target_margin / 100, 2)
-            sell = max(sell, 0.01)  # floor at 1 cent
-            row["offer_price"] = sell
-            row["markup_pct"] = round((sell / cost - 1) * 100, 1) if cost > 0 else 0
+            # Floor at cost — never price below what we paid
+            sell = max(sell, cost)
+            row["offer_price"] = round(sell, 2)
+            row["markup_pct"] = round((sell / cost - 1) * 100, 1)
             row["below_amz"] = round((amazon - sell) / amazon * 100, 1)
             row["est_profit"] = round(amazon - sell - fees, 2)
-            row["est_margin"] = target_margin
-        elif amazon > 0:
-            # No fee data — fall back to simple margin on amazon price
+            row["est_margin"] = round((amazon - sell - fees) / amazon * 100, 1)
+        elif amazon > 0 and cost > 0:
+            # No fee data — use margin as simple % below amazon
             sell = round(amazon * (1 - target_margin / 100), 2)
-            sell = max(sell, 0.01)
-            row["offer_price"] = sell
-            row["markup_pct"] = round((sell / cost - 1) * 100, 1) if cost > 0 else 0
+            sell = max(sell, cost)
+            row["offer_price"] = round(sell, 2)
+            row["markup_pct"] = round((sell / cost - 1) * 100, 1)
             row["below_amz"] = round((amazon - sell) / amazon * 100, 1)
-            row["est_profit"] = None
-            row["est_margin"] = None
-    return table_data
+            _recalc_row_profit(row)
+    return table_data, _build_send_table_styles(table_data, selected_rows), _build_avg_markup(table_data, selected_rows)
 
 
 @callback(
     Output("offers-send-table", "data", allow_duplicate=True),
+    Output("offers-send-table", "style_data_conditional", allow_duplicate=True),
+    Output("offers-avg-markup", "children", allow_duplicate=True),
     Input("offers-send-table", "data_timestamp"),
     State("offers-send-table", "data"),
-    State("offers-send-table", "data_previous"),
+    State("offers-send-table", "selected_rows"),
     prevent_initial_call=True,
 )
-def _recalc_on_edit(data_ts, table_data, prev_data):
-    """Recalculate when a row is edited inline (markup or below_amz)."""
+def _recalc_on_edit(data_ts, table_data, selected_rows):
+    """Recalculate when a row's markup is edited inline."""
     if not table_data:
-        return no_update
-
-    # Detect which column changed per row
-    edited_below = set()
-    if prev_data and len(prev_data) == len(table_data):
-        for i, (cur, prev) in enumerate(zip(table_data, prev_data)):
-            if cur.get("below_amz") != prev.get("below_amz"):
-                edited_below.add(i)
+        return no_update, no_update, no_update
+    selected = set(selected_rows or [])
 
     for i, row in enumerate(table_data):
+        if i not in selected:
+            continue
         cost = float(row.get("cost") or 0)
         amazon = float(row.get("amazon") or 0)
-
-        if i in edited_below:
-            below = float(row.get("below_amz") or 0)
-            if amazon > 0:
-                sell = round(amazon * (1 - below / 100), 2)
-                row["offer_price"] = sell
-                row["markup_pct"] = round((sell / cost - 1) * 100, 1) if cost > 0 else 0
-        else:
-            mkp = float(row.get("markup_pct") or 0)
-            sell = round(cost * (1 + mkp / 100), 2)
-            row["offer_price"] = sell
-            row["below_amz"] = round((amazon - sell) / amazon * 100, 1) if amazon else 0
+        mkp = float(row.get("markup_pct") or 0)
+        sell = round(cost * (1 + mkp / 100), 2)
+        row["offer_price"] = sell
+        row["below_amz"] = round((amazon - sell) / amazon * 100, 1) if amazon else 0
         _recalc_row_profit(row)
 
-    return table_data
+    return table_data, _build_send_table_styles(table_data, selected_rows), _build_avg_markup(table_data, selected_rows)
 
 
 # ── Average markup display ────────────────────────────────────────────────────
 
-@callback(
-    Output("offers-avg-markup", "children"),
-    Input("offers-send-table", "data"),
-    prevent_initial_call=True,
-)
-def _update_avg_markup(table_data):
-    """Show average markup across all rows."""
+def _build_avg_markup(table_data, selected_rows=None):
+    """Build average markup/margin display from table data."""
     if not table_data:
         return ""
-    markups = [float(r.get("markup_pct") or 0) for r in table_data]
-    avg = sum(markups) / len(markups) if markups else 0
-    # Color based on same gradient scale
-    if avg >= 150:
-        color = "#239030"
-    elif avg >= 120:
-        color = "#3fb950"
-    elif avg >= 90:
-        color = "#58a6ff"
-    elif avg >= 60:
-        color = "#d29922"
-    elif avg >= 40:
-        color = "#db6d28"
-    else:
-        color = "#f85149"
+    selected = set(selected_rows or [])
+    included = [r for i, r in enumerate(table_data) if i in selected]
+    markups = [float(r.get("markup_pct") or 0) for r in included]
+    avg_markup = sum(markups) / len(markups) if markups else 0
+    _, mk_color = _markup_color(avg_markup)
+
+    margins = [float(r.get("est_margin")) for r in included if r.get("est_margin") is not None]
+    avg_margin = sum(margins) / len(margins) if margins else 0
+    _, mg_color = _margin_color(avg_margin)
+
     return html.Span([
         html.Span("Avg Markup: ", style={"color": COLORS["text_muted"], "fontSize": "0.82rem"}),
-        html.Span(f"{avg:.1f}%", style={"color": color, "fontWeight": "700", "fontSize": "0.9rem"}),
+        html.Span(f"{avg_markup:.1f}%", style={"color": mk_color, "fontWeight": "700", "fontSize": "0.9rem"}),
+        html.Span("   Avg Cust Margin: ", style={"color": COLORS["text_muted"], "fontSize": "0.82rem", "marginLeft": "16px"}),
+        html.Span(f"{avg_margin:.1f}%", style={"color": mg_color, "fontWeight": "700", "fontSize": "0.9rem"}),
     ])
+
+
+@callback(
+    Output("offers-send-table", "style_data_conditional", allow_duplicate=True),
+    Output("offers-avg-markup", "children", allow_duplicate=True),
+    Input("offers-send-table", "selected_rows"),
+    State("offers-send-table", "data"),
+    prevent_initial_call=True,
+)
+def _on_selection_change(selected_rows, table_data):
+    """Update styles and averages when row selection changes."""
+    if not table_data:
+        return no_update, no_update
+    return _build_send_table_styles(table_data, selected_rows), _build_avg_markup(table_data, selected_rows)
 
 
 # ── Build email body from table data (with per-item markups) ─────────────────
@@ -1555,7 +1551,7 @@ def _build_offer_email_body(buyer_name, table_data, offers_lookup, review_url=""
 
     # Build table rows
     rows_html = ""
-    for row in sorted(table_data, key=lambda r: -float(r.get("below_amz") or 0)):
+    for row in sorted(table_data, key=lambda r: -float(r.get("est_margin") or r.get("below_amz") or 0)):
         oid = row.get("id")
         offer = offers_lookup.get(oid, {})
         sa = offer.get("sa_data") or {}
@@ -1564,7 +1560,20 @@ def _build_offer_email_body(buyer_name, table_data, offers_lookup, review_url=""
         sell_price = float(row.get("offer_price") or 0)
         amazon_price = float(row.get("amazon") or 0)
         qty = row.get("quantity") or 0
-        margin_pct = round((amazon_price - sell_price) / amazon_price * 100) if amazon_price else 0
+
+        # Customer margin after fees — green→red gradient
+        est_margin = row.get("est_margin")
+        if est_margin is not None:
+            m = float(est_margin)
+            margin_display = f"{m:.0f}%"
+        else:
+            m = round((amazon_price - sell_price) / amazon_price * 100) if amazon_price else 0
+            margin_display = f"{m}%"
+        _, margin_color = _green_red_color(m, green_at=45, red_at=20)
+
+        # Monthly sales from SA
+        mo_sales = sa.get("estimated_monthly_sales") or 0
+        mo_sales_display = f"{mo_sales:,}" if mo_sales else "—"
 
         # Amazon link
         amazon_url = sa.get("product_url", "")
@@ -1577,7 +1586,8 @@ def _build_offer_email_body(buyer_name, table_data, offers_lookup, review_url=""
             <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#8b949e;">{category}</td>
             <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;">${sell_price:.2f}</td>
             <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#3fb950;">${amazon_price:.2f}</td>
-            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#3fb950;font-weight:600;">{margin_pct}%</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:{margin_color};font-weight:600;">{margin_display}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#8b949e;">{mo_sales_display}</td>
             <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;">{qty:,}</td>
         </tr>"""
 
@@ -1610,7 +1620,8 @@ def _build_offer_email_body(buyer_name, table_data, offers_lookup, review_url=""
             <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Category</th>
             <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Unit Cost</th>
             <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Amazon</th>
-            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Margin</th>
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Est. Margin</th>
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Mo. Sales</th>
             <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;font-weight:600;">Available</th>
         </tr></thead>
         <tbody>{rows_html}</tbody>
@@ -1638,9 +1649,10 @@ def _build_offer_email_body(buyer_name, table_data, offers_lookup, review_url=""
     Input("offers-build-btn", "n_clicks"),
     State("offers-send-buyer", "value"),
     State("offers-send-table", "data"),
+    State("offers-send-table", "selected_rows"),
     prevent_initial_call=True,
 )
-def _build_offer_preview(n_clicks, buyer_id, table_data):
+def _build_offer_preview(n_clicks, buyer_id, table_data, selected_rows):
     """Build and display the email preview using per-item markups from the table."""
     hide_btn = {"padding": "10px 24px", "display": "none",
                 "background": COLORS["success"], "border": f"1px solid {COLORS['success']}",
@@ -1661,11 +1673,18 @@ def _build_offer_preview(n_clicks, buyer_id, table_data):
     buyer_name = buyer.get("name", "")
     buyer_email = buyer.get("contact_email", "")
 
+    # Filter to selected items only
+    selected = set(selected_rows or [])
+    included_data = [r for i, r in enumerate(table_data) if i in selected]
+    if not included_data:
+        return html.Span("No products selected — check rows to include",
+                         style={"color": COLORS["warning"], "fontSize": "0.85rem"}), hide_btn
+
     # Build offers lookup for UPC/expiry etc
     offers = _load_offers()
     offers_lookup = {o["id"]: o for o in offers}
 
-    subject, body = _build_offer_email_body(buyer_name, table_data, offers_lookup,
+    subject, body = _build_offer_email_body(buyer_name, included_data, offers_lookup,
                                               review_url="#review-link-generated-on-send")
 
     preview = html.Div([
@@ -1701,9 +1720,10 @@ def _build_offer_preview(n_clicks, buyer_id, table_data):
     Input("offers-send-btn", "n_clicks"),
     State("offers-send-buyer", "value"),
     State("offers-send-table", "data"),
+    State("offers-send-table", "selected_rows"),
     prevent_initial_call=True,
 )
-def _send_offer(n_clicks, buyer_id, table_data):
+def _send_offer(n_clicks, buyer_id, table_data, selected_rows):
     """Send the master offer email using per-item markups from the table."""
     import uuid
 
@@ -1722,9 +1742,16 @@ def _send_offer(n_clicks, buyer_id, table_data):
         return html.Span(f"No email on file for {buyer_name}",
                          style={"color": COLORS["warning"], "fontSize": "0.85rem"})
 
+    # Filter to selected items only
+    selected = set(selected_rows or [])
+    included_data = [r for i, r in enumerate(table_data) if i in selected]
+    if not included_data:
+        return html.Span("No products selected — check rows to include",
+                         style={"color": COLORS["warning"], "fontSize": "0.85rem"})
+
     # Save per-item markup and sell price
     offers = _load_offers()
-    table_by_id = {row["id"]: row for row in table_data}
+    table_by_id = {row["id"]: row for row in included_data}
     offer_ids = []
     for o in offers:
         if o["id"] in table_by_id:
@@ -1768,7 +1795,7 @@ def _send_offer(n_clicks, buyer_id, table_data):
 
     # Build and send HTML email
     offers_lookup = {o["id"]: o for o in offers}
-    subject, body = _build_offer_email_body(buyer_name, table_data, offers_lookup, review_url)
+    subject, body = _build_offer_email_body(buyer_name, included_data, offers_lookup, review_url)
 
     try:
         _send_offer_email_smtp(buyer_email, subject, body)
@@ -1780,7 +1807,7 @@ def _send_offer(n_clicks, buyer_id, table_data):
 
     return html.Span([
         html.I(className="bi bi-check-circle-fill me-2", style={"color": COLORS["success"]}),
-        f"Sent {len(table_data)} products to {buyer_name}",
+        f"Sent {len(included_data)} products to {buyer_name}",
     ], style={"color": COLORS["success"], "fontSize": "0.85rem"})
 
 

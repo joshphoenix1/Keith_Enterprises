@@ -208,8 +208,8 @@ body {
 }
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td,
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th {
-    background-color: #1c2128 !important;
-    color: #e6edf3 !important;
+    background-color: #1c2128;
+    color: #e6edf3;
     border: 1px solid #30363d !important;
 }
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th {
@@ -229,7 +229,7 @@ body {
     cursor: pointer !important;
 }
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner tr:hover td {
-    background-color: #1f2937 !important;
+    background-color: #1f2937;
 }
 input.dash-filter--case--sensitive {
     display: none !important;
@@ -237,6 +237,45 @@ input.dash-filter--case--sensitive {
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner input {
     background-color: #0d1117 !important;
     color: #e6edf3 !important;
+}
+
+/* Style the row_selectable checkbox column in send table */
+#offers-send-table .dash-spreadsheet-inner th.dash-select-header {
+    position: relative;
+    min-width: 80px !important;
+    width: 80px !important;
+}
+#offers-send-table .dash-spreadsheet-inner th.dash-select-header::after {
+    content: "Include";
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #8b949e;
+    margin-top: 2px;
+}
+#offers-send-table .dash-spreadsheet-inner td.dash-select-cell {
+    min-width: 80px !important;
+    width: 80px !important;
+}
+/* Solid green/red circle for include checkboxes */
+#offers-send-table .dash-spreadsheet-inner td.dash-select-cell input[type="checkbox"],
+#offers-send-table .dash-spreadsheet-inner th.dash-select-header input[type="checkbox"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    background: #f85149 !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    transition: background 0.15s;
+}
+#offers-send-table .dash-spreadsheet-inner td.dash-select-cell input[type="checkbox"]:checked,
+#offers-send-table .dash-spreadsheet-inner th.dash-select-header input[type="checkbox"]:checked {
+    background: #3fb950 !important;
 }
 
 /* ===== Table auto-fit ===== */

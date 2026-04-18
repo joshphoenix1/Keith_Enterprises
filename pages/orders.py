@@ -327,6 +327,17 @@ def _handle_action(confirm, cancel, invoice, paid, shipped, complete, order_id):
     elif triggered in action_map:
         new_status, msg = action_map[triggered]
         update_order_status(order_id, new_status)
+        # Send payment confirmation email when marking as paid
+        if triggered == "orders-btn-paid":
+            try:
+                from utils.notifications import send_payment_confirmation
+                orders_tmp = load_orders()
+                paid_order = next((o for o in orders_tmp if o.get("id") == order_id), None)
+                if paid_order:
+                    send_payment_confirmation(paid_order, paid_order.get("buyer_email", ""))
+                    msg = "Payment recorded — confirmation email sent"
+            except Exception:
+                pass
     else:
         return no_update, no_update, no_update, no_update, no_update
 

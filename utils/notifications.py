@@ -387,3 +387,89 @@ def send_invoice_email(order, buyer_email, invoice_html=""):
 </body></html>"""
 
     return _smtp_send(buyer_email, subject, html)
+
+
+def send_payment_confirmation(order, buyer_email):
+    """Send payment confirmation email — order is locked in, shipping next."""
+    order_id = order.get("id", "N/A")
+    buyer = order.get("buyer_name", "")
+    subtotal = order.get("subtotal", 0)
+    items = order.get("items", [])
+
+    subject = f"Keith Enterprises — Payment Received — {order_id}"
+
+    items_html = ""
+    for item in items:
+        qty = item.get("qty", 0)
+        unit = item.get("unit_cost", 0)
+        total = item.get("line_total", qty * unit)
+        items_html += f"""<tr>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;">{item.get('product_name','')}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;text-align:center;">{qty:,}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#e6edf3;text-align:right;">${unit:.2f}</td>
+            <td style="padding:10px 14px;border-bottom:1px solid #30363d;color:#3fb950;text-align:right;font-weight:600;">${total:,.2f}</td>
+        </tr>"""
+
+    ship = order.get("shipping_address", {})
+    ship_lines = [s for s in [
+        ship.get("name", ""), ship.get("company", ""), ship.get("line1", ""),
+        ship.get("line2", ""),
+        f"{ship.get('city', '')}, {ship.get('state', '')} {ship.get('zip', '')}".strip(", "),
+        f"Phone: {ship.get('phone', '')}" if ship.get("phone") else "",
+    ] if s and s.strip()]
+    ship_html = "<br>".join(ship_lines) if ship_lines else "To be confirmed"
+
+    html = f"""<!DOCTYPE html>
+<html><head><meta charset="utf-8"></head>
+<body style="background:#0f1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;">
+<div style="max-width:700px;margin:0 auto;padding:32px 20px;">
+
+    <div style="background:#3fb95020;border:1px solid #3fb95040;border-radius:10px;padding:20px 24px;margin-bottom:24px;text-align:center;">
+        <p style="font-size:2rem;margin:0 0 8px;">&#10003;</p>
+        <h2 style="color:#3fb950;margin:0 0 4px;font-size:1.3rem;">Payment Received</h2>
+        <p style="color:#8b949e;margin:0;font-size:0.85rem;">Your order is confirmed and locked in.</p>
+    </div>
+
+    <p style="color:#e6edf3;margin:0 0 20px;">Hi {buyer},</p>
+    <p style="color:#8b949e;margin:0 0 20px;">
+        We've received your payment of <strong style="color:#3fb950;">${subtotal:,.2f}</strong> for order
+        <strong style="color:#e6edf3;">{order_id}</strong>. Your order is now locked in and we're preparing it for shipment.</p>
+
+    <div style="overflow-x:auto;border:1px solid #30363d;border-radius:8px;">
+    <table style="width:100%;border-collapse:collapse;background:#1c2128;">
+        <thead><tr style="background:#161b22;">
+            <th style="padding:10px 14px;text-align:left;color:#8b949e;font-size:0.8rem;">Product</th>
+            <th style="padding:10px 14px;text-align:center;color:#8b949e;font-size:0.8rem;">Qty</th>
+            <th style="padding:10px 14px;text-align:right;color:#8b949e;font-size:0.8rem;">Unit Price</th>
+            <th style="padding:10px 14px;text-align:right;color:#8b949e;font-size:0.8rem;">Total</th>
+        </tr></thead>
+        <tbody>{items_html}</tbody>
+        <tfoot><tr style="background:#161b22;">
+            <td colspan="3" style="padding:12px 14px;text-align:right;color:#e6edf3;font-weight:600;">Paid:</td>
+            <td style="padding:12px 14px;text-align:right;color:#3fb950;font-weight:700;font-size:1.1rem;">${subtotal:,.2f}</td>
+        </tr></tfoot>
+    </table>
+    </div>
+
+    <div style="background:#1c2128;border:1px solid #30363d;border-radius:8px;padding:16px;margin-top:20px;">
+        <p style="margin:0 0 8px;font-size:0.75rem;color:#8b949e;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Shipping To</p>
+        <p style="margin:0;color:#e6edf3;font-size:0.85rem;line-height:1.6;">{ship_html}</p>
+    </div>
+
+    <div style="background:#58a6ff15;border:1px solid #58a6ff30;border-radius:8px;padding:16px;margin-top:16px;">
+        <p style="margin:0 0 6px;color:#58a6ff;font-weight:600;font-size:0.9rem;">What happens next</p>
+        <ol style="margin:0;padding-left:20px;color:#8b949e;font-size:0.85rem;line-height:1.8;">
+            <li>We pick and pack your order</li>
+            <li>You'll receive a shipping confirmation with tracking info</li>
+            <li>Estimated delivery: 3-5 business days via ground</li>
+        </ol>
+    </div>
+
+    <p style="color:#8b949e;font-size:0.8rem;margin:20px 0 0;">Questions? Reply to this email.</p>
+    <p style="color:#e6edf3;margin:16px 0 0;">Thank you for your business,</p>
+    <p style="color:#e6edf3;margin:4px 0 0;font-weight:600;">Keith Enterprises</p>
+
+</div>
+</body></html>"""
+
+    return _smtp_send(buyer_email, subject, html)
