@@ -205,6 +205,9 @@ def _show_detail(selected_rows, table_data):
         actions.append(html.Button([html.I(className="bi bi-x-lg me-2"), "Cancel"],
                        id="orders-btn-cancel", className="btn-outline-dark", style={"marginRight": "8px"}))
     elif status == "confirmed":
+        actions.append(html.Button([html.I(className="bi bi-check-circle-fill me-2"), "Order Confirmed"],
+                       id="orders-btn-confirm", className="btn-primary-dark", disabled=True,
+                       style={"marginRight": "8px", "opacity": "0.7", "cursor": "default"}))
         actions.append(html.Button([html.I(className="bi bi-receipt me-2"), "Send Invoice"],
                        id="orders-btn-invoice", className="btn-primary-dark", style={"marginRight": "8px"}))
     elif status == "invoiced":
@@ -346,15 +349,18 @@ def _handle_action(confirm, cancel, invoice, paid, shipped, complete, order_id):
     table_data = _build_table_data(orders)
     kpi_row = _build_kpi_row(orders)
 
-    # Re-render detail
+    # Re-render detail panel with updated order
     order = next((o for o in orders if o.get("id") == order_id), None)
     if order:
-        detail, _ = _show_detail.__wrapped__(None, None)  # Can't easily call, just clear
-    detail = html.Div()  # Clear detail panel to force re-select
+        # Build a fake table row and call _show_detail to re-render
+        fake_table = [{"id": order_id}]
+        detail, _ = _show_detail.__wrapped__([0], fake_table)
+    else:
+        detail = html.Div()
 
     status_msg = html.Div([
         html.I(className="bi bi-check-circle-fill me-2", style={"color": COLORS["success"]}),
         html.Span(msg, style={"color": COLORS["success"], "fontSize": "0.85rem"}),
     ], style={"background": f"{COLORS['success']}10", "padding": "10px 14px", "borderRadius": "8px"})
 
-    return status_msg, table_data, kpi_row, detail, None
+    return status_msg, table_data, kpi_row, detail, order_id
