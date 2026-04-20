@@ -79,7 +79,7 @@ body {
     padding: 20px;
     transition: border-color 0.2s ease;
     min-width: 0;
-    overflow: hidden;
+    overflow: visible;
 }
 .dash-card:hover {
     border-color: #484f58;
@@ -115,7 +115,7 @@ body {
 /* Prevent grid children from overflowing */
 .grid-row > * {
     min-width: 0;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* ===== Forms / Inputs ===== */
@@ -161,6 +161,43 @@ body {
 }
 .dark-dropdown .VirtualizedSelectFocusedOption {
     background-color: #1f2937 !important;
+}
+
+/* Dash 2.x dropdown overrides */
+.dark-dropdown .Select-menu-outer,
+.dark-dropdown .dash-dropdown-menu {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    z-index: 9999 !important;
+}
+.dark-dropdown .Select-option,
+.dark-dropdown .dash-dropdown-option {
+    background-color: #161b22 !important;
+    color: #e6edf3 !important;
+}
+.dark-dropdown .Select-option.is-focused,
+.dark-dropdown .dash-dropdown-option:hover,
+.dark-dropdown .dash-dropdown-option.highlighted {
+    background-color: #1f2937 !important;
+}
+/* Generic Dash dcc.Dropdown internals */
+.dark-dropdown .Select-control,
+.dark-dropdown > div > div {
+    background-color: #0d1117 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+.dark-dropdown .Select-multi-value-wrapper .Select-value {
+    background-color: #1f6feb !important;
+    border: none !important;
+    color: #fff !important;
+    border-radius: 4px !important;
+}
+.dark-dropdown .Select-value-label {
+    color: #fff !important;
+}
+.dark-dropdown .Select-input input {
+    color: #e6edf3 !important;
 }
 
 /* ===== Buttons ===== */

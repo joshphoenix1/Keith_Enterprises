@@ -504,5 +504,185 @@
     "paid_at": null,
     "shipped_at": null,
     "notes": ""
+  },
+  {
+    "id": "ORD-20260420-001",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "confirmed",
+    "items": [
+      {
+        "offer_id": 13,
+        "product_name": "Sambucus Zero Sugar Elderberry Gummies 50ct",
+        "upc": "033674146163",
+        "unit_cost": 2.58,
+        "qty": 100,
+        "line_total": 258.0
+      },
+      {
+        "offer_id": 19,
+        "product_name": "Quercetin with Zinc Gummy 60ct",
+        "upc": "033674142615",
+        "unit_cost": 3.18,
+        "qty": 300,
+        "line_total": 954.0
+      },
+      {
+        "offer_id": 21,
+        "product_name": "Fenugreek Seed 100ct",
+        "upc": "033674128008",
+        "unit_cost": 1.34,
+        "qty": 250,
+        "line_total": 335.0
+      },
+      {
+        "offer_id": 24,
+        "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+        "upc": "033674150009",
+        "unit_cost": 2.34,
+        "qty": 600,
+        "line_total": 1404.0
+      },
+      {
+        "offer_id": 59,
+        "product_name": "Chlorofresh Chlorophyll Supplement Gummies, 60 Count Bottle",
+        "upc": "033674142608",
+        "unit_cost": 5.38,
+        "qty": 125,
+        "line_total": 672.5
+      }
+    ],
+    "subtotal": 3623.5,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-20 20:49",
+    "confirmed_at": "2026-04-20 20:51",
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": ""
+  },
+  {
+    "id": "ORD-20260420-002",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "pending_review",
+    "items": [
+      {
+        "offer_id": 13,
+        "product_name": "Sambucus Zero Sugar Elderberry Gummies 50ct",
+        "upc": "033674146163",
+        "unit_cost": 2.58,
+        "qty": 500,
+        "line_total": 1290.0
+      },
+      {
+        "offer_id": 19,
+        "product_name": "Quercetin with Zinc Gummy 60ct",
+        "upc": "033674142615",
+        "unit_cost": 3.37,
+        "qty": 1200,
+        "line_total": 4044.0
+      },
+      {
+        "offer_id": 21,
+        "product_name": "Fenugreek Seed 100ct",
+        "upc": "033674128008",
+        "unit_cost": 1.34,
+        "qty": 245,
+        "line_total": 328.3
+      },
+      {
+        "offer_id": 24,
+        "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+        "upc": "033674150009",
+        "unit_cost": 2.34,
+        "qty": 40,
+        "line_total": 93.6
+      },
+      {
+        "offer_id": 27,
+        "product_name": "Alive! Immune Support Gummy Vitamins 90ct",
+        "upc": "033674104842",
+        "unit_cost": 5.18,
+        "qty": 500,
+        "line_total": 2590.0
+      }
+    ],
+    "subtotal": 8345.9,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-20 22:13",
+    "confirmed_at": null,
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": ""
+  },
+  {
+    "id": "ORD-20260420-003",
+    "buyer_id": 13,
+    "buyer_name": "Josh",
+    "buyer_email": "mtrxinfra@gmail.com",
+    "status": "pending_review",
+    "items": [
+      {
+        "offer_id": 13,
+        "product_name": "Sambucus Zero Sugar Elderberry Gummies 50ct",
+        "upc": "033674146163",
+        "unit_cost": 2.58,
+        "qty": 133,
+        "line_total": 343.14
+      },
+      {
+        "offer_id": 19,
+        "product_name": "Quercetin with Zinc Gummy 60ct",
+        "upc": "033674142615",
+        "unit_cost": 3.37,
+        "qty": 103,
+        "line_total": 347.11
+      },
+      {
+        "offer_id": 21,
+        "product_name": "Fenugreek Seed 100ct",
+        "upc": "033674128008",
+        "unit_cost": 1.34,
+        "qty": 198,
+        "line_total": 265.32
+      },
+      {
+        "offer_id": 24,
+        "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+        "upc": "033674150009",
+        "unit_cost": 2.34,
+        "qty": 30,
+        "line_total": 70.2
+      },
+      {
+        "offer_id": 27,
+        "product_name": "Alive! Immune Support Gummy Vitamins 90ct",
+        "upc": "033674104842",
+        "unit_cost": 5.18,
+        "qty": 11,
+        "line_total": 56.98
+      }
+    ],
+    "subtotal": 1082.75,
+    "payment_terms": "Wire before ship",
+    "payment_status": "unpaid",
+    "shipping_status": "not_shipped",
+    "tracking_number": "",
+    "carrier": "",
+    "created_at": "2026-04-20 22:17",
+    "confirmed_at": null,
+    "paid_at": null,
+    "shipped_at": null,
+    "notes": ""
   }
 ]

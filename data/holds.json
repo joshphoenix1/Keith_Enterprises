@@ -11,7 +11,7 @@
     "offer_id": 84,
     "buyer_id": 13,
     "buyer_name": "Josh",
-    "status": "active",
+    "status": "expired",
     "created_at": "2026-04-17 02:35",
     "expires_at": "2026-04-19 02:35"
   },
@@ -19,7 +19,7 @@
     "offer_id": 61,
     "buyer_id": 13,
     "buyer_name": "Josh",
-    "status": "active",
+    "status": "expired",
     "created_at": "2026-04-17 02:35",
     "expires_at": "2026-04-19 02:35"
   },
@@ -27,7 +27,7 @@
     "offer_id": 35,
     "buyer_id": 13,
     "buyer_name": "Josh",
-    "status": "active",
+    "status": "expired",
     "created_at": "2026-04-17 02:35",
     "expires_at": "2026-04-19 02:35"
   },
@@ -43,7 +43,7 @@
     "offer_id": 67,
     "buyer_id": 13,
     "buyer_name": "Josh",
-    "status": "active",
+    "status": "expired",
     "created_at": "2026-04-17 02:35",
     "expires_at": "2026-04-19 02:35"
   },
@@ -59,7 +59,7 @@
     "offer_id": 43,
     "buyer_id": 13,
     "buyer_name": "Josh",
-    "status": "active",
+    "status": "expired",
     "created_at": "2026-04-17 02:35",
     "expires_at": "2026-04-19 02:35"
   },
@@ -75,7 +75,7 @@
     "offer_id": 89,
     "buyer_id": 13,
     "buyer_name": "Josh",
-    "status": "active",
+    "status": "expired",
     "created_at": "2026-04-17 02:35",
     "expires_at": "2026-04-19 02:35"
   },
@@ -83,7 +83,7 @@
     "offer_id": 91,
     "buyer_id": 13,
     "buyer_name": "Josh",
-    "status": "active",
+    "status": "converted",
     "created_at": "2026-04-17 02:35",
     "expires_at": "2026-04-19 02:35"
   },

@@ -52,5 +52,89 @@
     "action": "created",
     "detail": "Order ORD-20260417-004 from Josh: 4 items, $4,711.34",
     "time": "2026-04-17 06:39:13"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260417-005 from Josh: 1 items, $1,823.60",
+    "time": "2026-04-17 06:52:52"
+  },
+  {
+    "type": "pipeline",
+    "action": "ingested_products",
+    "detail": "Scanned 495 products from inbox. Created 0 new offers, 495 duplicates skipped. Matched 0 offers to buyers.",
+    "time": "2026-04-17 21:05:08"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260418-001 from Josh: 5 items, $952.55",
+    "time": "2026-04-18 00:32:31"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260418-002 from Josh: 4 items, $2,806.30",
+    "time": "2026-04-18 01:24:45"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260418-003 from Josh: 5 items, $1,745.80",
+    "time": "2026-04-18 01:29:29"
+  },
+  {
+    "type": "pipeline",
+    "action": "ingested_products",
+    "detail": "Scanned 495 products from inbox. Created 0 new offers, 495 duplicates skipped. Matched 0 offers to buyers.",
+    "time": "2026-04-18 01:36:30"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260418-004 from Josh: 5 items, $1,678.32",
+    "time": "2026-04-18 01:48:56"
+  },
+  {
+    "type": "pipeline",
+    "action": "ingested_products",
+    "detail": "Scanned 500 products from inbox. Created 0 new offers, 500 duplicates skipped. Matched 0 offers to buyers.",
+    "time": "2026-04-18 01:50:48"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260420-001 from Josh: 5 items, $3,623.50",
+    "time": "2026-04-20 20:49:39"
+  },
+  {
+    "type": "pipeline",
+    "action": "ingested_products",
+    "detail": "Scanned 505 products from inbox. Created 0 new offers, 505 duplicates skipped. Matched 0 offers to buyers.",
+    "time": "2026-04-20 20:50:16"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260420-002 from Josh: 5 items, $8,345.90",
+    "time": "2026-04-20 22:13:16"
+  },
+  {
+    "type": "pipeline",
+    "action": "ingested_products",
+    "detail": "Scanned 510 products from inbox. Created 0 new offers, 510 duplicates skipped. Matched 0 offers to buyers.",
+    "time": "2026-04-20 22:15:05"
+  },
+  {
+    "type": "order",
+    "action": "created",
+    "detail": "Order ORD-20260420-003 from Josh: 5 items, $1,082.75",
+    "time": "2026-04-20 22:17:20"
+  },
+  {
+    "type": "pipeline",
+    "action": "ingested_products",
+    "detail": "Scanned 515 products from inbox. Created 0 new offers, 515 duplicates skipped. Matched 0 offers to buyers.",
+    "time": "2026-04-20 22:19:18"
   }
 ]

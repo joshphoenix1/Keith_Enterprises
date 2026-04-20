@@ -731,7 +731,7 @@ def buyer_respond(token):
         </div>
         <button type="submit" style="background:#1f6feb;color:#fff;border:none;padding:10px 28px;
             border-radius:6px;font-size:0.95rem;font-weight:600;cursor:pointer;">
-            Submit Selection
+            Submit Order
         </button>
     </div>
     </form>

@@ -8934,5 +8934,651 @@
       "_source": "spreadsheet",
       "_model_used": "claude-cli"
     }
+  },
+  {
+    "id": 502,
+    "filename": "email_199",
+    "timestamp": "2026-04-18T01:36:01.057691",
+    "data": {
+      "is_product": true,
+      "product_name": "Quercetin with Zinc Gummy 60ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Quercetin with zinc gummy supplement, 60 count",
+      "quantity": 100,
+      "offered_price": 2.43,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $243.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 503,
+    "filename": "email_199",
+    "timestamp": "2026-04-18T01:36:01.076746",
+    "data": {
+      "is_product": true,
+      "product_name": "Fenugreek Seed 100ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Fenugreek seed supplement, 100 count",
+      "quantity": 200,
+      "offered_price": 1.29,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $258.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 504,
+    "filename": "email_199",
+    "timestamp": "2026-04-18T01:36:01.091988",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Zero sugar kids gummy multivitamin, 40 count",
+      "quantity": 100,
+      "offered_price": 2.25,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $225.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 505,
+    "filename": "email_199",
+    "timestamp": "2026-04-18T01:36:01.107777",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Zero Sugar Men's Multivitamin Gummies, 50 Gummies",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Zero sugar men's multivitamin gummies, 50 count",
+      "quantity": 400,
+      "offered_price": 2.41,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $964.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 506,
+    "filename": "email_199",
+    "timestamp": "2026-04-18T01:36:01.125123",
+    "data": {
+      "is_product": true,
+      "product_name": "Cold Relief Cough Drops, Cherry Flavor",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Cherry flavor cold relief cough drops",
+      "quantity": 30,
+      "offered_price": 1.86,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $55.80",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 507,
+    "filename": "email_198",
+    "timestamp": "2026-04-18T01:36:12.425847",
+    "data": {
+      "is_product": true,
+      "product_name": "Quercetin with Zinc Gummy 60ct",
+      "brand": "Unknown",
+      "category": "OTC",
+      "description": "Quercetin with zinc gummy supplement, 60 count",
+      "quantity": 50,
+      "offered_price": 2.43,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $121.50. Order ORD-20260418-002, buyer Josh. Payment: unpaid, wire before ship.",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 508,
+    "filename": "email_198",
+    "timestamp": "2026-04-18T01:36:12.439842",
+    "data": {
+      "is_product": true,
+      "product_name": "Fenugreek Seed 100ct",
+      "brand": "Unknown",
+      "category": "OTC",
+      "description": "Fenugreek seed supplement, 100 count",
+      "quantity": 20,
+      "offered_price": 1.29,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $25.80. Order ORD-20260418-002, buyer Josh. Payment: unpaid, wire before ship.",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 509,
+    "filename": "email_198",
+    "timestamp": "2026-04-18T01:36:12.458468",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Zero Sugar Men's Multivitamin Gummies, 50 Gummies",
+      "brand": "Alive!",
+      "category": "OTC",
+      "description": "Zero sugar men's multivitamin gummies, 50 count",
+      "quantity": 100,
+      "offered_price": 2.41,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $241.00. Order ORD-20260418-002, buyer Josh. Payment: unpaid, wire before ship.",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 510,
+    "filename": "email_198",
+    "timestamp": "2026-04-18T01:36:12.472603",
+    "data": {
+      "is_product": true,
+      "product_name": "Cold Relief Cough Drops, Cherry Flavor",
+      "brand": "Unknown",
+      "category": "OTC",
+      "description": "Cherry flavor cold relief cough drops",
+      "quantity": 1300,
+      "offered_price": 1.86,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $2,418.00. Order ORD-20260418-002, buyer Josh. Payment: unpaid, wire before ship.",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 511,
+    "filename": "email_197",
+    "timestamp": "2026-04-18T01:36:23.281269",
+    "data": {
+      "is_product": true,
+      "product_name": "Quercetin with Zinc Gummy 60ct",
+      "brand": "Unknown",
+      "category": "OTC",
+      "description": "Quercetin with zinc gummy supplement, 60 count",
+      "quantity": 100,
+      "offered_price": 2.43,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $243.00. Order ORD-20260418-001, buyer Josh. Payment: unpaid, shipping: not_shipped.",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 512,
+    "filename": "email_197",
+    "timestamp": "2026-04-18T01:36:23.295483",
+    "data": {
+      "is_product": true,
+      "product_name": "Fenugreek Seed 100ct",
+      "brand": "Unknown",
+      "category": "OTC",
+      "description": "Fenugreek seed supplement, 100 count",
+      "quantity": 200,
+      "offered_price": 1.29,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $258.00. Order ORD-20260418-001, buyer Josh. Payment: unpaid, shipping: not_shipped.",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 513,
+    "filename": "email_197",
+    "timestamp": "2026-04-18T01:36:23.310824",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+      "brand": "Alive!",
+      "category": "OTC",
+      "description": "Zero sugar kids gummy multivitamin, 40 count",
+      "quantity": 25,
+      "offered_price": 2.25,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $56.25. Order ORD-20260418-001, buyer Josh. Payment: unpaid, shipping: not_shipped.",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 514,
+    "filename": "email_197",
+    "timestamp": "2026-04-18T01:36:23.327678",
+    "data": {
+      "is_product": true,
+      "product_name": "Cold Relief Cough Drops, Cherry Flavor",
+      "brand": "Unknown",
+      "category": "OTC",
+      "description": "Cherry flavor cold relief cough drops",
+      "quantity": 200,
+      "offered_price": 1.86,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $372.00. Order ORD-20260418-001, buyer Josh. Payment: unpaid, shipping: not_shipped.",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 515,
+    "filename": "email_197",
+    "timestamp": "2026-04-18T01:36:23.345041",
+    "data": {
+      "is_product": true,
+      "product_name": "Cold + Flu Relief, Orange Flavor Chewable",
+      "brand": "Unknown",
+      "category": "OTC",
+      "description": "Orange flavor chewable cold and flu relief",
+      "quantity": 10,
+      "offered_price": 2.33,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $23.30. Order ORD-20260418-001, buyer Josh. Payment: unpaid, shipping: not_shipped.",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 516,
+    "filename": "email_200",
+    "timestamp": "2026-04-18T01:50:48.784577",
+    "data": {
+      "is_product": true,
+      "product_name": "Quercetin with Zinc Gummy 60ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Quercetin with zinc gummy supplement, 60 count",
+      "quantity": 100,
+      "offered_price": 2.43,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $243.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 517,
+    "filename": "email_200",
+    "timestamp": "2026-04-18T01:50:48.798536",
+    "data": {
+      "is_product": true,
+      "product_name": "Fenugreek Seed 100ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Fenugreek seed supplement, 100 count",
+      "quantity": 200,
+      "offered_price": 1.29,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $258.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 518,
+    "filename": "email_200",
+    "timestamp": "2026-04-18T01:50:48.814026",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Zero sugar kids gummy multivitamin, 40 count",
+      "quantity": 100,
+      "offered_price": 2.25,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $225.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 519,
+    "filename": "email_200",
+    "timestamp": "2026-04-18T01:50:48.828802",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Zero Sugar Men's Multivitamin Gummies, 50 Gummies",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Zero sugar men's multivitamin gummies, 50 count",
+      "quantity": 372,
+      "offered_price": 2.41,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $896.52",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 520,
+    "filename": "email_200",
+    "timestamp": "2026-04-18T01:50:48.843435",
+    "data": {
+      "is_product": true,
+      "product_name": "Cold Relief Cough Drops, Cherry Flavor",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Cherry flavor cold relief cough drops",
+      "quantity": 30,
+      "offered_price": 1.86,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $55.80",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 521,
+    "filename": "email_228",
+    "timestamp": "2026-04-20T20:50:16.070812",
+    "data": {
+      "is_product": true,
+      "product_name": "Sambucus Zero Sugar Elderberry Gummies 50ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Zero sugar elderberry gummies, 50 count",
+      "quantity": 100,
+      "offered_price": 2.58,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $258.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 522,
+    "filename": "email_228",
+    "timestamp": "2026-04-20T20:50:16.085026",
+    "data": {
+      "is_product": true,
+      "product_name": "Quercetin with Zinc Gummy 60ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Quercetin with zinc gummy supplement, 60 count",
+      "quantity": 300,
+      "offered_price": 3.18,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $954.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 523,
+    "filename": "email_228",
+    "timestamp": "2026-04-20T20:50:16.100535",
+    "data": {
+      "is_product": true,
+      "product_name": "Fenugreek Seed 100ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Fenugreek seed supplement, 100 count",
+      "quantity": 250,
+      "offered_price": 1.34,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $335.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 524,
+    "filename": "email_228",
+    "timestamp": "2026-04-20T20:50:16.115813",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Zero sugar kids gummy multivitamin, 40 count",
+      "quantity": 600,
+      "offered_price": 2.34,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $1,404.00",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 525,
+    "filename": "email_228",
+    "timestamp": "2026-04-20T20:50:16.130661",
+    "data": {
+      "is_product": true,
+      "product_name": "Chlorofresh Chlorophyll Supplement Gummies, 60 Count Bottle",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Chlorophyll supplement gummies, 60 count bottle",
+      "quantity": 125,
+      "offered_price": 5.38,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "Line total $672.50",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 526,
+    "filename": "email_233",
+    "timestamp": "2026-04-20T22:15:05.457258",
+    "data": {
+      "is_product": true,
+      "product_name": "Sambucus Zero Sugar Elderberry Gummies 50ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Zero sugar elderberry gummy supplement, 50 count",
+      "quantity": 500,
+      "offered_price": 2.58,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 527,
+    "filename": "email_233",
+    "timestamp": "2026-04-20T22:15:05.471699",
+    "data": {
+      "is_product": true,
+      "product_name": "Quercetin with Zinc Gummy 60ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Quercetin with zinc gummy supplement, 60 count",
+      "quantity": 1200,
+      "offered_price": 3.37,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 528,
+    "filename": "email_233",
+    "timestamp": "2026-04-20T22:15:05.486939",
+    "data": {
+      "is_product": true,
+      "product_name": "Fenugreek Seed 100ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Fenugreek seed supplement, 100 count",
+      "quantity": 245,
+      "offered_price": 1.34,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 529,
+    "filename": "email_233",
+    "timestamp": "2026-04-20T22:15:05.503203",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Zero sugar kids gummy multivitamin, 40 count",
+      "quantity": 40,
+      "offered_price": 2.34,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 530,
+    "filename": "email_233",
+    "timestamp": "2026-04-20T22:15:05.518083",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Immune Support Gummy Vitamins 90ct",
+      "brand": "Nature's Way",
+      "category": "OTC",
+      "description": "Immune support gummy vitamins, 90 count",
+      "quantity": 500,
+      "offered_price": 5.18,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 531,
+    "filename": "email_234",
+    "timestamp": "2026-04-20T22:19:17.908216",
+    "data": {
+      "is_product": true,
+      "product_name": "Sambucus Zero Sugar Elderberry Gummies 50ct",
+      "brand": "Sambucus",
+      "category": "OTC",
+      "description": "Zero sugar elderberry gummies, 50 count",
+      "quantity": 133,
+      "offered_price": 2.58,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 532,
+    "filename": "email_234",
+    "timestamp": "2026-04-20T22:19:17.923949",
+    "data": {
+      "is_product": true,
+      "product_name": "Quercetin with Zinc Gummy 60ct",
+      "brand": "Other",
+      "category": "OTC",
+      "description": "Quercetin with zinc gummy supplement, 60 count",
+      "quantity": 103,
+      "offered_price": 3.37,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 533,
+    "filename": "email_234",
+    "timestamp": "2026-04-20T22:19:17.939188",
+    "data": {
+      "is_product": true,
+      "product_name": "Fenugreek Seed 100ct",
+      "brand": "Other",
+      "category": "OTC",
+      "description": "Fenugreek seed supplement, 100 count",
+      "quantity": 198,
+      "offered_price": 1.34,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 534,
+    "filename": "email_234",
+    "timestamp": "2026-04-20T22:19:17.954076",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Zero Sugar Kids Gummy Multivitamin 40ct",
+      "brand": "Alive!",
+      "category": "OTC",
+      "description": "Zero sugar kids gummy multivitamin, 40 count",
+      "quantity": 30,
+      "offered_price": 2.34,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
+  },
+  {
+    "id": 535,
+    "filename": "email_234",
+    "timestamp": "2026-04-20T22:19:17.969542",
+    "data": {
+      "is_product": true,
+      "product_name": "Alive! Immune Support Gummy Vitamins 90ct",
+      "brand": "Alive!",
+      "category": "OTC",
+      "description": "Immune support gummy vitamins, 90 count",
+      "quantity": 11,
+      "offered_price": 5.18,
+      "suggested_retail_price": null,
+      "upc_barcode": "",
+      "notes": "",
+      "_source": "email_text",
+      "_model_used": "claude-cli"
+    }
   }
 ]
