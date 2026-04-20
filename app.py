@@ -794,7 +794,7 @@ if __name__ == "__main__":
         app.server.email_poller = email_poller
         email_poller.start()
 
-        sa_poller = EnrichmentPoller(interval=1800, batch_size=50)
+        sa_poller = EnrichmentPoller(interval=300, batch_size=50)
         app.server.sa_poller = sa_poller
         sa_poller.start()
     app.run(debug=False, host="0.0.0.0", port=APP_PORT)

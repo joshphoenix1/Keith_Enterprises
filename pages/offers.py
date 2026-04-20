@@ -269,7 +269,10 @@ def layout():
     offers = _load_offers()
     table_data = _build_table_data(offers)
     no_price = sum(1 for o in offers if not (o.get("marketplace_data") or {}).get("amazon_price"))
-    no_sa = sum(1 for o in offers if o.get("upc") and not o.get("sa_data", {}).get("buy_box_price"))
+    no_sa = sum(1 for o in offers if o.get("upc")
+               and not o.get("sa_data", {}).get("buy_box_price")
+               and not o.get("sa_data", {}).get("enriched_at")
+               and not o.get("sa_data", {}).get("error"))
 
     return html.Div([
         # Hidden stores

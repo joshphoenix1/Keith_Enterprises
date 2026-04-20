@@ -242,7 +242,10 @@ def bulk_enrich(max_offers=50, delay=1.1):
     errors = 0
     restricted = 0
     needs_enrichment = [o for o in offers
-                        if o.get("upc") and not o.get("sa_data", {}).get("buy_box_price")]
+                        if o.get("upc")
+                        and not o.get("sa_data", {}).get("buy_box_price")
+                        and not o.get("sa_data", {}).get("enriched_at")
+                        and not o.get("sa_data", {}).get("error")]
 
     to_process = needs_enrichment[:max_offers]
     logger.info("SA enrichment: %d need enrichment, processing %d",
@@ -290,7 +293,10 @@ def _count_unenriched():
     except Exception:
         return 0
     return sum(1 for o in offers
-               if o.get("upc") and not o.get("sa_data", {}).get("buy_box_price"))
+               if o.get("upc")
+               and not o.get("sa_data", {}).get("buy_box_price")
+               and not o.get("sa_data", {}).get("enriched_at")
+               and not o.get("sa_data", {}).get("error"))
 
 
 class EnrichmentPoller:
