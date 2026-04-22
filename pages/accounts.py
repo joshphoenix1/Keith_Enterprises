@@ -414,7 +414,13 @@ def layout():
             html.Button([
                 html.I(className="bi bi-send me-2"),
                 "Send Test Message",
-            ], id="acct-wa-sendtest-btn", className="btn-outline-dark"),
+            ], id="acct-wa-sendtest-btn", className="btn-outline-dark",
+               style={"marginRight": "12px"}),
+            html.Button([
+                html.I(className="bi bi-box-arrow-right me-2"),
+                "Disconnect / Switch Account",
+            ], id="acct-wa-logout-btn", className="btn-outline-dark",
+               style={"borderColor": COLORS["danger"], "color": COLORS["danger"]}),
         ], style={"marginTop": "16px"}),
 
         # Single output area for all WA actions
@@ -812,10 +818,11 @@ def save_accounts(n_clicks,
     Input("acct-wa-create-btn", "n_clicks"),
     Input("acct-wa-test-btn", "n_clicks"),
     Input("acct-wa-sendtest-btn", "n_clicks"),
+    Input("acct-wa-logout-btn", "n_clicks"),
     State("acct-wa-phone", "value"),
     prevent_initial_call=True,
 )
-def handle_whatsapp_actions(create_clicks, test_clicks, send_clicks, phone_number):
+def handle_whatsapp_actions(create_clicks, test_clicks, send_clicks, logout_clicks, phone_number):
     triggered = ctx.triggered_id
 
     def _badge(msg, color, icon):
@@ -874,5 +881,29 @@ def handle_whatsapp_actions(create_clicks, test_clicks, send_clicks, phone_numbe
                 return _badge(f"Failed: {result.get('error', 'Unknown')}", COLORS["danger"], "bi-x-circle-fill")
         except Exception as e:
             return _badge(f"Error: {e}", COLORS["danger"], "bi-x-circle-fill")
+
+    elif triggered == "acct-wa-logout-btn":
+        try:
+            import requests
+            accounts = _load_accounts()
+            bridge_url = accounts.get("whatsapp", {}).get("bridge_url", "http://localhost:8085")
+            api_key = accounts.get("whatsapp", {}).get("api_key", "keith-enterprises-wa-key")
+            headers = {"apikey": api_key}
+
+            # Logout current session (clears auth state on bridge)
+            requests.post(f"{bridge_url}/logout", headers=headers, timeout=10)
+
+            # Restart bridge to generate a fresh QR code
+            requests.post(f"{bridge_url}/restart", headers=headers, timeout=10)
+
+            return html.Div([
+                _badge("WhatsApp disconnected. Refresh QR Code in a few seconds to link a new number.",
+                       COLORS["warning"], "bi-box-arrow-right"),
+                html.P("The bridge is restarting — click Refresh QR Code after a few seconds to scan with your new phone.",
+                       style={"color": COLORS["text_muted"], "fontSize": "0.8rem", "marginTop": "8px",
+                              "paddingLeft": "14px"}),
+            ])
+        except Exception as e:
+            return _badge(f"Error disconnecting: {e}", COLORS["danger"], "bi-x-circle-fill")
 
     return ""
