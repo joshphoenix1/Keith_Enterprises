@@ -414,14 +414,17 @@ def layout():
             html.Button([
                 html.I(className="bi bi-send me-2"),
                 "Send Test Message",
-            ], id="acct-wa-sendtest-btn", className="btn-outline-dark",
-               style={"marginRight": "12px"}),
+            ], id="acct-wa-sendtest-btn", className="btn-outline-dark"),
+        ], style={"marginTop": "16px", "display": "flex", "flexWrap": "wrap", "gap": "8px"}),
+
+        # Disconnect / switch account — separate row
+        html.Div([
             html.Button([
                 html.I(className="bi bi-box-arrow-right me-2"),
                 "Disconnect / Switch Account",
             ], id="acct-wa-logout-btn", className="btn-outline-dark",
                style={"borderColor": COLORS["danger"], "color": COLORS["danger"]}),
-        ], style={"marginTop": "16px"}),
+        ], style={"marginTop": "12px"}),
 
         # Single output area for all WA actions
         html.Div(id="acct-wa-action-result", style={"marginTop": "16px"}),
